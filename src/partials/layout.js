@@ -1,4 +1,4 @@
-const LOGO = "https://lh3.googleusercontent.com/aida/AEtjO1XgyGppC3hcdWVzSjVL9h7OFQHlGaldF9klrqUdMu_oWv-qK5jnnEeQjxV0QdJAAyQ-ABtXDCQVHlHI6ddFXx-KlTKw6GU7unyTljCvJofjA6bThJGFo2INtgHRHOohzxpDKBdvl-UFrOzLUnzpTzQmBK-HGCzmGOBn8OhiwsuelwoeZyFsP8pVZf3OceneG_PmhtQIonN524c3FQF7l0usrOEdm9S3jj427oEddMhcHJjsECYPsJh3p2I";
+const LOGO = "/assets/logo.png";
 
 function head(title, description) {
   return `<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
