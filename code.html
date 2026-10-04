@@ -1,0 +1,2445 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PTA SOLUTIONS | Hearing &amp; Speech Care Clinics, Mumbai</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#006A6A",
+            "primary-container": "#1BBCBC",
+            "on-primary-fixed": "#002020",
+            surface: "#F7FAF9",
+            dark: "#122326",
+            "muted-text": "#526163",
+            border: "#DCE7E6"
+          },
+          fontFamily: {
+            display: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    /* Waveform Animation */
+    @keyframes wavePulse {
+      0%, 100% { height: 10px; transform: scaleY(0.6); }
+      50% { height: 38px; transform: scaleY(1.2); }
+    }
+    .wave-bar {
+      animation: wavePulse 1.5s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+    .wave-bar:nth-child(5) { animation-delay: 0.6s; }
+    .wave-bar:nth-child(6) { animation-delay: 0.75s; }
+    .wave-bar:nth-child(7) { animation-delay: 0.9s; }
+
+    /* Pulse Glow Rings */
+    @keyframes pulseRing {
+      0% { box-shadow: 0 0 0 0 rgba(27, 188, 188, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(27, 188, 188, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(27, 188, 188, 0); }
+    }
+    .pulse-badge {
+      animation: pulseRing 2.4s infinite;
+    }
+
+    /* Sticky Header Scrolled */
+    .header-scrolled {
+      background-color: rgba(252, 253, 252, 0.98) !important;
+      box-shadow: 0 4px 20px -2px rgba(18, 35, 38, 0.08);
+      border-color: rgba(220, 231, 230, 0.9);
+    }
+
+    /* Nav Link Hover Underline */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #1bbcbc;
+      transition: width 0.25s ease-out;
+      border-radius: 999px;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Scroll Triggered Reveals */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero Stagger Entrances */
+    @keyframes fadeUpEntrance {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .anim-hero-badge { animation: fadeUpEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.1s; }
+    .anim-hero-title { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.25s; }
+    .anim-hero-desc { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.4s; }
+    .anim-hero-cta { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.55s; }
+    .anim-hero-metrics { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.7s; }
+
+    /* Interactive Plan Rows */
+    .plan-row {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .plan-row:hover {
+      border-color: #1bbcbc !important;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px -10px rgba(0, 106, 106, 0.12);
+    }
+
+    /* Interactive Journey Steps */
+    .journey-step {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .journey-step:hover, .journey-step.active {
+      transform: translateY(-4px);
+      border-color: #1bbcbc;
+      box-shadow: 0 12px 24px -8px rgba(0, 106, 106, 0.1);
+    }
+    .journey-step.active .step-num {
+      color: #006a6a;
+    }
+    .journey-step.active .step-icon-box {
+      background-color: #1bbcbc;
+      color: #ffffff;
+    }
+
+    /* Custom Input Focus */
+    .custom-input {
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .custom-input:focus {
+      border-color: #1bbcbc !important;
+      box-shadow: 0 0 0 3px rgba(27, 188, 188, 0.18);
+      background-color: #ffffff !important;
+    }
+
+    /* Dynamic Service Panel transition */
+    #service-content-panel {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    #service-content-panel.fade-out {
+      opacity: 0.15;
+      transform: translateY(5px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#F7FAF9] text-[#122326] font-body antialiased selection:bg-[#1BBCBC] selection:text-[#002020]">
+
+<!-- 1. STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] transition-all duration-300" id="main-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-20">
+    <a aria-label="PTA SOLUTIONS Home" class="flex items-center gap-3 group cursor-pointer" onclick="navigateTo('home')">
+      <img alt="PTA Solutions Clinic Logo" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XgyGppC3hcdWVzSjVL9h7OFQHlGaldF9klrqUdMu_oWv-qK5jnnEeQjxV0QdJAAyQ-ABtXDCQVHlHI6ddFXx-KlTKw6GU7unyTljCvJofjA6bThJGFo2INtgHRHOohzxpDKBdvl-UFrOzLUnzpTzQmBK-HGCzmGOBn8OhiwsuelwoeZyFsP8pVZf3OceneG_PmhtQIonN524c3FQF7l0usrOEdm9S3jj427oEddMhcHJjsECYPsJh3p2I">
+    </a>
+    <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[14px] font-medium text-[#526163]">
+      <a class="nav-item cursor-pointer py-1 transition-colors text-[#122326] font-semibold" data-route="home" onclick="navigateTo('home')">Home</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="about" onclick="navigateTo('about')">About</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="services" onclick="navigateTo('services')">Services</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="nri-care" onclick="navigateTo('nri-care')">NRI Hearing Care</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="complete-care" onclick="navigateTo('complete-care')">Complete Care</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="contact" onclick="navigateTo('contact')">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#526163] hover:text-[#006A6A] transition-colors group" href="tel:+919773545058">
+        <span class="material-symbols-outlined text-[#006A6A] text-[18px] transition-transform group-hover:scale-110">call</span>
+        <span class="">+91 9773545058</span>
+      </a>
+      <button class="group inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md" onclick="navigateTo('booking-hub')">
+        <span class="">Book Appointment</span>
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+      </button>
+      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#122326] hover:bg-[#F1F4F3] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+  <div class="hidden md:hidden border-t border-[#DCE7E6] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
+    <a class="block py-2 text-[15px] font-medium text-[#122326] border-b border-[#F1F4F3]" onclick="navigateTo('home'); toggleMobileMenu();">Home</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('about'); toggleMobileMenu();">About PTA Solutions</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('services'); toggleMobileMenu();">All Services Directory</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('nri-care'); toggleMobileMenu();">NRI Hearing Care Mumbai</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('complete-care'); toggleMobileMenu();">Complete Care Program</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('booking-hub'); toggleMobileMenu();">Book Appointment Hub</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163]" onclick="navigateTo('contact'); toggleMobileMenu();">Contact Chembur Clinic</a>
+    <div class="pt-2">
+      <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#006A6A] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
+        <span class="material-symbols-outlined text-[18px]">call</span>
+        <span class="">Direct Call: +91 9773545058</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- 2. HERO SECTION -->
+<div id="spa-root" class="min-h-screen"><!-- 1. HOME VIEW (route: 'home') -->
+<div class="spa-view active transition-all duration-300" id="view-home">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-10 pb-16 lg:py-20 border-b border-[#DCE7E6] bg-[#F7FAF9]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-[#E6E9E8]/70 rounded-full border border-[#DCE7E6]">
+            <span class="w-2 h-2 rounded-full bg-[#1BBCBC] animate-ping"></span>
+            <span class="text-[#3C4949] text-[11px] font-semibold tracking-widest uppercase">Chembur • Mumbai Hearing &amp; Speech Sanctuary</span>
+          </div>
+          <h1 class="text-[38px] sm:text-[52px] lg:text-[62px] font-display font-extrabold text-[#122326] tracking-tight leading-[1.1]">
+            Empowering You to<br class="hidden sm:inline">
+            <span class="relative inline-block text-[#006A6A] underline decoration-[#1BBCBC] decoration-[5px] underline-offset-8">Hear and Speak Better</span><br>
+            Every Day
+          </h1>
+          <p class="text-[17px] lg:text-[19px] text-[#3C4949] max-w-2xl leading-relaxed">
+            At PTA SOLUTIONS Hearing and Speech Care Clinics, we bring advanced hearing tests and speech therapy services to Mumbai — combining calibrated ISO diagnostic suites with genuine personal care.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button class="group h-12 px-7 inline-flex items-center justify-center gap-2 bg-[#122326] text-white font-display text-[15px] font-semibold rounded-lg hover:bg-[#006A6A] active:scale-95 transition-all duration-200 shadow-sm hover:shadow-lg" onclick="navigateTo('booking-hub')">
+              <span class="">Book Appointment</span>
+              <span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:translate-x-1">calendar_month</span>
+            </button>
+            <button class="h-12 px-7 inline-flex items-center justify-center border border-[#6C7A79]/30 bg-white text-[#122326] font-display text-[15px] font-semibold rounded-lg hover:border-[#1BBCBC] hover:text-[#006A6A] active:scale-95 transition-all duration-200" onclick="navigateTo('services')">
+              Explore All Services
+            </button>
+          </div>
+          <div class="pt-8 grid grid-cols-3 gap-6 border-t border-[#DCE7E6] max-w-xl">
+            <div class="space-y-0.5 cursor-default">
+              <p class="text-[26px] font-display font-bold text-[#122326]">10+ Yrs</p>
+              <p class="text-[13px] text-[#526163]">Clinical Expertise</p>
+            </div>
+            <div class="space-y-0.5 cursor-default">
+              <p class="text-[26px] font-display font-bold text-[#122326]">100%</p>
+              <p class="text-[13px] text-[#526163]">Ethical Diagnostics</p>
+            </div>
+            <div class="space-y-0.5 cursor-default">
+              <p class="text-[26px] font-display font-bold text-[#122326]">Newborn → Sr</p>
+              <p class="text-[13px] text-[#526163]">Complete Lifespan</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-5 relative">
+          <div class="relative bg-white p-2.5 border border-[#DCE7E6] rounded-2xl shadow-xl overflow-hidden group">
+            <img alt="Audiology Consultation in Mumbai Clinic" class="w-full h-auto aspect-[4/3] object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1WvuL5utkpTwVEOcBlkp8HVhy9ceFEP15_G1tVd682eS_QYRKM8uOVUDaVdYcRnWBsTwvWblN3HFs5N4kaVPSC7K_ZR3dKWQp4uMpOV5rQ8DwSMA9y-mbWJvJin6JrCe7L58e0UwO3GmKIOuCDleU9VHIHE12qRm_0F2w8d7d0Y7EVmemtTaPIUxfsv_K_4nd-p7M3L1dVfxGiP8RQzjIR-NSwQqGsSwG3-kN2n6orLuROSNmKe-2PD0w8">
+            <div class="absolute -bottom-1 left-4 right-4 sm:right-auto sm:left-4 sm:max-w-xs bg-white/95 backdrop-blur-md p-4 rounded-xl border border-[#DCE7E6] shadow-lg flex items-center gap-3.5 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-[#1BBCBC]/20 flex items-center justify-center text-[#006A6A] shrink-0">
+                <span class="material-symbols-outlined text-[24px]">graphic_eq</span>
+              </div>
+              <div>
+                <p class="text-[13px] font-bold font-display text-[#122326]">Acoustic Diagnostics</p>
+                <p class="text-[12px] text-[#526163]">&amp; Speech Rehabilitation</p>
+              </div>
+            </div>
+            <div class="absolute top-5 right-5 bg-[#122326]/90 backdrop-blur-sm text-white px-3.5 py-1.5 rounded-md border border-white/10 flex items-center gap-2 shadow-md">
+              <span class="w-2 h-2 rounded-full bg-[#1BBCBC] animate-pulse"></span>
+              <span class="text-[11px] font-semibold tracking-wide uppercase">Calibrated ISO Booth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Service Selector Grid -->
+  <section class="py-16 bg-white border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">Clinical Services</span>
+          <h2 class="text-[28px] lg:text-[36px] font-display font-bold text-[#122326] mt-1">Comprehensive Hearing &amp; Speech Care</h2>
+        </div>
+        <button class="text-[#006A6A] font-semibold text-[14px] flex items-center gap-1 hover:underline" onclick="navigateTo('services')">
+          <span class="">View Full Services Directory</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-[#F7FAF9] border border-[#DCE7E6] hover:border-[#1BBCBC] hover:shadow-md transition-all group flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-[#1BBCBC]/20 text-[#006A6A] flex items-center justify-center">
+              <span class="material-symbols-outlined text-[22px]">hearing</span>
+            </div>
+            <h3 class="font-display font-bold text-[18px] text-[#122326]">Hearing Tests</h3>
+            <p class="text-[13px] text-[#526163] leading-relaxed">Pure Tone Audiometry (PTA) in a calibrated ISO booth, tympanometry &amp; acoustic reflexes.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <span class="text-[13px] font-semibold text-[#006A6A]">From ₹1,500</span>
+            <button class="px-3 py-1.5 bg-white border border-[#DCE7E6] text-[#122326] hover:bg-[#006A6A] hover:text-white rounded-md text-[12px] font-semibold transition-all" onclick="navigateTo('booking-hearing-tests')">Book Test</button>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-[#F7FAF9] border border-[#DCE7E6] hover:border-[#1BBCBC] hover:shadow-md transition-all group flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-[#1BBCBC]/20 text-[#006A6A] flex items-center justify-center">
+              <span class="material-symbols-outlined text-[22px]">hearing_disabled</span>
+            </div>
+            <h3 class="font-display font-bold text-[18px] text-[#122326]">Hearing Aids Fitting</h3>
+            <p class="text-[13px] text-[#526163] leading-relaxed">Swiss &amp; Danish premium digital instruments with Real-Ear Measurement verification.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <span class="text-[13px] font-semibold text-[#006A6A]">Custom Trial</span>
+            <button class="px-3 py-1.5 bg-white border border-[#DCE7E6] text-[#122326] hover:bg-[#006A6A] hover:text-white rounded-md text-[12px] font-semibold transition-all" onclick="navigateTo('booking-hearing-aids')">Book Trial</button>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-[#F7FAF9] border border-[#DCE7E6] hover:border-[#1BBCBC] hover:shadow-md transition-all group flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-[#1BBCBC]/20 text-[#006A6A] flex items-center justify-center">
+              <span class="material-symbols-outlined text-[22px]">record_voice_over</span>
+            </div>
+            <h3 class="font-display font-bold text-[18px] text-[#122326]">Speech &amp; Language Therapy</h3>
+            <p class="text-[13px] text-[#526163] leading-relaxed">Pediatric articulation, stammering modification, and adult post-stroke recovery therapies.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <span class="text-[13px] font-semibold text-[#006A6A]">Personalized</span>
+            <button class="px-3 py-1.5 bg-white border border-[#DCE7E6] text-[#122326] hover:bg-[#006A6A] hover:text-white rounded-md text-[12px] font-semibold transition-all" onclick="navigateTo('booking-speech-therapy')">Book Therapy</button>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-[#F7FAF9] border border-[#DCE7E6] hover:border-[#1BBCBC] hover:shadow-md transition-all group flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-[#1BBCBC]/20 text-[#006A6A] flex items-center justify-center">
+              <span class="material-symbols-outlined text-[22px]">child_care</span>
+            </div>
+            <h3 class="font-display font-bold text-[18px] text-[#122326]">Newborn Screening</h3>
+            <p class="text-[13px] text-[#526163] leading-relaxed">Non-invasive automated OAE and BERA testing for infants and toddlers in a quiet suite.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <span class="text-[13px] font-semibold text-[#006A6A]">Gentle Screening</span>
+            <button class="px-3 py-1.5 bg-white border border-[#DCE7E6] text-[#122326] hover:bg-[#006A6A] hover:text-white rounded-md text-[12px] font-semibold transition-all" onclick="navigateTo('booking-newborn-screening')">Schedule</button>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-[#F7FAF9] border border-[#DCE7E6] hover:border-[#1BBCBC] hover:shadow-md transition-all group flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-[#1BBCBC]/20 text-[#006A6A] flex items-center justify-center">
+              <span class="material-symbols-outlined text-[22px]">public</span>
+            </div>
+            <h3 class="font-display font-bold text-[18px] text-[#122326]">NRI Parent Care Mumbai</h3>
+            <p class="text-[13px] text-[#526163] leading-relaxed">At-home testing and device tuning with direct WhatsApp clinical telemetry for overseas families.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <span class="text-[13px] font-semibold text-[#006A6A]">Doorstep Concierge</span>
+            <button class="px-3 py-1.5 bg-white border border-[#DCE7E6] text-[#122326] hover:bg-[#006A6A] hover:text-white rounded-md text-[12px] font-semibold transition-all" onclick="navigateTo('booking-nri-care')">Enroll Parents</button>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-[#122326] text-white border border-gray-800 hover:shadow-lg transition-all group flex flex-col justify-between">
+          <div class="space-y-3">
+            <span class="px-2.5 py-0.5 bg-[#1BBCBC] text-[#002020] rounded-full text-[11px] font-bold uppercase">Flagship Plan</span>
+            <h3 class="font-display font-bold text-[18px] text-white">Complete Care Suite</h3>
+            <p class="text-[13px] text-gray-300 leading-relaxed">All-inclusive 360-degree audiology and speech rehabilitation delivered directly to your home.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between">
+            <button class="text-[#1BBCBC] hover:underline text-[13px] font-semibold" onclick="navigateTo('complete-care')">Learn Details →</button>
+            <button class="px-3 py-1.5 bg-[#1BBCBC] text-[#002020] rounded-md text-[12px] font-bold hover:bg-white transition-all" onclick="navigateTo('booking-basic-consultation')">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Banner: NRI Spotlight -->
+  <section class="py-16 bg-[#F1F4F3]/70 border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5">
+        <img alt="NRI Daughter laughing with elderly father in Mumbai home" class="rounded-2xl border border-[#DCE7E6] shadow-md w-full h-auto aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UyvGvbDskN31EADDxLoChQsP8SjYbzTDESWn3d1H4lSrtCk5hOqn3noPWaav2E1Sje0kQYJqixek_kgg1xszLGJiZPVUcZ5_2gRgXXBZSoSW9WOFPe3UqWhTarjN5tYZAsSaeAM5AChTCAv2kEqHyFsKxK38A3Ofqh4JdXWJjJDM5lUgAz7dwR_lAmyjcDeNNDmdhx8EEXLJ2Bf6S8BAFQ2SpDOYVcJX_8in5zVanrpkayHlGL5fd_Mw">
+      </div>
+      <div class="lg:col-span-7 space-y-4">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">Specialized Concierge</span>
+        <h2 class="text-[30px] font-display font-bold text-[#122326]">Living Abroad? Ensure Your Parents in Mumbai Hear Every Family Memory</h2>
+        <p class="text-[15px] text-[#526163] leading-relaxed">
+          PTA Solutions brings diagnostic audiometry and precision device fitting directly to your parents' living room in Chembur and across Mumbai. We keep overseas children updated with detailed reports and video calls.
+        </p>
+        <div class="pt-2 flex flex-wrap gap-4">
+          <button class="px-6 py-2.5 bg-[#006A6A] text-white rounded-lg font-display font-semibold text-[14px] hover:bg-[#004f50] transition-colors" onclick="navigateTo('nri-care')">
+            Explore NRI Hearing Care
+          </button>
+          <button class="px-6 py-2.5 bg-white border border-[#DCE7E6] text-[#122326] rounded-lg font-display font-semibold text-[14px] hover:border-[#006A6A] transition-colors" onclick="navigateTo('booking-nri-care')">
+            Schedule Home Assessment
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 2. ABOUT VIEW (route: 'about') -->
+<div class="spa-view hidden transition-all duration-300" id="view-about">
+  <section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+        <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+        <span class="">/</span>
+        <span class="text-[#122326] font-semibold">About PTA Solutions</span>
+      </div>
+      <h1 class="text-[36px] lg:text-[46px] font-display font-extrabold text-[#122326]">About PTA Solutions</h1>
+      <p class="text-[17px] text-[#526163] max-w-2xl mt-2">Pioneering empathetic, diagnostic-first audiology and speech-language pathology in Mumbai.</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">Clinical Leadership</span>
+        <h2 class="text-[30px] font-display font-bold text-[#122326]">Led by Dr. Johnsavio Fernandes</h2>
+        <p class="text-[15px] text-[#3C4949] leading-relaxed">
+          With more than a decade of specialized clinical experience, Dr. Johnsavio Fernandes founded PTA SOLUTIONS with an uncompromising vision: bringing transparent, strictly ethical audiological diagnostic care to Chembur and greater Mumbai.
+        </p>
+        <p class="text-[15px] text-[#3C4949] leading-relaxed">
+          In an industry frequently pressured by high-volume commercial targets, our clinic adheres strictly to evidence-based protocols. Every patient recommendation is calculated solely upon acoustic threshold data and personal communicative well-being.
+        </p>
+        <div class="p-6 rounded-xl bg-[#F7FAF9] border-l-4 border-[#006A6A] space-y-2">
+          <p class="font-display font-bold text-[16px] text-[#122326]">Our Practice Philosophy</p>
+          <p class="text-[14px] text-[#526163]">"We never treat hearing aids as retail devices; they are prescription medical instruments that necessitate continuous real-ear measurement, personalized auditory rehabilitation, and lasting patient rapport."</p>
+        </div>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="bg-[#F7FAF9] p-4 rounded-2xl border border-[#DCE7E6] shadow-md">
+          <img alt="Clinical suite with Dr Johnsavio Fernandes" class="rounded-xl w-full h-auto aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WvuL5utkpTwVEOcBlkp8HVhy9ceFEP15_G1tVd682eS_QYRKM8uOVUDaVdYcRnWBsTwvWblN3HFs5N4kaVPSC7K_ZR3dKWQp4uMpOV5rQ8DwSMA9y-mbWJvJin6JrCe7L58e0UwO3GmKIOuCDleU9VHIHE12qRm_0F2w8d7d0Y7EVmemtTaPIUxfsv_K_4nd-p7M3L1dVfxGiP8RQzjIR-NSwQqGsSwG3-kN2n6orLuROSNmKe-2PD0w8">
+          <div class="mt-4 p-4 bg-white rounded-lg border border-[#DCE7E6] flex items-center justify-between">
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">Chembur Sanctuary Clinic</p>
+              <p class="text-[12px] text-[#526163]">Shanmukhapriya HealthCare Center, 6th Floor</p>
+            </div>
+            <button class="px-4 py-2 bg-[#1BBCBC] text-[#002020] text-[13px] font-bold rounded-lg hover:bg-[#006A6A] hover:text-white transition-all" onclick="navigateTo('booking-hub')">Visit Clinic</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 3. SERVICES DIRECTORY VIEW (route: 'services') -->
+<div class="spa-view hidden transition-all duration-300" id="view-services">
+  <section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+        <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+        <span class="">/</span>
+        <span class="text-[#122326] font-semibold">Services Directory</span>
+      </div>
+      <h1 class="text-[36px] lg:text-[46px] font-display font-extrabold text-[#122326]">Clinical Practice Directory</h1>
+      <p class="text-[17px] text-[#526163] max-w-2xl mt-2">Explore all diagnostic audiology, speech pathology, and pediatric screening services available at our clinic and via doorstep appointments.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-[#F7FAF9] p-7 rounded-2xl border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Audiometry &amp; Diagnostic</span>
+            <h3 class="text-[22px] font-display font-bold text-[#122326] mt-3">Clinical Hearing Tests</h3>
+            <p class="text-[14px] text-[#526163] mt-2 leading-relaxed">Pure Tone Audiometry (Air &amp; Bone conduction), speech discrimination score mapping, and middle-ear impedance tympanometry.</p>
+            <ul class="mt-4 space-y-2 text-[13px] text-[#3C4949]">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Calibrated sound isolation booth</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Same-day comprehensive audiogram report</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <button class="text-[#006A6A] font-semibold text-[13px] hover:underline" onclick="navigateTo('booking-hearing-tests')">Full Details →</button>
+            <button class="px-4 py-2 bg-[#1BBCBC] text-[#002020] text-[13px] font-bold rounded-lg hover:bg-[#006A6A] hover:text-white transition-all" onclick="navigateTo('booking-hearing-tests')">Book Test</button>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-[#F7FAF9] p-7 rounded-2xl border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Acoustic Rehabilitation</span>
+            <h3 class="text-[22px] font-display font-bold text-[#122326] mt-3">Hearing Aids Dispensing</h3>
+            <p class="text-[14px] text-[#526163] mt-2 leading-relaxed">Prescription digital instruments from Oticon, Phonak, Signia, and Widex with verified Real-Ear Measurements (REM).</p>
+            <ul class="mt-4 space-y-2 text-[13px] text-[#3C4949]">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Risk-free home and clinic trial sessions</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Bluetooth smartphone sync &amp; rechargeable options</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <button class="text-[#006A6A] font-semibold text-[13px] hover:underline" onclick="navigateTo('booking-hearing-aids')">Full Details →</button>
+            <button class="px-4 py-2 bg-[#1BBCBC] text-[#002020] text-[13px] font-bold rounded-lg hover:bg-[#006A6A] hover:text-white transition-all" onclick="navigateTo('booking-hearing-aids')">Book Trial</button>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-[#F7FAF9] p-7 rounded-2xl border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Speech &amp; Fluency</span>
+            <h3 class="text-[22px] font-display font-bold text-[#122326] mt-3">Speech &amp; Language Therapy</h3>
+            <p class="text-[14px] text-[#526163] mt-2 leading-relaxed">Individualized therapeutic plans for developmental delay, articulation problems, stammering, and neurological voice rehab.</p>
+            <ul class="mt-4 space-y-2 text-[13px] text-[#3C4949]">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> One-on-one session with certified pathologists</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Milestone monitoring and home-guided practice</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <button class="text-[#006A6A] font-semibold text-[13px] hover:underline" onclick="navigateTo('booking-speech-therapy')">Full Details →</button>
+            <button class="px-4 py-2 bg-[#1BBCBC] text-[#002020] text-[13px] font-bold rounded-lg hover:bg-[#006A6A] hover:text-white transition-all" onclick="navigateTo('booking-speech-therapy')">Book Therapy</button>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-[#F7FAF9] p-7 rounded-2xl border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Infant Care</span>
+            <h3 class="text-[22px] font-display font-bold text-[#122326] mt-3">Newborn Hearing Screening</h3>
+            <p class="text-[14px] text-[#526163] mt-2 leading-relaxed">Safe, automated Otoacoustic Emissions (OAE) and Brainstem Evoked Response Audiometry (BERA/AABR).</p>
+            <ul class="mt-4 space-y-2 text-[13px] text-[#3C4949]">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Stress-free soothing environment</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Early intervention advisory for parents</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <button class="text-[#006A6A] font-semibold text-[13px] hover:underline" onclick="navigateTo('booking-newborn-screening')">Full Details →</button>
+            <button class="px-4 py-2 bg-[#1BBCBC] text-[#002020] text-[13px] font-bold rounded-lg hover:bg-[#006A6A] hover:text-white transition-all" onclick="navigateTo('booking-newborn-screening')">Schedule Test</button>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="bg-[#F7FAF9] p-7 rounded-2xl border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Family Concierge</span>
+            <h3 class="text-[22px] font-display font-bold text-[#122326] mt-3">NRI Hearing Care Mumbai</h3>
+            <p class="text-[14px] text-[#526163] mt-2 leading-relaxed">Doorstep visits, battery deliveries, and direct video summaries for sons and daughters living outside India.</p>
+            <ul class="mt-4 space-y-2 text-[13px] text-[#3C4949]">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Periodic scheduled checkups across Mumbai</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Dedicated WhatsApp coordinator desk</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <button class="text-[#006A6A] font-semibold text-[13px] hover:underline" onclick="navigateTo('nri-care')">Full Details →</button>
+            <button class="px-4 py-2 bg-[#1BBCBC] text-[#002020] text-[13px] font-bold rounded-lg hover:bg-[#006A6A] hover:text-white transition-all" onclick="navigateTo('booking-nri-care')">Enroll Parents</button>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="bg-[#F7FAF9] p-7 rounded-2xl border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 bg-[#006A6A] text-white rounded-md text-[11px] font-bold uppercase tracking-wider">All-Inclusive Suite</span>
+            <h3 class="text-[22px] font-display font-bold text-[#122326] mt-3">Complete Care Program</h3>
+            <p class="text-[14px] text-[#526163] mt-2 leading-relaxed">Continuous audiology, diagnostics, and speech rehabilitation bundle designed for holistic auditory restoration.</p>
+            <ul class="mt-4 space-y-2 text-[13px] text-[#3C4949]">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Unlimited routine acoustic adjustments</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#006A6A] text-[16px]">check_circle</span> Priority clinic and doorstep access</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#DCE7E6] flex items-center justify-between">
+            <button class="text-[#006A6A] font-semibold text-[13px] hover:underline" onclick="navigateTo('complete-care')">View Program →</button>
+            <button class="px-4 py-2 bg-[#1BBCBC] text-[#002020] text-[13px] font-bold rounded-lg hover:bg-[#006A6A] hover:text-white transition-all" onclick="navigateTo('complete-care')">Program Specs</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 4. NRI HEARING CARE VIEW (route: 'nri-care') -->
+<div class="spa-view hidden transition-all duration-300" id="view-nri-care">
+  <section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+        <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+        <span class="">/</span>
+        <span class="text-[#122326] font-semibold">NRI Hearing Care</span>
+      </div>
+      <div class="flex items-center gap-2 mb-2">
+        <span class="px-3 py-1 bg-[#1BBCBC]/20 text-[#004646] font-bold rounded-full text-[11px]">Global Family Concierge</span>
+        <span class="px-3 py-1 bg-[#E0E3E2] text-[#3C4949] font-bold rounded-full text-[11px]">Chembur &amp; Greater Mumbai</span>
+      </div>
+      <h1 class="text-[36px] lg:text-[46px] font-display font-extrabold text-[#122326]">Living Abroad? We Take Care of Your Parents' Hearing in Mumbai</h1>
+      <p class="text-[17px] text-[#526163] max-w-3xl mt-2">Complete home-based hearing diagnostic care with regular digital updates, scheduled maintenance, and direct video consultations—so you are never left guessing.</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <h2 class="text-[30px] font-display font-bold text-[#122326]">Peace of Mind for Families Around the Globe</h2>
+        <p class="text-[15px] text-[#3C4949] leading-relaxed">
+          Whether you are based in London, Dubai, New York, or Singapore, managing your parents' medical comfort in Mumbai from afar can feel overwhelming. Hearing loss can isolate seniors and cause cognitive withdrawal.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6]">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px] mt-0.5">home</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">Portable Audiology Brought to Their Home</p>
+              <p class="text-[13px] text-[#526163]">Your elderly parents never need to navigate hectic Mumbai traffic. We conduct complete Pure Tone Audiometry and device adjustments at their residence.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6]">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px] mt-0.5">mark_chat_read</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">WhatsApp Summaries &amp; Audiologist Calls</p>
+              <p class="text-[13px] text-[#526163]">Immediately after every visit, you receive a crisp diagnostic summary, battery logs, and can schedule a video conference directly with Dr. Johnsavio.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6]">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px] mt-0.5">battery_charging_full</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">Routine Maintenance &amp; Fresh Supplies</p>
+              <p class="text-[13px] text-[#526163]">Scheduled quarterly visits for ear wax cleaning, filter changes, and zinc-air or lithium charger checkups.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 flex flex-wrap gap-4">
+          <button class="px-8 py-3 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[15px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md" onclick="navigateTo('booking-nri-care')">
+            Enroll Your Parents Today
+          </button>
+          <a class="px-6 py-3 border border-[#25D366] text-[#122326] font-display font-semibold text-[15px] rounded-lg hover:bg-[#25D366]/10 transition-all flex items-center gap-2" href="https://wa.me/919773545058" target="_blank">
+            <span class="material-symbols-outlined text-[#25D366] text-[20px]">chat</span>
+            <span class="">WhatsApp NRI Coordinator</span>
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="bg-[#F7FAF9] p-4 rounded-2xl border border-[#DCE7E6] shadow-md">
+          <img alt="Happy senior father and daughter in living room" class="rounded-xl w-full h-auto aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UyvGvbDskN31EADDxLoChQsP8SjYbzTDESWn3d1H4lSrtCk5hOqn3noPWaav2E1Sje0kQYJqixek_kgg1xszLGJiZPVUcZ5_2gRgXXBZSoSW9WOFPe3UqWhTarjN5tYZAsSaeAM5AChTCAv2kEqHyFsKxK38A3Ofqh4JdXWJjJDM5lUgAz7dwR_lAmyjcDeNNDmdhx8EEXLJ2Bf6S8BAFQ2SpDOYVcJX_8in5zVanrpkayHlGL5fd_Mw">
+          <div class="mt-4 p-5 bg-white rounded-xl border border-[#DCE7E6] space-y-2">
+            <div class="flex items-center gap-2 text-[#006A6A] text-[13px] font-bold">
+              <span class="material-symbols-outlined text-[18px]">verified</span>
+              <span class="">Verified NRI Family Testimonial</span>
+            </div>
+            <p class="text-[13px] text-[#526163] italic">"Living in London, managing my father's hearing aids was stressful until we engaged PTA Solutions. The prompt WhatsApp follow-ups and care check-ins give our entire family peace of mind."</p>
+            <p class="text-[12px] font-bold text-[#122326]">— Vikramaditya Shah, London / Chembur</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 5. COMPLETE CARE DETAIL VIEW (route: 'complete-care') -->
+<div class="spa-view hidden transition-all duration-300" id="view-complete-care">
+  <section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+        <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+        <span class="">/</span>
+        <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('services')">Services</a>
+        <span class="">/</span>
+        <span class="text-[#122326] font-semibold">Complete Care Program</span>
+      </div>
+      <div class="inline-block px-3 py-1 bg-[#1BBCBC] text-[#002020] font-bold rounded-full text-[11px] mb-2 uppercase tracking-wider">Flagship Medical Protocol</div>
+      <h1 class="text-[36px] lg:text-[46px] font-display font-extrabold text-[#122326]">The Complete Care Program</h1>
+      <p class="text-[17px] text-[#526163] max-w-3xl mt-2">A premier 360-degree audiological and speech rehabilitation suite engineered for individuals requiring comprehensive hearing restoration without diagnostic shortcuts.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-8 space-y-8">
+        <div class="space-y-4">
+          <h2 class="text-[26px] font-display font-bold text-[#122326]">What is the Complete Care Suite?</h2>
+          <p class="text-[15px] text-[#3C4949] leading-relaxed">
+            Most conventional hearing dispensaries focus on selling a pair of hearing aids and bidding farewell. The Complete Care Program takes the exact opposite approach. We treat hearing restoration as an iterative medical journey spanning diagnostic baseline testing, multi-environment real-ear measurement (REM), and continuous speech rehabilitation.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6] space-y-2">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px]">biotech</span>
+            <p class="font-display font-bold text-[16px] text-[#122326]">Full Portable Diagnostic Suite</p>
+            <p class="text-[13px] text-[#526163]">Complete pure tone, bone conduction, and speech discrimination assessment inside your residence or at our Chembur clinic.</p>
+          </div>
+          <div class="p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6] space-y-2">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px]">tune</span>
+            <p class="font-display font-bold text-[16px] text-[#122326]">Real-Ear Acoustic Verification</p>
+            <p class="text-[13px] text-[#526163]">Probe microphone measurements positioned right next to your eardrum to ensure acoustic frequencies match scientific prescriptions.</p>
+          </div>
+          <div class="p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6] space-y-2">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px]">record_voice_over</span>
+            <p class="font-display font-bold text-[16px] text-[#122326]">Integrated Speech Therapy</p>
+            <p class="text-[13px] text-[#526163]">Auditory cognitive training sessions to retrain your brain to decode muffled speech consonants in noisy surroundings.</p>
+          </div>
+          <div class="p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6] space-y-2">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px]">support_agent</span>
+            <p class="font-display font-bold text-[16px] text-[#122326]">Dedicated Lifetime Concierge</p>
+            <p class="text-[13px] text-[#526163]">Priority direct communication with Dr. Johnsavio Fernandes, emergency sound adjustments, and scheduled battery refills.</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-4">
+        <div class="bg-[#F7FAF9] p-6 lg:p-8 rounded-2xl border-2 border-[#1BBCBC] shadow-md space-y-6 sticky top-28">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">Program Investment</span>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span class="text-[32px] font-display font-bold text-[#122326]">₹75,000</span>
+              <span class="text-[14px] text-[#526163]">to ₹1,50,000</span>
+            </div>
+            <p class="text-[12px] text-[#6C7A79] mt-1">Comprehensive package including diagnostics, premium fitting, and 12-month care.</p>
+          </div>
+          <div class="space-y-3 border-t border-[#DCE7E6] pt-4">
+            <div class="flex items-center gap-2 text-[13px] text-[#3C4949]">
+              <span class="material-symbols-outlined text-[#006A6A] text-[18px]">check</span>
+              <span class="">Both ears diagnostic evaluation</span>
+            </div>
+            <div class="flex items-center gap-2 text-[13px] text-[#3C4949]">
+              <span class="material-symbols-outlined text-[#006A6A] text-[18px]">check</span>
+              <span class="">In-home sound adaptation visits</span>
+            </div>
+            <div class="flex items-center gap-2 text-[13px] text-[#3C4949]">
+              <span class="material-symbols-outlined text-[#006A6A] text-[18px]">check</span>
+              <span class="">Zero hidden diagnostic fees</span>
+            </div>
+          </div>
+          <button class="w-full py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md" onclick="navigateTo('booking-basic-consultation')">
+            Consult Specialist on Complete Care
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 6. APPOINTMENT BOOKING HUB VIEW (route: 'booking-hub') -->
+<div class="spa-view hidden transition-all duration-300" id="view-booking-hub">
+  <section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-3">
+      <div class="inline-flex items-center gap-2">
+        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Direct Clinic Scheduling</span>
+        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+      </div>
+      <h1 class="text-[34px] lg:text-[42px] font-display font-extrabold text-[#122326]">
+        Guided 3-Step Appointment Booking Hub
+      </h1>
+      <p class="text-[15px] text-[#526163]">
+        Reserve your clinical evaluation at Chembur Sanctuary or schedule an attentive doorstep consultation across Mumbai.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white border-b border-[#DCE7E6]">
+    <div class="max-w-4xl mx-auto px-6">
+      <!-- Hub Selection Cards -->
+      <div class="mb-10 text-center">
+        <p class="text-[14px] font-semibold text-[#526163]">Select a dedicated clinical service to start direct scheduling:</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 mt-4">
+          <button class="p-3.5 rounded-xl border border-[#DCE7E6] hover:border-[#1BBCBC] bg-[#F7FAF9] hover:bg-white text-left transition-all" onclick="navigateTo('booking-hearing-tests')">
+            <p class="font-display font-bold text-[14px] text-[#122326]">Hearing Tests</p>
+            <p class="text-[11px] text-[#526163]">Audiometry &amp; Tympanometry</p>
+          </button>
+          <button class="p-3.5 rounded-xl border border-[#DCE7E6] hover:border-[#1BBCBC] bg-[#F7FAF9] hover:bg-white text-left transition-all" onclick="navigateTo('booking-hearing-aids')">
+            <p class="font-display font-bold text-[14px] text-[#122326]">Hearing Aids</p>
+            <p class="text-[11px] text-[#526163]">Trial, Fitting &amp; Tuning</p>
+          </button>
+          <button class="p-3.5 rounded-xl border border-[#DCE7E6] hover:border-[#1BBCBC] bg-[#F7FAF9] hover:bg-white text-left transition-all" onclick="navigateTo('booking-speech-therapy')">
+            <p class="font-display font-bold text-[14px] text-[#122326]">Speech Therapy</p>
+            <p class="text-[11px] text-[#526163]">Pediatric &amp; Fluency</p>
+          </button>
+          <button class="p-3.5 rounded-xl border border-[#DCE7E6] hover:border-[#1BBCBC] bg-[#F7FAF9] hover:bg-white text-left transition-all" onclick="navigateTo('booking-newborn-screening')">
+            <p class="font-display font-bold text-[14px] text-[#122326]">Newborn Screening</p>
+            <p class="text-[11px] text-[#526163]">BERA &amp; OAE Screen</p>
+          </button>
+          <button class="p-3.5 rounded-xl border border-[#DCE7E6] hover:border-[#1BBCBC] bg-[#F7FAF9] hover:bg-white text-left transition-all" onclick="navigateTo('booking-basic-consultation')">
+            <p class="font-display font-bold text-[14px] text-[#122326]">Basic Consultation</p>
+            <p class="text-[11px] text-[#526163]">In-Clinic Baseline Review</p>
+          </button>
+          <button class="p-3.5 rounded-xl border border-[#DCE7E6] hover:border-[#1BBCBC] bg-[#F7FAF9] hover:bg-white text-left transition-all" onclick="navigateTo('booking-nri-care')">
+            <p class="font-display font-bold text-[14px] text-[#122326]">Premium NRI Care</p>
+            <p class="text-[11px] text-[#526163]">Mumbai Parent Home Visits</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 7-12: DEDICATED INDIVIDUAL BOOKING PAGES -->
+<div class="spa-view hidden transition-all duration-300" id="view-booking-hearing-tests"><section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+      <span class="">/</span>
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('booking-hub')">Booking Hub</a>
+      <span class="">/</span>
+      <span class="text-[#122326] font-semibold">Hearing Tests</span>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Audiological Diagnostic</span>
+        <h1 class="text-[32px] font-display font-extrabold text-[#122326] mt-2">Book Clinical Hearing Tests &amp; Tympanometry</h1>
+        <p class="text-[14px] text-[#526163] mt-1">Conducted in our calibrated ISO sound isolation booth or via portable diagnostic equipment.</p>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-[#DCE7E6] text-right">
+        <p class="text-[11px] font-bold uppercase text-[#6C7A79]">Duration / Fee</p>
+        <p class="text-[18px] font-display font-bold text-[#006A6A]">45 Mins • ₹1,500</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-[#F7FAF9] p-6 sm:p-10 rounded-2xl border border-[#DCE7E6] shadow-sm">
+      <form onsubmit="event.preventDefault(); alert('Your Hearing Tests appointment has been confirmed with Dr. Johnsavio Fernandes! We will call or WhatsApp you shortly.'); navigateTo('home');">
+        <div class="space-y-6">
+          <h3 class="text-[18px] font-display font-bold text-[#122326]">1. Choose Consultation Mode &amp; Time</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <label class="flex items-center gap-3 p-4 rounded-xl border border-[#1BBCBC] bg-white cursor-pointer">
+              <input checked="" name="loc_hearing" type="radio" value="Chembur Clinic">
+              <div>
+                <p class="font-display font-bold text-[14px] text-[#122326]">Chembur Clinic Visit</p>
+                <p class="text-[12px] text-[#6C7A79]">ISO Sound Isolation Booth</p>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] bg-white cursor-pointer hover:border-[#1BBCBC]">
+              <input name="loc_hearing" type="radio" value="Home Visit">
+              <div>
+                <p class="font-display font-bold text-[14px] text-[#122326]">Doorstep Home Visit</p>
+                <p class="text-[12px] text-[#6C7A79]">Anywhere in Mumbai</p>
+              </div>
+            </label>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5">Preferred Date</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" required="" type="date" value="2026-04-15">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5">Preferred Time Window</label>
+              <select class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]">
+                <option>10:00 AM – 11:30 AM (Morning)</option>
+                <option>12:00 PM – 01:30 PM (Mid-Day)</option>
+                <option>03:30 PM – 05:00 PM (Afternoon)</option>
+                <option>05:30 PM – 07:00 PM (Evening)</option>
+              </select>
+            </div>
+          </div>
+          <h3 class="text-[18px] font-display font-bold text-[#122326] pt-4">2. Patient Information</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Patient Full Name *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="e.g., Ramesh Mehta" required="" type="text">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Phone / WhatsApp Number *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="+91 98765 43210" required="" type="tel">
+            </div>
+          </div>
+          <div class="pt-4">
+            <button class="w-full py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[15px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md" type="submit">
+              Confirm Hearing Tests Appointment
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section></div>
+<div class="spa-view hidden transition-all duration-300" id="view-booking-hearing-aids"><section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+      <span class="">/</span>
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('booking-hub')">Booking Hub</a>
+      <span class="">/</span>
+      <span class="text-[#122326] font-semibold">Hearing Aids Fitting</span>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Fitting &amp; Trial</span>
+        <h1 class="text-[32px] font-display font-extrabold text-[#122326] mt-2">Book Hearing Aids Dispensing &amp; Trial</h1>
+        <p class="text-[14px] text-[#526163] mt-1">Swiss &amp; Danish models with Real-Ear Measurement probe calibration.</p>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-[#DCE7E6] text-right">
+        <p class="text-[11px] font-bold uppercase text-[#6C7A79]">Duration</p>
+        <p class="text-[18px] font-display font-bold text-[#006A6A]">60 Mins • Free Trial</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-[#F7FAF9] p-6 sm:p-10 rounded-2xl border border-[#DCE7E6] shadow-sm">
+      <form onsubmit="event.preventDefault(); alert('Your Hearing Aids Trial appointment has been reserved! Dr. Johnsavio Fernandes will prepare device samples for your consultation.'); navigateTo('home');">
+        <div class="space-y-6">
+          <h3 class="text-[18px] font-display font-bold text-[#122326]">1. Device Preference (Optional)</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <label class="p-3.5 rounded-xl border border-[#1BBCBC] bg-white cursor-pointer">
+              <input checked="" name="aid_type" type="radio" value="Invisible IIC">
+              <p class="font-display font-bold text-[13px] text-[#122326] mt-1">Invisible (IIC / CIC)</p>
+              <p class="text-[11px] text-[#6C7A79]">Completely hidden in canal</p>
+            </label>
+            <label class="p-3.5 rounded-xl border border-[#DCE7E6] bg-white cursor-pointer hover:border-[#1BBCBC]">
+              <input name="aid_type" type="radio" value="Receiver-in-Canal">
+              <p class="font-display font-bold text-[13px] text-[#122326] mt-1">Receiver-in-Canal (RIC)</p>
+              <p class="text-[11px] text-[#6C7A79]">Natural sound, Bluetooth</p>
+            </label>
+            <label class="p-3.5 rounded-xl border border-[#DCE7E6] bg-white cursor-pointer hover:border-[#1BBCBC]">
+              <input name="aid_type" type="radio" value="Rechargeable BTE">
+              <p class="font-display font-bold text-[13px] text-[#122326] mt-1">Rechargeable BTE</p>
+              <p class="text-[11px] text-[#6C7A79]">Senior friendly, durable</p>
+            </label>
+          </div>
+          <h3 class="text-[18px] font-display font-bold text-[#122326] pt-2">2. Date &amp; Patient Contact</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Preferred Date</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" required="" type="date" value="2026-04-16">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Phone / WhatsApp *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="+91 98765 43210" required="" type="tel">
+            </div>
+          </div>
+          <div class="pt-4">
+            <button class="w-full py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[15px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md" type="submit">
+              Reserve Hearing Aids Fitting Session
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section></div>
+<div class="spa-view hidden transition-all duration-300" id="view-booking-speech-therapy"><section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+      <span class="">/</span>
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('booking-hub')">Booking Hub</a>
+      <span class="">/</span>
+      <span class="text-[#122326] font-semibold">Speech Therapy</span>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Speech Pathology</span>
+        <h1 class="text-[32px] font-display font-extrabold text-[#122326] mt-2">Book Speech &amp; Language Therapy</h1>
+        <p class="text-[14px] text-[#526163] mt-1">Pediatric delays, stammering, articulation therapy, and adult voice rehab.</p>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-[#DCE7E6] text-right">
+        <p class="text-[11px] font-bold uppercase text-[#6C7A79]">Session Duration</p>
+        <p class="text-[18px] font-display font-bold text-[#006A6A]">45 Mins • 1-on-1</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-[#F7FAF9] p-6 sm:p-10 rounded-2xl border border-[#DCE7E6] shadow-sm">
+      <form onsubmit="event.preventDefault(); alert('Speech Therapy consultation booked! Our certified speech therapist will contact you shortly.'); navigateTo('home');">
+        <div class="space-y-6">
+          <h3 class="text-[18px] font-display font-bold text-[#122326]">1. Therapy Focus Area</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <label class="flex items-center gap-3 p-4 rounded-xl border border-[#1BBCBC] bg-white cursor-pointer">
+              <input checked="" name="speech_focus" type="radio" value="Child Delay">
+              <div>
+                <p class="font-display font-bold text-[14px] text-[#122326]">Pediatric Speech Delay</p>
+                <p class="text-[12px] text-[#6C7A79]">Children aged 2 to 12 years</p>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] bg-white cursor-pointer hover:border-[#1BBCBC]">
+              <input name="speech_focus" type="radio" value="Fluency / Stammering">
+              <div>
+                <p class="font-display font-bold text-[14px] text-[#122326]">Stammering &amp; Fluency</p>
+                <p class="text-[12px] text-[#6C7A79]">Adolescents and adults</p>
+              </div>
+            </label>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Patient Full Name *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="Patient Name" required="" type="text">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Parent / Contact Phone *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="+91 98765 43210" required="" type="tel">
+            </div>
+          </div>
+          <div class="pt-4">
+            <button class="w-full py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[15px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md" type="submit">
+              Schedule Speech Therapy Session
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section></div>
+<div class="spa-view hidden transition-all duration-300" id="view-booking-newborn-screening"><section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+      <span class="">/</span>
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('booking-hub')">Booking Hub</a>
+      <span class="">/</span>
+      <span class="text-[#122326] font-semibold">Newborn Screening</span>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Infant Care</span>
+        <h1 class="text-[32px] font-display font-extrabold text-[#122326] mt-2">Schedule Newborn Hearing Screening</h1>
+        <p class="text-[14px] text-[#526163] mt-1">Automated OAE &amp; BERA tests conducted in a serene acoustic sanctuary.</p>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-[#DCE7E6] text-right">
+        <p class="text-[11px] font-bold uppercase text-[#6C7A79]">Infant Care</p>
+        <p class="text-[18px] font-display font-bold text-[#006A6A]">Non-Invasive</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-[#F7FAF9] p-6 sm:p-10 rounded-2xl border border-[#DCE7E6] shadow-sm">
+      <form onsubmit="event.preventDefault(); alert('Newborn screening slot confirmed! Our pediatric coordinator will guide you on preparing your baby for the peaceful assessment.'); navigateTo('home');">
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Baby / Infant Name *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="Baby of ..." required="" type="text">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Baby's Age in Weeks / Months</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="e.g., 4 weeks" type="text">
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Parent Full Name *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" required="" type="text">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Contact Phone / WhatsApp *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="+91 98765 43210" required="" type="tel">
+            </div>
+          </div>
+          <div class="pt-4">
+            <button class="w-full py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[15px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md" type="submit">
+              Confirm Newborn Screening Schedule
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section></div>
+<div class="spa-view hidden transition-all duration-300" id="view-booking-basic-consultation"><section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+      <span class="">/</span>
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('booking-hub')">Booking Hub</a>
+      <span class="">/</span>
+      <span class="text-[#122326] font-semibold">Basic Consultation</span>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">In-Clinic Baseline</span>
+        <h1 class="text-[32px] font-display font-extrabold text-[#122326] mt-2">Book Basic Audiology Consultation</h1>
+        <p class="text-[14px] text-[#526163] mt-1">Comprehensive evaluation for individuals seeking clarity on auditory or speech wellness.</p>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-[#DCE7E6] text-right">
+        <p class="text-[11px] font-bold uppercase text-[#6C7A79]">Consultation Tier</p>
+        <p class="text-[18px] font-display font-bold text-[#006A6A]">₹10,000 - ₹20,000</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-[#F7FAF9] p-6 sm:p-10 rounded-2xl border border-[#DCE7E6] shadow-sm">
+      <form onsubmit="event.preventDefault(); alert('Your Basic Consultation booking has been confirmed with Dr. Johnsavio Fernandes! We will connect with you right away.'); navigateTo('home');">
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Patient Full Name *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" required="" type="text">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Phone / WhatsApp *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="+91 98765 43210" required="" type="tel">
+            </div>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Brief Description of Hearing Concerns</label>
+            <textarea class="w-full p-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="e.g., ringing in ears, muffled tv dialogues..." rows="3"></textarea>
+          </div>
+          <div class="pt-4">
+            <button class="w-full py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[15px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md" type="submit">
+              Confirm In-Clinic Evaluation
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section></div>
+<div class="spa-view hidden transition-all duration-300" id="view-booking-nri-care"><section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+      <span class="">/</span>
+      <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('booking-hub')">Booking Hub</a>
+      <span class="">/</span>
+      <span class="text-[#122326] font-semibold">Premium NRI Parent Care</span>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <span class="px-2.5 py-1 bg-[#1BBCBC]/20 text-[#004646] rounded-md text-[11px] font-bold uppercase tracking-wider">Global Family Concierge</span>
+        <h1 class="text-[32px] font-display font-extrabold text-[#122326] mt-2">Enroll Parents in Mumbai Home Hearing Care</h1>
+        <p class="text-[14px] text-[#526163] mt-1">Doorstep visits across Mumbai with digital video updates to overseas children.</p>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-[#DCE7E6] text-right">
+        <p class="text-[11px] font-bold uppercase text-[#6C7A79]">Care Concierge</p>
+        <p class="text-[18px] font-display font-bold text-[#006A6A]">Mumbai Wide</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-b border-[#DCE7E6]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-[#F7FAF9] p-6 sm:p-10 rounded-2xl border border-[#DCE7E6] shadow-sm">
+      <form onsubmit="event.preventDefault(); alert('NRI Care enrollment request received! Our NRI parent desk coordinator will message you on WhatsApp to review your parents\' schedule.'); navigateTo('home');">
+        <div class="space-y-6">
+          <h3 class="text-[18px] font-display font-bold text-[#122326]">1. Parents' Location in Mumbai</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Parents' Name(s) *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="e.g. Mr. &amp; Mrs. Joshi" required="" type="text">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Mumbai Area / Neighborhood *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="e.g. Chembur, Bandra, Powai" required="" type="text">
+            </div>
+          </div>
+          <h3 class="text-[18px] font-display font-bold text-[#122326] pt-2">2. Your Details Abroad</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Your Name (Son / Daughter) *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" required="" type="text">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1">Your WhatsApp Number (with Country Code) *</label>
+              <input class="w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[14px]" placeholder="+44 7911 123456" required="" type="tel">
+            </div>
+          </div>
+          <div class="pt-4">
+            <button class="w-full py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[15px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md" type="submit">
+              Schedule Parents' In-Home Assessment
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section></div>
+
+<!-- 13. CONTACT VIEW (route: 'contact') -->
+<div class="spa-view hidden transition-all duration-300" id="view-contact">
+  <section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4">
+        <a class="hover:text-[#006A6A] cursor-pointer" onclick="navigateTo('home')">Home</a>
+        <span class="">/</span>
+        <span class="text-[#122326] font-semibold">Contact Us</span>
+      </div>
+      <h1 class="text-[36px] lg:text-[46px] font-display font-extrabold text-[#122326]">Connect with PTA Solutions Chembur</h1>
+      <p class="text-[17px] text-[#526163] max-w-2xl mt-2">We are here to answer your questions, assist your family, or coordinate a home visit across Mumbai.</p>
+    </div>
+  </section>
+</div></div><section class="relative overflow-hidden pt-12 pb-20 lg:py-24 border-b border-[#DCE7E6]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-7 space-y-7">
+        <div class="anim-hero-badge inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-[#E6E9E8]/70 rounded-full border border-[#DCE7E6]">
+          <span class="w-2 h-2 rounded-full bg-[#1BBCBC] animate-ping"></span>
+          <span class="text-[#3C4949] text-[11px] font-semibold tracking-widest uppercase">Chembur • Mumbai Hearing &amp; Speech Sanctuary</span>
+        </div>
+        <h1 class="anim-hero-title text-[38px] sm:text-[54px] lg:text-[66px] font-display font-extrabold text-[#122326] tracking-tight leading-[1.08]">
+          Empowering You to<br class="hidden sm:inline">
+          <span class="relative inline-block text-[#006A6A] underline decoration-[#1BBCBC] decoration-[5px] underline-offset-8 transition-colors hover:text-[#004f50]">Hear and Speak Better</span><br>
+          Every Day
+        </h1>
+        <p class="anim-hero-desc text-[17px] lg:text-[19px] text-[#3C4949] max-w-2xl leading-relaxed">
+          At PTA SOLUTIONS Hearing and Speech Care Clinics, we bring advanced hearing and speech therapy services to Mumbai — combining world-class diagnostics with genuine personal care.
+        </p>
+        <div class="anim-hero-cta flex flex-wrap items-center gap-4 pt-2">
+          <a class="group h-12 px-7 inline-flex items-center justify-center gap-2 bg-[#122326] text-white font-display text-[15px] font-semibold rounded-lg hover:bg-[#006A6A] active:scale-95 transition-all duration-200 shadow-sm hover:shadow-lg" href="#booking-hub">
+            <span class="">Book Appointment</span>
+            <span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:translate-x-1">calendar_month</span>
+          </a>
+          <a class="h-12 px-7 inline-flex items-center justify-center border border-[#6C7A79]/30 bg-white text-[#122326] font-display text-[15px] font-semibold rounded-lg hover:border-[#1BBCBC] hover:text-[#006A6A] active:scale-95 transition-all duration-200" href="#services">
+            Explore Services
+          </a>
+        </div>
+        <div class="anim-hero-metrics pt-8 grid grid-cols-3 gap-6 border-t border-[#DCE7E6] max-w-xl">
+          <div class="space-y-0.5 group cursor-default">
+            <p class="text-[26px] font-display font-bold text-[#122326] group-hover:text-[#006A6A] transition-colors">10+ Yrs</p>
+            <p class="text-[13px] text-[#526163]">Clinical Expertise</p>
+          </div>
+          <div class="space-y-0.5 group cursor-default">
+            <p class="text-[26px] font-display font-bold text-[#122326] group-hover:text-[#006A6A] transition-colors">100%</p>
+            <p class="text-[13px] text-[#526163]">Ethical Diagnostics</p>
+          </div>
+          <div class="space-y-0.5 group cursor-default">
+            <p class="text-[26px] font-display font-bold text-[#122326] group-hover:text-[#006A6A] transition-colors">Newborn → Sr</p>
+            <p class="text-[13px] text-[#526163]">Complete Lifespan</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 relative">
+        <div class="relative bg-white p-2.5 border border-[#DCE7E6] rounded-2xl shadow-xl overflow-hidden group">
+          <img alt="Audiology Consultation in Mumbai Clinic" class="w-full h-auto aspect-[4/3] object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1WvuL5utkpTwVEOcBlkp8HVhy9ceFEP15_G1tVd682eS_QYRKM8uOVUDaVdYcRnWBsTwvWblN3HFs5N4kaVPSC7K_ZR3dKWQp4uMpOV5rQ8DwSMA9y-mbWJvJin6JrCe7L58e0UwO3GmKIOuCDleU9VHIHE12qRm_0F2w8d7d0Y7EVmemtTaPIUxfsv_K_4nd-p7M3L1dVfxGiP8RQzjIR-NSwQqGsSwG3-kN2n6orLuROSNmKe-2PD0w8">
+          <div class="absolute -bottom-1 left-4 right-4 sm:right-auto sm:left-4 sm:max-w-xs bg-white/95 backdrop-blur-md p-4 rounded-xl border border-[#DCE7E6] shadow-lg flex items-center gap-3.5 mb-4 transition-transform hover:-translate-y-1">
+            <div class="w-10 h-10 rounded-lg bg-[#1BBCBC]/20 flex items-center justify-center text-[#006A6A] shrink-0">
+              <span class="material-symbols-outlined text-[24px]">graphic_eq</span>
+            </div>
+            <div>
+              <p class="text-[13px] font-bold font-display text-[#122326]">Acoustic Diagnostics</p>
+              <p class="text-[12px] text-[#526163]">&amp; Speech Rehabilitation</p>
+            </div>
+          </div>
+          <div class="absolute top-5 right-5 bg-[#122326]/90 backdrop-blur-sm text-white px-3.5 py-1.5 rounded-md border border-white/10 flex items-center gap-2 shadow-md pulse-badge">
+            <span class="w-2 h-2 rounded-full bg-[#1BBCBC] animate-pulse"></span>
+            <span class="text-[11px] font-semibold tracking-wide uppercase">Calibrated ISO Booth</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. BRAND STATEMENT & ACOUSTIC EQUALIZER -->
+<section class="py-16 bg-[#F1F4F3]/70 border-b border-[#DCE7E6] reveal-on-scroll is-visible">
+  <div class="max-w-5xl mx-auto px-6 text-center space-y-6">
+    <p class="text-[12px] font-semibold uppercase tracking-[0.25em] text-[#006A6A]">Audiological Protocol &amp; Care Standard</p>
+    <h2 class="text-[28px] md:text-[38px] font-display font-semibold text-[#122326] leading-tight">
+      "Advanced hearing care. Personal attention. Better communication."
+    </h2>
+    <div class="pt-4 flex items-center justify-center gap-1.5 cursor-pointer group" onclick="toggleWaveSpeed()" title="Interactive acoustic waveform">
+      <span class="w-1 bg-[#1BBCBC]/40 rounded-full h-3 wave-bar transition-colors group-hover:bg-[#006A6A]"></span>
+      <span class="w-1 bg-[#1BBCBC]/60 rounded-full h-6 wave-bar transition-colors group-hover:bg-[#006A6A]"></span>
+      <span class="w-1 bg-[#006A6A] rounded-full h-9 wave-bar transition-colors group-hover:bg-[#1BBCBC]"></span>
+      <span class="w-1.5 bg-[#122326] rounded-full h-10 wave-bar transition-colors group-hover:bg-[#004f50]"></span>
+      <span class="w-1 bg-[#006A6A] rounded-full h-9 wave-bar transition-colors group-hover:bg-[#1BBCBC]"></span>
+      <span class="w-1 bg-[#1BBCBC]/60 rounded-full h-6 wave-bar transition-colors group-hover:bg-[#006A6A]"></span>
+      <span class="w-1 bg-[#1BBCBC]/40 rounded-full h-3 wave-bar transition-colors group-hover:bg-[#006A6A]"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CREDIBILITY & CLINICAL FOUNDATIONS -->
+<section class="py-20 border-b border-[#DCE7E6] bg-white reveal-on-scroll is-visible">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#DCE7E6] pb-6">
+      <div class="space-y-2">
+        <div class="flex items-center gap-2">
+          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Clinical Philosophy</span>
+        </div>
+        <h2 class="text-[30px] lg:text-[36px] font-display font-bold text-[#122326]">
+          Advanced hearing and speech care with genuine personal attention.
+        </h2>
+      </div>
+      <p class="text-[14px] text-[#526163] max-w-sm">
+        Evidence-backed evaluations governed by Dr. Johnsavio Fernandes with zero commercial quotas.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-md group">
+        <div class="w-12 h-12 rounded-lg bg-white border border-[#DCE7E6] flex items-center justify-center text-[#006A6A] group-hover:bg-[#006A6A] group-hover:text-white transition-colors duration-200">
+          <span class="material-symbols-outlined text-[26px]">biotech</span>
+        </div>
+        <h3 class="text-[20px] font-display font-bold text-[#122326]">Clinical Precision</h3>
+        <p class="text-[14px] text-[#526163] leading-relaxed">
+          State-of-the-art audiometers, tympanometry, and speech mapping protocols calibrated to international medical accuracy benchmarks.
+        </p>
+        <div class="pt-2 text-[13px] font-semibold text-[#006A6A] flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-200">
+          <span class="">Rigorous Protocols</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </div>
+      </div>
+      <div class="p-8 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-md group">
+        <div class="w-12 h-12 rounded-lg bg-white border border-[#DCE7E6] flex items-center justify-center text-[#006A6A] group-hover:bg-[#006A6A] group-hover:text-white transition-colors duration-200">
+          <span class="material-symbols-outlined text-[26px]">verified_user</span>
+        </div>
+        <h3 class="text-[20px] font-display font-bold text-[#122326]">Ethical Recommendations</h3>
+        <p class="text-[14px] text-[#526163] leading-relaxed">
+          Transparent guidance driven exclusively by clinical diagnostic data—zero sales pressure or unnecessary technological upsells.
+        </p>
+        <div class="pt-2 text-[13px] font-semibold text-[#006A6A] flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-200">
+          <span class="">Patient-Centric Trust</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </div>
+      </div>
+      <div class="p-8 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-md group">
+        <div class="w-12 h-12 rounded-lg bg-white border border-[#DCE7E6] flex items-center justify-center text-[#006A6A] group-hover:bg-[#006A6A] group-hover:text-white transition-colors duration-200">
+          <span class="material-symbols-outlined text-[26px]">volunteer_activism</span>
+        </div>
+        <h3 class="text-[20px] font-display font-bold text-[#122326]">Patient Comfort Across Lifespans</h3>
+        <p class="text-[14px] text-[#526163] leading-relaxed">
+          Gentle diagnostic environments tailored for fragile newborn screenings, adolescent speech fluency, and reassuring senior care.
+        </p>
+        <div class="pt-2 text-[13px] font-semibold text-[#006A6A] flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-200">
+          <span class="">Lifelong Wellness</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. INTERACTIVE SERVICES SHOWCASE -->
+<section class="py-24 border-b border-[#DCE7E6] bg-[#F7FAF9] reveal-on-scroll is-visible" id="services">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Core Practice Areas</span>
+        </div>
+        <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+          Specialized Hearing &amp; Speech Solutions
+        </h2>
+      </div>
+      <p class="text-[14px] text-[#526163] max-w-md">
+        Select or hover an interactive clinical service below to review diagnostic scopes, durations, and targeted clinical therapy protocols.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-5 space-y-3" id="service-tabs">
+        <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-white border-2 border-[#1BBCBC] shadow-md group" data-key="tests" onclick="switchService('tests')">
+          <div class="flex items-center gap-4">
+            <span class="tab-num text-[14px] font-bold font-mono text-[#006A6A]">01</span>
+            <div>
+              <p class="tab-title font-display font-bold text-[16px] text-[#122326]">Hearing Tests</p>
+              <p class="tab-sub text-[12px] text-[#526163]">Pure Tone Audiometry, Tympanometry</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined tab-icon text-[#006A6A] text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+        </button>
+        <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group" data-key="aids" onclick="switchService('aids')">
+          <div class="flex items-center gap-4">
+            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]">02</span>
+            <div>
+              <p class="tab-title font-display font-semibold text-[16px] text-[#122326]">Hearing Aids</p>
+              <p class="tab-sub text-[12px] text-[#526163]">Dispensing, Real-Ear Fitting &amp; Tuning</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all">chevron_right</span>
+        </button>
+        <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group" data-key="speech" onclick="switchService('speech')">
+          <div class="flex items-center gap-4">
+            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]">03</span>
+            <div>
+              <p class="tab-title font-display font-semibold text-[16px] text-[#122326]">Speech Therapy</p>
+              <p class="tab-sub text-[12px] text-[#526163]">Pediatric, Stammering, Articulation</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all">chevron_right</span>
+        </button>
+        <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group" data-key="newborn" onclick="switchService('newborn')">
+          <div class="flex items-center gap-4">
+            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]">04</span>
+            <div>
+              <p class="tab-title font-display font-semibold text-[16px] text-[#122326]">Newborn Screening</p>
+              <p class="tab-sub text-[12px] text-[#526163]">Automated OAE &amp; BERA/AABR</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all">chevron_right</span>
+        </button>
+        <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group" data-key="nri" onclick="switchService('nri')">
+          <div class="flex items-center gap-4">
+            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]">05</span>
+            <div>
+              <p class="tab-title font-display font-semibold text-[16px] text-[#122326]">NRI Hearing Care</p>
+              <p class="tab-sub text-[12px] text-[#526163]">Dedicated Parent Care in Mumbai</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all">chevron_right</span>
+        </button>
+      </div>
+      <div class="lg:col-span-7 bg-white border border-[#DCE7E6] p-8 lg:p-10 rounded-2xl shadow-sm min-h-[440px] flex flex-col justify-between" id="service-content-panel">
+        <div class="space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-[#DCE7E6]">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-[#006A6A]" id="svc-category">COMPREHENSIVE AUDIOLOGY</span>
+              <h3 class="text-[26px] lg:text-[28px] font-display font-bold text-[#122326] mt-1" id="svc-title">Clinical Hearing Tests &amp; Tympanometry</h3>
+            </div>
+            <div class="px-3.5 py-1.5 bg-[#F1F4F3] rounded-md text-[13px] font-medium text-[#526163] flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-[#006A6A]">schedule</span>
+              <span id="svc-duration" class="">Session: 45 Mins</span>
+            </div>
+          </div>
+          <p class="text-[16px] text-[#3C4949] leading-relaxed" id="svc-desc">
+            Precision air and bone conduction Pure Tone Audiometry (PTA) inside a calibrated sound booth, coupled with impedance audiometry to measure eardrum compliance and acoustic reflex integrity.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-[#6C7A79]">Diagnostic Scope</p>
+              <p class="text-[14px] font-display font-bold text-[#122326] mt-1" id="svc-scope">Full octave threshold plotting (250Hz - 8000Hz) &amp; middle ear fluid analysis</p>
+            </div>
+            <div class="p-4 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-[#6C7A79]">Recommended For</p>
+              <p class="text-[14px] font-display font-bold text-[#122326] mt-1" id="svc-target">Adults, seniors, musicians &amp; individuals experiencing muffled speech</p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#DCE7E6]">
+          <div class="flex items-center gap-2 text-[13px] text-[#526163]">
+            <span class="material-symbols-outlined text-[#006A6A] text-[20px]">verified</span>
+            <span class="">Conducted in Chembur Clinic or via doorstep diagnostics</span>
+          </div>
+          <a class="group px-6 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all duration-200 shadow-sm inline-flex items-center gap-2" href="#booking-hub" id="svc-book-btn" onclick="selectServiceForBooking('Hearing Tests')">
+            <span class="">Book Service Now</span>
+            <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ABOUT SECTION -->
+<section class="py-24 bg-white border-b border-[#DCE7E6] reveal-on-scroll is-visible" id="about">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="flex items-center gap-2">
+          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Leadership &amp; Standards</span>
+        </div>
+        <h2 class="text-[32px] lg:text-[42px] font-display font-bold text-[#122326] leading-tight">
+          About PTA Solutions — Your Trusted Partner in Hearing and Speech Wellness
+        </h2>
+        <div class="p-6 bg-[#F1F4F3]/80 rounded-xl border-l-4 border-[#006A6A]">
+          <p class="text-[17px] font-display font-bold text-[#006A6A]">
+            10+ years of clinical experience led by Dr. Johnsavio Fernandes, Audiologist and Speech-Language professional.
+          </p>
+        </div>
+        <p class="text-[15px] text-[#3C4949] leading-relaxed">
+          Our Chembur clinic is founded upon the conviction that auditory and communicative well-being is vital to intellectual vitality, social bonding, and emotional peace. We reject commercial transactional models, ensuring our recommendations remain firmly tied to evidence-based audiological parameters.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2 text-[#122326] font-display font-bold text-[15px]">
+              <span class="material-symbols-outlined text-[#006A6A] text-[20px]">medical_services</span>
+              <span class="">Ethical Care Protocols</span>
+            </div>
+            <p class="text-[13px] text-[#526163]">Zero quota-based sales. Only what truly improves patient communicative independence.</p>
+          </div>
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2 text-[#122326] font-display font-bold text-[15px]">
+              <span class="material-symbols-outlined text-[#006A6A] text-[20px]">groups</span>
+              <span class="">Multi-Disciplinary Team</span>
+            </div>
+            <p class="text-[13px] text-[#526163]">Synergistic speech therapists and pediatric audiologists under one clinical roof.</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 space-y-6">
+        <div class="bg-[#F7FAF9] p-8 lg:p-10 border border-[#DCE7E6] rounded-2xl relative overflow-hidden shadow-sm">
+          <span class="text-[11px] font-bold uppercase tracking-widest text-[#006A6A]">Our Guiding Mission</span>
+          <blockquote class="text-[20px] font-display font-semibold text-[#122326] italic mt-4 leading-snug">
+            "Our mission is simple — to help you reconnect with the world through <span class="text-[#006A6A] font-bold not-italic">better hearing</span> and <span class="text-[#006A6A] font-bold not-italic">clearer communication</span> improving your quality of life."
+          </blockquote>
+          <div class="mt-8 pt-5 border-t border-[#DCE7E6] flex items-center justify-between">
+            <div>
+              <p class="font-display font-bold text-[16px] text-[#122326]">Dr. Johnsavio Fernandes</p>
+              <p class="text-[12px] text-[#526163]">Lead Audiologist &amp; Speech Pathologist</p>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-[#1BBCBC]/20 flex items-center justify-center text-[#006A6A]">
+              <span class="material-symbols-outlined text-[22px]">verified</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#F1F4F3] p-6 rounded-xl border border-[#DCE7E6] flex items-center gap-4">
+          <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center text-[#006A6A] shrink-0 shadow-xs">
+            <span class="material-symbols-outlined text-[28px]">apartment</span>
+          </div>
+          <div>
+            <p class="font-display font-bold text-[15px] text-[#122326]">State-of-the-Art Chembur Clinic</p>
+            <p class="text-[13px] text-[#526163]">ISO 8253-1 standard sound booth with real-ear measurement (REM) suites.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. CARE JOURNEY -->
+<section class="py-24 border-b border-[#DCE7E6] bg-[#F7FAF9] reveal-on-scroll is-visible" id="care-journey">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
+    <div class="text-center max-w-2xl mx-auto space-y-3">
+      <div class="inline-flex items-center gap-2">
+        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">The Patient Pathway</span>
+        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+      </div>
+      <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+        Listen → Understand → Recommend → Support
+      </h2>
+      <p class="text-[15px] text-[#526163]">
+        A coherent, pressure-free continuum of care focused on empathy, clear data, and long-term acoustic comfort.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="journey-step bg-white p-7 rounded-2xl border border-[#DCE7E6] space-y-4 shadow-xs active" onclick="highlightJourneyStep(this)">
+        <div class="flex items-center justify-between">
+          <span class="step-num text-[26px] font-mono font-extrabold text-[#006A6A] transition-colors">01</span>
+          <div class="step-icon-box w-10 h-10 rounded-lg bg-[#1BBCBC] text-white flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[22px]">hearing</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-[18px] text-[#122326]">1. Listen</h3>
+          <p class="text-[13px] text-[#526163] mt-2 leading-relaxed">
+            We start by listening to your unique lifestyle challenges, social environments, and personal communication goals.
+          </p>
+        </div>
+      </div>
+      <div class="journey-step bg-white p-7 rounded-2xl border border-[#DCE7E6] space-y-4 shadow-xs" onclick="highlightJourneyStep(this)">
+        <div class="flex items-center justify-between">
+          <span class="step-num text-[26px] font-mono font-extrabold text-[#6C7A79] transition-colors">02</span>
+          <div class="step-icon-box w-10 h-10 rounded-lg bg-[#F1F4F3] text-[#526163] flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[22px]">query_stats</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-[18px] text-[#122326]">2. Understand</h3>
+          <p class="text-[13px] text-[#526163] mt-2 leading-relaxed">
+            Comprehensive Pure Tone Audiometry (PTA), Speech Discrimination, and Tympanometry map exact acoustic thresholds.
+          </p>
+        </div>
+      </div>
+      <div class="journey-step bg-white p-7 rounded-2xl border border-[#DCE7E6] space-y-4 shadow-xs" onclick="highlightJourneyStep(this)">
+        <div class="flex items-center justify-between">
+          <span class="step-num text-[26px] font-mono font-extrabold text-[#6C7A79] transition-colors">03</span>
+          <div class="step-icon-box w-10 h-10 rounded-lg bg-[#F1F4F3] text-[#526163] flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[22px]">recommend</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-[18px] text-[#122326]">3. Recommend</h3>
+          <p class="text-[13px] text-[#526163] mt-2 leading-relaxed">
+            Transparent review of tailored rehabilitation options, trial fittings, or speech modules suited strictly to your needs.
+          </p>
+        </div>
+      </div>
+      <div class="journey-step bg-white p-7 rounded-2xl border border-[#DCE7E6] space-y-4 shadow-xs" onclick="highlightJourneyStep(this)">
+        <div class="flex items-center justify-between">
+          <span class="step-num text-[26px] font-mono font-extrabold text-[#6C7A79] transition-colors">04</span>
+          <div class="step-icon-box w-10 h-10 rounded-lg bg-[#F1F4F3] text-[#526163] flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[22px]">support_agent</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-[18px] text-[#122326]">4. Support</h3>
+          <p class="text-[13px] text-[#526163] mt-2 leading-relaxed">
+            Continual sound tuning, ear mold adjustments, device servicing, and speech progress tracking across lifetime check-ins.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. NRI HEARING CARE SECTION -->
+<section class="py-24 bg-white border-b border-[#DCE7E6] overflow-hidden reveal-on-scroll is-visible" id="nri-care">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-5 space-y-4">
+        <div class="relative bg-white p-2.5 border border-[#DCE7E6] rounded-2xl shadow-lg group">
+          <img alt="NRI Parent and daughter enjoying clear conversation in Mumbai" class="w-full h-auto aspect-[4/3] object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UyvGvbDskN31EADDxLoChQsP8SjYbzTDESWn3d1H4lSrtCk5hOqn3noPWaav2E1Sje0kQYJqixek_kgg1xszLGJiZPVUcZ5_2gRgXXBZSoSW9WOFPe3UqWhTarjN5tYZAsSaeAM5AChTCAv2kEqHyFsKxK38A3Ofqh4JdXWJjJDM5lUgAz7dwR_lAmyjcDeNNDmdhx8EEXLJ2Bf6S8BAFQ2SpDOYVcJX_8in5zVanrpkayHlGL5fd_Mw">
+          <div class="absolute -top-3 -left-3 bg-[#122326] text-white px-3.5 py-1.5 rounded-lg text-[11px] font-bold flex items-center gap-1.5 shadow-md">
+            <span class="material-symbols-outlined text-[#1BBCBC] text-[16px]">public</span>
+            <span class="">Global NRI Concierge</span>
+          </div>
+          <div class="absolute -bottom-3 right-4 bg-white px-3.5 py-1.5 border border-[#DCE7E6] rounded-lg shadow-md flex items-center gap-2 pulse-badge">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-[12px] font-semibold text-[#122326]">Home Visits Across Mumbai</span>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-7 space-y-6">
+        <div class="flex items-center gap-2.5">
+          <span class="px-3 py-1 bg-[#1BBCBC]/20 text-[#004646] font-bold rounded-full text-[11px]">We Only Have One Home</span>
+          <span class="px-3 py-1 bg-[#E0E3E2] text-[#3C4949] font-bold rounded-full text-[11px]">Act Now</span>
+        </div>
+        <h2 class="text-[32px] lg:text-[42px] font-display font-bold text-[#122326] leading-tight">
+          Living Abroad? We Take Care of Your Parents' Hearing in Mumbai
+        </h2>
+        <p class="text-[17px] text-[#3C4949] leading-relaxed">
+          Complete home-based hearing care with regular updates—so you don’t have to worry from miles away.
+        </p>
+        <div class="space-y-4 pt-2">
+          <div class="flex items-start gap-3.5">
+            <span class="material-symbols-outlined text-[#006A6A] text-[22px] mt-0.5">verified</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">Doorstep Audiological Testing</p>
+              <p class="text-[13px] text-[#526163]">Portable diagnostic equipment brought right into your parents' living room in Mumbai.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3.5">
+            <span class="material-symbols-outlined text-[#006A6A] text-[22px] mt-0.5">mark_chat_read</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">Direct WhatsApp Updates for Children Abroad</p>
+              <p class="text-[13px] text-[#526163]">Post-session clinical summary reports and direct video consultation with the audiologist.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3.5">
+            <span class="material-symbols-outlined text-[#006A6A] text-[22px] mt-0.5">home_repair_service</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">Regular Maintenance &amp; Battery Deliveries</p>
+              <p class="text-[13px] text-[#526163]">Scheduled visits for wax cleaning, acoustic filter renewals, and device fine-tuning.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <a class="h-12 px-7 inline-flex items-center justify-center bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[15px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all duration-200 shadow-sm hover:shadow-md" href="#booking-hub" onclick="selectServiceForBooking('Premium NRI Care')">
+            Book Consultation
+          </a>
+          <a class="h-12 px-7 inline-flex items-center justify-center gap-2 border border-[#25D366]/40 bg-white text-[#122326] font-display font-semibold text-[15px] rounded-lg hover:border-[#25D366] hover:bg-[#25D366]/10 transition-all duration-200" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[#25D366] text-[20px]">chat</span>
+            <span class="">Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. CARE PLANS & PRICING -->
+<section class="py-24 border-b border-[#DCE7E6] bg-[#F7FAF9] reveal-on-scroll is-visible" id="pricing">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-14">
+    <div class="text-center max-w-2xl mx-auto space-y-3">
+      <div class="inline-flex items-center gap-2">
+        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Transparent Clinical Tiers</span>
+        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+      </div>
+      <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+        Care Plans Tailored to Your Needs
+      </h2>
+      <p class="text-[15px] text-[#526163]">
+        Clear, structured investments in your auditory well-being with no hidden diagnostic surcharges.
+      </p>
+    </div>
+    <div class="space-y-4">
+      <!-- ROW 1 -->
+      <div class="plan-row bg-white border-2 border-[#1BBCBC] rounded-2xl p-6 lg:p-8 relative">
+        <div class="absolute -top-3 left-8 bg-[#1BBCBC] text-[#002020] px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase">
+          Most Comprehensive
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-4 space-y-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">Home &amp; Clinical Suite</span>
+            <h3 class="text-[22px] font-display font-bold text-[#122326]">Complete Care</h3>
+            <p class="text-[13px] text-[#526163]">Comprehensive audiology, advanced diagnostics &amp; customized speech therapies right at home.</p>
+          </div>
+          <div class="lg:col-span-3 py-2 lg:border-l lg:border-r border-[#DCE7E6] lg:px-6">
+            <div class="flex items-baseline gap-1.5">
+              <span class="text-[26px] font-display font-bold text-[#006A6A]">₹75,000</span>
+              <span class="text-[13px] text-[#526163]">to ₹1,50,000</span>
+            </div>
+            <div class="flex items-center gap-2 text-[12px] text-[#6C7A79] mt-1">
+              <span class="material-symbols-outlined text-[15px]">schedule</span>
+              <span class="">Duration: 1 hr • Customer's Place</span>
+            </div>
+          </div>
+          <div class="lg:col-span-3 text-[13px] text-[#3C4949] space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="">Full Portable Audiology Suite at Home</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="">Hearing Aid Trials in Real Environment</span>
+            </div>
+          </div>
+          <div class="lg:col-span-2 text-right">
+            <a class="w-full py-3 inline-flex items-center justify-center bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm" href="#booking-hub" onclick="selectServiceForBooking('Complete Care')">
+              Talk to Specialist
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- ROW 2 -->
+      <div class="plan-row bg-white border border-[#DCE7E6] rounded-2xl p-6 lg:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-4 space-y-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">In-Clinic Baseline</span>
+            <h3 class="text-[22px] font-display font-bold text-[#122326]">Basic Consultation</h3>
+            <p class="text-[13px] text-[#526163]">Comprehensive baseline audiological assessment for individuals seeking clarity on hearing or speech.</p>
+          </div>
+          <div class="lg:col-span-3 py-2 lg:border-l lg:border-r border-[#DCE7E6] lg:px-6">
+            <div class="flex items-baseline gap-1.5">
+              <span class="text-[26px] font-display font-bold text-[#122326]">₹10,000</span>
+              <span class="text-[13px] text-[#526163]">to ₹20,000</span>
+            </div>
+            <div class="flex items-center gap-2 text-[12px] text-[#6C7A79] mt-1">
+              <span class="material-symbols-outlined text-[15px]">schedule</span>
+              <span class="">Duration: 1 hr • Clinic / Home</span>
+            </div>
+          </div>
+          <div class="lg:col-span-3 text-[13px] text-[#3C4949] space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="">Pure Tone Audiometry (Air &amp; Bone)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="">Speech Discrimination &amp; Impedance</span>
+            </div>
+          </div>
+          <div class="lg:col-span-2 text-right">
+            <a class="w-full py-3 inline-flex items-center justify-center border border-[#6C7A79]/40 bg-white text-[#122326] font-display font-semibold text-[14px] rounded-lg hover:border-[#006A6A] hover:text-[#006A6A] transition-all" href="#booking-hub" onclick="selectServiceForBooking('Basic Consultation')">
+              Book Evaluation
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- ROW 3 -->
+      <div class="plan-row bg-white border border-[#DCE7E6] rounded-2xl p-6 lg:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-4 space-y-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Global Family Concierge</span>
+            <h3 class="text-[22px] font-display font-bold text-[#122326]">Premium NRI Care</h3>
+            <p class="text-[13px] text-[#526163]">Specialized home visits, parent progress reports &amp; remote video updates for overseas families.</p>
+          </div>
+          <div class="lg:col-span-3 py-2 lg:border-l lg:border-r border-[#DCE7E6] lg:px-6">
+            <div class="flex items-baseline gap-1.5">
+              <span class="text-[26px] font-display font-bold text-[#122326]">₹2,00,000</span>
+              <span class="text-[13px] text-[#526163]">to ₹3,50,000</span>
+            </div>
+            <div class="flex items-center gap-2 text-[12px] text-[#6C7A79] mt-1">
+              <span class="material-symbols-outlined text-[15px]">schedule</span>
+              <span class="">Duration: 1 hr • Dedicated Visits</span>
+            </div>
+          </div>
+          <div class="lg:col-span-3 text-[13px] text-[#3C4949] space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="">Quarterly In-Home Mumbai Evaluations</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="">Direct WhatsApp &amp; Tele-Clinicals</span>
+            </div>
+          </div>
+          <div class="lg:col-span-2 text-right">
+            <a class="w-full py-3 inline-flex items-center justify-center border border-[#6C7A79]/40 bg-white text-[#122326] font-display font-semibold text-[14px] rounded-lg hover:border-[#006A6A] hover:text-[#006A6A] transition-all" href="#booking-hub" onclick="selectServiceForBooking('Premium NRI Care')">
+              Enroll NRI Plan
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. PATIENT REVIEWS -->
+<section class="py-24 bg-white border-b border-[#DCE7E6] reveal-on-scroll is-visible" id="reviews">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Authentic Patient Experiences</span>
+        </div>
+        <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+          Patient Reviews &amp; Clinical Feedback
+        </h2>
+      </div>
+      <p class="text-[13px] text-[#6C7A79] max-w-xs">
+        Structured patient feedback framework verified through clinic sign-in audits.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-[#F7FAF9] p-8 rounded-2xl border border-[#DCE7E6] flex flex-col justify-between space-y-6 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-500">
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <span class="text-[11px] font-bold px-2.5 py-0.5 bg-white border border-[#DCE7E6] rounded-md text-[#526163]">Verified Patient</span>
+          </div>
+          <p class="text-[15px] text-[#122326] leading-relaxed italic">
+            "The home visit for my 82-year-old mother in Chembur was remarkably gentle. Dr. Johnsavio explained the audiogram without rushing. The hearing aid fitting has brought back her confidence."
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#DCE7E6]">
+          <p class="font-display font-bold text-[15px] text-[#122326]">Mrs. Ananya Kulkarni</p>
+          <p class="text-[12px] text-[#6C7A79]">Complete Care • Home Visit</p>
+        </div>
+      </div>
+      <div class="bg-[#F7FAF9] p-8 rounded-2xl border border-[#DCE7E6] flex flex-col justify-between space-y-6 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-500">
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <span class="text-[11px] font-bold px-2.5 py-0.5 bg-white border border-[#DCE7E6] rounded-md text-[#526163]">NRI Family Care</span>
+          </div>
+          <p class="text-[15px] text-[#122326] leading-relaxed italic">
+            "Living in London, managing my father’s hearing aids was stressful until we engaged PTA Solutions. The prompt WhatsApp follow-ups and care check-ins give our entire family peace of mind."
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#DCE7E6]">
+          <p class="font-display font-bold text-[15px] text-[#122326]">Vikramaditya Shah</p>
+          <p class="text-[12px] text-[#6C7A79]">NRI Parent Care Desk • London / Chembur</p>
+        </div>
+      </div>
+      <div class="bg-[#F7FAF9] p-8 rounded-2xl border border-[#DCE7E6] flex flex-col justify-between space-y-6 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-500">
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <span class="text-[11px] font-bold px-2.5 py-0.5 bg-white border border-[#DCE7E6] rounded-md text-[#526163]">Pediatric Screening</span>
+          </div>
+          <p class="text-[15px] text-[#122326] leading-relaxed italic">
+            "We brought our 4-year-old son for speech delays and auditory testing. The clinic environment was quiet, calming, and free of medical fear. We saw clear articulation gains within two months."
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#DCE7E6]">
+          <p class="font-display font-bold text-[15px] text-[#122326]">Pooja &amp; Rohan Sen</p>
+          <p class="text-[12px] text-[#6C7A79]">Speech Therapy &amp; Audiometry</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. GUIDED 3-STEP APPOINTMENT BOOKING HUB -->
+<section class="py-24 border-b border-[#DCE7E6] bg-[#F7FAF9] reveal-on-scroll is-visible" id="booking-hub">
+  <div class="max-w-4xl mx-auto px-6 space-y-10">
+    <div class="text-center space-y-3">
+      <div class="inline-flex items-center gap-2">
+        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Direct Clinic Scheduling</span>
+        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+      </div>
+      <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+        Guided 3-Step Appointment Booking Hub
+      </h2>
+      <p class="text-[15px] text-[#526163]">
+        Reserve your clinical evaluation or home consultation with Dr. Johnsavio Fernandes and the PTA Solutions team.
+      </p>
+    </div>
+    <div class="bg-white border border-[#DCE7E6] rounded-2xl p-6 lg:p-10 shadow-sm transition-all duration-300">
+      <div class="grid grid-cols-3 gap-2 pb-8 border-b border-[#DCE7E6] mb-8" id="step-indicator">
+        <button class="flex items-center gap-2 text-[#006A6A] font-bold border-b-2 border-[#1BBCBC] pb-2 text-left" id="step-ind-1" onclick="goToStep(1)" type="button">
+          <span class="w-6 h-6 rounded-full bg-[#1BBCBC] text-[#002020] text-[11px] flex items-center justify-center font-bold">1</span>
+          <span class="text-[13px] font-display hidden sm:inline">Choose Service</span>
+        </button>
+        <button class="flex items-center gap-2 text-[#6C7A79] pb-2 text-left" id="step-ind-2" onclick="goToStep(2)" type="button">
+          <span class="w-6 h-6 rounded-full bg-[#E0E3E2] text-[#3C4949] text-[11px] flex items-center justify-center font-bold">2</span>
+          <span class="text-[13px] font-display hidden sm:inline">Date &amp; Time</span>
+        </button>
+        <button class="flex items-center gap-2 text-[#6C7A79] pb-2 text-left" id="step-ind-3" onclick="goToStep(3)" type="button">
+          <span class="w-6 h-6 rounded-full bg-[#E0E3E2] text-[#3C4949] text-[11px] flex items-center justify-center font-bold">3</span>
+          <span class="text-[13px] font-display hidden sm:inline">Patient Details</span>
+        </button>
+      </div>
+
+      <form id="booking-form" onsubmit="handleBookingSubmit(event)">
+        <!-- STEP 1 -->
+        <div class="space-y-6" id="step-1">
+          <h3 class="text-[18px] font-display font-bold text-[#122326]">Step 1: Select Your Required Clinical Service</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#1BBCBC] bg-[#F1F4F3]/50 cursor-pointer hover:border-[#1BBCBC] transition-all">
+              <input checked="" class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Hearing Tests">
+              <div>
+                <p class="font-display font-bold text-[15px] text-[#122326]">Hearing Tests</p>
+                <p class="text-[12px] text-[#6C7A79]">Audiometry, Tympanometry</p>
+              </div>
+            </label>
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
+              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Hearing Aids">
+              <div>
+                <p class="font-display font-bold text-[15px] text-[#122326]">Hearing Aids</p>
+                <p class="text-[12px] text-[#6C7A79]">Fitting, Trials &amp; Programming</p>
+              </div>
+            </label>
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
+              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Speech Therapy">
+              <div>
+                <p class="font-display font-bold text-[15px] text-[#122326]">Speech Therapy</p>
+                <p class="text-[12px] text-[#6C7A79]">Pediatric &amp; Adult Fluency</p>
+              </div>
+            </label>
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
+              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Newborn Screening">
+              <div>
+                <p class="font-display font-bold text-[15px] text-[#122326]">Newborn Screening</p>
+                <p class="text-[12px] text-[#6C7A79]">BERA, OAE Testing</p>
+              </div>
+            </label>
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
+              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Complete Care">
+              <div>
+                <p class="font-display font-bold text-[15px] text-[#122326]">Complete Care</p>
+                <p class="text-[12px] text-[#6C7A79]">Comprehensive In-Home Care</p>
+              </div>
+            </label>
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
+              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Premium NRI Care">
+              <div>
+                <p class="font-display font-bold text-[15px] text-[#122326]">Premium NRI Care</p>
+                <p class="text-[12px] text-[#6C7A79]">Mumbai Home Visits for NRIs</p>
+              </div>
+            </label>
+          </div>
+          <div class="flex justify-end pt-4">
+            <button class="group px-7 py-3 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(2)" type="button">
+              <span class="">Continue to Date &amp; Time</span>
+              <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="space-y-6 hidden" id="step-2">
+          <h3 class="text-[18px] font-display font-bold text-[#122326]">Step 2: Choose Preferred Date &amp; Time Slot</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-2" for="book-date">Preferred Date</label>
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#122326] text-[14px]" id="book-date" onchange="updateSummary()" required="" type="date">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-2" for="book-time">Preferred Time Window</label>
+              <select class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#122326] text-[14px]" id="book-time" onchange="updateSummary()">
+                <option>10:00 AM – 11:30 AM (Morning)</option>
+                <option>12:00 PM – 01:30 PM (Mid-Day)</option>
+                <option>03:00 PM – 04:30 PM (Afternoon)</option>
+                <option>05:30 PM – 07:00 PM (Evening)</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex justify-between pt-4">
+            <button class="px-6 py-2.5 border border-[#6C7A79]/40 text-[#122326] font-display font-semibold text-[14px] rounded-lg hover:bg-[#F1F4F3] transition-all" onclick="goToStep(1)" type="button">
+              ← Back
+            </button>
+            <button class="group px-7 py-3 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(3)" type="button">
+              <span class="">Continue to Details</span>
+              <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="space-y-6 hidden" id="step-3">
+          <h3 class="text-[18px] font-display font-bold text-[#122326]">Step 3: Enter Patient Information &amp; Confirm</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1" for="patient-name">Full Patient Name *</label>
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#122326] text-[14px]" id="patient-name" placeholder="e.g., Ramesh Mehta" required="" type="text">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1" for="patient-phone">Contact Phone / WhatsApp *</label>
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#122326] text-[14px]" id="patient-phone" placeholder="+91 98765 43210" required="" type="tel">
+            </div>
+          </div>
+          <div class="p-4 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6] space-y-2">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">Booking Summary Preview</p>
+            <div class="text-[13px] text-[#526163] flex flex-wrap gap-x-6 gap-y-1">
+              <span class="">Selected: <strong class="text-[#122326]" id="prev-service">Hearing Tests</strong></span>
+              <span class="">Date: <strong class="text-[#122326]" id="prev-date">2026-10-05</strong></span>
+              <span class="">Time: <strong class="text-[#122326]" id="prev-time">10:00 AM – 11:30 AM (Morning)</strong></span>
+            </div>
+          </div>
+          <div class="flex justify-between pt-4">
+            <button class="px-6 py-2.5 border border-[#6C7A79]/40 text-[#122326] font-display font-semibold text-[14px] rounded-lg hover:bg-[#F1F4F3] transition-all" onclick="goToStep(2)" type="button">
+              ← Back
+            </button>
+            <button class="px-8 py-3 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md active:scale-95" type="submit">
+              Confirm &amp; Book Appointment
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="hidden p-8 text-center space-y-4" id="booking-success">
+        <div class="w-16 h-16 rounded-full bg-[#1BBCBC]/20 text-[#006A6A] mx-auto flex items-center justify-center">
+          <span class="material-symbols-outlined text-[36px]">check_circle</span>
+        </div>
+        <h3 class="text-[26px] font-display font-bold text-[#122326]">Appointment Request Confirmed!</h3>
+        <p class="text-[14px] text-[#526163] max-w-md mx-auto leading-relaxed">
+          Thank you. Dr. Johnsavio Fernandes' clinical desk at PTA SOLUTIONS Chembur has received your consultation booking. Our care coordinator will call or WhatsApp you shortly.
+        </p>
+        <button class="mt-4 px-6 py-2 border border-[#6C7A79]/40 rounded-lg font-display font-semibold text-[13px] text-[#122326] hover:bg-[#F1F4F3] transition-colors" onclick="resetBooking()">
+          Book Another Consultation
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. FULL-WIDTH PRE-FOOTER CTA -->
+<section class="py-20 bg-[#122326] text-white relative overflow-hidden reveal-on-scroll is-visible">
+  <div class="max-w-5xl mx-auto px-6 text-center relative z-10 space-y-6">
+    <span class="px-3.5 py-1.5 bg-white/10 rounded-full text-[#1BBCBC] text-[11px] font-bold tracking-widest uppercase">
+      Mumbai's Trusted Audiology Practice
+    </span>
+    <h2 class="text-[34px] md:text-[46px] font-display font-extrabold tracking-tight">
+      Better hearing starts with the right care.
+    </h2>
+    <p class="text-[16px] text-gray-300 max-w-xl mx-auto leading-relaxed">
+      Speak with Dr. Johnsavio Fernandes or schedule a doorstep clinical audiology evaluation today.
+    </p>
+    <div class="pt-4 flex flex-wrap justify-center items-center gap-4">
+      <a class="group px-8 py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[15px] rounded-lg hover:bg-white hover:text-[#122326] transition-all duration-200 shadow-lg inline-flex items-center gap-2" href="#booking-hub">
+        <span class="">Book Appointment</span>
+        <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1.5">arrow_forward</span>
+      </a>
+      <a class="px-7 py-3.5 border border-white/20 text-white font-display font-semibold text-[15px] rounded-lg hover:bg-white/10 transition-all duration-200" href="tel:+919773545058">
+        Call +91 9773545058
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 13. CONTACT SECTION -->
+<section class="py-24 border-b border-[#DCE7E6] bg-white reveal-on-scroll is-visible" id="contact">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      <div class="lg:col-span-5 space-y-6">
+        <div class="flex items-center gap-2">
+          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Connect With Us</span>
+        </div>
+        <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+          Let's Talk About Better Hearing &amp; Communication
+        </h2>
+        <p class="text-[15px] text-[#526163]">
+          Reach out directly to our Chembur clinical center or request a dedicated home diagnostic schedule across Mumbai.
+        </p>
+        <div class="space-y-4 pt-2">
+          <div class="flex items-start gap-4 p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px] mt-0.5">location_on</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">Clinic Address</p>
+              <p class="text-[13px] text-[#526163] mt-1 leading-relaxed">
+                Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Above Surya Hospital Next to R.K.Studio, Opp CROMA, Chembur, Mumbai - 400074
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px]">call</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">Direct Phone</p>
+              <a class="text-[14px] text-[#006A6A] font-bold hover:underline" href="tel:+919773545058">+91 9773545058</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
+            <span class="material-symbols-outlined text-[#006A6A] text-[24px]">mail</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#122326]">Email Address</p>
+              <a class="text-[14px] text-[#526163] hover:text-[#006A6A] transition-colors" href="mailto:ptasolutionshsc@gmail.com">ptasolutionshsc@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-7 bg-[#F7FAF9] p-8 lg:p-10 rounded-2xl border border-[#DCE7E6] shadow-sm">
+        <form class="space-y-4" id="contact-form" onsubmit="handleContactSubmit(event)">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-first-name">First Name *</label>
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-first-name" required="" type="text">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-last-name">Last Name</label>
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-last-name" type="text">
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-email">Email *</label>
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-email" required="" type="email">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-phone">Phone *</label>
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-phone" required="" type="tel">
+            </div>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-message">Message</label>
+            <textarea class="custom-input w-full p-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-message" placeholder="Briefly describe your hearing concerns..." rows="4"></textarea>
+          </div>
+          <button class="w-full h-12 inline-flex items-center justify-center bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm active:scale-95" type="submit">
+            Send Message
+          </button>
+          <div class="hidden p-3.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-[13px] text-center" id="contact-feedback">
+            Message received! Dr. Johnsavio's team will contact you shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. FOOTER -->
+<footer class="w-full bg-[#122326] text-gray-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
+      <div class="space-y-4">
+        <div class="bg-white p-2 rounded-lg inline-block">
+          <img alt="PTA Solutions Clinic Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XgyGppC3hcdWVzSjVL9h7OFQHlGaldF9klrqUdMu_oWv-qK5jnnEeQjxV0QdJAAyQ-ABtXDCQVHlHI6ddFXx-KlTKw6GU7unyTljCvJofjA6bThJGFo2INtgHRHOohzxpDKBdvl-UFrOzLUnzpTzQmBK-HGCzmGOBn8OhiwsuelwoeZyFsP8pVZf3OceneG_PmhtQIonN524c3FQF7l0usrOEdm9S3jj427oEddMhcHJjsECYPsJh3p2I">
+        </div>
+        <p class="text-[13px] text-gray-400 leading-relaxed">
+          PTA SOLUTIONS Hearing &amp; Speech Care Clinics. Leading audiology and speech pathology practice in Chembur, Mumbai.
+        </p>
+        <p class="text-[12px] text-gray-400"><span class="text-white font-medium">Lead Clinician:</span> Dr. Johnsavio Fernandes</p>
+      </div>
+      <div class="space-y-3">
+        <p class="font-display font-bold text-white text-[15px]">Explore</p>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#about">About</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Services</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#nri-care">NRI Hearing Care</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#pricing">Care Plans</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#booking-hub">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <p class="font-display font-bold text-white text-[15px]">Services</p>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Hearing Tests</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Hearing Aids</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Speech Therapy</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Newborn Screening</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#pricing">Complete Care</a></li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <p class="font-display font-bold text-white text-[15px]">Chembur Clinic</p>
+        <p class="text-[13px] text-gray-400 leading-relaxed">
+          Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Opp CROMA, Chembur, Mumbai - 400074
+        </p>
+        <p class="text-[13px] pt-1">Tel: <a class="text-[#1BBCBC] font-medium hover:underline" href="tel:+919773545058">+91 9773545058</a></p>
+      </div>
+    </div>
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-[12px] text-gray-500">
+      <p class="">© 2026 PTA Solutions. All rights reserved.</p>
+      <div class="flex flex-wrap gap-4">
+        <span class="">Clinical Governance</span>
+        <span class="">•</span>
+        <span class="">Audiology Protocols</span>
+        <span class="">•</span>
+        <span class="">NRI Patient Desk</span>
+        <span class="">•</span>
+        <span class="">Privacy Policy</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP QUICK ACTION WIDGET -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#DCE7E6] p-3 px-6 flex items-center justify-between shadow-2xl">
+  <div>
+    <p class="text-[12px] font-bold text-[#122326]">PTA Solutions Chembur</p>
+    <p class="text-[11px] text-[#006A6A]">Doorstep &amp; Clinic Care</p>
+  </div>
+  <button class="px-4 py-2 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[13px] rounded-lg shadow-sm active:scale-95 transition-all" onclick="navigateTo('booking-hub')">
+    Book Appointment
+  </button>
+</div><div class="fixed bottom-6 right-6 z-40">
+  <a aria-label="Chat directly on WhatsApp" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all font-display font-semibold text-[13px] group" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
+    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+    <span class="hidden sm:inline">WhatsApp Care Desk</span>
+    <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+  </a>
+</div>
+
+<!-- SCRIPTS FOR MOTION & MICRO-INTERACTIONS -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Scroll reveal observer
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('is-visible'));
+    }
+
+    // Header scroll background toggle
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 25) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
+
+    // Default tomorrow date
+    const dateInput = document.getElementById('book-date');
+    if (dateInput) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      dateInput.value = tomorrow.toISOString().split('T')[0];
+      updateSummary();
+    }
+  });
+
+  // Services switcher
+  const servicesData = {
+    tests: {
+      category: "COMPREHENSIVE AUDIOLOGY",
+      title: "Clinical Hearing Tests & Tympanometry",
+      duration: "Session: 45 Mins",
+      desc: "Precision air and bone conduction Pure Tone Audiometry (PTA) inside a calibrated sound booth, coupled with impedance audiometry to measure eardrum compliance and acoustic reflex integrity.",
+      scope: "Full octave threshold plotting (250Hz - 8000Hz) & middle ear fluid analysis",
+      target: "Adults, seniors, musicians & individuals experiencing muffled speech",
+      serviceName: "Hearing Tests"
+    },
+    aids: {
+      category: "REHABILITATIVE TECHNOLOGY",
+      title: "Hearing Aids Dispensing & Real-Ear Fitting",
+      duration: "Session: 60 Mins",
+      desc: "Prescription and digital fine-tuning of leading Swiss and Danish hearing instruments. Every fit includes probe-microphone Real-Ear Measurements (REM) to verify prescriptive speech target matches.",
+      scope: "Invisible-in-canal (IIC), Receiver-in-canal (RIC), Bluetooth AI streaming",
+      target: "Mild to profound sensorineural, conductive, or mixed hearing loss",
+      serviceName: "Hearing Aids"
+    },
+    speech: {
+      category: "LANGUAGE & ARTICULATION",
+      title: "Speech & Language Therapy",
+      duration: "Session: 45 Mins",
+      desc: "Tailored individualized sessions addressing speech delays, stammering, articulation clarity, and post-stroke aphasia recovery led by certified Speech-Language professionals.",
+      scope: "Voice modulation, oral-motor stimulation, phonological therapy",
+      target: "Children with developmental delays, stammering individuals, voice professionals",
+      serviceName: "Speech Therapy"
+    },
+    newborn: {
+      category: "EARLY INTERVENTION PROTOCOL",
+      title: "Newborn Hearing Screening (OAE & BERA)",
+      duration: "Session: 45 - 60 Mins",
+      desc: "Non-invasive, automated Otoacoustic Emissions (OAE) and Brainstem Evoked Response Audiometry (BERA/AABR) tests conducted in an acoustic sanctuary environment to identify congenital auditory variances.",
+      scope: "Cochlear hair cell assessment & Auditory nerve pathway status",
+      target: "Infants (0-6 months), high-risk NICU graduates & toddler milestones",
+      serviceName: "Newborn Screening"
+    },
+    nri: {
+      category: "CONCIERGE HOME CARE",
+      title: "NRI Hearing Care for Parents in Mumbai",
+      duration: "Session: 60 - 90 Mins",
+      desc: "Comprehensive doorstep hearing evaluations and hearing aid support across Mumbai. Children living overseas receive complete clinical telemetry, battery refills, and video consultation summaries.",
+      scope: "In-home portable diagnostics, routine maintenance, direct WhatsApp parent logs",
+      target: "Overseas children caring for elderly parents residing across Mumbai",
+      serviceName: "Premium NRI Care"
+    }
+  };
+
+  let activeServiceKey = 'tests';
+
+  function switchService(key) {
+    if (activeServiceKey === key) return;
+    const data = servicesData[key];
+    if (!data) return;
+
+    const panel = document.getElementById('service-content-panel');
+    panel.classList.add('fade-out');
+
+    setTimeout(() => {
+      document.getElementById('svc-category').innerText = data.category;
+      document.getElementById('svc-title').innerText = data.title;
+      document.getElementById('svc-duration').innerText = data.duration;
+      document.getElementById('svc-desc').innerText = data.desc;
+      document.getElementById('svc-scope').innerText = data.scope;
+      document.getElementById('svc-target').innerText = data.target;
+
+      const bookBtn = document.getElementById('svc-book-btn');
+      bookBtn.setAttribute('onclick', `selectServiceForBooking('${data.serviceName}')`);
+
+      panel.classList.remove('fade-out');
+    }, 150);
+
+    const buttons = document.querySelectorAll('.service-tab-btn');
+    buttons.forEach(btn => {
+      const btnKey = btn.getAttribute('data-key');
+      const num = btn.querySelector('.tab-num');
+      const title = btn.querySelector('.tab-title');
+      const icon = btn.querySelector('.tab-icon');
+
+      if (btnKey === key) {
+        btn.className = "service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-white border-2 border-[#1BBCBC] shadow-md group";
+        num.className = "tab-num text-[14px] font-bold font-mono text-[#006A6A]";
+        title.className = "tab-title font-display font-bold text-[16px] text-[#122326]";
+        icon.innerText = "arrow_forward";
+        icon.className = "material-symbols-outlined tab-icon text-[#006A6A] text-[20px] transition-transform group-hover:translate-x-1";
+      } else {
+        btn.className = "service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group";
+        num.className = "tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]";
+        title.className = "tab-title font-display font-semibold text-[16px] text-[#122326]";
+        icon.innerText = "chevron_right";
+        icon.className = "material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all";
+      }
+    });
+
+    activeServiceKey = key;
+  }
+
+  function highlightJourneyStep(stepEl) {
+    document.querySelectorAll('.journey-step').forEach(step => {
+      step.classList.remove('active');
+      step.querySelector('.step-num').className = 'step-num text-[26px] font-mono font-extrabold text-[#6C7A79] transition-colors';
+      step.querySelector('.step-icon-box').className = 'step-icon-box w-10 h-10 rounded-lg bg-[#F1F4F3] text-[#526163] flex items-center justify-center transition-colors';
+    });
+    stepEl.classList.add('active');
+    stepEl.querySelector('.step-num').className = 'step-num text-[26px] font-mono font-extrabold text-[#006A6A] transition-colors';
+    stepEl.querySelector('.step-icon-box').className = 'step-icon-box w-10 h-10 rounded-lg bg-[#1BBCBC] text-white flex items-center justify-center transition-colors';
+  }
+
+  // Booking Flow
+  function goToStep(step) {
+    document.getElementById('step-1').classList.add('hidden');
+    document.getElementById('step-2').classList.add('hidden');
+    document.getElementById('step-3').classList.add('hidden');
+    document.getElementById(`step-${step}`).classList.remove('hidden');
+
+    for (let i = 1; i <= 3; i++) {
+      const ind = document.getElementById(`step-ind-${i}`);
+      const badge = ind.querySelector('span:first-child');
+      if (i === step) {
+        ind.className = "flex items-center gap-2 text-[#006A6A] font-bold border-b-2 border-[#1BBCBC] pb-2 text-left";
+        badge.className = "w-6 h-6 rounded-full bg-[#1BBCBC] text-[#002020] text-[11px] flex items-center justify-center font-bold";
+      } else if (i < step) {
+        ind.className = "flex items-center gap-2 text-[#006A6A] pb-2 font-medium text-left";
+        badge.className = "w-6 h-6 rounded-full bg-[#1BBCBC]/20 text-[#006A6A] text-[11px] flex items-center justify-center font-bold";
+      } else {
+        ind.className = "flex items-center gap-2 text-[#6C7A79] pb-2 text-left";
+        badge.className = "w-6 h-6 rounded-full bg-[#E0E3E2] text-[#3C4949] text-[11px] flex items-center justify-center font-bold";
+      }
+    }
+    updateSummary();
+  }
+
+  function syncServiceSelection(inputEl) {
+    document.querySelectorAll('.service-pill-label').forEach(l => {
+      l.classList.remove('border-[#1BBCBC]', 'bg-[#F1F4F3]/50');
+      l.classList.add('border-[#DCE7E6]');
+    });
+    const parentLabel = inputEl.closest('.service-pill-label');
+    if (parentLabel) {
+      parentLabel.classList.remove('border-[#DCE7E6]');
+      parentLabel.classList.add('border-[#1BBCBC]', 'bg-[#F1F4F3]/50');
+    }
+    updateSummary();
+  }
+
+  function selectServiceForBooking(serviceName) {
+    const radios = document.querySelectorAll('input[name="selected_service"]');
+    radios.forEach(radio => {
+      if (radio.value === serviceName) {
+        radio.checked = true;
+        syncServiceSelection(radio);
+      }
+    });
+    goToStep(1);
+    const bookingSection = document.getElementById('booking-hub');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function updateSummary() {
+    const selectedRadio = document.querySelector('input[name="selected_service"]:checked');
+    if (selectedRadio) {
+      document.getElementById('prev-service').innerText = selectedRadio.value;
+    }
+    const dateVal = document.getElementById('book-date').value;
+    if (dateVal) {
+      document.getElementById('prev-date').innerText = dateVal;
+    }
+    const timeVal = document.getElementById('book-time').value;
+    if (timeVal) {
+      document.getElementById('prev-time').innerText = timeVal;
+    }
+  }
+
+  function handleBookingSubmit(e) {
+    e.preventDefault();
+    document.getElementById('booking-form').classList.add('hidden');
+    document.getElementById('step-indicator').classList.add('hidden');
+    document.getElementById('booking-success').classList.remove('hidden');
+  }
+
+  function resetBooking() {
+    document.getElementById('booking-form').classList.remove('hidden');
+    document.getElementById('step-indicator').classList.remove('hidden');
+    document.getElementById('booking-success').classList.add('hidden');
+    goToStep(1);
+  }
+
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    document.getElementById('contact-feedback').classList.remove('hidden');
+    document.getElementById('contact-form').reset();
+    setTimeout(() => {
+      document.getElementById('contact-feedback').classList.add('hidden');
+    }, 5000);
+  }
+
+  function toggleWaveSpeed() {
+    const bars = document.querySelectorAll('.wave-bar');
+    bars.forEach(bar => {
+      bar.style.animationDuration = bar.style.animationDuration === '0.7s' ? '1.5s' : '0.7s';
+    });
+  }
+</script>
+
+
+
+</body></html>
