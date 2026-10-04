@@ -177,39 +177,39 @@
 <!-- 1. STICKY HEADER -->
 <header class="sticky top-0 z-50 w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] transition-all duration-300" id="main-header">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-20">
-    <a aria-label="PTA SOLUTIONS Home" class="flex items-center gap-3 group cursor-pointer" onclick="navigateTo('home')">
+    <a aria-label="PTA SOLUTIONS Home" class="flex items-center gap-3 group cursor-pointer" href="/">
       <img alt="PTA Solutions Clinic Logo" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XgyGppC3hcdWVzSjVL9h7OFQHlGaldF9klrqUdMu_oWv-qK5jnnEeQjxV0QdJAAyQ-ABtXDCQVHlHI6ddFXx-KlTKw6GU7unyTljCvJofjA6bThJGFo2INtgHRHOohzxpDKBdvl-UFrOzLUnzpTzQmBK-HGCzmGOBn8OhiwsuelwoeZyFsP8pVZf3OceneG_PmhtQIonN524c3FQF7l0usrOEdm9S3jj427oEddMhcHJjsECYPsJh3p2I">
     </a>
     <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[14px] font-medium text-[#526163]">
-      <a class="nav-item cursor-pointer py-1 transition-colors text-[#122326] font-semibold" data-route="home" onclick="navigateTo('home')">Home</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="about" onclick="navigateTo('about')">About</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="services" onclick="navigateTo('services')">Services</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="nri-care" onclick="navigateTo('nri-care')">NRI Hearing Care</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="complete-care" onclick="navigateTo('complete-care')">Complete Care</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" data-route="contact" onclick="navigateTo('contact')">Contact</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors text-[#122326] font-semibold" href="/">Home</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/about">About</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/services">Services</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/nri-hearing-care">NRI Hearing Care</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/services/complete-care">Complete Care</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/contact">Contact</a>
     </nav>
     <div class="flex items-center gap-4">
       <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#526163] hover:text-[#006A6A] transition-colors group" href="tel:+919773545058">
         <span class="material-symbols-outlined text-[#006A6A] text-[18px] transition-transform group-hover:scale-110">call</span>
         <span class="">+91 9773545058</span>
       </a>
-      <button class="group inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md" onclick="navigateTo('booking-hub')">
+      <a class="group inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md" href="/book-appointment">
         <span class="">Book Appointment</span>
         <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
-      </button>
+      </a>
       <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#122326] hover:bg-[#F1F4F3] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
       </button>
     </div>
   </div>
   <div class="hidden md:hidden border-t border-[#DCE7E6] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
-    <a class="block py-2 text-[15px] font-medium text-[#122326] border-b border-[#F1F4F3]" onclick="navigateTo('home'); toggleMobileMenu();">Home</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('about'); toggleMobileMenu();">About PTA Solutions</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('services'); toggleMobileMenu();">All Services Directory</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('nri-care'); toggleMobileMenu();">NRI Hearing Care Mumbai</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('complete-care'); toggleMobileMenu();">Complete Care Program</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" onclick="navigateTo('booking-hub'); toggleMobileMenu();">Book Appointment Hub</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163]" onclick="navigateTo('contact'); toggleMobileMenu();">Contact Chembur Clinic</a>
+    <a class="block py-2 text-[15px] font-medium text-[#122326] border-b border-[#F1F4F3]" href="/">Home</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/about">About PTA Solutions</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/services">All Services Directory</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/nri-hearing-care">NRI Hearing Care Mumbai</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/services/complete-care">Complete Care Program</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/book-appointment">Book Appointment Hub</a>
+    <a class="block py-2 text-[15px] font-medium text-[#526163]" href="/contact">Contact Chembur Clinic</a>
     <div class="pt-2">
       <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#006A6A] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
         <span class="material-symbols-outlined text-[18px]">call</span>
@@ -2137,21 +2137,21 @@
       <div class="space-y-3">
         <p class="font-display font-bold text-white text-[15px]">Explore</p>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#about">About</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Services</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#nri-care">NRI Hearing Care</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#pricing">Care Plans</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#booking-hub">Book Appointment</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/about">About</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services">Services</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/nri-hearing-care">NRI Hearing Care</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/nri-hearing-care">Care Plans</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/book-appointment">Book Appointment</a></li>
         </ul>
       </div>
       <div class="space-y-3">
         <p class="font-display font-bold text-white text-[15px]">Services</p>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Hearing Tests</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Hearing Aids</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Speech Therapy</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#services">Newborn Screening</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="#pricing">Complete Care</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/hearing-tests">Hearing Tests</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/hearing-aids">Hearing Aids</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/speech-therapy">Speech Therapy</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/newborn-screening">Newborn Screening</a></li>
+          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/complete-care">Complete Care</a></li>
         </ul>
       </div>
       <div class="space-y-3">
@@ -2183,9 +2183,9 @@
     <p class="text-[12px] font-bold text-[#122326]">PTA Solutions Chembur</p>
     <p class="text-[11px] text-[#006A6A]">Doorstep &amp; Clinic Care</p>
   </div>
-  <button class="px-4 py-2 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[13px] rounded-lg shadow-sm active:scale-95 transition-all" onclick="navigateTo('booking-hub')">
+  <a class="px-4 py-2 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[13px] rounded-lg shadow-sm active:scale-95 transition-all" href="/book-appointment">
     Book Appointment
-  </button>
+  </a>
 </div><div class="fixed bottom-6 right-6 z-40">
   <a aria-label="Chat directly on WhatsApp" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all font-display font-semibold text-[13px] group" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
     <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
@@ -2430,6 +2430,13 @@
     setTimeout(() => {
       document.getElementById('contact-feedback').classList.add('hidden');
     }, 5000);
+  }
+
+  function toggleMobileMenu() {
+    const dd = document.getElementById('mobile-menu-dropdown');
+    const icon = document.getElementById('menu-icon');
+    dd.classList.toggle('hidden');
+    icon.innerText = dd.classList.contains('hidden') ? 'menu' : 'close';
   }
 
   function toggleWaveSpeed() {
