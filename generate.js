@@ -85,13 +85,14 @@ write('services', page({
 }));
 
 /* ---------------- 3. NRI HEARING CARE ---------------- */
-function nriPlanRow(badgeFirst, tier, name, price, priceNote, duration, ctaLabel, ctaHref, highlighted) {
+function nriPlanRow(detailHref, tier, name, price, priceNote, duration, ctaLabel, ctaHref, highlighted) {
   return `      <div class="plan-row bg-white ${highlighted ? 'border-2 border-[#1BBCBC]' : 'border border-[#DCE7E6]'} rounded-2xl p-6 lg:p-8 relative">
         ${highlighted ? `<div class="absolute -top-3 left-8 bg-[#1BBCBC] text-[#002020] px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase">Most Comprehensive</div>` : ''}
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           <div class="lg:col-span-5 space-y-1">
             <span class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">${tier}</span>
             <h3 class="text-[22px] font-display font-bold text-[#122326]">${name}</h3>
+            ${detailHref ? `<a class="inline-flex items-center gap-1 text-[12px] font-semibold text-[#006A6A] hover:underline" href="${detailHref}">View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>` : ''}
           </div>
           <div class="lg:col-span-4 py-2 lg:border-l lg:border-r border-[#DCE7E6] lg:px-6">
             <div class="flex items-baseline gap-1.5">
@@ -150,8 +151,8 @@ write('nri-hearing-care', page({
     <h2 class="text-[28px] lg:text-[34px] font-display font-bold text-[#122326]">NRI Care Plans</h2>
     <div class="space-y-4">
 ${nriPlanRow(null, 'Home & Clinical Suite', 'Complete Care', '₹75,000', 'to ₹1,50,000', 'Duration: 1 hr', 'Talk to Specialist Now', '/services/complete-care', true)}
-${nriPlanRow(null, 'In-Clinic Baseline', 'Basic Consultation', '₹10,000', 'to ₹20,000', 'Duration: 1 hr', 'Book Now', '/booking/basic-consultation', false)}
-${nriPlanRow(null, 'Global Family Concierge', 'Premium NRI Care', '₹2L', 'to ₹3.5L', 'Duration: 1 hr', 'Book Now', '/booking/premium-nri-care', false)}
+${nriPlanRow('/services/basic-consultation', 'In-Clinic Baseline', 'Basic Consultation', '₹10,000', 'to ₹20,000', 'Duration: 1 hr', 'Book Now', '/booking/basic-consultation', false)}
+${nriPlanRow('/services/premium-nri-care', 'Global Family Concierge', 'Premium NRI Care', '₹2L', 'to ₹3.5L', 'Duration: 1 hr', 'Book Now', '/booking/premium-nri-care', false)}
     </div>
   </div>
 </section>
@@ -269,9 +270,12 @@ pricedServiceDetail('basic-consultation', 'Basic Consultation', '1 hr', '₹10,0
 pricedServiceDetail('premium-nri-care', 'Premium NRI Care', '1 hr', '₹2L', 'to ₹3.5L', '/booking/premium-nri-care');
 
 /* ---------------- Book Appointment / Our Services hub ---------------- */
-function hubRow(name, ctaLabel, href) {
-  return `      <div class="plan-row bg-white border border-[#DCE7E6] rounded-2xl p-6 flex items-center justify-between gap-4">
-        <h3 class="text-[18px] font-display font-bold text-[#122326]">${name}</h3>
+function hubRow(name, ctaLabel, href, detailHref) {
+  return `      <div class="plan-row bg-white border border-[#DCE7E6] rounded-2xl p-6 flex items-center justify-between gap-4 flex-wrap">
+        <div>
+          <h3 class="text-[18px] font-display font-bold text-[#122326]">${name}</h3>
+          ${detailHref ? `<a class="inline-flex items-center gap-1 text-[12px] font-semibold text-[#006A6A] hover:underline mt-1" href="${detailHref}">View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>` : ''}
+        </div>
         <a class="px-5 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[13px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm whitespace-nowrap" href="${href}">${ctaLabel}</a>
       </div>`;
 }
@@ -286,13 +290,13 @@ write('book-appointment', page({
   body: `
 <section class="py-16 bg-white border-b border-[#DCE7E6]">
   <div class="max-w-4xl mx-auto px-6 space-y-4">
-${hubRow('Hearing Tests', 'Book Appointment Now', '/booking/hearing-tests')}
-${hubRow('Hearing Aids', 'Book Appointment Now', '/booking/hearing-aids')}
-${hubRow('Speech Therapy', 'Book Appointment Now', '/booking/speech-therapy')}
-${hubRow('Newborn Screening', 'Book Appointment Now', '/booking/newborn-screening')}
-${hubRow('Complete Care', 'More Info', '/services/complete-care')}
-${hubRow('Basic Consultation', 'Book Appointment Now', '/booking/basic-consultation')}
-${hubRow('Premium NRI Care', 'Book Appointment Now', '/booking/premium-nri-care')}
+${hubRow('Hearing Tests', 'Book Appointment Now', '/booking/hearing-tests', '/services/hearing-tests')}
+${hubRow('Hearing Aids', 'Book Appointment Now', '/booking/hearing-aids', '/services/hearing-aids')}
+${hubRow('Speech Therapy', 'Book Appointment Now', '/booking/speech-therapy', '/services/speech-therapy')}
+${hubRow('Newborn Screening', 'Book Appointment Now', '/booking/newborn-screening', '/services/newborn-screening')}
+${hubRow('Complete Care', 'More Info', '/services/complete-care', null)}
+${hubRow('Basic Consultation', 'Book Appointment Now', '/booking/basic-consultation', '/services/basic-consultation')}
+${hubRow('Premium NRI Care', 'Book Appointment Now', '/booking/premium-nri-care', '/services/premium-nri-care')}
   </div>
 </section>
 `
