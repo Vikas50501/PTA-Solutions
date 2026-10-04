@@ -1,25 +1,26 @@
-<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Speech Therapy | PTA Solutions Service Detail</title>
-  <meta name="description" content="Speech Therapy at PTA Solutions Hearing and Speech Care Clinics, Chembur, Mumbai. Book your appointment today.">
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Pediatric articulation, stammering modification, and adult post-stroke recovery speech therapy at PTA Solutions, Chembur, Mumbai.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             primary: "#006A6A",
-            "primary-container": "#1BBCBC",
-            "on-primary-fixed": "#002020",
-            surface: "#F7FAF9",
+            teal: "#1BBCBC",
             dark: "#122326",
-            "muted-text": "#526163",
-            border: "#DCE7E6"
+            textdark: "#182426",
+            muted: "#687779",
+            surface: "#F7FAF9",
+            warmwhite: "#FCFDFC",
+            bordercol: "#DCE7E6"
           },
           fontFamily: {
             display: ["Manrope", "sans-serif"],
@@ -34,100 +35,55 @@
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       display: inline-block;
       vertical-align: middle;
-      line-height: 1;
     }
-    .header-scrolled {
-      background-color: rgba(252, 253, 252, 0.98) !important;
-      box-shadow: 0 4px 20px -2px rgba(18, 35, 38, 0.08);
-      border-color: rgba(220, 231, 230, 0.9);
+    @keyframes wavePulse {
+      0%, 100% { height: 10px; transform: scaleY(0.6); }
+      50% { height: 36px; transform: scaleY(1.2); }
     }
-    .nav-link { position: relative; }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background-color: #1bbcbc;
-      transition: width 0.25s ease-out;
-      border-radius: 999px;
-    }
-    .nav-link:hover::after { width: 100%; }
-    .reveal-on-scroll {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-    .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-    @keyframes fadeUpEntrance {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .anim-hero-badge { animation: fadeUpEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.1s; }
-    .anim-hero-title { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.25s; }
-    .anim-hero-desc { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.4s; }
-    .anim-hero-cta { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.55s; }
-    .plan-row { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-    .plan-row:hover {
-      border-color: #1bbcbc !important;
-      transform: translateY(-3px);
-      box-shadow: 0 14px 30px -10px rgba(0, 106, 106, 0.12);
-    }
-    .custom-input { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
-    .custom-input:focus {
-      border-color: #1bbcbc !important;
-      box-shadow: 0 0 0 3px rgba(27, 188, 188, 0.18);
-      background-color: #ffffff !important;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, ::before, ::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
-    }
+    .wave-bar { animation: wavePulse 1.6s ease-in-out infinite; transform-origin: bottom center; }
+    .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+    .wave-bar:nth-child(5) { animation-delay: 0.6s; }
+    .wave-bar:nth-child(6) { animation-delay: 0.75s; }
   </style>
 </head>
-<body class="bg-[#F7FAF9] text-[#122326] font-body antialiased selection:bg-[#1BBCBC] selection:text-[#002020]">
-<header class="sticky top-0 z-50 w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] transition-all duration-300" id="main-header">
+<body class="bg-[#F7FAF9] text-[#182426] font-body antialiased selection:bg-[#1BBCBC] selection:text-[#002020] flex flex-col min-h-screen">
+<header class="w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] sticky z-40 top-0">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-20">
-    <a aria-label="PTA SOLUTIONS Home" class="flex items-center gap-3 group cursor-pointer" href="/">
-      <img alt="PTA Solutions Clinic Logo" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XgyGppC3hcdWVzSjVL9h7OFQHlGaldF9klrqUdMu_oWv-qK5jnnEeQjxV0QdJAAyQ-ABtXDCQVHlHI6ddFXx-KlTKw6GU7unyTljCvJofjA6bThJGFo2INtgHRHOohzxpDKBdvl-UFrOzLUnzpTzQmBK-HGCzmGOBn8OhiwsuelwoeZyFsP8pVZf3OceneG_PmhtQIonN524c3FQF7l0usrOEdm9S3jj427oEddMhcHJjsECYPsJh3p2I">
+    <a href="/" class="cursor-pointer flex items-center gap-3">
+      <img src="https://lh3.googleusercontent.com/aida/AEtjO1XgyGppC3hcdWVzSjVL9h7OFQHlGaldF9klrqUdMu_oWv-qK5jnnEeQjxV0QdJAAyQ-ABtXDCQVHlHI6ddFXx-KlTKw6GU7unyTljCvJofjA6bThJGFo2INtgHRHOohzxpDKBdvl-UFrOzLUnzpTzQmBK-HGCzmGOBn8OhiwsuelwoeZyFsP8pVZf3OceneG_PmhtQIonN524c3FQF7l0usrOEdm9S3jj427oEddMhcHJjsECYPsJh3p2I" alt="PTA Solutions Clinic Logo" class="h-10 w-auto object-contain">
     </a>
-    <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[14px] font-medium text-[#526163]">
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/">Home</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/about">About</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors text-[#122326] font-semibold" href="/services">Services</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/nri-hearing-care">NRI Hearing Care</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/services/complete-care">Complete Care</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/contact">Contact</a>
+    <nav class="hidden md:flex items-center space-x-6 lg:space-x-7 text-[14px] font-medium text-[#687779]">
+        <a href="/" class="main-nav transition-colors py-1 hover:text-[#006A6A]">Home</a>
+        <a href="/about" class="main-nav transition-colors py-1 hover:text-[#006A6A]">About</a>
+        <a href="/services" class="main-nav transition-colors py-1 text-[#122326] font-semibold border-b-2 border-[#1BBCBC]">Services</a>
+        <a href="/nri-hearing-care" class="main-nav transition-colors py-1 hover:text-[#006A6A]">NRI Hearing Care</a>
+        <a href="/services/complete-care" class="main-nav transition-colors py-1 hover:text-[#006A6A]">Complete Care</a>
+        <a href="/book-appointment" class="main-nav transition-colors py-1 hover:text-[#006A6A]">Booking Hub</a>
+        <a href="/contact" class="main-nav transition-colors py-1 hover:text-[#006A6A]">Contact</a>
     </nav>
     <div class="flex items-center gap-4">
-      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#526163] hover:text-[#006A6A] transition-colors group" href="tel:+919773545058">
-        <span class="material-symbols-outlined text-[#006A6A] text-[18px] transition-transform group-hover:scale-110">call</span>
+      <a href="tel:+919773545058" class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#687779] hover:text-[#006A6A]">
+        <span class="material-symbols-outlined text-[#006A6A] text-[18px]">call</span>
         <span class="">+91 9773545058</span>
       </a>
-      <a class="group inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md" href="/book-appointment">
-        <span class="">Book Appointment</span>
-        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+      <a href="/book-appointment" class="px-5 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm">
+        Book Appointment →
       </a>
-      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#122326] hover:bg-[#F1F4F3] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#122326] hover:bg-[#F1F4F3]" id="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
       </button>
     </div>
   </div>
   <div class="hidden md:hidden border-t border-[#DCE7E6] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/">Home</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/about">About PTA Solutions</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/services">All Services Directory</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/nri-hearing-care">NRI Hearing Care Mumbai</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/services/complete-care">Complete Care Program</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/book-appointment">Book Appointment Hub</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163]" href="/contact">Contact Chembur Clinic</a>
+    <a href="/" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">Home</a>
+    <a href="/about" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">About</a>
+    <a href="/services" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">Services</a>
+    <a href="/nri-hearing-care" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">NRI Hearing Care</a>
+    <a href="/services/complete-care" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">Complete Care</a>
+    <a href="/book-appointment" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">Booking Hub</a>
+    <a href="/contact" class="block py-2 text-[15px] font-medium text-[#687779]">Contact</a>
     <div class="pt-2">
       <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#006A6A] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
         <span class="material-symbols-outlined text-[18px]">call</span>
@@ -136,131 +92,101 @@
     </div>
   </div>
 </header>
+<main class="flex-grow">
   <section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="flex items-center gap-2 text-[13px] text-[#526163] mb-4 flex-wrap">
-      <a class="hover:text-[#006A6A] cursor-pointer" href="/">Home</a>
-      <span class="">/</span>
-      <a class="hover:text-[#006A6A] cursor-pointer" href="/services">Services</a>
-      <span class="">/</span>
-      <span class="text-[#122326] font-semibold">Speech Therapy</span>
-      </div>
-      <h1 class="text-[36px] lg:text-[46px] font-display font-extrabold text-[#122326]">Speech Therapy</h1>
+      <p class="text-[12px] text-[#687779] mb-3"><a href="/" class="cursor-pointer hover:underline">Home</a> / <a href="/services" class="cursor-pointer hover:underline">Services</a> / Speech Therapy</p>
+      <div class="flex items-center gap-2 mb-2">
+          <span class="px-3 py-1 bg-[#1BBCBC]/20 text-[#004646] font-bold rounded-full text-[11px] uppercase tracking-wider">Rehabilitation</span>
+        </div>
+      <h1 class="text-[36px] lg:text-[48px] font-display font-extrabold text-[#122326] mt-2">Speech Therapy</h1>
       
+      <div class="flex flex-wrap gap-4 text-[13px] text-[#687779] mt-3"><span><strong>Duration:</strong> 45 Mins</span><span>•</span><span><strong>Session Fee:</strong> Personalized</span><span>•</span><span><strong>Location:</strong> Chembur Clinic or Doorstep</span></div>
     </div>
   </section>
 
 <section class="py-16 bg-white border-b border-[#DCE7E6]">
-  <div class="max-w-3xl mx-auto px-6 text-center space-y-6">
-    <div class="w-16 h-16 rounded-2xl bg-[#1BBCBC]/20 text-[#006A6A] flex items-center justify-center mx-auto">
-      <span class="material-symbols-outlined text-[32px]">record_voice_over</span>
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <div class="lg:col-span-8 space-y-6">
+      <h2 class="text-[26px] font-display font-bold text-[#122326]">Specialized Speech &amp; Language Programs</h2>
+      <p class="text-[16px] text-[#687779] leading-relaxed">
+        Specialized therapy programs for pediatric articulation, language delay milestones, fluency, adult stroke rehab, and stammering recovery.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div class="p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
+          <span class="material-symbols-outlined text-[#006A6A] text-[24px]">record_voice_over</span>
+          <h4 class="font-display font-bold text-[16px] text-[#122326] mt-2">Therapy Focus</h4>
+          <p class="text-[13px] text-[#687779] mt-1">Pediatric speech delay, articulation, stammering/fluency, and adult voice/stroke rehab.</p>
+        </div>
+        <div class="p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
+          <span class="material-symbols-outlined text-[#006A6A] text-[24px]">groups</span>
+          <h4 class="font-display font-bold text-[16px] text-[#122326] mt-2">One-on-One Sessions</h4>
+          <p class="text-[13px] text-[#687779] mt-1">Individualized plans led by certified speech-language professionals.</p>
+        </div>
+      </div>
     </div>
-    <p class="text-[16px] text-[#3C4949]">Book your Speech Therapy appointment with PTA Solutions Hearing and Speech Care Clinics.</p>
-    <div>
-      <a class="group h-12 px-7 inline-flex items-center justify-center gap-2 bg-[#1BBCBC] text-[#002020] font-display text-[15px] font-semibold rounded-lg hover:bg-[#006A6A] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md" href="/booking/speech-therapy">
-    <span class="">Book Speech Therapy</span><span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:translate-x-1">calendar_month</span>
-  </a>
+    <div class="lg:col-span-4 bg-[#F7FAF9] p-8 rounded-2xl border-2 border-[#1BBCBC] space-y-6">
+      <div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">Session Fee</span>
+        <p class="text-[28px] font-display font-bold text-[#122326] mt-1">Personalized</p>
+        <p class="text-[12px] text-[#687779] mt-1">Duration: 45 Mins • Chembur Clinic or Doorstep</p>
+      </div>
+      <a href="/booking/speech-therapy" class="block text-center w-full py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md">
+        Book Speech Therapy
+      </a>
     </div>
   </div>
 </section>
-<footer class="w-full bg-[#122326] text-gray-300">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
-      <div class="space-y-4">
-        <div class="bg-white p-2 rounded-lg inline-block">
-          <img alt="PTA Solutions Clinic Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XgyGppC3hcdWVzSjVL9h7OFQHlGaldF9klrqUdMu_oWv-qK5jnnEeQjxV0QdJAAyQ-ABtXDCQVHlHI6ddFXx-KlTKw6GU7unyTljCvJofjA6bThJGFo2INtgHRHOohzxpDKBdvl-UFrOzLUnzpTzQmBK-HGCzmGOBn8OhiwsuelwoeZyFsP8pVZf3OceneG_PmhtQIonN524c3FQF7l0usrOEdm9S3jj427oEddMhcHJjsECYPsJh3p2I">
-        </div>
-        <p class="text-[13px] text-gray-400 leading-relaxed">
-          PTA SOLUTIONS Hearing &amp; Speech Care Clinics. Leading audiology and speech pathology practice in Chembur, Mumbai.
-        </p>
-        <p class="text-[12px] text-gray-400"><span class="text-white font-medium">Lead Clinician:</span> Dr. Johnsavio Fernandes</p>
-      </div>
-      <div class="space-y-3">
-        <p class="font-display font-bold text-white text-[15px]">Explore</p>
-        <ul class="space-y-2 text-[13px] text-gray-400">
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/about">About</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services">Services</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/nri-hearing-care">NRI Hearing Care</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/nri-hearing-care">Care Plans</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/book-appointment">Book Appointment</a></li>
-        </ul>
-      </div>
-      <div class="space-y-3">
-        <p class="font-display font-bold text-white text-[15px]">Services</p>
-        <ul class="space-y-2 text-[13px] text-gray-400">
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/hearing-tests">Hearing Tests</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/hearing-aids">Hearing Aids</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/speech-therapy">Speech Therapy</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/newborn-screening">Newborn Screening</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/complete-care">Complete Care</a></li>
-        </ul>
-      </div>
-      <div class="space-y-3">
-        <p class="font-display font-bold text-white text-[15px]">Chembur Clinic</p>
-        <p class="text-[13px] text-gray-400 leading-relaxed">
-          Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Opp CROMA, Chembur, Mumbai - 400074
-        </p>
-        <p class="text-[13px] pt-1">Tel: <a class="text-[#1BBCBC] font-medium hover:underline" href="tel:+919773545058">+91 9773545058</a></p>
-      </div>
+</main>
+<footer class="bg-[#122326] text-white border-t border-gray-800">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="space-y-4">
+      <h4 class="font-display font-bold text-[18px] text-white tracking-wider">PTA SOLUTIONS</h4>
+      <p class="text-[13px] text-gray-400">Hearing and Speech Care Clinics. Leading audiology and speech pathology practice in Chembur, Mumbai.</p>
+      <p class="text-[12px] text-gray-500">Lead Clinician: Dr. Johnsavio Fernandes</p>
     </div>
-    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-[12px] text-gray-500">
-      <p class="">© 2026 PTA Solutions. All rights reserved.</p>
-      <div class="flex flex-wrap gap-4">
-        <span class="">Clinical Governance</span>
-        <span class="">•</span>
-        <span class="">Audiology Protocols</span>
-        <span class="">•</span>
-        <span class="">NRI Patient Desk</span>
-        <span class="">•</span>
-        <span class="">Privacy Policy</span>
-      </div>
+    <div class="space-y-3">
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#1BBCBC]">Explore</h5>
+      <ul class="space-y-2 text-[13px] text-gray-400">
+        <li><a href="/about" class="hover:text-white">About Clinic</a></li>
+        <li><a href="/services" class="hover:text-white">Services Directory</a></li>
+        <li><a href="/nri-hearing-care" class="hover:text-white">NRI Hearing Care</a></li>
+        <li><a href="/services/complete-care" class="hover:text-white">Complete Care Suite</a></li>
+        <li><a href="/book-appointment" class="hover:text-white">Book Appointment Hub</a></li>
+        <li><a href="/contact" class="hover:text-white">Contact Us</a></li>
+      </ul>
     </div>
+    <div class="space-y-3">
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#1BBCBC]">Clinical Services</h5>
+      <ul class="space-y-2 text-[13px] text-gray-400">
+        <li><a href="/services/hearing-tests" class="hover:text-white">Hearing Tests</a></li>
+        <li><a href="/services/hearing-aids" class="hover:text-white">Hearing Aids</a></li>
+        <li><a href="/services/speech-therapy" class="hover:text-white">Speech Therapy</a></li>
+        <li><a href="/services/newborn-screening" class="hover:text-white">Newborn Screening</a></li>
+        <li><a href="/services/basic-consultation" class="hover:text-white">Basic Consultation</a></li>
+        <li><a href="/services/premium-nri-care" class="hover:text-white">Premium NRI Care</a></li>
+      </ul>
+    </div>
+    <div class="space-y-3">
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#1BBCBC]">Contact</h5>
+      <p class="text-[13px] text-gray-400">Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Opp CROMA, Chembur, Mumbai - 400074</p>
+      <p class="text-[13px] text-gray-400">Tel: <a href="tel:+919773545058" class="text-white hover:text-[#1BBCBC]">+91 9773545058</a></p>
+      <p class="text-[13px] text-gray-400">Email: <a href="mailto:ptasolutionshsc@gmail.com" class="text-white hover:text-[#1BBCBC]">ptasolutionshsc@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="border-t border-gray-800/80 py-6 text-center text-[12px] text-gray-500">
+    © 2026 PTA Solutions. All rights reserved.
   </div>
 </footer>
 
-<div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#DCE7E6] p-3 px-6 flex items-center justify-between shadow-2xl">
+<div id="booking-toast" class="fixed bottom-6 right-6 bg-[#122326] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-gray-700 hidden z-50 items-center gap-3">
+  <span class="material-symbols-outlined text-[#1BBCBC]">check_circle</span>
   <div>
-    <p class="text-[12px] font-bold text-[#122326]">PTA Solutions Chembur</p>
-    <p class="text-[11px] text-[#006A6A]">Doorstep &amp; Clinic Care</p>
+    <p class="font-display font-bold text-[13px]" id="toast-title">Appointment Confirmed</p>
+    <p class="text-[12px] text-gray-300" id="toast-desc">Our clinic desk will contact you shortly.</p>
   </div>
-  <a class="px-4 py-2 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[13px] rounded-lg shadow-sm active:scale-95 transition-all" href="/book-appointment">
-    Book Appointment
-  </a>
-</div>
-<div class="fixed bottom-6 right-6 z-40 hidden md:block">
-  <a aria-label="Chat directly on WhatsApp" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all font-display font-semibold text-[13px] group" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
-    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
-    <span class="hidden sm:inline">WhatsApp Care Desk</span>
-    <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-  </a>
 </div>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      revealElements.forEach(el => observer.observe(el));
-    } else {
-      revealElements.forEach(el => el.classList.add('is-visible'));
-    }
-
-    const header = document.getElementById('main-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 25) {
-        header.classList.add('header-scrolled');
-      } else {
-        header.classList.remove('header-scrolled');
-      }
-    });
-  });
-
   function toggleMobileMenu() {
     const dd = document.getElementById('mobile-menu-dropdown');
     const icon = document.getElementById('menu-icon');
@@ -268,13 +194,33 @@
     icon.innerText = dd.classList.contains('hidden') ? 'menu' : 'close';
   }
 
-  function handleFormSubmit(e, feedbackId) {
+  function showToast(title, desc) {
+    const toast = document.getElementById('booking-toast');
+    document.getElementById('toast-title').textContent = title;
+    document.getElementById('toast-desc').textContent = desc;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => { toast.classList.add('hidden'); toast.classList.remove('flex'); }, 4000);
+  }
+
+  function handleBooking(e, serviceName) {
     e.preventDefault();
-    document.getElementById(feedbackId).classList.remove('hidden');
+    showToast('Booking Request Received: ' + serviceName, "Dr. Johnsavio Fernandes' desk has received your request.");
     e.target.reset();
-    setTimeout(() => {
-      document.getElementById(feedbackId).classList.add('hidden');
-    }, 5000);
+  }
+
+  function handleContact(e) {
+    e.preventDefault();
+    showToast('Message Sent', 'Thank you. The Chembur clinic team will call or email you shortly.');
+    e.target.reset();
+  }
+
+  function handleContactPageForm(e) {
+    e.preventDefault();
+    const msg = document.getElementById('contact-page-success');
+    if (msg) msg.classList.remove('hidden');
+    showToast('Thanks for submitting!', 'Our Chembur clinic team will call or email you shortly.');
+    e.target.reset();
   }
 </script>
 </body></html>

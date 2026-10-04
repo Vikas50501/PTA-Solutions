@@ -1,13 +1,16 @@
-<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
+const LOGO = "https://lh3.googleusercontent.com/aida/AEtjO1XgyGppC3hcdWVzSjVL9h7OFQHlGaldF9klrqUdMu_oWv-qK5jnnEeQjxV0QdJAAyQ-ABtXDCQVHlHI6ddFXx-KlTKw6GU7unyTljCvJofjA6bThJGFo2INtgHRHOohzxpDKBdvl-UFrOzLUnzpTzQmBK-HGCzmGOBn8OhiwsuelwoeZyFsP8pVZf3OceneG_PmhtQIonN524c3FQF7l0usrOEdm9S3jj427oEddMhcHJjsECYPsJh3p2I";
+
+function head(title, description) {
+  return `<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basic Consultation Booking | PTA Solutions</title>
-  <meta name="description" content="Schedule your Basic Consultation with PTA Solutions Hearing and Speech Care Clinics, Chembur, Mumbai. Duration 1 hr, ₹10,000 to ₹20,000.">
+  <title>${title}</title>
+  <meta name="description" content="${description}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"><\/script>
   <script>
     tailwind.config = {
       theme: {
@@ -29,7 +32,7 @@
         }
       }
     };
-  </script>
+  <\/script>
   <style>
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -49,19 +52,39 @@
   </style>
 </head>
 <body class="bg-[#F7FAF9] text-[#182426] font-body antialiased selection:bg-[#1BBCBC] selection:text-[#002020] flex flex-col min-h-screen">
-<header class="w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] sticky z-40 top-0">
+`;
+}
+
+const NAV_ITEMS = [
+  { key: 'home', label: 'Home', href: '/' },
+  { key: 'about', label: 'About', href: '/about' },
+  { key: 'services', label: 'Services', href: '/services' },
+  { key: 'nri', label: 'NRI Hearing Care', href: '/nri-hearing-care' },
+  { key: 'complete-care', label: 'Complete Care', href: '/services/complete-care' },
+  { key: 'book-appointment', label: 'Booking Hub', href: '/book-appointment' },
+  { key: 'contact', label: 'Contact', href: '/contact' },
+];
+
+function header(active) {
+  const navHtml = NAV_ITEMS.map(it => {
+    const activeClass = it.key === active
+      ? 'text-[#122326] font-semibold border-b-2 border-[#1BBCBC]'
+      : 'hover:text-[#006A6A]';
+    return `        <a href="${it.href}" class="main-nav transition-colors py-1 ${activeClass}">${it.label}</a>`;
+  }).join('\n');
+
+  const mobileItems = NAV_ITEMS.map((it, i) => {
+    const border = i < NAV_ITEMS.length - 1 ? ' border-b border-[#F1F4F3]' : '';
+    return `    <a href="${it.href}" class="block py-2 text-[15px] font-medium text-[#687779]${border}">${it.label}</a>`;
+  }).join('\n');
+
+  return `<header class="w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] sticky z-40 top-0">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-20">
     <a href="/" class="cursor-pointer flex items-center gap-3">
-      <img src="https://lh3.googleusercontent.com/aida/AEtjO1XgyGppC3hcdWVzSjVL9h7OFQHlGaldF9klrqUdMu_oWv-qK5jnnEeQjxV0QdJAAyQ-ABtXDCQVHlHI6ddFXx-KlTKw6GU7unyTljCvJofjA6bThJGFo2INtgHRHOohzxpDKBdvl-UFrOzLUnzpTzQmBK-HGCzmGOBn8OhiwsuelwoeZyFsP8pVZf3OceneG_PmhtQIonN524c3FQF7l0usrOEdm9S3jj427oEddMhcHJjsECYPsJh3p2I" alt="PTA Solutions Clinic Logo" class="h-10 w-auto object-contain">
+      <img src="${LOGO}" alt="PTA Solutions Clinic Logo" class="h-10 w-auto object-contain">
     </a>
     <nav class="hidden md:flex items-center space-x-6 lg:space-x-7 text-[14px] font-medium text-[#687779]">
-        <a href="/" class="main-nav transition-colors py-1 hover:text-[#006A6A]">Home</a>
-        <a href="/about" class="main-nav transition-colors py-1 hover:text-[#006A6A]">About</a>
-        <a href="/services" class="main-nav transition-colors py-1 text-[#122326] font-semibold border-b-2 border-[#1BBCBC]">Services</a>
-        <a href="/nri-hearing-care" class="main-nav transition-colors py-1 hover:text-[#006A6A]">NRI Hearing Care</a>
-        <a href="/services/complete-care" class="main-nav transition-colors py-1 hover:text-[#006A6A]">Complete Care</a>
-        <a href="/book-appointment" class="main-nav transition-colors py-1 hover:text-[#006A6A]">Booking Hub</a>
-        <a href="/contact" class="main-nav transition-colors py-1 hover:text-[#006A6A]">Contact</a>
+${navHtml}
     </nav>
     <div class="flex items-center gap-4">
       <a href="tel:+919773545058" class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#687779] hover:text-[#006A6A]">
@@ -77,13 +100,7 @@
     </div>
   </div>
   <div class="hidden md:hidden border-t border-[#DCE7E6] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
-    <a href="/" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">Home</a>
-    <a href="/about" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">About</a>
-    <a href="/services" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">Services</a>
-    <a href="/nri-hearing-care" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">NRI Hearing Care</a>
-    <a href="/services/complete-care" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">Complete Care</a>
-    <a href="/book-appointment" class="block py-2 text-[15px] font-medium text-[#687779] border-b border-[#F1F4F3]">Booking Hub</a>
-    <a href="/contact" class="block py-2 text-[15px] font-medium text-[#687779]">Contact</a>
+${mobileItems}
     <div class="pt-2">
       <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#006A6A] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
         <span class="material-symbols-outlined text-[18px]">call</span>
@@ -92,68 +109,34 @@
     </div>
   </div>
 </header>
-<main class="flex-grow">
+`;
+}
 
-<div class="max-w-4xl mx-auto px-6 py-12">
-  <p class="text-[12px] text-[#687779] mb-3"><a href="/" class="cursor-pointer hover:underline">Home</a> / <a href="/book-appointment" class="cursor-pointer hover:underline">Book Appointment</a> / Basic Consultation</p>
-  <span class="px-3 py-1 bg-[#1BBCBC]/20 text-[#004646] font-bold rounded-full text-[11px] uppercase tracking-wider">Service: Basic Consultation</span>
-  <h1 class="text-[34px] font-display font-extrabold text-[#122326] mt-2">Basic Consultation</h1>
-  <div class="mt-8 bg-white p-8 rounded-2xl border border-[#DCE7E6] shadow-sm space-y-6">
-    <div class="flex flex-wrap items-center justify-between gap-4">
-      <div>
-        <h2 class="text-[22px] font-display font-bold text-[#122326]">Schedule your service</h2>
-        <p class="text-[14px] text-[#687779] mt-1">Check out our availability and book the date and time that works for you.</p>
-      </div>
-      <div class="bg-[#F7FAF9] px-4 py-2 rounded-xl border border-[#DCE7E6] text-right">
-        <span class="text-[11px] font-bold uppercase text-[#687779]">Duration &amp; Price</span>
-        <p class="font-display font-bold text-[16px] text-[#006A6A]">1 hr • ₹10,000 to ₹20,000</p>
-      </div>
+// Breadcrumb + title band, same editorial pattern used across every inner page
+function pageHero({ crumbs, badges, title, subtitle, meta, bg = '#F7FAF9' }) {
+  const crumbHtml = crumbs.map((c, i) => {
+    if (i === crumbs.length - 1) return c.label;
+    return `<a href="${c.href}" class="cursor-pointer hover:underline">${c.label}</a> / `;
+  }).join('');
+
+  const badgeHtml = badges ? `<div class="flex items-center gap-2 mb-2">
+          ${badges.map(b => `<span class="px-3 py-1 ${b.solid ? 'bg-[#1BBCBC] text-[#002020]' : 'bg-[#1BBCBC]/20 text-[#004646]'} font-bold rounded-full text-[11px] uppercase tracking-wider">${b.label}</span>`).join('\n          ')}
+        </div>` : '';
+
+  return `  <section class="py-12 bg-[${bg}] border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <p class="text-[12px] text-[#687779] mb-3">${crumbHtml}</p>
+      ${badgeHtml}
+      <h1 class="text-[36px] lg:text-[48px] font-display font-extrabold text-[#122326] mt-2">${title}</h1>
+      ${subtitle ? `<p class="text-[16px] text-[#687779] max-w-2xl mt-2">${subtitle}</p>` : ''}
+      ${meta ? `<div class="flex flex-wrap gap-4 text-[13px] text-[#687779] mt-3">${meta}</div>` : ''}
     </div>
-    <form onsubmit="handleBooking(event, 'Basic Consultation')" class="space-y-4 pt-2">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-[11px] font-bold uppercase tracking-wider text-[#687779] mb-1">Location Preference</label>
-          <select class="w-full h-11 px-3 bg-[#F7FAF9] border border-[#DCE7E6] rounded-lg text-[14px]">
-            <option>Clinic (Chembur)</option>
-            <option>Home Visit</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-[11px] font-bold uppercase tracking-wider text-[#687779] mb-1">Preferred Date</label>
-          <input type="date" required class="w-full h-11 px-3 bg-[#F7FAF9] border border-[#DCE7E6] rounded-lg text-[14px]">
-        </div>
-        <div>
-          <label class="block text-[11px] font-bold uppercase tracking-wider text-[#687779] mb-1">Time Slot Window</label>
-          <select class="w-full h-11 px-3 bg-[#F7FAF9] border border-[#DCE7E6] rounded-lg text-[14px]">
-            <option>10:00 AM – 11:30 AM</option>
-            <option>12:00 PM – 01:30 PM</option>
-            <option>04:00 PM – 05:30 PM</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-[11px] font-bold uppercase tracking-wider text-[#687779] mb-1">Patient Full Name *</label>
-          <input type="text" required placeholder="e.g. Arvind Mehta" class="w-full h-11 px-3 bg-[#F7FAF9] border border-[#DCE7E6] rounded-lg text-[14px]">
-        </div>
-        <div>
-          <label class="block text-[11px] font-bold uppercase tracking-wider text-[#687779] mb-1">Contact Phone / WhatsApp *</label>
-          <input type="tel" required placeholder="+91 97735 45058" class="w-full h-11 px-3 bg-[#F7FAF9] border border-[#DCE7E6] rounded-lg text-[14px]">
-        </div>
-        <div>
-          <label class="block text-[11px] font-bold uppercase tracking-wider text-[#687779] mb-1">Primary Hearing Concern</label>
-          <input type="text" placeholder="e.g. Muffled speech on television" class="w-full h-11 px-3 bg-[#F7FAF9] border border-[#DCE7E6] rounded-lg text-[14px]">
-        </div>
-      </div>
-      <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#DCE7E6]">
-        <div class="text-[13px] text-[#687779]">Need help? Call clinic desk: <a href="tel:+919773545058" class="text-[#006A6A] font-bold">+91 9773545058</a></div>
-        <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md">
-          Confirm Basic Consultation Booking
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-</main>
-<footer class="bg-[#122326] text-white border-t border-gray-800">
+  </section>
+`;
+}
+
+function footer() {
+  return `<footer class="bg-[#122326] text-white border-t border-gray-800">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
     <div class="space-y-4">
       <h4 class="font-display font-bold text-[18px] text-white tracking-wider">PTA SOLUTIONS</h4>
@@ -201,7 +184,11 @@
     <p class="text-[12px] text-gray-300" id="toast-desc">Our clinic desk will contact you shortly.</p>
   </div>
 </div>
-<script>
+`;
+}
+
+function scripts() {
+  return `<script>
   function toggleMobileMenu() {
     const dd = document.getElementById('mobile-menu-dropdown');
     const icon = document.getElementById('menu-icon');
@@ -237,5 +224,12 @@
     showToast('Thanks for submitting!', 'Our Chembur clinic team will call or email you shortly.');
     e.target.reset();
   }
-</script>
-</body></html>
+<\/script>
+</body></html>`;
+}
+
+function page({ title, description, active, hero, body }) {
+  return head(title, description) + header(active) + '<main class="flex-grow">\n' + (hero || '') + body + '</main>\n' + footer() + scripts();
+}
+
+module.exports = { LOGO, head, header, footer, scripts, page, pageHero, NAV_ITEMS };
