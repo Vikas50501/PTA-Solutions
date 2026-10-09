@@ -1,14 +1,19 @@
-const { pageHero } = require('../partials/layout.js');
+const { pageHero, imagePlaceholder, breadcrumbSchema } = require('../partials/layout.js');
+
+const PATH = '/about';
+const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'About' }];
 
 module.exports = {
-  title: 'About PTA Solutions | Hearing & Speech Care Clinics, Mumbai',
+  title: 'About PTA Solutions | Hearing & Speech Care Clinics, Chembur, Mumbai',
   description: 'Your trusted partner in hearing and speech wellness, led by Dr. Johnsavio Fernandes at PTA Solutions, Chembur, Mumbai.',
   active: 'about',
   hero: pageHero({
-    crumbs: [{ label: 'Home', href: '/' }, { label: 'About' }],
+    crumbs: CRUMBS,
     badges: [{ label: 'ABOUT PTA SOLUTIONS' }],
     title: 'Your Trusted Partner in Hearing and Speech Wellness',
   }),
+  path: PATH,
+  extraSchema: [breadcrumbSchema(CRUMBS, PATH)],
   body: `
 <section class="py-16 bg-white border-b border-[#DCE7E6]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -43,15 +48,18 @@ module.exports = {
         </a>
       </div>
     </div>
-    <div class="lg:col-span-5 bg-[#F7FAF9] p-8 rounded-2xl border border-[#DCE7E6] space-y-6">
-      <span class="text-[11px] font-bold uppercase tracking-widest text-[#1E3E83]">Our Mission</span>
-      <blockquote class="text-[20px] font-display font-semibold text-[#0F1E3E] italic leading-relaxed">
-        "Our mission is simple — to help you reconnect with the world through <span class="text-[#1E3E83] not-italic font-bold">better hearing</span> and <span class="text-[#1E3E83] not-italic font-bold">clearer communication</span> improving your quality of life."
-      </blockquote>
-      <div class="pt-4 border-t border-[#DCE7E6]">
-        <p class="font-display font-bold text-[16px] text-[#0F1E3E]">Dr. Johnsavio Fernandes</p>
-        <p class="text-[13px] text-[#687779]">Lead Audiologist &amp; Speech Pathologist</p>
-        <p class="text-[12px] text-[#687779] mt-1">Shanmukhapriya HealthCare Center, Chembur, Mumbai</p>
+    <div class="lg:col-span-5 space-y-6">
+      ${imagePlaceholder({ icon: 'medical_services', label: 'Dr. Johnsavio Fernandes', caption: 'Lead Audiologist & Speech Pathologist' })}
+      <div class="bg-[#F7FAF9] p-8 rounded-2xl border border-[#DCE7E6] space-y-6">
+        <span class="text-[11px] font-bold uppercase tracking-widest text-[#1E3E83]">Our Mission</span>
+        <blockquote class="text-[20px] font-display font-semibold text-[#0F1E3E] italic leading-relaxed">
+          "Our mission is simple — to help you reconnect with the world through <span class="text-[#1E3E83] not-italic font-bold">better hearing</span> and <span class="text-[#1E3E83] not-italic font-bold">clearer communication</span> improving your quality of life."
+        </blockquote>
+        <div class="pt-4 border-t border-[#DCE7E6]">
+          <p class="font-display font-bold text-[16px] text-[#0F1E3E]">Dr. Johnsavio Fernandes</p>
+          <p class="text-[13px] text-[#687779]">Lead Audiologist &amp; Speech Pathologist</p>
+          <p class="text-[12px] text-[#687779] mt-1">Shanmukhapriya HealthCare Center, Chembur, Mumbai</p>
+        </div>
       </div>
     </div>
   </div>

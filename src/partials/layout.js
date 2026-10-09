@@ -1,15 +1,115 @@
 const LOGO = "/assets/logo.png";
+const SITE_URL = "https://ptasolutions.vercel.app";
+const SITE_NAME = "PTA Solutions Hearing and Speech Care Clinics";
 
-function head(title, description) {
+function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": SITE_NAME,
+    "alternateName": "PTA Solutions",
+    "image": `${SITE_URL}${LOGO}`,
+    "logo": `${SITE_URL}${LOGO}`,
+    "url": SITE_URL,
+    "telephone": "+91-9773545058",
+    "email": "ptasolutionshsc@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Above Surya Hospital, Next to R.K.Studio, Opp CROMA",
+      "addressLocality": "Chembur, Mumbai",
+      "addressRegion": "Maharashtra",
+      "postalCode": "400074",
+      "addressCountry": "IN"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Dr. Johnsavio Fernandes"
+    }
+  };
+}
+
+function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": SITE_NAME,
+    "url": SITE_URL
+  };
+}
+
+function breadcrumbSchema(crumbs, path) {
+  const items = crumbs.map((c, i) => {
+    const isLast = i === crumbs.length - 1;
+    const url = isLast ? `${SITE_URL}${path}` : `${SITE_URL}${c.href === '/' ? '' : c.href}`;
+    return { "@type": "ListItem", "position": i + 1, "name": c.label, "item": url };
+  });
+  return { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items };
+}
+
+function serviceSchema({ name, description, priceMin, priceMax, price, path }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": name,
+    "name": `${name} | ${SITE_NAME}`,
+    "description": description,
+    "provider": { "@type": "MedicalBusiness", "name": SITE_NAME, "url": SITE_URL },
+    "areaServed": { "@type": "City", "name": "Mumbai" },
+    "url": `${SITE_URL}${path}`
+  };
+  if (price) {
+    schema.offers = { "@type": "Offer", "priceCurrency": "INR", "price": String(price) };
+  } else if (priceMin && priceMax) {
+    schema.offers = {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "priceSpecification": { "@type": "PriceSpecification", "minPrice": String(priceMin), "maxPrice": String(priceMax), "priceCurrency": "INR" }
+    };
+  }
+  return schema;
+}
+
+function faqSchema(faqs) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.aPlain || f.a }
+    }))
+  };
+}
+
+function jsonLd(obj) {
+  return `<script type="application/ld+json">${JSON.stringify(obj)}<\/script>`;
+}
+
+function head({ title, description, path = '/', ogImage, extraSchema = [] }) {
+  const canonical = `${SITE_URL}${path === '/' ? '' : path}`;
+  const image = ogImage || `${SITE_URL}${LOGO}`;
+  const schemas = [organizationSchema(), websiteSchema(), ...extraSchema].map(jsonLd).join('\n  ');
   return `<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
   <meta name="description" content="${description}">
+  <link rel="canonical" href="${canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="${SITE_NAME}">
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${description}">
+  <meta property="og:url" content="${canonical}">
+  <meta property="og:image" content="${image}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${title}">
+  <meta name="twitter:description" content="${description}">
+  <meta name="twitter:image" content="${image}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" rel="stylesheet">
+  ${schemas}
   <script src="https://cdn.tailwindcss.com?plugins=forms"><\/script>
   <script>
     tailwind.config = {
@@ -39,6 +139,10 @@ function head(title, description) {
       display: inline-block;
       vertical-align: middle;
     }
+    .faq-chevron { transition: transform 0.25s ease; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 320px; }
   </style>
 </head>
 <body class="bg-[#F7FAF9] text-[#182426] font-body antialiased selection:bg-[#4FC3D9] selection:text-[#0F1E3E] flex flex-col min-h-screen">
@@ -214,12 +318,105 @@ function scripts() {
     showToast('Thanks for submitting!', 'Our Chembur clinic team will call or email you shortly.');
     e.target.reset();
   }
+
+  function toggleFaq(el) {
+    const isOpen = el.classList.contains('open');
+    el.closest('.faq-list').querySelectorAll('.faq-item').forEach(item => item.classList.remove('open'));
+    if (!isOpen) el.classList.add('open');
+  }
 <\/script>
 </body></html>`;
 }
 
-function page({ title, description, active, hero, body }) {
-  return head(title, description) + header(active) + '<main class="flex-grow">\n' + (hero || '') + body + '</main>\n' + footer() + scripts();
+function page({ title, description, active, hero, body, path = '/', ogImage, extraSchema = [] }) {
+  return head({ title, description, path, ogImage, extraSchema }) + header(active) + '<main class="flex-grow">\n' + (hero || '') + body + '</main>\n' + footer() + scripts();
 }
 
-module.exports = { LOGO, head, header, footer, scripts, page, pageHero, NAV_ITEMS };
+// A bordered visual panel standing in for a real photo (same aspect/shape a photo would use).
+// Marked with an HTML comment so it's easy to find and swap for real photography later.
+function imagePlaceholder({ icon, label, caption, aspect = 'aspect-[4/3]' }) {
+  return `<!-- IMAGE PLACEHOLDER: replace with a real photo (${label}) -->
+        <div class="relative bg-white p-3 border border-[#DCE7E6] rounded-2xl shadow-md">
+          <div class="${aspect} rounded-xl bg-gradient-to-br from-[#F7FAF9] to-[#E6F6FA] border border-[#DCE7E6] flex flex-col items-center justify-center gap-3 text-center p-6">
+            <div class="w-16 h-16 rounded-full bg-white border border-[#DCE7E6] flex items-center justify-center text-[#1E3E83] shadow-sm">
+              <span class="material-symbols-outlined text-[32px]">${icon}</span>
+            </div>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#0F1E3E]">${label}</p>
+              ${caption ? `<p class="text-[12px] text-[#687779] mt-1">${caption}</p>` : ''}
+            </div>
+          </div>
+        </div>`;
+}
+
+function sectionHeading({ eyebrow, title, subtitle, align = 'left' }) {
+  const alignClass = align === 'center' ? 'text-center mx-auto' : '';
+  return `    <div class="max-w-2xl ${alignClass} space-y-3">
+      <div class="inline-flex items-center gap-2 ${align === 'center' ? 'justify-center' : ''}">
+        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#687779]">${eyebrow}</span>
+        ${align === 'center' ? `<span class="w-5 h-[2px] bg-[#4FC3D9]"></span>` : ''}
+      </div>
+      <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0F1E3E] leading-tight">${title}</h2>
+      ${subtitle ? `<p class="text-[15px] text-[#687779] leading-relaxed">${subtitle}</p>` : ''}
+    </div>`;
+}
+
+function benefitGrid(items) {
+  return `    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+${items.map(it => `      <div class="p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
+        <span class="material-symbols-outlined text-[#1E3E83] text-[24px]">${it.icon}</span>
+        <h4 class="font-display font-bold text-[16px] text-[#0F1E3E] mt-2">${it.title}</h4>
+        <p class="text-[13px] text-[#687779] mt-1">${it.desc}</p>
+      </div>`).join('\n')}
+    </div>`;
+}
+
+function processSteps(steps) {
+  return `    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+${steps.map((s, i) => `      <div class="bg-white p-6 rounded-2xl border border-[#DCE7E6] space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-[22px] font-mono font-extrabold ${i === 0 ? 'text-[#1E3E83]' : 'text-[#687779]'}">0${i + 1}</span>
+          <div class="w-9 h-9 rounded-lg ${i === 0 ? 'bg-[#4FC3D9] text-[#0F1E3E]' : 'bg-[#F1F4F3] text-[#687779]'} flex items-center justify-center">
+            <span class="material-symbols-outlined text-[20px]">${s.icon}</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">${s.title}</h4>
+          <p class="text-[12.5px] text-[#687779] mt-1.5 leading-relaxed">${s.desc}</p>
+        </div>
+      </div>`).join('\n')}
+    </div>`;
+}
+
+function faqAccordion(faqs) {
+  return `    <div class="faq-list space-y-3 max-w-3xl mx-auto">
+${faqs.map((f, i) => `      <div class="faq-item border border-[#DCE7E6] rounded-xl bg-white overflow-hidden${i === 0 ? ' open' : ''}">
+        <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
+          <span class="font-display font-semibold text-[15px] text-[#0F1E3E]">${f.q}</span>
+          <span class="material-symbols-outlined faq-chevron text-[#1E3E83] text-[22px] shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-[14px] text-[#687779] leading-relaxed pb-5">${f.a}</p>
+        </div>
+      </div>`).join('\n')}
+    </div>`;
+}
+
+function relatedServices(items) {
+  return `    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+${items.map(it => `      <a href="${it.href}" class="block p-5 bg-white rounded-xl border border-[#DCE7E6] hover:border-[#4FC3D9] transition-all group">
+        <div class="w-10 h-10 rounded-lg bg-[#4FC3D9]/20 text-[#1E3E83] flex items-center justify-center mb-3">
+          <span class="material-symbols-outlined text-[20px]">${it.icon}</span>
+        </div>
+        <h4 class="font-display font-bold text-[15px] text-[#0F1E3E] group-hover:text-[#1E3E83]">${it.title}</h4>
+        <p class="text-[12.5px] text-[#687779] mt-1">${it.desc}</p>
+      </a>`).join('\n')}
+    </div>`;
+}
+
+module.exports = {
+  LOGO, SITE_URL, SITE_NAME, head, header, footer, scripts, page, pageHero, NAV_ITEMS,
+  breadcrumbSchema, serviceSchema, faqSchema, jsonLd,
+  imagePlaceholder, sectionHeading, benefitGrid, processSteps, faqAccordion, relatedServices,
+};

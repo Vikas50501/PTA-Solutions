@@ -1,15 +1,20 @@
-const { pageHero } = require('../../partials/layout.js');
+const { pageHero, breadcrumbSchema } = require('../../partials/layout.js');
+
+const PATH = '/services';
+const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Services' }];
 
 module.exports = {
-  title: 'Services Directory | PTA Solutions Hearing & Speech Care Clinics',
+  title: 'Hearing & Speech Services in Chembur, Mumbai | PTA Solutions',
   description: 'Explore PTA Solutions services: Hearing Tests, Hearing Aids, Speech Therapy, Newborn Screening, NRI Hearing Care, and Complete Care in Chembur, Mumbai.',
   active: 'services',
   hero: pageHero({
-    crumbs: [{ label: 'Home', href: '/' }, { label: 'Services' }],
+    crumbs: CRUMBS,
     badges: [{ label: 'Clinical Directory' }],
     title: 'Services Directory',
     subtitle: 'At PTA SOLUTIONS Hearing and Speech Care Clinics, we bring advanced hearing and speech therapy services to Mumbai — combining world-class diagnostics with genuine personal care.',
   }),
+  path: PATH,
+  extraSchema: [breadcrumbSchema(CRUMBS, PATH)],
   body: `
 <section class="py-16 bg-white border-b border-[#DCE7E6]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-6">

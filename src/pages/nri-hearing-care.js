@@ -1,15 +1,20 @@
-const { pageHero } = require('../partials/layout.js');
+const { pageHero, breadcrumbSchema } = require('../partials/layout.js');
+
+const PATH = '/nri-hearing-care';
+const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'NRI Hearing Care' }];
 
 module.exports = {
-  title: 'NRI Hearing Care | PTA Solutions Mumbai',
+  title: 'NRI Hearing Care in Mumbai | Hearing Support for Parents Abroad | PTA Solutions',
   description: "Living abroad? PTA Solutions brings complete home-based hearing care to your parents in Mumbai, with regular updates so you never have to worry from miles away.",
   active: 'nri',
   hero: pageHero({
-    crumbs: [{ label: 'Home', href: '/' }, { label: 'NRI Hearing Care' }],
+    crumbs: CRUMBS,
     badges: [{ label: 'We Only Have One Home' }, { label: 'Act Now' }],
     title: "Living Abroad? We Take Care of Your Parents' Hearing in Mumbai",
     subtitle: "Complete home-based hearing care with regular updates—so you don't have to worry from miles away.",
   }),
+  path: PATH,
+  extraSchema: [breadcrumbSchema(CRUMBS, PATH)],
   body: `
 <section class="py-16 bg-white border-b border-[#DCE7E6]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -51,7 +56,7 @@ module.exports = {
       </div>
     </div>
     <div class="lg:col-span-6 space-y-6">
-      <img src="https://lh3.googleusercontent.com/aida/AEtjO1UyvGvbDskN31EADDxLoChQsP8SjYbzTDESWn3d1H4lSrtCk5hOqn3noPWaav2E1Sje0kQYJqixek_kgg1xszLGJiZPVUcZ5_2gRgXXBZSoSW9WOFPe3UqWhTarjN5tYZAsSaeAM5AChTCAv2kEqHyFsKxK38A3Ofqh4JdXWJjJDM5lUgAz7dwR_lAmyjcDeNNDmdhx8EEXLJ2Bf6S8BAFQ2SpDOYVcJX_8in5zVanrpkayHlGL5fd_Mw" alt="Parent & family care at home in Mumbai" class="rounded-2xl border border-[#DCE7E6] shadow-md w-full">
+      <img src="https://lh3.googleusercontent.com/aida/AEtjO1UyvGvbDskN31EADDxLoChQsP8SjYbzTDESWn3d1H4lSrtCk5hOqn3noPWaav2E1Sje0kQYJqixek_kgg1xszLGJiZPVUcZ5_2gRgXXBZSoSW9WOFPe3UqWhTarjN5tYZAsSaeAM5AChTCAv2kEqHyFsKxK38A3Ofqh4JdXWJjJDM5lUgAz7dwR_lAmyjcDeNNDmdhx8EEXLJ2Bf6S8BAFQ2SpDOYVcJX_8in5zVanrpkayHlGL5fd_Mw" alt="Parent and adult daughter enjoying a clear conversation at home in Mumbai, representing PTA Solutions' NRI hearing care service" class="rounded-2xl border border-[#DCE7E6] shadow-md w-full" width="640" height="480" loading="lazy">
       <div class="p-6 bg-[#F7FAF9] rounded-2xl border border-[#DCE7E6]">
         <h3 class="font-display font-bold text-[18px] text-[#0F1E3E] mb-3">Service Options for NRI Families:</h3>
         <div class="space-y-3 text-[14px]">

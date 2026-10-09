@@ -1,15 +1,20 @@
-const { pageHero } = require('../partials/layout.js');
+const { pageHero, breadcrumbSchema } = require('../partials/layout.js');
+
+const PATH = '/contact';
+const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Contact Us' }];
 
 module.exports = {
-  title: 'Contact Us | PTA Solutions Hearing & Speech Care Clinics',
+  title: 'Contact PTA Solutions | Hearing & Speech Care Clinic, Chembur, Mumbai',
   description: 'Contact PTA Solutions Hearing and Speech Care Clinics at Shanmukhapriya HealthCare Center, Chembur, Mumbai. Call +91 9773545058 or email ptasolutionshsc@gmail.com.',
   active: 'contact',
   hero: pageHero({
-    crumbs: [{ label: 'Home', href: '/' }, { label: 'Contact Us' }],
+    crumbs: CRUMBS,
     badges: [{ label: 'Direct Clinical Desk' }, { label: 'Chembur • Mumbai' }],
     title: 'Contact Us',
     subtitle: 'We are here to assist you and your family with compassionate, world-class audiology diagnostics and speech therapy care.',
   }),
+  path: PATH,
+  extraSchema: [breadcrumbSchema(CRUMBS, PATH)],
   body: `
 <section class="py-16 bg-white border-b border-[#DCE7E6]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

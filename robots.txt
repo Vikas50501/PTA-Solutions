@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ptasolutions.vercel.app/sitemap.xml
