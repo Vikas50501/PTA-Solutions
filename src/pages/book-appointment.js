@@ -1,7 +1,14 @@
+const { imageBanner, breadcrumbSchema } = require('../partials/layout.js');
+
+const PATH = '/book-appointment';
+const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Book Appointment' }];
+
 module.exports = {
-  title: 'Book Appointment | Our Services | PTA Solutions',
+  title: 'Book an Appointment | PTA Solutions Hearing & Speech Care Clinics',
   description: 'Choose a clinical service and book your appointment with PTA Solutions Hearing and Speech Care Clinics, Chembur, Mumbai.',
   active: 'book-appointment',
+  path: PATH,
+  extraSchema: [breadcrumbSchema(CRUMBS, PATH)],
   hero: `  <section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
     <div class="max-w-4xl mx-auto px-6 text-center space-y-2">
       <span class="text-[11px] font-bold uppercase tracking-wider text-[#1E3E83]">Guided Scheduling Hub</span>
@@ -11,6 +18,7 @@ module.exports = {
   </section>
 `,
   body: `
+${imageBanner({ icon: 'calendar_month', label: 'Book Your Appointment', caption: 'Chembur clinic or doorstep visits across Mumbai' })}
 <section class="py-16 bg-white border-b border-[#DCE7E6]">
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

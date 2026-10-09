@@ -1,4 +1,4 @@
-const { pageHero, breadcrumbSchema } = require('../../partials/layout.js');
+const { pageHero, breadcrumbSchema, imageThumb, imageBanner } = require('../../partials/layout.js');
 
 const PATH = '/services';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Services' }];
@@ -16,11 +16,13 @@ module.exports = {
   path: PATH,
   extraSchema: [breadcrumbSchema(CRUMBS, PATH)],
   body: `
+${imageBanner({ icon: 'graphic_eq', label: 'PTA Solutions Clinic, Chembur', caption: 'Calibrated diagnostic suite and consultation rooms' })}
 <section class="py-16 bg-white border-b border-[#DCE7E6]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-6">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="p-8 bg-[#F7FAF9] rounded-2xl border border-[#DCE7E6] space-y-4 flex flex-col justify-between">
         <div>
+          ${imageThumb({ icon: 'hearing', label: 'Hearing Tests' })}
           <span class="font-mono text-[12px] font-bold text-[#1E3E83]">01 • AUDIOLOGY</span>
           <h3 class="text-[22px] font-display font-bold text-[#0F1E3E] mt-1">Hearing Tests</h3>
           <p class="text-[14px] text-[#687779] mt-2">Comprehensive Pure Tone Audiometry (air and bone conduction) in a calibrated ISO sound isolation booth plus tympanometry acoustic reflex testing.</p>
@@ -31,6 +33,7 @@ module.exports = {
       </div>
       <div class="p-8 bg-[#F7FAF9] rounded-2xl border border-[#DCE7E6] space-y-4 flex flex-col justify-between">
         <div>
+          ${imageThumb({ icon: 'hearing_disabled', label: 'Hearing Aids' })}
           <span class="font-mono text-[12px] font-bold text-[#1E3E83]">02 • DISPENSING</span>
           <h3 class="text-[22px] font-display font-bold text-[#0F1E3E] mt-1">Hearing Aids</h3>
           <p class="text-[14px] text-[#687779] mt-2">Authorized fitting of Swiss and Danish digital hearing instruments with probe-microphone Real-Ear Measurements (REM) and free home trials.</p>
@@ -41,6 +44,7 @@ module.exports = {
       </div>
       <div class="p-8 bg-[#F7FAF9] rounded-2xl border border-[#DCE7E6] space-y-4 flex flex-col justify-between">
         <div>
+          ${imageThumb({ icon: 'record_voice_over', label: 'Speech Therapy' })}
           <span class="font-mono text-[12px] font-bold text-[#1E3E83]">03 • REHABILITATION</span>
           <h3 class="text-[22px] font-display font-bold text-[#0F1E3E] mt-1">Speech Therapy</h3>
           <p class="text-[14px] text-[#687779] mt-2">Specialized therapy programs for pediatric articulation, language delay milestones, fluency, adult stroke rehab, and stammering recovery.</p>
@@ -51,6 +55,7 @@ module.exports = {
       </div>
       <div class="p-8 bg-[#F7FAF9] rounded-2xl border border-[#DCE7E6] space-y-4 flex flex-col justify-between">
         <div>
+          ${imageThumb({ icon: 'child_care', label: 'Newborn Screening' })}
           <span class="font-mono text-[12px] font-bold text-[#1E3E83]">04 • PEDIATRIC</span>
           <h3 class="text-[22px] font-display font-bold text-[#0F1E3E] mt-1">Newborn Screening</h3>
           <p class="text-[14px] text-[#687779] mt-2">Automated Otoacoustic Emissions (OAE) and Brainstem Evoked Response (BERA/AABR) evaluations tailored gently for infants and toddlers.</p>
@@ -61,6 +66,7 @@ module.exports = {
       </div>
       <div class="p-8 bg-[#F7FAF9] rounded-2xl border border-[#DCE7E6] space-y-4 flex flex-col justify-between">
         <div>
+          ${imageThumb({ icon: 'public', label: 'NRI Hearing Care' })}
           <span class="font-mono text-[12px] font-bold text-[#1E3E83]">05 • GLOBAL DESK</span>
           <h3 class="text-[22px] font-display font-bold text-[#0F1E3E] mt-1">NRI Hearing Care</h3>
           <p class="text-[14px] text-[#687779] mt-2">Dedicated elder care for parents residing in Mumbai with children living overseas. Includes doorstep visits and WhatsApp telemetry.</p>
@@ -71,6 +77,7 @@ module.exports = {
       </div>
       <div class="p-8 bg-[#0F1E3E] text-white rounded-2xl border border-gray-800 space-y-4 flex flex-col justify-between">
         <div>
+          ${imageThumb({ icon: 'favorite', label: 'Complete Care', dark: true })}
           <span class="font-mono text-[12px] font-bold text-[#4FC3D9]">FLAGSHIP SUITE</span>
           <h3 class="text-[22px] font-display font-bold text-white mt-1">Complete Care</h3>
           <p class="text-[14px] text-gray-300 mt-2">All-in-one audiology, home testing, real-ear verification, and tailored speech rehabilitation suite (₹75k to ₹1.5L).</p>

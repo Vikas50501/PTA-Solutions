@@ -1,4 +1,4 @@
-const { pageHero, breadcrumbSchema } = require('../partials/layout.js');
+const { pageHero, breadcrumbSchema, imageThumb, sectionHeading } = require('../partials/layout.js');
 
 const PATH = '/nri-hearing-care';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'NRI Hearing Care' }];
@@ -91,6 +91,34 @@ module.exports = {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-10">
+    ${sectionHeading({ eyebrow: 'How NRI Care Works', title: 'A Simple, Dependable Process', align: 'center' })}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-white p-5 rounded-2xl border border-[#DCE7E6]">
+        ${imageThumb({ icon: 'home', label: 'Doorstep Visit' })}
+        <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">1. Doorstep Visit</h4>
+        <p class="text-[12.5px] text-[#687779] mt-1.5">Our team visits your parents' home in Mumbai with portable diagnostic equipment.</p>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-[#DCE7E6]">
+        ${imageThumb({ icon: 'chat', label: 'WhatsApp Update' })}
+        <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">2. WhatsApp Update</h4>
+        <p class="text-[12.5px] text-[#687779] mt-1.5">You receive a summary and audiogram directly on WhatsApp, wherever you are.</p>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-[#DCE7E6]">
+        ${imageThumb({ icon: 'video_call', label: 'Tele-Consultation' })}
+        <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">3. Tele-Consultation</h4>
+        <p class="text-[12.5px] text-[#687779] mt-1.5">Join a video call to discuss results and care plans with our clinical team.</p>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-[#DCE7E6]">
+        ${imageThumb({ icon: 'event_repeat', label: 'Ongoing Check-Ins' })}
+        <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">4. Ongoing Check-Ins</h4>
+        <p class="text-[12.5px] text-[#687779] mt-1.5">Scheduled follow-up visits keep your parents' hearing health on track.</p>
       </div>
     </div>
   </div>

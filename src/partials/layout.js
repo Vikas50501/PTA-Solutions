@@ -349,6 +349,40 @@ function imagePlaceholder({ icon, label, caption, aspect = 'aspect-[4/3]' }) {
         </div>`;
 }
 
+// Small thumbnail variant for use inside cards/grids (directory listings, etc.)
+function imageThumb({ icon, label, dark = false }) {
+  const base = dark
+    ? 'bg-gradient-to-br from-white/10 to-white/5 border-white/15'
+    : 'bg-gradient-to-br from-[#F7FAF9] to-[#E6F6FA] border-[#DCE7E6]';
+  const iconBox = dark
+    ? 'bg-white/10 border-white/20 text-[#4FC3D9]'
+    : 'bg-white border-[#DCE7E6] text-[#1E3E83]';
+  return `<!-- IMAGE PLACEHOLDER: replace with a real photo (${label}) -->
+        <div class="aspect-[16/9] rounded-xl border ${base} flex items-center justify-center mb-4">
+          <div class="w-11 h-11 rounded-full border ${iconBox} flex items-center justify-center">
+            <span class="material-symbols-outlined text-[22px]">${icon}</span>
+          </div>
+        </div>`;
+}
+
+// Full-width banner placeholder for the top of a page, under the title band
+function imageBanner({ icon, label, caption }) {
+  return `<!-- IMAGE PLACEHOLDER: replace with a real photo (${label}) -->
+  <section class="bg-white border-b border-[#DCE7E6]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-10">
+      <div class="aspect-[21/9] sm:aspect-[3/1] rounded-2xl border border-[#DCE7E6] bg-gradient-to-br from-[#F7FAF9] to-[#E6F6FA] flex flex-col items-center justify-center gap-3 text-center p-6">
+        <div class="w-16 h-16 rounded-full bg-white border border-[#DCE7E6] flex items-center justify-center text-[#1E3E83] shadow-sm">
+          <span class="material-symbols-outlined text-[32px]">${icon}</span>
+        </div>
+        <div>
+          <p class="font-display font-bold text-[16px] text-[#0F1E3E]">${label}</p>
+          ${caption ? `<p class="text-[13px] text-[#687779] mt-1">${caption}</p>` : ''}
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
 function sectionHeading({ eyebrow, title, subtitle, align = 'left' }) {
   const alignClass = align === 'center' ? 'text-center mx-auto' : '';
   return `    <div class="max-w-2xl ${alignClass} space-y-3">
@@ -418,5 +452,5 @@ ${items.map(it => `      <a href="${it.href}" class="block p-5 bg-white rounded-
 module.exports = {
   LOGO, SITE_URL, SITE_NAME, head, header, footer, scripts, page, pageHero, NAV_ITEMS,
   breadcrumbSchema, serviceSchema, faqSchema, jsonLd,
-  imagePlaceholder, sectionHeading, benefitGrid, processSteps, faqAccordion, relatedServices,
+  imagePlaceholder, imageThumb, imageBanner, sectionHeading, benefitGrid, processSteps, faqAccordion, relatedServices,
 };
