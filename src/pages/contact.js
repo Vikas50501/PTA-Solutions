@@ -18,11 +18,11 @@ module.exports = {
         <div class="flex items-center justify-between">
           <span class="text-[11px] font-bold uppercase tracking-widest text-[#1E3E83]">Clinic Headquarters</span>
           <div class="flex items-center gap-1">
-            <span class="w-1 bg-[#4FC3D9] h-3 rounded wave-bar"></span>
-            <span class="w-1 bg-[#1E3E83] h-5 rounded wave-bar"></span>
-            <span class="w-1.5 bg-[#0F1E3E] h-7 rounded wave-bar"></span>
-            <span class="w-1 bg-[#1E3E83] h-5 rounded wave-bar"></span>
-            <span class="w-1 bg-[#4FC3D9] h-3 rounded wave-bar"></span>
+            <span class="w-1 bg-[#4FC3D9] h-3 rounded"></span>
+            <span class="w-1 bg-[#1E3E83] h-5 rounded"></span>
+            <span class="w-1.5 bg-[#0F1E3E] h-7 rounded"></span>
+            <span class="w-1 bg-[#1E3E83] h-5 rounded"></span>
+            <span class="w-1 bg-[#4FC3D9] h-3 rounded"></span>
           </div>
         </div>
         <div class="space-y-4 text-[14px] text-[#0F1E3E]">

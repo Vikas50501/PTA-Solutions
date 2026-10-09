@@ -39,16 +39,6 @@ function head(title, description) {
       display: inline-block;
       vertical-align: middle;
     }
-    @keyframes wavePulse {
-      0%, 100% { height: 10px; transform: scaleY(0.6); }
-      50% { height: 36px; transform: scaleY(1.2); }
-    }
-    .wave-bar { animation: wavePulse 1.6s ease-in-out infinite; transform-origin: bottom center; }
-    .wave-bar:nth-child(2) { animation-delay: 0.15s; }
-    .wave-bar:nth-child(3) { animation-delay: 0.3s; }
-    .wave-bar:nth-child(4) { animation-delay: 0.45s; }
-    .wave-bar:nth-child(5) { animation-delay: 0.6s; }
-    .wave-bar:nth-child(6) { animation-delay: 0.75s; }
   </style>
 </head>
 <body class="bg-[#F7FAF9] text-[#182426] font-body antialiased selection:bg-[#4FC3D9] selection:text-[#0F1E3E] flex flex-col min-h-screen">
