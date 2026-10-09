@@ -12,11 +12,11 @@
       theme: {
         extend: {
           colors: {
-            primary: "#006A6A",
-            "primary-container": "#1BBCBC",
-            "on-primary-fixed": "#002020",
+            primary: "#1E3E83",
+            "primary-container": "#4FC3D9",
+            "on-primary-fixed": "#0F1E3E",
             surface: "#F7FAF9",
-            dark: "#122326",
+            dark: "#0F1E3E",
             "muted-text": "#526163",
             border: "#DCE7E6"
           },
@@ -54,9 +54,9 @@
 
     /* Pulse Glow Rings */
     @keyframes pulseRing {
-      0% { box-shadow: 0 0 0 0 rgba(27, 188, 188, 0.6); }
-      70% { box-shadow: 0 0 0 10px rgba(27, 188, 188, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(27, 188, 188, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(79, 195, 217, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(79, 195, 217, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(79, 195, 217, 0); }
     }
     .pulse-badge {
       animation: pulseRing 2.4s infinite;
@@ -65,7 +65,7 @@
     /* Sticky Header Scrolled */
     .header-scrolled {
       background-color: rgba(252, 253, 252, 0.98) !important;
-      box-shadow: 0 4px 20px -2px rgba(18, 35, 38, 0.08);
+      box-shadow: 0 4px 20px -2px rgba(15, 30, 62, 0.08);
       border-color: rgba(220, 231, 230, 0.9);
     }
 
@@ -80,7 +80,7 @@
       left: 0;
       width: 0%;
       height: 2px;
-      background-color: #1bbcbc;
+      background-color: #4FC3D9;
       transition: width 0.25s ease-out;
       border-radius: 999px;
     }
@@ -116,9 +116,9 @@
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .plan-row:hover {
-      border-color: #1bbcbc !important;
+      border-color: #4FC3D9 !important;
       transform: translateY(-3px);
-      box-shadow: 0 14px 30px -10px rgba(0, 106, 106, 0.12);
+      box-shadow: 0 14px 30px -10px rgba(30, 62, 131, 0.12);
     }
 
     /* Interactive Journey Steps */
@@ -128,14 +128,14 @@
     }
     .journey-step:hover, .journey-step.active {
       transform: translateY(-4px);
-      border-color: #1bbcbc;
-      box-shadow: 0 12px 24px -8px rgba(0, 106, 106, 0.1);
+      border-color: #4FC3D9;
+      box-shadow: 0 12px 24px -8px rgba(30, 62, 131, 0.1);
     }
     .journey-step.active .step-num {
-      color: #006a6a;
+      color: #1E3E83;
     }
     .journey-step.active .step-icon-box {
-      background-color: #1bbcbc;
+      background-color: #4FC3D9;
       color: #ffffff;
     }
 
@@ -144,8 +144,8 @@
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .custom-input:focus {
-      border-color: #1bbcbc !important;
-      box-shadow: 0 0 0 3px rgba(27, 188, 188, 0.18);
+      border-color: #4FC3D9 !important;
+      box-shadow: 0 0 0 3px rgba(79, 195, 217, 0.18);
       background-color: #ffffff !important;
     }
 
@@ -172,7 +172,7 @@
     }
   </style>
 </head>
-<body class="bg-[#F7FAF9] text-[#122326] font-body antialiased selection:bg-[#1BBCBC] selection:text-[#002020]">
+<body class="bg-[#F7FAF9] text-[#0F1E3E] font-body antialiased selection:bg-[#4FC3D9] selection:text-[#0F1E3E]">
 
 <!-- 1. STICKY HEADER -->
 <header class="sticky top-0 z-50 w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] transition-all duration-300" id="main-header">
@@ -181,29 +181,29 @@
       <img alt="PTA Solutions Clinic Logo" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105" src="/assets/logo.png">
     </a>
     <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[14px] font-medium text-[#526163]">
-      <a class="nav-item cursor-pointer py-1 transition-colors text-[#122326] font-semibold" href="/">Home</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/about">About</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/services">Services</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/nri-hearing-care">NRI Hearing Care</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/services/complete-care">Complete Care</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#006A6A]" href="/contact">Contact</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors text-[#0F1E3E] font-semibold" href="/">Home</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/about">About</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/services">Services</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/nri-hearing-care">NRI Hearing Care</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/services/complete-care">Complete Care</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/contact">Contact</a>
     </nav>
     <div class="flex items-center gap-4">
-      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#526163] hover:text-[#006A6A] transition-colors group" href="tel:+919773545058">
-        <span class="material-symbols-outlined text-[#006A6A] text-[18px] transition-transform group-hover:scale-110">call</span>
+      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#526163] hover:text-[#1E3E83] transition-colors group" href="tel:+919773545058">
+        <span class="material-symbols-outlined text-[#1E3E83] text-[18px] transition-transform group-hover:scale-110">call</span>
         <span class="">+91 9773545058</span>
       </a>
-      <a class="group inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md" href="/book-appointment">
+      <a class="group inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md" href="/book-appointment">
         <span class="">Book Appointment</span>
         <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
       </a>
-      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#122326] hover:bg-[#F1F4F3] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0F1E3E] hover:bg-[#F1F4F3] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
       </button>
     </div>
   </div>
   <div class="hidden md:hidden border-t border-[#DCE7E6] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
-    <a class="block py-2 text-[15px] font-medium text-[#122326] border-b border-[#F1F4F3]" href="/">Home</a>
+    <a class="block py-2 text-[15px] font-medium text-[#0F1E3E] border-b border-[#F1F4F3]" href="/">Home</a>
     <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/about">About PTA Solutions</a>
     <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/services">All Services Directory</a>
     <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/nri-hearing-care">NRI Hearing Care Mumbai</a>
@@ -211,7 +211,7 @@
     <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/book-appointment">Book Appointment Hub</a>
     <a class="block py-2 text-[15px] font-medium text-[#526163]" href="/contact">Contact Chembur Clinic</a>
     <div class="pt-2">
-      <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#006A6A] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
+      <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#1E3E83] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
         <span class="material-symbols-outlined text-[18px]">call</span>
         <span class="">Direct Call: +91 9773545058</span>
       </a>
@@ -225,37 +225,37 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       <div class="lg:col-span-7 space-y-7">
         <div class="anim-hero-badge inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-[#E6E9E8]/70 rounded-full border border-[#DCE7E6]">
-          <span class="w-2 h-2 rounded-full bg-[#1BBCBC] animate-ping"></span>
+          <span class="w-2 h-2 rounded-full bg-[#4FC3D9] animate-ping"></span>
           <span class="text-[#3C4949] text-[11px] font-semibold tracking-widest uppercase">Chembur • Mumbai Hearing &amp; Speech Sanctuary</span>
         </div>
-        <h1 class="anim-hero-title text-[38px] sm:text-[54px] lg:text-[66px] font-display font-extrabold text-[#122326] tracking-tight leading-[1.08]">
+        <h1 class="anim-hero-title text-[38px] sm:text-[54px] lg:text-[66px] font-display font-extrabold text-[#0F1E3E] tracking-tight leading-[1.08]">
           Empowering You to<br class="hidden sm:inline">
-          <span class="relative inline-block text-[#006A6A] underline decoration-[#1BBCBC] decoration-[5px] underline-offset-8 transition-colors hover:text-[#004f50]">Hear and Speak Better</span><br>
+          <span class="relative inline-block text-[#1E3E83] underline decoration-[#4FC3D9] decoration-[5px] underline-offset-8 transition-colors hover:text-[#004f50]">Hear and Speak Better</span><br>
           Every Day
         </h1>
         <p class="anim-hero-desc text-[17px] lg:text-[19px] text-[#3C4949] max-w-2xl leading-relaxed">
           At PTA SOLUTIONS Hearing and Speech Care Clinics, we bring advanced hearing and speech therapy services to Mumbai — combining world-class diagnostics with genuine personal care.
         </p>
         <div class="anim-hero-cta flex flex-wrap items-center gap-4 pt-2">
-          <a class="group h-12 px-7 inline-flex items-center justify-center gap-2 bg-[#122326] text-white font-display text-[15px] font-semibold rounded-lg hover:bg-[#006A6A] active:scale-95 transition-all duration-200 shadow-sm hover:shadow-lg" href="#booking-hub">
+          <a class="group h-12 px-7 inline-flex items-center justify-center gap-2 bg-[#0F1E3E] text-white font-display text-[15px] font-semibold rounded-lg hover:bg-[#1E3E83] active:scale-95 transition-all duration-200 shadow-sm hover:shadow-lg" href="#booking-hub">
             <span class="">Book Appointment</span>
             <span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:translate-x-1">calendar_month</span>
           </a>
-          <a class="h-12 px-7 inline-flex items-center justify-center border border-[#6C7A79]/30 bg-white text-[#122326] font-display text-[15px] font-semibold rounded-lg hover:border-[#1BBCBC] hover:text-[#006A6A] active:scale-95 transition-all duration-200" href="#services">
+          <a class="h-12 px-7 inline-flex items-center justify-center border border-[#6C7A79]/30 bg-white text-[#0F1E3E] font-display text-[15px] font-semibold rounded-lg hover:border-[#4FC3D9] hover:text-[#1E3E83] active:scale-95 transition-all duration-200" href="#services">
             Explore Services
           </a>
         </div>
         <div class="anim-hero-metrics pt-8 grid grid-cols-3 gap-6 border-t border-[#DCE7E6] max-w-xl">
           <div class="space-y-0.5 group cursor-default">
-            <p class="text-[26px] font-display font-bold text-[#122326] group-hover:text-[#006A6A] transition-colors">10+ Yrs</p>
+            <p class="text-[26px] font-display font-bold text-[#0F1E3E] group-hover:text-[#1E3E83] transition-colors">10+ Yrs</p>
             <p class="text-[13px] text-[#526163]">Clinical Expertise</p>
           </div>
           <div class="space-y-0.5 group cursor-default">
-            <p class="text-[26px] font-display font-bold text-[#122326] group-hover:text-[#006A6A] transition-colors">100%</p>
+            <p class="text-[26px] font-display font-bold text-[#0F1E3E] group-hover:text-[#1E3E83] transition-colors">100%</p>
             <p class="text-[13px] text-[#526163]">Ethical Diagnostics</p>
           </div>
           <div class="space-y-0.5 group cursor-default">
-            <p class="text-[26px] font-display font-bold text-[#122326] group-hover:text-[#006A6A] transition-colors">Newborn → Sr</p>
+            <p class="text-[26px] font-display font-bold text-[#0F1E3E] group-hover:text-[#1E3E83] transition-colors">Newborn → Sr</p>
             <p class="text-[13px] text-[#526163]">Complete Lifespan</p>
           </div>
         </div>
@@ -264,16 +264,16 @@
         <div class="relative bg-white p-2.5 border border-[#DCE7E6] rounded-2xl shadow-xl overflow-hidden group">
           <img alt="Audiology Consultation in Mumbai Clinic" class="w-full h-auto aspect-[4/3] object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1WvuL5utkpTwVEOcBlkp8HVhy9ceFEP15_G1tVd682eS_QYRKM8uOVUDaVdYcRnWBsTwvWblN3HFs5N4kaVPSC7K_ZR3dKWQp4uMpOV5rQ8DwSMA9y-mbWJvJin6JrCe7L58e0UwO3GmKIOuCDleU9VHIHE12qRm_0F2w8d7d0Y7EVmemtTaPIUxfsv_K_4nd-p7M3L1dVfxGiP8RQzjIR-NSwQqGsSwG3-kN2n6orLuROSNmKe-2PD0w8">
           <div class="absolute -bottom-1 left-4 right-4 sm:right-auto sm:left-4 sm:max-w-xs bg-white/95 backdrop-blur-md p-4 rounded-xl border border-[#DCE7E6] shadow-lg flex items-center gap-3.5 mb-4 transition-transform hover:-translate-y-1">
-            <div class="w-10 h-10 rounded-lg bg-[#1BBCBC]/20 flex items-center justify-center text-[#006A6A] shrink-0">
+            <div class="w-10 h-10 rounded-lg bg-[#4FC3D9]/20 flex items-center justify-center text-[#1E3E83] shrink-0">
               <span class="material-symbols-outlined text-[24px]">graphic_eq</span>
             </div>
             <div>
-              <p class="text-[13px] font-bold font-display text-[#122326]">Acoustic Diagnostics</p>
+              <p class="text-[13px] font-bold font-display text-[#0F1E3E]">Acoustic Diagnostics</p>
               <p class="text-[12px] text-[#526163]">&amp; Speech Rehabilitation</p>
             </div>
           </div>
-          <div class="absolute top-5 right-5 bg-[#122326]/90 backdrop-blur-sm text-white px-3.5 py-1.5 rounded-md border border-white/10 flex items-center gap-2 shadow-md pulse-badge">
-            <span class="w-2 h-2 rounded-full bg-[#1BBCBC] animate-pulse"></span>
+          <div class="absolute top-5 right-5 bg-[#0F1E3E]/90 backdrop-blur-sm text-white px-3.5 py-1.5 rounded-md border border-white/10 flex items-center gap-2 shadow-md pulse-badge">
+            <span class="w-2 h-2 rounded-full bg-[#4FC3D9] animate-pulse"></span>
             <span class="text-[11px] font-semibold tracking-wide uppercase">Calibrated ISO Booth</span>
           </div>
         </div>
@@ -285,18 +285,18 @@
 <!-- 3. BRAND STATEMENT & ACOUSTIC EQUALIZER -->
 <section class="py-16 bg-[#F1F4F3]/70 border-b border-[#DCE7E6] reveal-on-scroll is-visible">
   <div class="max-w-5xl mx-auto px-6 text-center space-y-6">
-    <p class="text-[12px] font-semibold uppercase tracking-[0.25em] text-[#006A6A]">Audiological Protocol &amp; Care Standard</p>
-    <h2 class="text-[28px] md:text-[38px] font-display font-semibold text-[#122326] leading-tight">
+    <p class="text-[12px] font-semibold uppercase tracking-[0.25em] text-[#1E3E83]">Audiological Protocol &amp; Care Standard</p>
+    <h2 class="text-[28px] md:text-[38px] font-display font-semibold text-[#0F1E3E] leading-tight">
       "Advanced hearing care. Personal attention. Better communication."
     </h2>
     <div class="pt-4 flex items-center justify-center gap-1.5 cursor-pointer group" onclick="toggleWaveSpeed()" title="Interactive acoustic waveform">
-      <span class="w-1 bg-[#1BBCBC]/40 rounded-full h-3 wave-bar transition-colors group-hover:bg-[#006A6A]"></span>
-      <span class="w-1 bg-[#1BBCBC]/60 rounded-full h-6 wave-bar transition-colors group-hover:bg-[#006A6A]"></span>
-      <span class="w-1 bg-[#006A6A] rounded-full h-9 wave-bar transition-colors group-hover:bg-[#1BBCBC]"></span>
-      <span class="w-1.5 bg-[#122326] rounded-full h-10 wave-bar transition-colors group-hover:bg-[#004f50]"></span>
-      <span class="w-1 bg-[#006A6A] rounded-full h-9 wave-bar transition-colors group-hover:bg-[#1BBCBC]"></span>
-      <span class="w-1 bg-[#1BBCBC]/60 rounded-full h-6 wave-bar transition-colors group-hover:bg-[#006A6A]"></span>
-      <span class="w-1 bg-[#1BBCBC]/40 rounded-full h-3 wave-bar transition-colors group-hover:bg-[#006A6A]"></span>
+      <span class="w-1 bg-[#4FC3D9]/40 rounded-full h-3 wave-bar transition-colors group-hover:bg-[#1E3E83]"></span>
+      <span class="w-1 bg-[#4FC3D9]/60 rounded-full h-6 wave-bar transition-colors group-hover:bg-[#1E3E83]"></span>
+      <span class="w-1 bg-[#1E3E83] rounded-full h-9 wave-bar transition-colors group-hover:bg-[#4FC3D9]"></span>
+      <span class="w-1.5 bg-[#0F1E3E] rounded-full h-10 wave-bar transition-colors group-hover:bg-[#004f50]"></span>
+      <span class="w-1 bg-[#1E3E83] rounded-full h-9 wave-bar transition-colors group-hover:bg-[#4FC3D9]"></span>
+      <span class="w-1 bg-[#4FC3D9]/60 rounded-full h-6 wave-bar transition-colors group-hover:bg-[#1E3E83]"></span>
+      <span class="w-1 bg-[#4FC3D9]/40 rounded-full h-3 wave-bar transition-colors group-hover:bg-[#1E3E83]"></span>
     </div>
   </div>
 </section>
@@ -307,10 +307,10 @@
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#DCE7E6] pb-6">
       <div class="space-y-2">
         <div class="flex items-center gap-2">
-          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Clinical Philosophy</span>
         </div>
-        <h2 class="text-[30px] lg:text-[36px] font-display font-bold text-[#122326]">
+        <h2 class="text-[30px] lg:text-[36px] font-display font-bold text-[#0F1E3E]">
           Advanced hearing and speech care with genuine personal attention.
         </h2>
       </div>
@@ -319,41 +319,41 @@
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="p-8 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-md group">
-        <div class="w-12 h-12 rounded-lg bg-white border border-[#DCE7E6] flex items-center justify-center text-[#006A6A] group-hover:bg-[#006A6A] group-hover:text-white transition-colors duration-200">
+      <div class="p-8 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6] space-y-4 hover:border-[#4FC3D9] hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-md group">
+        <div class="w-12 h-12 rounded-lg bg-white border border-[#DCE7E6] flex items-center justify-center text-[#1E3E83] group-hover:bg-[#1E3E83] group-hover:text-white transition-colors duration-200">
           <span class="material-symbols-outlined text-[26px]">biotech</span>
         </div>
-        <h3 class="text-[20px] font-display font-bold text-[#122326]">Clinical Precision</h3>
+        <h3 class="text-[20px] font-display font-bold text-[#0F1E3E]">Clinical Precision</h3>
         <p class="text-[14px] text-[#526163] leading-relaxed">
           State-of-the-art audiometers, tympanometry, and speech mapping protocols calibrated to international medical accuracy benchmarks.
         </p>
-        <div class="pt-2 text-[13px] font-semibold text-[#006A6A] flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-200">
+        <div class="pt-2 text-[13px] font-semibold text-[#1E3E83] flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-200">
           <span class="">Rigorous Protocols</span>
           <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </div>
       </div>
-      <div class="p-8 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-md group">
-        <div class="w-12 h-12 rounded-lg bg-white border border-[#DCE7E6] flex items-center justify-center text-[#006A6A] group-hover:bg-[#006A6A] group-hover:text-white transition-colors duration-200">
+      <div class="p-8 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6] space-y-4 hover:border-[#4FC3D9] hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-md group">
+        <div class="w-12 h-12 rounded-lg bg-white border border-[#DCE7E6] flex items-center justify-center text-[#1E3E83] group-hover:bg-[#1E3E83] group-hover:text-white transition-colors duration-200">
           <span class="material-symbols-outlined text-[26px]">verified_user</span>
         </div>
-        <h3 class="text-[20px] font-display font-bold text-[#122326]">Ethical Recommendations</h3>
+        <h3 class="text-[20px] font-display font-bold text-[#0F1E3E]">Ethical Recommendations</h3>
         <p class="text-[14px] text-[#526163] leading-relaxed">
           Transparent guidance driven exclusively by clinical diagnostic data—zero sales pressure or unnecessary technological upsells.
         </p>
-        <div class="pt-2 text-[13px] font-semibold text-[#006A6A] flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-200">
+        <div class="pt-2 text-[13px] font-semibold text-[#1E3E83] flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-200">
           <span class="">Patient-Centric Trust</span>
           <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </div>
       </div>
-      <div class="p-8 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6] space-y-4 hover:border-[#1BBCBC] hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-md group">
-        <div class="w-12 h-12 rounded-lg bg-white border border-[#DCE7E6] flex items-center justify-center text-[#006A6A] group-hover:bg-[#006A6A] group-hover:text-white transition-colors duration-200">
+      <div class="p-8 rounded-xl bg-[#F7FAF9] border border-[#DCE7E6] space-y-4 hover:border-[#4FC3D9] hover:-translate-y-1.5 transition-all duration-300 shadow-xs hover:shadow-md group">
+        <div class="w-12 h-12 rounded-lg bg-white border border-[#DCE7E6] flex items-center justify-center text-[#1E3E83] group-hover:bg-[#1E3E83] group-hover:text-white transition-colors duration-200">
           <span class="material-symbols-outlined text-[26px]">volunteer_activism</span>
         </div>
-        <h3 class="text-[20px] font-display font-bold text-[#122326]">Patient Comfort Across Lifespans</h3>
+        <h3 class="text-[20px] font-display font-bold text-[#0F1E3E]">Patient Comfort Across Lifespans</h3>
         <p class="text-[14px] text-[#526163] leading-relaxed">
           Gentle diagnostic environments tailored for fragile newborn screenings, adolescent speech fluency, and reassuring senior care.
         </p>
-        <div class="pt-2 text-[13px] font-semibold text-[#006A6A] flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-200">
+        <div class="pt-2 text-[13px] font-semibold text-[#1E3E83] flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-200">
           <span class="">Lifelong Wellness</span>
           <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </div>
@@ -368,10 +368,10 @@
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
         <div class="flex items-center gap-2 mb-2">
-          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Core Practice Areas</span>
         </div>
-        <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+        <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#0F1E3E]">
           Specialized Hearing &amp; Speech Solutions
         </h2>
       </div>
@@ -381,66 +381,66 @@
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       <div class="lg:col-span-5 space-y-3" id="service-tabs">
-        <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-white border-2 border-[#1BBCBC] shadow-md group" data-key="tests" onclick="switchService('tests')">
+        <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-white border-2 border-[#4FC3D9] shadow-md group" data-key="tests" onclick="switchService('tests')">
           <div class="flex items-center gap-4">
-            <span class="tab-num text-[14px] font-bold font-mono text-[#006A6A]">01</span>
+            <span class="tab-num text-[14px] font-bold font-mono text-[#1E3E83]">01</span>
             <div>
-              <p class="tab-title font-display font-bold text-[16px] text-[#122326]">Hearing Tests</p>
+              <p class="tab-title font-display font-bold text-[16px] text-[#0F1E3E]">Hearing Tests</p>
               <p class="tab-sub text-[12px] text-[#526163]">Pure Tone Audiometry, Tympanometry</p>
             </div>
           </div>
-          <span class="material-symbols-outlined tab-icon text-[#006A6A] text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+          <span class="material-symbols-outlined tab-icon text-[#1E3E83] text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
         </button>
         <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group" data-key="aids" onclick="switchService('aids')">
           <div class="flex items-center gap-4">
-            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]">02</span>
+            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#1E3E83]">02</span>
             <div>
-              <p class="tab-title font-display font-semibold text-[16px] text-[#122326]">Hearing Aids</p>
+              <p class="tab-title font-display font-semibold text-[16px] text-[#0F1E3E]">Hearing Aids</p>
               <p class="tab-sub text-[12px] text-[#526163]">Dispensing, Real-Ear Fitting &amp; Tuning</p>
             </div>
           </div>
-          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all">chevron_right</span>
+          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#1E3E83] transition-all">chevron_right</span>
         </button>
         <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group" data-key="speech" onclick="switchService('speech')">
           <div class="flex items-center gap-4">
-            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]">03</span>
+            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#1E3E83]">03</span>
             <div>
-              <p class="tab-title font-display font-semibold text-[16px] text-[#122326]">Speech Therapy</p>
+              <p class="tab-title font-display font-semibold text-[16px] text-[#0F1E3E]">Speech Therapy</p>
               <p class="tab-sub text-[12px] text-[#526163]">Pediatric, Stammering, Articulation</p>
             </div>
           </div>
-          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all">chevron_right</span>
+          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#1E3E83] transition-all">chevron_right</span>
         </button>
         <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group" data-key="newborn" onclick="switchService('newborn')">
           <div class="flex items-center gap-4">
-            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]">04</span>
+            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#1E3E83]">04</span>
             <div>
-              <p class="tab-title font-display font-semibold text-[16px] text-[#122326]">Newborn Screening</p>
+              <p class="tab-title font-display font-semibold text-[16px] text-[#0F1E3E]">Newborn Screening</p>
               <p class="tab-sub text-[12px] text-[#526163]">Automated OAE &amp; BERA/AABR</p>
             </div>
           </div>
-          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all">chevron_right</span>
+          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#1E3E83] transition-all">chevron_right</span>
         </button>
         <button class="service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group" data-key="nri" onclick="switchService('nri')">
           <div class="flex items-center gap-4">
-            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]">05</span>
+            <span class="tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#1E3E83]">05</span>
             <div>
-              <p class="tab-title font-display font-semibold text-[16px] text-[#122326]">NRI Hearing Care</p>
+              <p class="tab-title font-display font-semibold text-[16px] text-[#0F1E3E]">NRI Hearing Care</p>
               <p class="tab-sub text-[12px] text-[#526163]">Dedicated Parent Care in Mumbai</p>
             </div>
           </div>
-          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all">chevron_right</span>
+          <span class="material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#1E3E83] transition-all">chevron_right</span>
         </button>
       </div>
       <div class="lg:col-span-7 bg-white border border-[#DCE7E6] p-8 lg:p-10 rounded-2xl shadow-sm min-h-[440px] flex flex-col justify-between" id="service-content-panel">
         <div class="space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-[#DCE7E6]">
             <div>
-              <span class="text-[11px] font-bold uppercase tracking-widest text-[#006A6A]" id="svc-category">COMPREHENSIVE AUDIOLOGY</span>
-              <h3 class="text-[26px] lg:text-[28px] font-display font-bold text-[#122326] mt-1" id="svc-title">Clinical Hearing Tests &amp; Tympanometry</h3>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-[#1E3E83]" id="svc-category">COMPREHENSIVE AUDIOLOGY</span>
+              <h3 class="text-[26px] lg:text-[28px] font-display font-bold text-[#0F1E3E] mt-1" id="svc-title">Clinical Hearing Tests &amp; Tympanometry</h3>
             </div>
             <div class="px-3.5 py-1.5 bg-[#F1F4F3] rounded-md text-[13px] font-medium text-[#526163] flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[16px] text-[#006A6A]">schedule</span>
+              <span class="material-symbols-outlined text-[16px] text-[#1E3E83]">schedule</span>
               <span id="svc-duration" class="">Session: 45 Mins</span>
             </div>
           </div>
@@ -450,20 +450,20 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
             <div class="p-4 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
               <p class="text-[11px] font-semibold uppercase tracking-wider text-[#6C7A79]">Diagnostic Scope</p>
-              <p class="text-[14px] font-display font-bold text-[#122326] mt-1" id="svc-scope">Full octave threshold plotting (250Hz - 8000Hz) &amp; middle ear fluid analysis</p>
+              <p class="text-[14px] font-display font-bold text-[#0F1E3E] mt-1" id="svc-scope">Full octave threshold plotting (250Hz - 8000Hz) &amp; middle ear fluid analysis</p>
             </div>
             <div class="p-4 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
               <p class="text-[11px] font-semibold uppercase tracking-wider text-[#6C7A79]">Recommended For</p>
-              <p class="text-[14px] font-display font-bold text-[#122326] mt-1" id="svc-target">Adults, seniors, musicians &amp; individuals experiencing muffled speech</p>
+              <p class="text-[14px] font-display font-bold text-[#0F1E3E] mt-1" id="svc-target">Adults, seniors, musicians &amp; individuals experiencing muffled speech</p>
             </div>
           </div>
         </div>
         <div class="pt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#DCE7E6]">
           <div class="flex items-center gap-2 text-[13px] text-[#526163]">
-            <span class="material-symbols-outlined text-[#006A6A] text-[20px]">verified</span>
+            <span class="material-symbols-outlined text-[#1E3E83] text-[20px]">verified</span>
             <span class="">Conducted in Chembur Clinic or via doorstep diagnostics</span>
           </div>
-          <a class="group px-6 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all duration-200 shadow-sm inline-flex items-center gap-2" href="#booking-hub" id="svc-book-btn" onclick="selectServiceForBooking('Hearing Tests')">
+          <a class="group px-6 py-2.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all duration-200 shadow-sm inline-flex items-center gap-2" href="#booking-hub" id="svc-book-btn" onclick="selectServiceForBooking('Hearing Tests')">
             <span class="">Book Service Now</span>
             <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
           </a>
@@ -479,14 +479,14 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       <div class="lg:col-span-7 space-y-6">
         <div class="flex items-center gap-2">
-          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Leadership &amp; Standards</span>
         </div>
-        <h2 class="text-[32px] lg:text-[42px] font-display font-bold text-[#122326] leading-tight">
+        <h2 class="text-[32px] lg:text-[42px] font-display font-bold text-[#0F1E3E] leading-tight">
           About PTA Solutions — Your Trusted Partner in Hearing and Speech Wellness
         </h2>
-        <div class="p-6 bg-[#F1F4F3]/80 rounded-xl border-l-4 border-[#006A6A]">
-          <p class="text-[17px] font-display font-bold text-[#006A6A]">
+        <div class="p-6 bg-[#F1F4F3]/80 rounded-xl border-l-4 border-[#1E3E83]">
+          <p class="text-[17px] font-display font-bold text-[#1E3E83]">
             10+ years of clinical experience led by Dr. Johnsavio Fernandes, Audiologist and Speech-Language professional.
           </p>
         </div>
@@ -495,15 +495,15 @@
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
           <div class="space-y-1.5">
-            <div class="flex items-center gap-2 text-[#122326] font-display font-bold text-[15px]">
-              <span class="material-symbols-outlined text-[#006A6A] text-[20px]">medical_services</span>
+            <div class="flex items-center gap-2 text-[#0F1E3E] font-display font-bold text-[15px]">
+              <span class="material-symbols-outlined text-[#1E3E83] text-[20px]">medical_services</span>
               <span class="">Ethical Care Protocols</span>
             </div>
             <p class="text-[13px] text-[#526163]">Zero quota-based sales. Only what truly improves patient communicative independence.</p>
           </div>
           <div class="space-y-1.5">
-            <div class="flex items-center gap-2 text-[#122326] font-display font-bold text-[15px]">
-              <span class="material-symbols-outlined text-[#006A6A] text-[20px]">groups</span>
+            <div class="flex items-center gap-2 text-[#0F1E3E] font-display font-bold text-[15px]">
+              <span class="material-symbols-outlined text-[#1E3E83] text-[20px]">groups</span>
               <span class="">Multi-Disciplinary Team</span>
             </div>
             <p class="text-[13px] text-[#526163]">Synergistic speech therapists and pediatric audiologists under one clinical roof.</p>
@@ -512,26 +512,26 @@
       </div>
       <div class="lg:col-span-5 space-y-6">
         <div class="bg-[#F7FAF9] p-8 lg:p-10 border border-[#DCE7E6] rounded-2xl relative overflow-hidden shadow-sm">
-          <span class="text-[11px] font-bold uppercase tracking-widest text-[#006A6A]">Our Guiding Mission</span>
-          <blockquote class="text-[20px] font-display font-semibold text-[#122326] italic mt-4 leading-snug">
-            "Our mission is simple — to help you reconnect with the world through <span class="text-[#006A6A] font-bold not-italic">better hearing</span> and <span class="text-[#006A6A] font-bold not-italic">clearer communication</span> improving your quality of life."
+          <span class="text-[11px] font-bold uppercase tracking-widest text-[#1E3E83]">Our Guiding Mission</span>
+          <blockquote class="text-[20px] font-display font-semibold text-[#0F1E3E] italic mt-4 leading-snug">
+            "Our mission is simple — to help you reconnect with the world through <span class="text-[#1E3E83] font-bold not-italic">better hearing</span> and <span class="text-[#1E3E83] font-bold not-italic">clearer communication</span> improving your quality of life."
           </blockquote>
           <div class="mt-8 pt-5 border-t border-[#DCE7E6] flex items-center justify-between">
             <div>
-              <p class="font-display font-bold text-[16px] text-[#122326]">Dr. Johnsavio Fernandes</p>
+              <p class="font-display font-bold text-[16px] text-[#0F1E3E]">Dr. Johnsavio Fernandes</p>
               <p class="text-[12px] text-[#526163]">Lead Audiologist &amp; Speech Pathologist</p>
             </div>
-            <div class="w-10 h-10 rounded-full bg-[#1BBCBC]/20 flex items-center justify-center text-[#006A6A]">
+            <div class="w-10 h-10 rounded-full bg-[#4FC3D9]/20 flex items-center justify-center text-[#1E3E83]">
               <span class="material-symbols-outlined text-[22px]">verified</span>
             </div>
           </div>
         </div>
         <div class="bg-[#F1F4F3] p-6 rounded-xl border border-[#DCE7E6] flex items-center gap-4">
-          <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center text-[#006A6A] shrink-0 shadow-xs">
+          <div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center text-[#1E3E83] shrink-0 shadow-xs">
             <span class="material-symbols-outlined text-[28px]">apartment</span>
           </div>
           <div>
-            <p class="font-display font-bold text-[15px] text-[#122326]">State-of-the-Art Chembur Clinic</p>
+            <p class="font-display font-bold text-[15px] text-[#0F1E3E]">State-of-the-Art Chembur Clinic</p>
             <p class="text-[13px] text-[#526163]">ISO 8253-1 standard sound booth with real-ear measurement (REM) suites.</p>
           </div>
         </div>
@@ -545,11 +545,11 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
     <div class="text-center max-w-2xl mx-auto space-y-3">
       <div class="inline-flex items-center gap-2">
-        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
         <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">The Patient Pathway</span>
-        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
       </div>
-      <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+      <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#0F1E3E]">
         Listen → Understand → Recommend → Support
       </h2>
       <p class="text-[15px] text-[#526163]">
@@ -559,13 +559,13 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
       <div class="journey-step bg-white p-7 rounded-2xl border border-[#DCE7E6] space-y-4 shadow-xs active" onclick="highlightJourneyStep(this)">
         <div class="flex items-center justify-between">
-          <span class="step-num text-[26px] font-mono font-extrabold text-[#006A6A] transition-colors">01</span>
-          <div class="step-icon-box w-10 h-10 rounded-lg bg-[#1BBCBC] text-white flex items-center justify-center transition-colors">
+          <span class="step-num text-[26px] font-mono font-extrabold text-[#1E3E83] transition-colors">01</span>
+          <div class="step-icon-box w-10 h-10 rounded-lg bg-[#4FC3D9] text-white flex items-center justify-center transition-colors">
             <span class="material-symbols-outlined text-[22px]">hearing</span>
           </div>
         </div>
         <div>
-          <h3 class="font-display font-bold text-[18px] text-[#122326]">1. Listen</h3>
+          <h3 class="font-display font-bold text-[18px] text-[#0F1E3E]">1. Listen</h3>
           <p class="text-[13px] text-[#526163] mt-2 leading-relaxed">
             We start by listening to your unique lifestyle challenges, social environments, and personal communication goals.
           </p>
@@ -579,7 +579,7 @@
           </div>
         </div>
         <div>
-          <h3 class="font-display font-bold text-[18px] text-[#122326]">2. Understand</h3>
+          <h3 class="font-display font-bold text-[18px] text-[#0F1E3E]">2. Understand</h3>
           <p class="text-[13px] text-[#526163] mt-2 leading-relaxed">
             Comprehensive Pure Tone Audiometry (PTA), Speech Discrimination, and Tympanometry map exact acoustic thresholds.
           </p>
@@ -593,7 +593,7 @@
           </div>
         </div>
         <div>
-          <h3 class="font-display font-bold text-[18px] text-[#122326]">3. Recommend</h3>
+          <h3 class="font-display font-bold text-[18px] text-[#0F1E3E]">3. Recommend</h3>
           <p class="text-[13px] text-[#526163] mt-2 leading-relaxed">
             Transparent review of tailored rehabilitation options, trial fittings, or speech modules suited strictly to your needs.
           </p>
@@ -607,7 +607,7 @@
           </div>
         </div>
         <div>
-          <h3 class="font-display font-bold text-[18px] text-[#122326]">4. Support</h3>
+          <h3 class="font-display font-bold text-[18px] text-[#0F1E3E]">4. Support</h3>
           <p class="text-[13px] text-[#526163] mt-2 leading-relaxed">
             Continual sound tuning, ear mold adjustments, device servicing, and speech progress tracking across lifetime check-ins.
           </p>
@@ -624,22 +624,22 @@
       <div class="lg:col-span-5 space-y-4">
         <div class="relative bg-white p-2.5 border border-[#DCE7E6] rounded-2xl shadow-lg group">
           <img alt="NRI Parent and daughter enjoying clear conversation in Mumbai" class="w-full h-auto aspect-[4/3] object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UyvGvbDskN31EADDxLoChQsP8SjYbzTDESWn3d1H4lSrtCk5hOqn3noPWaav2E1Sje0kQYJqixek_kgg1xszLGJiZPVUcZ5_2gRgXXBZSoSW9WOFPe3UqWhTarjN5tYZAsSaeAM5AChTCAv2kEqHyFsKxK38A3Ofqh4JdXWJjJDM5lUgAz7dwR_lAmyjcDeNNDmdhx8EEXLJ2Bf6S8BAFQ2SpDOYVcJX_8in5zVanrpkayHlGL5fd_Mw">
-          <div class="absolute -top-3 -left-3 bg-[#122326] text-white px-3.5 py-1.5 rounded-lg text-[11px] font-bold flex items-center gap-1.5 shadow-md">
-            <span class="material-symbols-outlined text-[#1BBCBC] text-[16px]">public</span>
+          <div class="absolute -top-3 -left-3 bg-[#0F1E3E] text-white px-3.5 py-1.5 rounded-lg text-[11px] font-bold flex items-center gap-1.5 shadow-md">
+            <span class="material-symbols-outlined text-[#4FC3D9] text-[16px]">public</span>
             <span class="">Global NRI Concierge</span>
           </div>
           <div class="absolute -bottom-3 right-4 bg-white px-3.5 py-1.5 border border-[#DCE7E6] rounded-lg shadow-md flex items-center gap-2 pulse-badge">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span class="text-[12px] font-semibold text-[#122326]">Home Visits Across Mumbai</span>
+            <span class="text-[12px] font-semibold text-[#0F1E3E]">Home Visits Across Mumbai</span>
           </div>
         </div>
       </div>
       <div class="lg:col-span-7 space-y-6">
         <div class="flex items-center gap-2.5">
-          <span class="px-3 py-1 bg-[#1BBCBC]/20 text-[#004646] font-bold rounded-full text-[11px]">We Only Have One Home</span>
+          <span class="px-3 py-1 bg-[#4FC3D9]/20 text-[#163B6B] font-bold rounded-full text-[11px]">We Only Have One Home</span>
           <span class="px-3 py-1 bg-[#E0E3E2] text-[#3C4949] font-bold rounded-full text-[11px]">Act Now</span>
         </div>
-        <h2 class="text-[32px] lg:text-[42px] font-display font-bold text-[#122326] leading-tight">
+        <h2 class="text-[32px] lg:text-[42px] font-display font-bold text-[#0F1E3E] leading-tight">
           Living Abroad? We Take Care of Your Parents' Hearing in Mumbai
         </h2>
         <p class="text-[17px] text-[#3C4949] leading-relaxed">
@@ -647,32 +647,32 @@
         </p>
         <div class="space-y-4 pt-2">
           <div class="flex items-start gap-3.5">
-            <span class="material-symbols-outlined text-[#006A6A] text-[22px] mt-0.5">verified</span>
+            <span class="material-symbols-outlined text-[#1E3E83] text-[22px] mt-0.5">verified</span>
             <div>
-              <p class="font-display font-bold text-[15px] text-[#122326]">Doorstep Audiological Testing</p>
+              <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Doorstep Audiological Testing</p>
               <p class="text-[13px] text-[#526163]">Portable diagnostic equipment brought right into your parents' living room in Mumbai.</p>
             </div>
           </div>
           <div class="flex items-start gap-3.5">
-            <span class="material-symbols-outlined text-[#006A6A] text-[22px] mt-0.5">mark_chat_read</span>
+            <span class="material-symbols-outlined text-[#1E3E83] text-[22px] mt-0.5">mark_chat_read</span>
             <div>
-              <p class="font-display font-bold text-[15px] text-[#122326]">Direct WhatsApp Updates for Children Abroad</p>
+              <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Direct WhatsApp Updates for Children Abroad</p>
               <p class="text-[13px] text-[#526163]">Post-session clinical summary reports and direct video consultation with the audiologist.</p>
             </div>
           </div>
           <div class="flex items-start gap-3.5">
-            <span class="material-symbols-outlined text-[#006A6A] text-[22px] mt-0.5">home_repair_service</span>
+            <span class="material-symbols-outlined text-[#1E3E83] text-[22px] mt-0.5">home_repair_service</span>
             <div>
-              <p class="font-display font-bold text-[15px] text-[#122326]">Regular Maintenance &amp; Battery Deliveries</p>
+              <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Regular Maintenance &amp; Battery Deliveries</p>
               <p class="text-[13px] text-[#526163]">Scheduled visits for wax cleaning, acoustic filter renewals, and device fine-tuning.</p>
             </div>
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-4 pt-4">
-          <a class="h-12 px-7 inline-flex items-center justify-center bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[15px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all duration-200 shadow-sm hover:shadow-md" href="#booking-hub" onclick="selectServiceForBooking('Premium NRI Care')">
+          <a class="h-12 px-7 inline-flex items-center justify-center bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[15px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all duration-200 shadow-sm hover:shadow-md" href="#booking-hub" onclick="selectServiceForBooking('Premium NRI Care')">
             Book Consultation
           </a>
-          <a class="h-12 px-7 inline-flex items-center justify-center gap-2 border border-[#25D366]/40 bg-white text-[#122326] font-display font-semibold text-[15px] rounded-lg hover:border-[#25D366] hover:bg-[#25D366]/10 transition-all duration-200" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
+          <a class="h-12 px-7 inline-flex items-center justify-center gap-2 border border-[#25D366]/40 bg-white text-[#0F1E3E] font-display font-semibold text-[15px] rounded-lg hover:border-[#25D366] hover:bg-[#25D366]/10 transition-all duration-200" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
             <span class="material-symbols-outlined text-[#25D366] text-[20px]">chat</span>
             <span class="">Chat on WhatsApp</span>
           </a>
@@ -687,11 +687,11 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-14">
     <div class="text-center max-w-2xl mx-auto space-y-3">
       <div class="inline-flex items-center gap-2">
-        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
         <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Transparent Clinical Tiers</span>
-        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
       </div>
-      <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+      <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#0F1E3E]">
         Care Plans Tailored to Your Needs
       </h2>
       <p class="text-[15px] text-[#526163]">
@@ -700,19 +700,19 @@
     </div>
     <div class="space-y-4">
       <!-- ROW 1 -->
-      <div class="plan-row bg-white border-2 border-[#1BBCBC] rounded-2xl p-6 lg:p-8 relative">
-        <div class="absolute -top-3 left-8 bg-[#1BBCBC] text-[#002020] px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase">
+      <div class="plan-row bg-white border-2 border-[#4FC3D9] rounded-2xl p-6 lg:p-8 relative">
+        <div class="absolute -top-3 left-8 bg-[#4FC3D9] text-[#0F1E3E] px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase">
           Most Comprehensive
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           <div class="lg:col-span-4 space-y-1">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">Home &amp; Clinical Suite</span>
-            <h3 class="text-[22px] font-display font-bold text-[#122326]">Complete Care</h3>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#1E3E83]">Home &amp; Clinical Suite</span>
+            <h3 class="text-[22px] font-display font-bold text-[#0F1E3E]">Complete Care</h3>
             <p class="text-[13px] text-[#526163]">Comprehensive audiology, advanced diagnostics &amp; customized speech therapies right at home.</p>
           </div>
           <div class="lg:col-span-3 py-2 lg:border-l lg:border-r border-[#DCE7E6] lg:px-6">
             <div class="flex items-baseline gap-1.5">
-              <span class="text-[26px] font-display font-bold text-[#006A6A]">₹75,000</span>
+              <span class="text-[26px] font-display font-bold text-[#1E3E83]">₹75,000</span>
               <span class="text-[13px] text-[#526163]">to ₹1,50,000</span>
             </div>
             <div class="flex items-center gap-2 text-[12px] text-[#6C7A79] mt-1">
@@ -722,16 +722,16 @@
           </div>
           <div class="lg:col-span-3 text-[13px] text-[#3C4949] space-y-1">
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="material-symbols-outlined text-[#1E3E83] text-[16px]">check</span>
               <span class="">Full Portable Audiology Suite at Home</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="material-symbols-outlined text-[#1E3E83] text-[16px]">check</span>
               <span class="">Hearing Aid Trials in Real Environment</span>
             </div>
           </div>
           <div class="lg:col-span-2 text-right">
-            <a class="w-full py-3 inline-flex items-center justify-center bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm" href="#booking-hub" onclick="selectServiceForBooking('Complete Care')">
+            <a class="w-full py-3 inline-flex items-center justify-center bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-sm" href="#booking-hub" onclick="selectServiceForBooking('Complete Care')">
               Talk to Specialist
             </a>
           </div>
@@ -742,12 +742,12 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           <div class="lg:col-span-4 space-y-1">
             <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">In-Clinic Baseline</span>
-            <h3 class="text-[22px] font-display font-bold text-[#122326]">Basic Consultation</h3>
+            <h3 class="text-[22px] font-display font-bold text-[#0F1E3E]">Basic Consultation</h3>
             <p class="text-[13px] text-[#526163]">Comprehensive baseline audiological assessment for individuals seeking clarity on hearing or speech.</p>
           </div>
           <div class="lg:col-span-3 py-2 lg:border-l lg:border-r border-[#DCE7E6] lg:px-6">
             <div class="flex items-baseline gap-1.5">
-              <span class="text-[26px] font-display font-bold text-[#122326]">₹10,000</span>
+              <span class="text-[26px] font-display font-bold text-[#0F1E3E]">₹10,000</span>
               <span class="text-[13px] text-[#526163]">to ₹20,000</span>
             </div>
             <div class="flex items-center gap-2 text-[12px] text-[#6C7A79] mt-1">
@@ -757,16 +757,16 @@
           </div>
           <div class="lg:col-span-3 text-[13px] text-[#3C4949] space-y-1">
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="material-symbols-outlined text-[#1E3E83] text-[16px]">check</span>
               <span class="">Pure Tone Audiometry (Air &amp; Bone)</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="material-symbols-outlined text-[#1E3E83] text-[16px]">check</span>
               <span class="">Speech Discrimination &amp; Impedance</span>
             </div>
           </div>
           <div class="lg:col-span-2 text-right">
-            <a class="w-full py-3 inline-flex items-center justify-center border border-[#6C7A79]/40 bg-white text-[#122326] font-display font-semibold text-[14px] rounded-lg hover:border-[#006A6A] hover:text-[#006A6A] transition-all" href="#booking-hub" onclick="selectServiceForBooking('Basic Consultation')">
+            <a class="w-full py-3 inline-flex items-center justify-center border border-[#6C7A79]/40 bg-white text-[#0F1E3E] font-display font-semibold text-[14px] rounded-lg hover:border-[#1E3E83] hover:text-[#1E3E83] transition-all" href="#booking-hub" onclick="selectServiceForBooking('Basic Consultation')">
               Book Evaluation
             </a>
           </div>
@@ -777,12 +777,12 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           <div class="lg:col-span-4 space-y-1">
             <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Global Family Concierge</span>
-            <h3 class="text-[22px] font-display font-bold text-[#122326]">Premium NRI Care</h3>
+            <h3 class="text-[22px] font-display font-bold text-[#0F1E3E]">Premium NRI Care</h3>
             <p class="text-[13px] text-[#526163]">Specialized home visits, parent progress reports &amp; remote video updates for overseas families.</p>
           </div>
           <div class="lg:col-span-3 py-2 lg:border-l lg:border-r border-[#DCE7E6] lg:px-6">
             <div class="flex items-baseline gap-1.5">
-              <span class="text-[26px] font-display font-bold text-[#122326]">₹2,00,000</span>
+              <span class="text-[26px] font-display font-bold text-[#0F1E3E]">₹2,00,000</span>
               <span class="text-[13px] text-[#526163]">to ₹3,50,000</span>
             </div>
             <div class="flex items-center gap-2 text-[12px] text-[#6C7A79] mt-1">
@@ -792,16 +792,16 @@
           </div>
           <div class="lg:col-span-3 text-[13px] text-[#3C4949] space-y-1">
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="material-symbols-outlined text-[#1E3E83] text-[16px]">check</span>
               <span class="">Quarterly In-Home Mumbai Evaluations</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-[#006A6A] text-[16px]">check</span>
+              <span class="material-symbols-outlined text-[#1E3E83] text-[16px]">check</span>
               <span class="">Direct WhatsApp &amp; Tele-Clinicals</span>
             </div>
           </div>
           <div class="lg:col-span-2 text-right">
-            <a class="w-full py-3 inline-flex items-center justify-center border border-[#6C7A79]/40 bg-white text-[#122326] font-display font-semibold text-[14px] rounded-lg hover:border-[#006A6A] hover:text-[#006A6A] transition-all" href="#booking-hub" onclick="selectServiceForBooking('Premium NRI Care')">
+            <a class="w-full py-3 inline-flex items-center justify-center border border-[#6C7A79]/40 bg-white text-[#0F1E3E] font-display font-semibold text-[14px] rounded-lg hover:border-[#1E3E83] hover:text-[#1E3E83] transition-all" href="#booking-hub" onclick="selectServiceForBooking('Premium NRI Care')">
               Enroll NRI Plan
             </a>
           </div>
@@ -817,10 +817,10 @@
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
         <div class="flex items-center gap-2 mb-2">
-          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Authentic Patient Experiences</span>
         </div>
-        <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+        <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#0F1E3E]">
           Patient Reviews &amp; Clinical Feedback
         </h2>
       </div>
@@ -841,12 +841,12 @@
             </div>
             <span class="text-[11px] font-bold px-2.5 py-0.5 bg-white border border-[#DCE7E6] rounded-md text-[#526163]">Verified Patient</span>
           </div>
-          <p class="text-[15px] text-[#122326] leading-relaxed italic">
+          <p class="text-[15px] text-[#0F1E3E] leading-relaxed italic">
             "The home visit for my 82-year-old mother in Chembur was remarkably gentle. Dr. Johnsavio explained the audiogram without rushing. The hearing aid fitting has brought back her confidence."
           </p>
         </div>
         <div class="pt-4 border-t border-[#DCE7E6]">
-          <p class="font-display font-bold text-[15px] text-[#122326]">Mrs. Ananya Kulkarni</p>
+          <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Mrs. Ananya Kulkarni</p>
           <p class="text-[12px] text-[#6C7A79]">Complete Care • Home Visit</p>
         </div>
       </div>
@@ -862,12 +862,12 @@
             </div>
             <span class="text-[11px] font-bold px-2.5 py-0.5 bg-white border border-[#DCE7E6] rounded-md text-[#526163]">NRI Family Care</span>
           </div>
-          <p class="text-[15px] text-[#122326] leading-relaxed italic">
+          <p class="text-[15px] text-[#0F1E3E] leading-relaxed italic">
             "Living in London, managing my father’s hearing aids was stressful until we engaged PTA Solutions. The prompt WhatsApp follow-ups and care check-ins give our entire family peace of mind."
           </p>
         </div>
         <div class="pt-4 border-t border-[#DCE7E6]">
-          <p class="font-display font-bold text-[15px] text-[#122326]">Vikramaditya Shah</p>
+          <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Vikramaditya Shah</p>
           <p class="text-[12px] text-[#6C7A79]">NRI Parent Care Desk • London / Chembur</p>
         </div>
       </div>
@@ -883,12 +883,12 @@
             </div>
             <span class="text-[11px] font-bold px-2.5 py-0.5 bg-white border border-[#DCE7E6] rounded-md text-[#526163]">Pediatric Screening</span>
           </div>
-          <p class="text-[15px] text-[#122326] leading-relaxed italic">
+          <p class="text-[15px] text-[#0F1E3E] leading-relaxed italic">
             "We brought our 4-year-old son for speech delays and auditory testing. The clinic environment was quiet, calming, and free of medical fear. We saw clear articulation gains within two months."
           </p>
         </div>
         <div class="pt-4 border-t border-[#DCE7E6]">
-          <p class="font-display font-bold text-[15px] text-[#122326]">Pooja &amp; Rohan Sen</p>
+          <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Pooja &amp; Rohan Sen</p>
           <p class="text-[12px] text-[#6C7A79]">Speech Therapy &amp; Audiometry</p>
         </div>
       </div>
@@ -901,11 +901,11 @@
   <div class="max-w-4xl mx-auto px-6 space-y-10">
     <div class="text-center space-y-3">
       <div class="inline-flex items-center gap-2">
-        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
         <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Direct Clinic Scheduling</span>
-        <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
       </div>
-      <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+      <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#0F1E3E]">
         Guided 3-Step Appointment Booking Hub
       </h2>
       <p class="text-[15px] text-[#526163]">
@@ -914,8 +914,8 @@
     </div>
     <div class="bg-white border border-[#DCE7E6] rounded-2xl p-6 lg:p-10 shadow-sm transition-all duration-300">
       <div class="grid grid-cols-3 gap-2 pb-8 border-b border-[#DCE7E6] mb-8" id="step-indicator">
-        <button class="flex items-center gap-2 text-[#006A6A] font-bold border-b-2 border-[#1BBCBC] pb-2 text-left" id="step-ind-1" onclick="goToStep(1)" type="button">
-          <span class="w-6 h-6 rounded-full bg-[#1BBCBC] text-[#002020] text-[11px] flex items-center justify-center font-bold">1</span>
+        <button class="flex items-center gap-2 text-[#1E3E83] font-bold border-b-2 border-[#4FC3D9] pb-2 text-left" id="step-ind-1" onclick="goToStep(1)" type="button">
+          <span class="w-6 h-6 rounded-full bg-[#4FC3D9] text-[#0F1E3E] text-[11px] flex items-center justify-center font-bold">1</span>
           <span class="text-[13px] font-display hidden sm:inline">Choose Service</span>
         </button>
         <button class="flex items-center gap-2 text-[#6C7A79] pb-2 text-left" id="step-ind-2" onclick="goToStep(2)" type="button">
@@ -931,53 +931,53 @@
       <form id="booking-form" onsubmit="handleBookingSubmit(event)">
         <!-- STEP 1 -->
         <div class="space-y-6" id="step-1">
-          <h3 class="text-[18px] font-display font-bold text-[#122326]">Step 1: Select Your Required Clinical Service</h3>
+          <h3 class="text-[18px] font-display font-bold text-[#0F1E3E]">Step 1: Select Your Required Clinical Service</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#1BBCBC] bg-[#F1F4F3]/50 cursor-pointer hover:border-[#1BBCBC] transition-all">
-              <input checked="" class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Hearing Tests">
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#4FC3D9] bg-[#F1F4F3]/50 cursor-pointer hover:border-[#4FC3D9] transition-all">
+              <input checked="" class="text-[#1E3E83] focus:ring-[#1E3E83]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Hearing Tests">
               <div>
-                <p class="font-display font-bold text-[15px] text-[#122326]">Hearing Tests</p>
+                <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Hearing Tests</p>
                 <p class="text-[12px] text-[#6C7A79]">Audiometry, Tympanometry</p>
               </div>
             </label>
-            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
-              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Hearing Aids">
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#4FC3D9] transition-all">
+              <input class="text-[#1E3E83] focus:ring-[#1E3E83]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Hearing Aids">
               <div>
-                <p class="font-display font-bold text-[15px] text-[#122326]">Hearing Aids</p>
+                <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Hearing Aids</p>
                 <p class="text-[12px] text-[#6C7A79]">Fitting, Trials &amp; Programming</p>
               </div>
             </label>
-            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
-              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Speech Therapy">
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#4FC3D9] transition-all">
+              <input class="text-[#1E3E83] focus:ring-[#1E3E83]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Speech Therapy">
               <div>
-                <p class="font-display font-bold text-[15px] text-[#122326]">Speech Therapy</p>
+                <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Speech Therapy</p>
                 <p class="text-[12px] text-[#6C7A79]">Pediatric &amp; Adult Fluency</p>
               </div>
             </label>
-            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
-              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Newborn Screening">
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#4FC3D9] transition-all">
+              <input class="text-[#1E3E83] focus:ring-[#1E3E83]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Newborn Screening">
               <div>
-                <p class="font-display font-bold text-[15px] text-[#122326]">Newborn Screening</p>
+                <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Newborn Screening</p>
                 <p class="text-[12px] text-[#6C7A79]">BERA, OAE Testing</p>
               </div>
             </label>
-            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
-              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Complete Care">
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#4FC3D9] transition-all">
+              <input class="text-[#1E3E83] focus:ring-[#1E3E83]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Complete Care">
               <div>
-                <p class="font-display font-bold text-[15px] text-[#122326]">Complete Care</p>
+                <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Complete Care</p>
                 <p class="text-[12px] text-[#6C7A79]">Comprehensive In-Home Care</p>
               </div>
             </label>
-            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#1BBCBC] transition-all">
-              <input class="text-[#006A6A] focus:ring-[#006A6A]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Premium NRI Care">
+            <label class="service-pill-label flex items-center gap-3 p-4 rounded-xl border border-[#DCE7E6] cursor-pointer hover:border-[#4FC3D9] transition-all">
+              <input class="text-[#1E3E83] focus:ring-[#1E3E83]" name="selected_service" onchange="syncServiceSelection(this)" type="radio" value="Premium NRI Care">
               <div>
-                <p class="font-display font-bold text-[15px] text-[#122326]">Premium NRI Care</p>
+                <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Premium NRI Care</p>
                 <p class="text-[12px] text-[#6C7A79]">Mumbai Home Visits for NRIs</p>
               </div>
             </label>
           </div>
           <div class="flex justify-end pt-4">
-            <button class="group px-7 py-3 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(2)" type="button">
+            <button class="group px-7 py-3 bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(2)" type="button">
               <span class="">Continue to Date &amp; Time</span>
               <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
             </button>
@@ -986,15 +986,15 @@
 
         <!-- STEP 2 -->
         <div class="space-y-6 hidden" id="step-2">
-          <h3 class="text-[18px] font-display font-bold text-[#122326]">Step 2: Choose Preferred Date &amp; Time Slot</h3>
+          <h3 class="text-[18px] font-display font-bold text-[#0F1E3E]">Step 2: Choose Preferred Date &amp; Time Slot</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-2" for="book-date">Preferred Date</label>
-              <input class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#122326] text-[14px]" id="book-date" onchange="updateSummary()" required="" type="date">
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#0F1E3E] text-[14px]" id="book-date" onchange="updateSummary()" required="" type="date">
             </div>
             <div>
               <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-2" for="book-time">Preferred Time Window</label>
-              <select class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#122326] text-[14px]" id="book-time" onchange="updateSummary()">
+              <select class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#0F1E3E] text-[14px]" id="book-time" onchange="updateSummary()">
                 <option>10:00 AM – 11:30 AM (Morning)</option>
                 <option>12:00 PM – 01:30 PM (Mid-Day)</option>
                 <option>03:00 PM – 04:30 PM (Afternoon)</option>
@@ -1003,10 +1003,10 @@
             </div>
           </div>
           <div class="flex justify-between pt-4">
-            <button class="px-6 py-2.5 border border-[#6C7A79]/40 text-[#122326] font-display font-semibold text-[14px] rounded-lg hover:bg-[#F1F4F3] transition-all" onclick="goToStep(1)" type="button">
+            <button class="px-6 py-2.5 border border-[#6C7A79]/40 text-[#0F1E3E] font-display font-semibold text-[14px] rounded-lg hover:bg-[#F1F4F3] transition-all" onclick="goToStep(1)" type="button">
               ← Back
             </button>
-            <button class="group px-7 py-3 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(3)" type="button">
+            <button class="group px-7 py-3 bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(3)" type="button">
               <span class="">Continue to Details</span>
               <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
             </button>
@@ -1015,30 +1015,30 @@
 
         <!-- STEP 3 -->
         <div class="space-y-6 hidden" id="step-3">
-          <h3 class="text-[18px] font-display font-bold text-[#122326]">Step 3: Enter Patient Information &amp; Confirm</h3>
+          <h3 class="text-[18px] font-display font-bold text-[#0F1E3E]">Step 3: Enter Patient Information &amp; Confirm</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1" for="patient-name">Full Patient Name *</label>
-              <input class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#122326] text-[14px]" id="patient-name" placeholder="e.g., Ramesh Mehta" required="" type="text">
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#0F1E3E] text-[14px]" id="patient-name" placeholder="e.g., Ramesh Mehta" required="" type="text">
             </div>
             <div>
               <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1" for="patient-phone">Contact Phone / WhatsApp *</label>
-              <input class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#122326] text-[14px]" id="patient-phone" placeholder="+91 98765 43210" required="" type="tel">
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-[#F7FAF9] border border-[#DCE7E6] text-[#0F1E3E] text-[14px]" id="patient-phone" placeholder="+91 98765 43210" required="" type="tel">
             </div>
           </div>
           <div class="p-4 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6] space-y-2">
-            <p class="text-[11px] font-bold uppercase tracking-wider text-[#006A6A]">Booking Summary Preview</p>
+            <p class="text-[11px] font-bold uppercase tracking-wider text-[#1E3E83]">Booking Summary Preview</p>
             <div class="text-[13px] text-[#526163] flex flex-wrap gap-x-6 gap-y-1">
-              <span class="">Selected: <strong class="text-[#122326]" id="prev-service">Hearing Tests</strong></span>
-              <span class="">Date: <strong class="text-[#122326]" id="prev-date">2026-10-05</strong></span>
-              <span class="">Time: <strong class="text-[#122326]" id="prev-time">10:00 AM – 11:30 AM (Morning)</strong></span>
+              <span class="">Selected: <strong class="text-[#0F1E3E]" id="prev-service">Hearing Tests</strong></span>
+              <span class="">Date: <strong class="text-[#0F1E3E]" id="prev-date">2026-10-05</strong></span>
+              <span class="">Time: <strong class="text-[#0F1E3E]" id="prev-time">10:00 AM – 11:30 AM (Morning)</strong></span>
             </div>
           </div>
           <div class="flex justify-between pt-4">
-            <button class="px-6 py-2.5 border border-[#6C7A79]/40 text-[#122326] font-display font-semibold text-[14px] rounded-lg hover:bg-[#F1F4F3] transition-all" onclick="goToStep(2)" type="button">
+            <button class="px-6 py-2.5 border border-[#6C7A79]/40 text-[#0F1E3E] font-display font-semibold text-[14px] rounded-lg hover:bg-[#F1F4F3] transition-all" onclick="goToStep(2)" type="button">
               ← Back
             </button>
-            <button class="px-8 py-3 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md active:scale-95" type="submit">
+            <button class="px-8 py-3 bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-md active:scale-95" type="submit">
               Confirm &amp; Book Appointment
             </button>
           </div>
@@ -1046,14 +1046,14 @@
       </form>
 
       <div class="hidden p-8 text-center space-y-4" id="booking-success">
-        <div class="w-16 h-16 rounded-full bg-[#1BBCBC]/20 text-[#006A6A] mx-auto flex items-center justify-center">
+        <div class="w-16 h-16 rounded-full bg-[#4FC3D9]/20 text-[#1E3E83] mx-auto flex items-center justify-center">
           <span class="material-symbols-outlined text-[36px]">check_circle</span>
         </div>
-        <h3 class="text-[26px] font-display font-bold text-[#122326]">Appointment Request Confirmed!</h3>
+        <h3 class="text-[26px] font-display font-bold text-[#0F1E3E]">Appointment Request Confirmed!</h3>
         <p class="text-[14px] text-[#526163] max-w-md mx-auto leading-relaxed">
           Thank you. Dr. Johnsavio Fernandes' clinical desk at PTA SOLUTIONS Chembur has received your consultation booking. Our care coordinator will call or WhatsApp you shortly.
         </p>
-        <button class="mt-4 px-6 py-2 border border-[#6C7A79]/40 rounded-lg font-display font-semibold text-[13px] text-[#122326] hover:bg-[#F1F4F3] transition-colors" onclick="resetBooking()">
+        <button class="mt-4 px-6 py-2 border border-[#6C7A79]/40 rounded-lg font-display font-semibold text-[13px] text-[#0F1E3E] hover:bg-[#F1F4F3] transition-colors" onclick="resetBooking()">
           Book Another Consultation
         </button>
       </div>
@@ -1062,9 +1062,9 @@
 </section>
 
 <!-- 12. FULL-WIDTH PRE-FOOTER CTA -->
-<section class="py-20 bg-[#122326] text-white relative overflow-hidden reveal-on-scroll is-visible">
+<section class="py-20 bg-[#0F1E3E] text-white relative overflow-hidden reveal-on-scroll is-visible">
   <div class="max-w-5xl mx-auto px-6 text-center relative z-10 space-y-6">
-    <span class="px-3.5 py-1.5 bg-white/10 rounded-full text-[#1BBCBC] text-[11px] font-bold tracking-widest uppercase">
+    <span class="px-3.5 py-1.5 bg-white/10 rounded-full text-[#4FC3D9] text-[11px] font-bold tracking-widest uppercase">
       Mumbai's Trusted Audiology Practice
     </span>
     <h2 class="text-[34px] md:text-[46px] font-display font-extrabold tracking-tight">
@@ -1074,7 +1074,7 @@
       Speak with Dr. Johnsavio Fernandes or schedule a doorstep clinical audiology evaluation today.
     </p>
     <div class="pt-4 flex flex-wrap justify-center items-center gap-4">
-      <a class="group px-8 py-3.5 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[15px] rounded-lg hover:bg-white hover:text-[#122326] transition-all duration-200 shadow-lg inline-flex items-center gap-2" href="#booking-hub">
+      <a class="group px-8 py-3.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[15px] rounded-lg hover:bg-white hover:text-[#0F1E3E] transition-all duration-200 shadow-lg inline-flex items-center gap-2" href="#booking-hub">
         <span class="">Book Appointment</span>
         <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1.5">arrow_forward</span>
       </a>
@@ -1091,10 +1091,10 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
       <div class="lg:col-span-5 space-y-6">
         <div class="flex items-center gap-2">
-          <span class="w-5 h-[2px] bg-[#1BBCBC]"></span>
+          <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#526163]">Connect With Us</span>
         </div>
-        <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#122326]">
+        <h2 class="text-[32px] lg:text-[40px] font-display font-bold text-[#0F1E3E]">
           Let's Talk About Better Hearing &amp; Communication
         </h2>
         <p class="text-[15px] text-[#526163]">
@@ -1102,26 +1102,26 @@
         </p>
         <div class="space-y-4 pt-2">
           <div class="flex items-start gap-4 p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
-            <span class="material-symbols-outlined text-[#006A6A] text-[24px] mt-0.5">location_on</span>
+            <span class="material-symbols-outlined text-[#1E3E83] text-[24px] mt-0.5">location_on</span>
             <div>
-              <p class="font-display font-bold text-[15px] text-[#122326]">Clinic Address</p>
+              <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Clinic Address</p>
               <p class="text-[13px] text-[#526163] mt-1 leading-relaxed">
                 Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Above Surya Hospital Next to R.K.Studio, Opp CROMA, Chembur, Mumbai - 400074
               </p>
             </div>
           </div>
           <div class="flex items-center gap-4 p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
-            <span class="material-symbols-outlined text-[#006A6A] text-[24px]">call</span>
+            <span class="material-symbols-outlined text-[#1E3E83] text-[24px]">call</span>
             <div>
-              <p class="font-display font-bold text-[15px] text-[#122326]">Direct Phone</p>
-              <a class="text-[14px] text-[#006A6A] font-bold hover:underline" href="tel:+919773545058">+91 9773545058</a>
+              <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Direct Phone</p>
+              <a class="text-[14px] text-[#1E3E83] font-bold hover:underline" href="tel:+919773545058">+91 9773545058</a>
             </div>
           </div>
           <div class="flex items-center gap-4 p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
-            <span class="material-symbols-outlined text-[#006A6A] text-[24px]">mail</span>
+            <span class="material-symbols-outlined text-[#1E3E83] text-[24px]">mail</span>
             <div>
-              <p class="font-display font-bold text-[15px] text-[#122326]">Email Address</p>
-              <a class="text-[14px] text-[#526163] hover:text-[#006A6A] transition-colors" href="mailto:ptasolutionshsc@gmail.com">ptasolutionshsc@gmail.com</a>
+              <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Email Address</p>
+              <a class="text-[14px] text-[#526163] hover:text-[#1E3E83] transition-colors" href="mailto:ptasolutionshsc@gmail.com">ptasolutionshsc@gmail.com</a>
             </div>
           </div>
         </div>
@@ -1131,28 +1131,28 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-first-name">First Name *</label>
-              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-first-name" required="" type="text">
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#0F1E3E] text-[14px]" id="contact-first-name" required="" type="text">
             </div>
             <div>
               <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-last-name">Last Name</label>
-              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-last-name" type="text">
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#0F1E3E] text-[14px]" id="contact-last-name" type="text">
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-email">Email *</label>
-              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-email" required="" type="email">
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#0F1E3E] text-[14px]" id="contact-email" required="" type="email">
             </div>
             <div>
               <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-phone">Phone *</label>
-              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-phone" required="" type="tel">
+              <input class="custom-input w-full h-12 px-4 rounded-lg bg-white border border-[#DCE7E6] text-[#0F1E3E] text-[14px]" id="contact-phone" required="" type="tel">
             </div>
           </div>
           <div>
             <label class="block text-[11px] font-bold uppercase tracking-wider text-[#6C7A79] mb-1.5" for="contact-message">Message</label>
-            <textarea class="custom-input w-full p-4 rounded-lg bg-white border border-[#DCE7E6] text-[#122326] text-[14px]" id="contact-message" placeholder="Briefly describe your hearing concerns..." rows="4"></textarea>
+            <textarea class="custom-input w-full p-4 rounded-lg bg-white border border-[#DCE7E6] text-[#0F1E3E] text-[14px]" id="contact-message" placeholder="Briefly describe your hearing concerns..." rows="4"></textarea>
           </div>
-          <button class="w-full h-12 inline-flex items-center justify-center bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm active:scale-95" type="submit">
+          <button class="w-full h-12 inline-flex items-center justify-center bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-sm active:scale-95" type="submit">
             Send Message
           </button>
           <div class="hidden p-3.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-[13px] text-center" id="contact-feedback">
@@ -1165,7 +1165,7 @@
 </section>
 
 <!-- 14. FOOTER -->
-<footer class="w-full bg-[#122326] text-gray-300">
+<footer class="w-full bg-[#0F1E3E] text-gray-300">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
       <div class="space-y-4">
@@ -1180,21 +1180,21 @@
       <div class="space-y-3">
         <p class="font-display font-bold text-white text-[15px]">Explore</p>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/about">About</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services">Services</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/nri-hearing-care">NRI Hearing Care</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/nri-hearing-care">Care Plans</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/book-appointment">Book Appointment</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/about">About</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/services">Services</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/nri-hearing-care">NRI Hearing Care</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/nri-hearing-care">Care Plans</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/book-appointment">Book Appointment</a></li>
         </ul>
       </div>
       <div class="space-y-3">
         <p class="font-display font-bold text-white text-[15px]">Services</p>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/hearing-tests">Hearing Tests</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/hearing-aids">Hearing Aids</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/speech-therapy">Speech Therapy</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/newborn-screening">Newborn Screening</a></li>
-          <li class=""><a class="hover:text-[#1BBCBC] transition-colors" href="/services/complete-care">Complete Care</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/services/hearing-tests">Hearing Tests</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/services/hearing-aids">Hearing Aids</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/services/speech-therapy">Speech Therapy</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/services/newborn-screening">Newborn Screening</a></li>
+          <li class=""><a class="hover:text-[#4FC3D9] transition-colors" href="/services/complete-care">Complete Care</a></li>
         </ul>
       </div>
       <div class="space-y-3">
@@ -1202,7 +1202,7 @@
         <p class="text-[13px] text-gray-400 leading-relaxed">
           Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Opp CROMA, Chembur, Mumbai - 400074
         </p>
-        <p class="text-[13px] pt-1">Tel: <a class="text-[#1BBCBC] font-medium hover:underline" href="tel:+919773545058">+91 9773545058</a></p>
+        <p class="text-[13px] pt-1">Tel: <a class="text-[#4FC3D9] font-medium hover:underline" href="tel:+919773545058">+91 9773545058</a></p>
       </div>
     </div>
     <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-[12px] text-gray-500">
@@ -1223,10 +1223,10 @@
 <!-- FLOATING WHATSAPP QUICK ACTION WIDGET -->
 <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#DCE7E6] p-3 px-6 flex items-center justify-between shadow-2xl">
   <div>
-    <p class="text-[12px] font-bold text-[#122326]">PTA Solutions Chembur</p>
-    <p class="text-[11px] text-[#006A6A]">Doorstep &amp; Clinic Care</p>
+    <p class="text-[12px] font-bold text-[#0F1E3E]">PTA Solutions Chembur</p>
+    <p class="text-[11px] text-[#1E3E83]">Doorstep &amp; Clinic Care</p>
   </div>
-  <a class="px-4 py-2 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[13px] rounded-lg shadow-sm active:scale-95 transition-all" href="/book-appointment">
+  <a class="px-4 py-2 bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[13px] rounded-lg shadow-sm active:scale-95 transition-all" href="/book-appointment">
     Book Appointment
   </a>
 </div><div class="fixed bottom-6 right-6 z-40">
@@ -1357,17 +1357,17 @@
       const icon = btn.querySelector('.tab-icon');
 
       if (btnKey === key) {
-        btn.className = "service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-white border-2 border-[#1BBCBC] shadow-md group";
-        num.className = "tab-num text-[14px] font-bold font-mono text-[#006A6A]";
-        title.className = "tab-title font-display font-bold text-[16px] text-[#122326]";
+        btn.className = "service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-white border-2 border-[#4FC3D9] shadow-md group";
+        num.className = "tab-num text-[14px] font-bold font-mono text-[#1E3E83]";
+        title.className = "tab-title font-display font-bold text-[16px] text-[#0F1E3E]";
         icon.innerText = "arrow_forward";
-        icon.className = "material-symbols-outlined tab-icon text-[#006A6A] text-[20px] transition-transform group-hover:translate-x-1";
+        icon.className = "material-symbols-outlined tab-icon text-[#1E3E83] text-[20px] transition-transform group-hover:translate-x-1";
       } else {
         btn.className = "service-tab-btn w-full text-left p-5 rounded-xl transition-all duration-200 flex items-center justify-between bg-[#F1F4F3]/60 hover:bg-white border border-transparent hover:border-[#DCE7E6] group";
-        num.className = "tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#006A6A]";
-        title.className = "tab-title font-display font-semibold text-[16px] text-[#122326]";
+        num.className = "tab-num text-[14px] font-bold font-mono text-[#6C7A79] group-hover:text-[#1E3E83]";
+        title.className = "tab-title font-display font-semibold text-[16px] text-[#0F1E3E]";
         icon.innerText = "chevron_right";
-        icon.className = "material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#006A6A] transition-all";
+        icon.className = "material-symbols-outlined tab-icon text-[#6C7A79] text-[20px] group-hover:text-[#1E3E83] transition-all";
       }
     });
 
@@ -1381,8 +1381,8 @@
       step.querySelector('.step-icon-box').className = 'step-icon-box w-10 h-10 rounded-lg bg-[#F1F4F3] text-[#526163] flex items-center justify-center transition-colors';
     });
     stepEl.classList.add('active');
-    stepEl.querySelector('.step-num').className = 'step-num text-[26px] font-mono font-extrabold text-[#006A6A] transition-colors';
-    stepEl.querySelector('.step-icon-box').className = 'step-icon-box w-10 h-10 rounded-lg bg-[#1BBCBC] text-white flex items-center justify-center transition-colors';
+    stepEl.querySelector('.step-num').className = 'step-num text-[26px] font-mono font-extrabold text-[#1E3E83] transition-colors';
+    stepEl.querySelector('.step-icon-box').className = 'step-icon-box w-10 h-10 rounded-lg bg-[#4FC3D9] text-white flex items-center justify-center transition-colors';
   }
 
   // Booking Flow
@@ -1396,11 +1396,11 @@
       const ind = document.getElementById(`step-ind-${i}`);
       const badge = ind.querySelector('span:first-child');
       if (i === step) {
-        ind.className = "flex items-center gap-2 text-[#006A6A] font-bold border-b-2 border-[#1BBCBC] pb-2 text-left";
-        badge.className = "w-6 h-6 rounded-full bg-[#1BBCBC] text-[#002020] text-[11px] flex items-center justify-center font-bold";
+        ind.className = "flex items-center gap-2 text-[#1E3E83] font-bold border-b-2 border-[#4FC3D9] pb-2 text-left";
+        badge.className = "w-6 h-6 rounded-full bg-[#4FC3D9] text-[#0F1E3E] text-[11px] flex items-center justify-center font-bold";
       } else if (i < step) {
-        ind.className = "flex items-center gap-2 text-[#006A6A] pb-2 font-medium text-left";
-        badge.className = "w-6 h-6 rounded-full bg-[#1BBCBC]/20 text-[#006A6A] text-[11px] flex items-center justify-center font-bold";
+        ind.className = "flex items-center gap-2 text-[#1E3E83] pb-2 font-medium text-left";
+        badge.className = "w-6 h-6 rounded-full bg-[#4FC3D9]/20 text-[#1E3E83] text-[11px] flex items-center justify-center font-bold";
       } else {
         ind.className = "flex items-center gap-2 text-[#6C7A79] pb-2 text-left";
         badge.className = "w-6 h-6 rounded-full bg-[#E0E3E2] text-[#3C4949] text-[11px] flex items-center justify-center font-bold";
@@ -1411,13 +1411,13 @@
 
   function syncServiceSelection(inputEl) {
     document.querySelectorAll('.service-pill-label').forEach(l => {
-      l.classList.remove('border-[#1BBCBC]', 'bg-[#F1F4F3]/50');
+      l.classList.remove('border-[#4FC3D9]', 'bg-[#F1F4F3]/50');
       l.classList.add('border-[#DCE7E6]');
     });
     const parentLabel = inputEl.closest('.service-pill-label');
     if (parentLabel) {
       parentLabel.classList.remove('border-[#DCE7E6]');
-      parentLabel.classList.add('border-[#1BBCBC]', 'bg-[#F1F4F3]/50');
+      parentLabel.classList.add('border-[#4FC3D9]', 'bg-[#F1F4F3]/50');
     }
     updateSummary();
   }

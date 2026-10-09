@@ -6,11 +6,11 @@ module.exports = {
   body: `
 <div class="max-w-4xl mx-auto px-6 py-12">
   <p class="text-[12px] text-[#687779] mb-3"><a href="/" class="cursor-pointer hover:underline">Home</a> / <a href="/book-appointment" class="cursor-pointer hover:underline">Book Appointment</a> / Hearing Aids</p>
-  <span class="px-3 py-1 bg-[#1BBCBC]/20 text-[#004646] font-bold rounded-full text-[11px] uppercase tracking-wider">Service: Hearing Aids</span>
-  <h1 class="text-[34px] font-display font-extrabold text-[#122326] mt-2">Hearing Aids</h1>
+  <span class="px-3 py-1 bg-[#4FC3D9]/20 text-[#163B6B] font-bold rounded-full text-[11px] uppercase tracking-wider">Service: Hearing Aids</span>
+  <h1 class="text-[34px] font-display font-extrabold text-[#0F1E3E] mt-2">Hearing Aids</h1>
   <div class="mt-8 bg-white p-8 rounded-2xl border border-[#DCE7E6] shadow-sm space-y-6">
     <div>
-      <h2 class="text-[22px] font-display font-bold text-[#122326]">Schedule your service</h2>
+      <h2 class="text-[22px] font-display font-bold text-[#0F1E3E]">Schedule your service</h2>
       <p class="text-[14px] text-[#687779] mt-1">Check out our availability and book the date and time that works for you.</p>
     </div>
     <form onsubmit="handleBooking(event, 'Hearing Aids')" class="space-y-4 pt-2">
@@ -53,8 +53,8 @@ module.exports = {
         </div>
       </div>
       <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#DCE7E6]">
-        <div class="text-[13px] text-[#687779]">Need help? Call clinic desk: <a href="tel:+919773545058" class="text-[#006A6A] font-bold">+91 9773545058</a></div>
-        <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-[#1BBCBC] text-[#002020] font-display font-bold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-md">
+        <div class="text-[13px] text-[#687779]">Need help? Call clinic desk: <a href="tel:+919773545058" class="text-[#1E3E83] font-bold">+91 9773545058</a></div>
+        <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-md">
           Confirm Hearing Aids Booking
         </button>
       </div>

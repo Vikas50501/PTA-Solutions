@@ -16,9 +16,9 @@ function head(title, description) {
       theme: {
         extend: {
           colors: {
-            primary: "#006A6A",
-            teal: "#1BBCBC",
-            dark: "#122326",
+            primary: "#1E3E83",
+            teal: "#4FC3D9",
+            dark: "#0F1E3E",
             textdark: "#182426",
             muted: "#687779",
             surface: "#F7FAF9",
@@ -51,7 +51,7 @@ function head(title, description) {
     .wave-bar:nth-child(6) { animation-delay: 0.75s; }
   </style>
 </head>
-<body class="bg-[#F7FAF9] text-[#182426] font-body antialiased selection:bg-[#1BBCBC] selection:text-[#002020] flex flex-col min-h-screen">
+<body class="bg-[#F7FAF9] text-[#182426] font-body antialiased selection:bg-[#4FC3D9] selection:text-[#0F1E3E] flex flex-col min-h-screen">
 `;
 }
 
@@ -68,8 +68,8 @@ const NAV_ITEMS = [
 function header(active) {
   const navHtml = NAV_ITEMS.map(it => {
     const activeClass = it.key === active
-      ? 'text-[#122326] font-semibold border-b-2 border-[#1BBCBC]'
-      : 'hover:text-[#006A6A]';
+      ? 'text-[#0F1E3E] font-semibold border-b-2 border-[#4FC3D9]'
+      : 'hover:text-[#1E3E83]';
     return `        <a href="${it.href}" class="main-nav transition-colors py-1 ${activeClass}">${it.label}</a>`;
   }).join('\n');
 
@@ -87,14 +87,14 @@ function header(active) {
 ${navHtml}
     </nav>
     <div class="flex items-center gap-4">
-      <a href="tel:+919773545058" class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#687779] hover:text-[#006A6A]">
-        <span class="material-symbols-outlined text-[#006A6A] text-[18px]">call</span>
+      <a href="tel:+919773545058" class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#687779] hover:text-[#1E3E83]">
+        <span class="material-symbols-outlined text-[#1E3E83] text-[18px]">call</span>
         <span class="">+91 9773545058</span>
       </a>
-      <a href="/book-appointment" class="px-5 py-2.5 bg-[#1BBCBC] text-[#002020] font-display font-semibold text-[14px] rounded-lg hover:bg-[#006A6A] hover:text-white transition-all shadow-sm">
+      <a href="/book-appointment" class="px-5 py-2.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-sm">
         Book Appointment →
       </a>
-      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#122326] hover:bg-[#F1F4F3]" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0F1E3E] hover:bg-[#F1F4F3]" id="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
       </button>
     </div>
@@ -102,7 +102,7 @@ ${navHtml}
   <div class="hidden md:hidden border-t border-[#DCE7E6] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
 ${mobileItems}
     <div class="pt-2">
-      <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#006A6A] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
+      <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#1E3E83] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
         <span class="material-symbols-outlined text-[18px]">call</span>
         <span class="">Direct Call: +91 9773545058</span>
       </a>
@@ -120,14 +120,14 @@ function pageHero({ crumbs, badges, title, subtitle, meta, bg = '#F7FAF9' }) {
   }).join('');
 
   const badgeHtml = badges ? `<div class="flex items-center gap-2 mb-2">
-          ${badges.map(b => `<span class="px-3 py-1 ${b.solid ? 'bg-[#1BBCBC] text-[#002020]' : 'bg-[#1BBCBC]/20 text-[#004646]'} font-bold rounded-full text-[11px] uppercase tracking-wider">${b.label}</span>`).join('\n          ')}
+          ${badges.map(b => `<span class="px-3 py-1 ${b.solid ? 'bg-[#4FC3D9] text-[#0F1E3E]' : 'bg-[#4FC3D9]/20 text-[#163B6B]'} font-bold rounded-full text-[11px] uppercase tracking-wider">${b.label}</span>`).join('\n          ')}
         </div>` : '';
 
   return `  <section class="py-12 bg-[${bg}] border-b border-[#DCE7E6]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <p class="text-[12px] text-[#687779] mb-3">${crumbHtml}</p>
       ${badgeHtml}
-      <h1 class="text-[36px] lg:text-[48px] font-display font-extrabold text-[#122326] mt-2">${title}</h1>
+      <h1 class="text-[36px] lg:text-[48px] font-display font-extrabold text-[#0F1E3E] mt-2">${title}</h1>
       ${subtitle ? `<p class="text-[16px] text-[#687779] max-w-2xl mt-2">${subtitle}</p>` : ''}
       ${meta ? `<div class="flex flex-wrap gap-4 text-[13px] text-[#687779] mt-3">${meta}</div>` : ''}
     </div>
@@ -136,7 +136,7 @@ function pageHero({ crumbs, badges, title, subtitle, meta, bg = '#F7FAF9' }) {
 }
 
 function footer() {
-  return `<footer class="bg-[#122326] text-white border-t border-gray-800">
+  return `<footer class="bg-[#0F1E3E] text-white border-t border-gray-800">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
     <div class="space-y-4">
       <h4 class="font-display font-bold text-[18px] text-white tracking-wider">PTA SOLUTIONS</h4>
@@ -144,7 +144,7 @@ function footer() {
       <p class="text-[12px] text-gray-500">Lead Clinician: Dr. Johnsavio Fernandes</p>
     </div>
     <div class="space-y-3">
-      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#1BBCBC]">Explore</h5>
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#4FC3D9]">Explore</h5>
       <ul class="space-y-2 text-[13px] text-gray-400">
         <li><a href="/about" class="hover:text-white">About Clinic</a></li>
         <li><a href="/services" class="hover:text-white">Services Directory</a></li>
@@ -155,7 +155,7 @@ function footer() {
       </ul>
     </div>
     <div class="space-y-3">
-      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#1BBCBC]">Clinical Services</h5>
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#4FC3D9]">Clinical Services</h5>
       <ul class="space-y-2 text-[13px] text-gray-400">
         <li><a href="/services/hearing-tests" class="hover:text-white">Hearing Tests</a></li>
         <li><a href="/services/hearing-aids" class="hover:text-white">Hearing Aids</a></li>
@@ -166,10 +166,10 @@ function footer() {
       </ul>
     </div>
     <div class="space-y-3">
-      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#1BBCBC]">Contact</h5>
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#4FC3D9]">Contact</h5>
       <p class="text-[13px] text-gray-400">Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Opp CROMA, Chembur, Mumbai - 400074</p>
-      <p class="text-[13px] text-gray-400">Tel: <a href="tel:+919773545058" class="text-white hover:text-[#1BBCBC]">+91 9773545058</a></p>
-      <p class="text-[13px] text-gray-400">Email: <a href="mailto:ptasolutionshsc@gmail.com" class="text-white hover:text-[#1BBCBC]">ptasolutionshsc@gmail.com</a></p>
+      <p class="text-[13px] text-gray-400">Tel: <a href="tel:+919773545058" class="text-white hover:text-[#4FC3D9]">+91 9773545058</a></p>
+      <p class="text-[13px] text-gray-400">Email: <a href="mailto:ptasolutionshsc@gmail.com" class="text-white hover:text-[#4FC3D9]">ptasolutionshsc@gmail.com</a></p>
     </div>
   </div>
   <div class="border-t border-gray-800/80 py-6 text-center text-[12px] text-gray-500">
@@ -177,8 +177,8 @@ function footer() {
   </div>
 </footer>
 
-<div id="booking-toast" class="fixed bottom-6 right-6 bg-[#122326] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-gray-700 hidden z-50 items-center gap-3">
-  <span class="material-symbols-outlined text-[#1BBCBC]">check_circle</span>
+<div id="booking-toast" class="fixed bottom-6 right-6 bg-[#0F1E3E] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-gray-700 hidden z-50 items-center gap-3">
+  <span class="material-symbols-outlined text-[#4FC3D9]">check_circle</span>
   <div>
     <p class="font-display font-bold text-[13px]" id="toast-title">Appointment Confirmed</p>
     <p class="text-[12px] text-gray-300" id="toast-desc">Our clinic desk will contact you shortly.</p>
