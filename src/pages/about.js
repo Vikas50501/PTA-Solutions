@@ -1,4 +1,4 @@
-const { pageHero, imagePlaceholder, breadcrumbSchema } = require('../partials/layout.js');
+const { pageHero, imagePlaceholder, breadcrumbSchema, sectionHeading, benefitGrid, processSteps } = require('../partials/layout.js');
 
 const PATH = '/about';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'About' }];
@@ -61,6 +61,41 @@ module.exports = {
           <p class="text-[12px] text-[#687779] mt-1">Shanmukhapriya HealthCare Center, Chembur, Mumbai</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-10">
+    ${sectionHeading({ eyebrow: 'Why Choose PTA Solutions', title: 'Care Built on Precision and Trust', align: 'center' })}
+    ${benefitGrid([
+      { icon: 'biotech', title: 'Clinical Precision', desc: 'State-of-the-art audiometers, tympanometry, and speech mapping protocols calibrated to international accuracy benchmarks.' },
+      { icon: 'verified_user', title: 'Ethical Recommendations', desc: 'Transparent guidance driven exclusively by clinical diagnostic data — zero sales pressure or unnecessary upsells.' },
+      { icon: 'volunteer_activism', title: 'Patient Comfort Across Lifespans', desc: 'Gentle diagnostic environments tailored for fragile newborn screenings, adolescent speech fluency, and reassuring senior care.' },
+      { icon: 'groups', title: 'Multi-Disciplinary Team', desc: 'Synergistic speech therapists and pediatric audiologists under one clinical roof.' },
+    ])}
+  </div>
+</section>
+
+<section class="py-16 bg-white border-b border-[#DCE7E6]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-10">
+    ${sectionHeading({ eyebrow: 'The Patient Pathway', title: 'Listen → Understand → Recommend → Support', align: 'center' })}
+    ${processSteps([
+      { icon: 'hearing', title: '1. Listen', desc: 'We start by listening to your unique lifestyle challenges, social environments, and personal communication goals.' },
+      { icon: 'query_stats', title: '2. Understand', desc: 'Comprehensive Pure Tone Audiometry, Speech Discrimination, and Tympanometry map exact acoustic thresholds.' },
+      { icon: 'recommend', title: '3. Recommend', desc: 'Transparent review of tailored rehabilitation options, trial fittings, or speech modules suited strictly to your needs.' },
+      { icon: 'support_agent', title: '4. Support', desc: 'Continual sound tuning, ear mold adjustments, device servicing, and speech progress tracking across lifetime check-ins.' },
+    ])}
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-6 text-center space-y-5">
+    <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0F1E3E]">Ready to take the first step?</h2>
+    <p class="text-[15px] text-[#687779]">Book a consultation with Dr. Johnsavio Fernandes at our Chembur clinic or request a doorstep visit.</p>
+    <div class="flex flex-wrap justify-center gap-4 pt-2">
+      <a href="/book-appointment" class="px-7 py-3.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[15px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-md">Book Appointment</a>
+      <a href="tel:+919773545058" class="px-7 py-3.5 border border-[#DCE7E6] bg-white text-[#0F1E3E] font-display font-semibold text-[15px] rounded-lg hover:border-[#4FC3D9] transition-all">Call +91 9773545058</a>
     </div>
   </div>
 </section>

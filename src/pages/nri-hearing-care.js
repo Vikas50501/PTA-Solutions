@@ -1,4 +1,4 @@
-const { pageHero, breadcrumbSchema, imageThumb, sectionHeading } = require('../partials/layout.js');
+const { pageHero, breadcrumbSchema, imageThumb, imagePlaceholder, sectionHeading } = require('../partials/layout.js');
 
 const PATH = '/nri-hearing-care';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'NRI Hearing Care' }];
@@ -56,7 +56,7 @@ module.exports = {
       </div>
     </div>
     <div class="lg:col-span-6 space-y-6">
-      <img src="https://lh3.googleusercontent.com/aida/AEtjO1UyvGvbDskN31EADDxLoChQsP8SjYbzTDESWn3d1H4lSrtCk5hOqn3noPWaav2E1Sje0kQYJqixek_kgg1xszLGJiZPVUcZ5_2gRgXXBZSoSW9WOFPe3UqWhTarjN5tYZAsSaeAM5AChTCAv2kEqHyFsKxK38A3Ofqh4JdXWJjJDM5lUgAz7dwR_lAmyjcDeNNDmdhx8EEXLJ2Bf6S8BAFQ2SpDOYVcJX_8in5zVanrpkayHlGL5fd_Mw" alt="Parent and adult daughter enjoying a clear conversation at home in Mumbai, representing PTA Solutions' NRI hearing care service" class="rounded-2xl border border-[#DCE7E6] shadow-md w-full" width="640" height="480" loading="lazy">
+      ${imagePlaceholder({ icon: 'family_restroom', label: 'NRI Family Care in Mumbai', caption: 'Doorstep visits for parents at home' })}
       <div class="p-6 bg-[#F7FAF9] rounded-2xl border border-[#DCE7E6]">
         <h3 class="font-display font-bold text-[18px] text-[#0F1E3E] mb-3">Service Options for NRI Families:</h3>
         <div class="space-y-3 text-[14px]">
