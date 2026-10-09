@@ -139,6 +139,11 @@ function head({ title, description, path = '/', ogImage, extraSchema = [] }) {
       display: inline-block;
       vertical-align: middle;
     }
+    .header-scrolled {
+      background-color: rgba(252, 253, 252, 0.98) !important;
+      box-shadow: 0 4px 20px -2px rgba(15, 30, 62, 0.08);
+      border-color: rgba(220, 231, 230, 0.9);
+    }
     .faq-chevron { transition: transform 0.25s ease; }
     .faq-item.open .faq-chevron { transform: rotate(180deg); }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
@@ -155,40 +160,52 @@ const NAV_ITEMS = [
   { key: 'services', label: 'Services', href: '/services' },
   { key: 'nri', label: 'NRI Hearing Care', href: '/nri-hearing-care' },
   { key: 'complete-care', label: 'Complete Care', href: '/services/complete-care' },
-  { key: 'book-appointment', label: 'Booking Hub', href: '/book-appointment' },
   { key: 'contact', label: 'Contact', href: '/contact' },
 ];
 
+const MOBILE_NAV_ITEMS = [
+  { key: 'home', label: 'Home', href: '/' },
+  { key: 'about', label: 'About PTA Solutions', href: '/about' },
+  { key: 'services', label: 'All Services Directory', href: '/services' },
+  { key: 'nri', label: 'NRI Hearing Care Mumbai', href: '/nri-hearing-care' },
+  { key: 'complete-care', label: 'Complete Care Program', href: '/services/complete-care' },
+  { key: 'book-appointment', label: 'Book Appointment Hub', href: '/book-appointment' },
+  { key: 'contact', label: 'Contact Chembur Clinic', href: '/contact' },
+];
+
+// Mirrors the Home page header (index.html) exactly, so the header is identical site-wide.
 function header(active) {
   const navHtml = NAV_ITEMS.map(it => {
     const activeClass = it.key === active
-      ? 'text-[#0F1E3E] font-semibold border-b-2 border-[#4FC3D9]'
+      ? 'text-[#0F1E3E] font-semibold'
       : 'hover:text-[#1E3E83]';
-    return `        <a href="${it.href}" class="main-nav transition-colors py-1 ${activeClass}">${it.label}</a>`;
+    return `      <a class="nav-item cursor-pointer py-1 transition-colors ${activeClass}" href="${it.href}">${it.label}</a>`;
   }).join('\n');
 
-  const mobileItems = NAV_ITEMS.map((it, i) => {
-    const border = i < NAV_ITEMS.length - 1 ? ' border-b border-[#F1F4F3]' : '';
-    return `    <a href="${it.href}" class="block py-2 text-[15px] font-medium text-[#687779]${border}">${it.label}</a>`;
+  const mobileItems = MOBILE_NAV_ITEMS.map((it, i) => {
+    const border = i < MOBILE_NAV_ITEMS.length - 1 ? ' border-b border-[#F1F4F3]' : '';
+    const colorClass = it.key === active ? 'text-[#0F1E3E]' : 'text-[#526163]';
+    return `    <a class="block py-2 text-[15px] font-medium ${colorClass}${border}" href="${it.href}">${it.label}</a>`;
   }).join('\n');
 
-  return `<header class="w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] sticky z-40 top-0">
+  return `<header class="sticky top-0 z-50 w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] transition-all duration-300" id="main-header">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-20">
-    <a href="/" class="cursor-pointer flex items-center gap-3">
-      <img src="${LOGO}" alt="PTA Solutions Clinic Logo" class="h-10 w-auto object-contain">
+    <a aria-label="PTA SOLUTIONS Home" class="flex items-center gap-3 group cursor-pointer" href="/">
+      <img alt="PTA Solutions Clinic Logo" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105" src="${LOGO}">
     </a>
-    <nav class="hidden md:flex items-center space-x-6 lg:space-x-7 text-[14px] font-medium text-[#687779]">
+    <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[14px] font-medium text-[#526163]">
 ${navHtml}
     </nav>
     <div class="flex items-center gap-4">
-      <a href="tel:+919773545058" class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#687779] hover:text-[#1E3E83]">
-        <span class="material-symbols-outlined text-[#1E3E83] text-[18px]">call</span>
+      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#526163] hover:text-[#1E3E83] transition-colors group" href="tel:+919773545058">
+        <span class="material-symbols-outlined text-[#1E3E83] text-[18px] transition-transform group-hover:scale-110">call</span>
         <span class="">+91 9773545058</span>
       </a>
-      <a href="/book-appointment" class="px-5 py-2.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-sm">
-        Book Appointment →
+      <a class="group hidden sm:inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap" href="/book-appointment">
+        <span class="">Book Appointment</span>
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
       </a>
-      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0F1E3E] hover:bg-[#F1F4F3]" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0F1E3E] hover:bg-[#F1F4F3] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
       </button>
     </div>
@@ -271,18 +288,36 @@ function footer() {
   </div>
 </footer>
 
-<div id="booking-toast" class="fixed bottom-6 right-6 bg-[#0F1E3E] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-gray-700 hidden z-50 items-center gap-3">
+<div id="booking-toast" class="fixed bottom-6 left-6 bg-[#0F1E3E] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-gray-700 hidden z-50 items-center gap-3">
   <span class="material-symbols-outlined text-[#4FC3D9]">check_circle</span>
   <div>
     <p class="font-display font-bold text-[13px]" id="toast-title">Appointment Confirmed</p>
     <p class="text-[12px] text-gray-300" id="toast-desc">Our clinic desk will contact you shortly.</p>
   </div>
 </div>
+<div class="fixed bottom-6 right-6 z-40">
+  <a aria-label="Chat directly on WhatsApp" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all font-display font-semibold text-[13px] group" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
+    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+    <span class="hidden sm:inline">WhatsApp Care Desk</span>
+    <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+  </a>
+</div>
 `;
 }
 
 function scripts() {
   return `<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 25) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
+  });
+
   function toggleMobileMenu() {
     const dd = document.getElementById('mobile-menu-dropdown');
     const icon = document.getElementById('menu-icon');
