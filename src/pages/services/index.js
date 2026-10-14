@@ -20,7 +20,7 @@ ${imageBanner({ icon: 'graphic_eq', label: 'PTA Solutions Clinic, Chembur', capt
 <section class="py-16 bg-white border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-14">
 
-    <div>
+    <div id="hearing-care">
       <span class="font-mono text-[12px] font-bold text-[#1797A6] uppercase tracking-widest">Hearing Care</span>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
         <div class="p-8 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] space-y-4 flex flex-col justify-between">

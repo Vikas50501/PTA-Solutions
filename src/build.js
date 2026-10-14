@@ -24,6 +24,7 @@ const ROUTES = {
   'booking/basic-consultation': 'booking/basic-consultation.js',
   'booking/premium-nri-care': 'booking/premium-nri-care.js',
   'contact': 'contact.js',
+  'privacy-policy': 'privacy-policy.js',
 };
 
 for (const [route, modPath] of Object.entries(ROUTES)) {
