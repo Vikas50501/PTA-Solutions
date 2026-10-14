@@ -4,8 +4,9 @@ const { page, SITE_URL } = require('./partials/layout.js');
 
 const ROOT = path.join(__dirname, '..');
 
-// route -> page module (relative to src/pages)
+// route -> page module (relative to src/pages). '' is the Home page, written to the repo root.
 const ROUTES = {
+  '': 'home.js',
   'about': 'about.js',
   'services': 'services/index.js',
   'services/complete-care': 'services/complete-care.js',
@@ -33,8 +34,14 @@ for (const [route, modPath] of Object.entries(ROUTES)) {
   const outDir = path.join(ROOT, route);
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf-8');
-  console.log('wrote', route + '/index.html');
+  console.log('wrote', (route || '(home)') + '/index.html');
 }
+
+// --- custom 404 page (served automatically by Vercel's static output) ---
+const notFoundMod = require(path.join(__dirname, 'pages', '404.js'));
+const notFoundHtml = page({ ...notFoundMod, path: '/404' });
+fs.writeFileSync(path.join(ROOT, '404.html'), notFoundHtml, 'utf-8');
+console.log('wrote 404.html');
 
 // --- robots.txt ---
 const robotsTxt = `User-agent: *
@@ -47,7 +54,7 @@ console.log('wrote robots.txt');
 
 // --- sitemap.xml ---
 const today = new Date().toISOString().split('T')[0];
-const allRoutes = ['', ...Object.keys(ROUTES)];
+const allRoutes = Object.keys(ROUTES);
 const priorityFor = (route) => {
   if (route === '') return '1.0';
   if (route === 'services' || route === 'about' || route === 'contact' || route === 'book-appointment') return '0.9';
@@ -72,4 +79,4 @@ ${urlEntries}
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemapXml, 'utf-8');
 console.log('wrote sitemap.xml');
 
-console.log(`\nBuilt ${Object.keys(ROUTES).length} pages + robots.txt + sitemap.xml. index.html (Home) was left untouched.`);
+console.log(`\nBuilt ${Object.keys(ROUTES).length} pages (including Home) + 404.html + robots.txt + sitemap.xml.`);

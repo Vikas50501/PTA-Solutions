@@ -87,7 +87,7 @@ function jsonLd(obj) {
 
 function head({ title, description, path = '/', ogImage, extraSchema = [] }) {
   const canonical = `${SITE_URL}${path === '/' ? '' : path}`;
-  const image = ogImage || `${SITE_URL}${LOGO}`;
+  const image = ogImage || `${SITE_URL}/assets/og-image.png`;
   const schemas = [organizationSchema(), websiteSchema(), ...extraSchema].map(jsonLd).join('\n  ');
   return `<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
   <meta charset="utf-8">
@@ -101,59 +101,26 @@ function head({ title, description, path = '/', ogImage, extraSchema = [] }) {
   <meta property="og:description" content="${description}">
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${image}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${title}">
   <meta name="twitter:description" content="${description}">
   <meta name="twitter:image" content="${image}">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" rel="stylesheet">
   ${schemas}
-  <script src="https://cdn.tailwindcss.com?plugins=forms"><\/script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: "#1797A6",
-            teal: "#087F8C",
-            dark: "#0D234A",
-            textdark: "#1F2937",
-            muted: "#64748B",
-            surface: "#F8FAFC",
-            warmwhite: "#F8FAFC",
-            bordercol: "#D7E3E8"
-          },
-          fontFamily: {
-            display: ["Manrope", "sans-serif"],
-            body: ["Inter", "sans-serif"]
-          }
-        }
-      }
-    };
-  <\/script>
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .header-scrolled {
-      background-color: rgba(248, 250, 252, 0.98) !important;
-      box-shadow: 0 4px 20px -2px rgba(13, 35, 74, 0.08);
-      border-color: rgba(215, 227, 232, 0.9);
-    }
-    .faq-chevron { transition: transform 0.25s ease; }
-    .faq-item.open .faq-chevron { transform: rotate(180deg); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .faq-item.open .faq-answer { max-height: 320px; }
-    @media (max-width: 767px) {
-      body { padding-bottom: 64px; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body class="bg-[#F8FAFC] text-[#1F2937] font-body antialiased selection:bg-[#087F8C] selection:text-[#0D234A] flex flex-col min-h-screen">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-[#0D234A] focus:p-3 focus:rounded-lg focus:shadow-lg">Skip to content</a>
 `;
 }
 
@@ -208,7 +175,7 @@ ${navHtml}
         <span class="">Book Appointment</span>
         <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
       </a>
-      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0D234A] hover:bg-[#EEF6F8] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0D234A] hover:bg-[#EEF6F8] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1797A6] focus-visible:ring-offset-2" id="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
       </button>
     </div>
@@ -356,24 +323,60 @@ function scripts() {
     setTimeout(() => { toast.classList.add('hidden'); toast.classList.remove('flex'); }, 4000);
   }
 
-  function handleBooking(e, serviceName) {
-    e.preventDefault();
-    showToast('Booking Request Received: ' + serviceName, "Johnsavio Fernandes' desk has received your request.");
-    e.target.reset();
+  // Replace with your real Formspree (or other) endpoint ID before go-live.
+  // Sign up free at https://formspree.io, create a form, paste its ID below.
+  const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  async function submitFormData(formEl) {
+    if (FORM_ENDPOINT.includes('YOUR_FORM_ID')) {
+      console.warn('PTA Solutions: FORM_ENDPOINT is still a placeholder in scripts() (layout.js). Forms will not be delivered until this is set.');
+      return { ok: false, placeholder: true };
+    }
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(formEl),
+      });
+      return { ok: res.ok, placeholder: false };
+    } catch (err) {
+      return { ok: false, placeholder: false };
+    }
   }
 
-  function handleContact(e) {
+  async function handleBooking(e, serviceName) {
     e.preventDefault();
-    showToast('Message Sent', 'Thank you. The Chembur clinic team will call or email you shortly.');
-    e.target.reset();
+    const result = await submitFormData(e.target);
+    if (result.ok) {
+      showToast('Booking Request Received: ' + serviceName, "Johnsavio Fernandes' desk has received your request.");
+      e.target.reset();
+    } else {
+      showToast('Could not send your request', 'Please call or WhatsApp us directly at +91 9773545058.');
+    }
   }
 
-  function handleContactPageForm(e) {
+  async function handleContact(e) {
     e.preventDefault();
+    const result = await submitFormData(e.target);
+    if (result.ok) {
+      showToast('Message Sent', 'Thank you. The Chembur clinic team will call or email you shortly.');
+      e.target.reset();
+    } else {
+      showToast('Could not send your message', 'Please call or WhatsApp us directly at +91 9773545058.');
+    }
+  }
+
+  async function handleContactPageForm(e) {
+    e.preventDefault();
+    const result = await submitFormData(e.target);
     const msg = document.getElementById('contact-page-success');
-    if (msg) msg.classList.remove('hidden');
-    showToast('Thanks for submitting!', 'Our Chembur clinic team will call or email you shortly.');
-    e.target.reset();
+    if (result.ok) {
+      if (msg) msg.classList.remove('hidden');
+      showToast('Thanks for submitting!', 'Our Chembur clinic team will call or email you shortly.');
+      e.target.reset();
+    } else {
+      showToast('Could not send your message', 'Please call or WhatsApp us directly at +91 9773545058.');
+    }
   }
 
   function toggleFaq(el) {
@@ -386,7 +389,7 @@ function scripts() {
 }
 
 function page({ title, description, active, hero, body, path = '/', ogImage, extraSchema = [] }) {
-  return head({ title, description, path, ogImage, extraSchema }) + header(active) + '<main class="flex-grow">\n' + (hero || '') + body + '</main>\n' + footer() + scripts();
+  return head({ title, description, path, ogImage, extraSchema }) + header(active) + '<main class="flex-grow" id="main-content">\n' + (hero || '') + body + '</main>\n' + footer() + scripts();
 }
 
 // A bordered visual panel standing in for a real photo (same aspect/shape a photo would use).
@@ -522,27 +525,28 @@ function requestAppointmentForm(serviceName, formId) {
     <p class="text-[14px] text-[#64748B] mt-1">Please submit your preferred date and time. Our team will contact you to confirm availability. Your appointment is not confirmed until we contact you.</p>
   </div>
   <form onsubmit="handleBooking(event, '${serviceName}')" class="space-y-4 pt-2" id="${formId}">
+    <input type="hidden" name="_subject" value="New appointment request: ${serviceName}">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Name *</label>
-        <input type="text" required placeholder="Your full name" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+        <input type="text" name="name" required placeholder="Your full name" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
       </div>
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Phone / WhatsApp Number *</label>
-        <input type="tel" required placeholder="+91 97735 45058" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+        <input type="tel" name="phone" required placeholder="+91 97735 45058" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
       </div>
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Service Needed *</label>
-        <select required class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">${options}</select>
+        <select name="service" required class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">${options}</select>
       </div>
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Preferred Date or Time</label>
-        <input type="text" placeholder="e.g. Weekday mornings" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+        <input type="text" name="preferred_time" placeholder="e.g. Weekday mornings" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
       </div>
     </div>
     <div>
       <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Short Message</label>
-      <textarea rows="3" placeholder="Anything else we should know?" class="w-full p-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]"></textarea>
+      <textarea name="message" rows="3" placeholder="Anything else we should know?" class="w-full p-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]"></textarea>
     </div>
     <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#D7E3E8]">
       <div class="text-[13px] text-[#64748B]">Need help? Call the clinic: <a href="tel:+919773545058" class="text-[#1797A6] font-bold">+91 9773545058</a></div>

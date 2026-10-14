@@ -9,11 +9,18 @@
   <meta property="og:title" content="Request Premium NRI Care | PTA Solutions">
   <meta property="og:description" content="Request Premium NRI Care home-visit coordination with PTA Solutions Hearing and Speech Care Clinics, Chembur, Mumbai.">
   <meta property="og:url" content="https://ptasolutions.vercel.app/booking/premium-nri-care">
-  <meta property="og:image" content="https://ptasolutions.vercel.app/assets/logo.png">
+  <meta property="og:image" content="https://ptasolutions.vercel.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Request Premium NRI Care | PTA Solutions">
   <meta name="twitter:description" content="Request Premium NRI Care home-visit coordination with PTA Solutions Hearing and Speech Care Clinics, Chembur, Mumbai.">
-  <meta name="twitter:image" content="https://ptasolutions.vercel.app/assets/logo.png">
+  <meta name="twitter:image" content="https://ptasolutions.vercel.app/assets/og-image.png">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -21,50 +28,10 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","name":"PTA Solutions Hearing and Speech Care Clinics","alternateName":"PTA Solutions","image":"https://ptasolutions.vercel.app/assets/logo.png","logo":"https://ptasolutions.vercel.app/assets/logo.png","url":"https://ptasolutions.vercel.app","telephone":"+91-9773545058","email":"ptasolutionshsc@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Above Surya Hospital, Next to R.K.Studio, Opp CROMA","addressLocality":"Chembur, Mumbai","addressRegion":"Maharashtra","postalCode":"400074","addressCountry":"IN"},"founder":{"@type":"Person","name":"Johnsavio Fernandes"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"PTA Solutions Hearing and Speech Care Clinics","url":"https://ptasolutions.vercel.app"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ptasolutions.vercel.app"},{"@type":"ListItem","position":2,"name":"Book Appointment","item":"https://ptasolutions.vercel.app/book-appointment"},{"@type":"ListItem","position":3,"name":"Premium NRI Care","item":"https://ptasolutions.vercel.app/booking/premium-nri-care"}]}</script>
-  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: "#1797A6",
-            teal: "#087F8C",
-            dark: "#0D234A",
-            textdark: "#1F2937",
-            muted: "#64748B",
-            surface: "#F8FAFC",
-            warmwhite: "#F8FAFC",
-            bordercol: "#D7E3E8"
-          },
-          fontFamily: {
-            display: ["Manrope", "sans-serif"],
-            body: ["Inter", "sans-serif"]
-          }
-        }
-      }
-    };
-  </script>
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .header-scrolled {
-      background-color: rgba(248, 250, 252, 0.98) !important;
-      box-shadow: 0 4px 20px -2px rgba(13, 35, 74, 0.08);
-      border-color: rgba(215, 227, 232, 0.9);
-    }
-    .faq-chevron { transition: transform 0.25s ease; }
-    .faq-item.open .faq-chevron { transform: rotate(180deg); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .faq-item.open .faq-answer { max-height: 320px; }
-    @media (max-width: 767px) {
-      body { padding-bottom: 64px; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body class="bg-[#F8FAFC] text-[#1F2937] font-body antialiased selection:bg-[#087F8C] selection:text-[#0D234A] flex flex-col min-h-screen">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-[#0D234A] focus:p-3 focus:rounded-lg focus:shadow-lg">Skip to content</a>
 <header class="sticky top-0 z-50 w-full bg-[#F8FAFC]/95 backdrop-blur-md border-b border-[#D7E3E8] transition-all duration-300" id="main-header">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-20">
     <a aria-label="PTA SOLUTIONS Home" class="flex items-center gap-3 group cursor-pointer" href="/">
@@ -87,7 +54,7 @@
         <span class="">Book Appointment</span>
         <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
       </a>
-      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0D234A] hover:bg-[#EEF6F8] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0D234A] hover:bg-[#EEF6F8] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1797A6] focus-visible:ring-offset-2" id="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
       </button>
     </div>
@@ -108,7 +75,7 @@
     </div>
   </div>
 </header>
-<main class="flex-grow">
+<main class="flex-grow" id="main-content">
 
 <div class="max-w-4xl mx-auto px-6 py-12">
   <p class="text-[12px] text-[#64748B] mb-3"><a href="/" class="cursor-pointer hover:underline">Home</a> / <a href="/book-appointment" class="cursor-pointer hover:underline">Book Appointment</a> / Premium NRI Care</p>
@@ -120,27 +87,28 @@
     <p class="text-[14px] text-[#64748B] mt-1">Please submit your preferred date and time. Our team will contact you to confirm availability. Your appointment is not confirmed until we contact you.</p>
   </div>
   <form onsubmit="handleBooking(event, 'Premium NRI Care')" class="space-y-4 pt-2" id="booking-form-premium-nri-care">
+    <input type="hidden" name="_subject" value="New appointment request: Premium NRI Care">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Name *</label>
-        <input type="text" required placeholder="Your full name" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+        <input type="text" name="name" required placeholder="Your full name" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
       </div>
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Phone / WhatsApp Number *</label>
-        <input type="tel" required placeholder="+91 97735 45058" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+        <input type="tel" name="phone" required placeholder="+91 97735 45058" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
       </div>
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Service Needed *</label>
-        <select required class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]"><option>Hearing Tests</option><option>Hearing Aids</option><option>Speech Therapy</option><option>Newborn Screening</option><option>Basic Consultation</option><option selected>Premium NRI Care</option><option>Complete Care</option></select>
+        <select name="service" required class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]"><option>Hearing Tests</option><option>Hearing Aids</option><option>Speech Therapy</option><option>Newborn Screening</option><option>Basic Consultation</option><option selected>Premium NRI Care</option><option>Complete Care</option></select>
       </div>
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Preferred Date or Time</label>
-        <input type="text" placeholder="e.g. Weekday mornings" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+        <input type="text" name="preferred_time" placeholder="e.g. Weekday mornings" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
       </div>
     </div>
     <div>
       <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Short Message</label>
-      <textarea rows="3" placeholder="Anything else we should know?" class="w-full p-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]"></textarea>
+      <textarea name="message" rows="3" placeholder="Anything else we should know?" class="w-full p-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]"></textarea>
     </div>
     <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#D7E3E8]">
       <div class="text-[13px] text-[#64748B]">Need help? Call the clinic: <a href="tel:+919773545058" class="text-[#1797A6] font-bold">+91 9773545058</a></div>
@@ -256,24 +224,60 @@
     setTimeout(() => { toast.classList.add('hidden'); toast.classList.remove('flex'); }, 4000);
   }
 
-  function handleBooking(e, serviceName) {
-    e.preventDefault();
-    showToast('Booking Request Received: ' + serviceName, "Johnsavio Fernandes' desk has received your request.");
-    e.target.reset();
+  // Replace with your real Formspree (or other) endpoint ID before go-live.
+  // Sign up free at https://formspree.io, create a form, paste its ID below.
+  const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  async function submitFormData(formEl) {
+    if (FORM_ENDPOINT.includes('YOUR_FORM_ID')) {
+      console.warn('PTA Solutions: FORM_ENDPOINT is still a placeholder in scripts() (layout.js). Forms will not be delivered until this is set.');
+      return { ok: false, placeholder: true };
+    }
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(formEl),
+      });
+      return { ok: res.ok, placeholder: false };
+    } catch (err) {
+      return { ok: false, placeholder: false };
+    }
   }
 
-  function handleContact(e) {
+  async function handleBooking(e, serviceName) {
     e.preventDefault();
-    showToast('Message Sent', 'Thank you. The Chembur clinic team will call or email you shortly.');
-    e.target.reset();
+    const result = await submitFormData(e.target);
+    if (result.ok) {
+      showToast('Booking Request Received: ' + serviceName, "Johnsavio Fernandes' desk has received your request.");
+      e.target.reset();
+    } else {
+      showToast('Could not send your request', 'Please call or WhatsApp us directly at +91 9773545058.');
+    }
   }
 
-  function handleContactPageForm(e) {
+  async function handleContact(e) {
     e.preventDefault();
+    const result = await submitFormData(e.target);
+    if (result.ok) {
+      showToast('Message Sent', 'Thank you. The Chembur clinic team will call or email you shortly.');
+      e.target.reset();
+    } else {
+      showToast('Could not send your message', 'Please call or WhatsApp us directly at +91 9773545058.');
+    }
+  }
+
+  async function handleContactPageForm(e) {
+    e.preventDefault();
+    const result = await submitFormData(e.target);
     const msg = document.getElementById('contact-page-success');
-    if (msg) msg.classList.remove('hidden');
-    showToast('Thanks for submitting!', 'Our Chembur clinic team will call or email you shortly.');
-    e.target.reset();
+    if (result.ok) {
+      if (msg) msg.classList.remove('hidden');
+      showToast('Thanks for submitting!', 'Our Chembur clinic team will call or email you shortly.');
+      e.target.reset();
+    } else {
+      showToast('Could not send your message', 'Please call or WhatsApp us directly at +91 9773545058.');
+    }
   }
 
   function toggleFaq(el) {

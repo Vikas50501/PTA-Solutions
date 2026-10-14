@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  /* Pulse Glow Rings */
+  @keyframes pulseRing {
+    0% { box-shadow: 0 0 0 0 rgba(8, 127, 140, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(8, 127, 140, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(8, 127, 140, 0); }
+  }
+  .pulse-badge {
+    animation: pulseRing 2.4s infinite;
+  }
+
+  /* Sticky Header Scrolled */
+  .header-scrolled {
+    background-color: rgba(248, 250, 252, 0.98) !important;
+    box-shadow: 0 4px 20px -2px rgba(13, 35, 74, 0.08);
+    border-color: rgba(215, 227, 232, 0.9);
+  }
+
+  /* Nav Link Hover Underline */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #087F8C;
+    transition: width 0.25s ease-out;
+    border-radius: 999px;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Scroll Triggered Reveals */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hero Stagger Entrances */
+  @keyframes fadeUpEntrance {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .anim-hero-badge { animation: fadeUpEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) both 0.1s; }
+  .anim-hero-title { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.25s; }
+  .anim-hero-desc { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.4s; }
+  .anim-hero-cta { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.55s; }
+  .anim-hero-metrics { animation: fadeUpEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.7s; }
+
+  /* Interactive Plan Rows */
+  .plan-row {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .plan-row:hover {
+    border-color: #087F8C !important;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px -10px rgba(23, 151, 166, 0.12);
+  }
+
+  /* Interactive Journey Steps */
+  .journey-step {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+  .journey-step:hover, .journey-step.active {
+    transform: translateY(-4px);
+    border-color: #087F8C;
+    box-shadow: 0 12px 24px -8px rgba(23, 151, 166, 0.1);
+  }
+  .journey-step.active .step-num {
+    color: #1797A6;
+  }
+  .journey-step.active .step-icon-box {
+    background-color: #087F8C;
+    color: #ffffff;
+  }
+
+  /* Custom Input Focus */
+  .custom-input {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .custom-input:focus {
+    border-color: #087F8C !important;
+    box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.18);
+    background-color: #ffffff !important;
+  }
+
+  /* Dynamic Service Panel transition */
+  #service-content-panel {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  #service-content-panel.fade-out {
+    opacity: 0.15;
+    transform: translateY(5px);
+  }
+
+  /* FAQ accordion */
+  .faq-chevron { transition: transform 0.25s ease; }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .faq-item.open .faq-answer { max-height: 320px; }
+
+  @media (max-width: 767px) {
+    body { padding-bottom: 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal-on-scroll {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
