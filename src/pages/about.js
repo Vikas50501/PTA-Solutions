@@ -29,7 +29,7 @@ module.exports = {
         <div class="p-4 bg-[#F8FAFC] rounded-xl border border-[#D7E3E8]">
           <span class="material-symbols-outlined text-[#1797A6] text-[24px]">verified</span>
           <p class="font-display font-bold text-[15px] text-[#0D234A] mt-2">Accurate Diagnosis</p>
-          <p class="text-[12px] text-[#64748B] mt-1">Calibrated sound-booth audiometry and impedance testing.</p>
+          <p class="text-[12px] text-[#64748B] mt-1">Pure Tone Audiometry and impedance testing in a sound-treated testing room.</p>
         </div>
         <div class="p-4 bg-[#F8FAFC] rounded-xl border border-[#D7E3E8]">
           <span class="material-symbols-outlined text-[#1797A6] text-[24px]">balance</span>
@@ -68,7 +68,7 @@ module.exports = {
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-10">
     ${sectionHeading({ eyebrow: 'Why Choose PTA Solutions', title: 'Care Built on Precision and Trust', align: 'center' })}
     ${benefitGrid([
-      { icon: 'biotech', title: 'Clinical Precision', desc: 'State-of-the-art audiometers, tympanometry, and speech mapping protocols calibrated to international accuracy benchmarks.' },
+      { icon: 'biotech', title: 'Clinical Precision', desc: 'Pure Tone Audiometry, tympanometry, and speech mapping protocols carried out with care and attention to detail.' },
       { icon: 'verified_user', title: 'Ethical Recommendations', desc: 'Transparent guidance based on clinical diagnostic data, with options explained before any recommendation.' },
       { icon: 'volunteer_activism', title: 'Patient Comfort Across Lifespans', desc: 'Gentle diagnostic environments tailored for fragile newborn screenings, adolescent speech fluency, and reassuring senior care.' },
       { icon: 'groups', title: 'Multi-Disciplinary Team', desc: 'Synergistic speech therapists and pediatric audiologists under one clinical roof.' },

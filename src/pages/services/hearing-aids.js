@@ -7,7 +7,7 @@ const PATH = '/services/hearing-aids';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Services', href: '/services' }, { label: 'Hearing Aids' }];
 
 const FAQS = [
-  { q: 'Can I try a hearing aid before buying?', a: 'Yes, we offer risk-free trial sessions so you can experience the device in real environments first.' },
+  { q: 'Can I try a hearing aid before buying?', a: 'Yes, we offer a trial period so you can experience the device in real environments first.' },
   { q: 'What is Real-Ear Measurement (REM)?', a: 'REM is a probe-microphone verification that confirms the amplified sound matches your prescriptive target precisely.' },
   { q: 'Do hearing aids support Bluetooth?', a: 'Several of our device options support Bluetooth streaming and are rechargeable.' },
   { q: 'Is a fitting available at home?', a: 'Yes, hearing aid fitting and trial sessions can be arranged at your home across Mumbai.' },
