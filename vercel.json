@@ -1,4 +1,6 @@
 {
+  "buildCommand": "echo 'No build needed - built HTML/CSS is committed to the repo'",
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/(.*)",
