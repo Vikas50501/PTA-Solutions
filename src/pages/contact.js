@@ -4,13 +4,13 @@ const PATH = '/contact';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Contact Us' }];
 
 module.exports = {
-  title: 'Contact PTA Solutions | Hearing & Speech Care Clinic, Chembur, Mumbai',
+  title: 'Contact PTA Solutions Hearing and Speech Care Clinics',
   description: 'Contact PTA Solutions Hearing and Speech Care Clinics at Shanmukhapriya HealthCare Center, Chembur, Mumbai. Call +91 9773545058 or email ptasolutionshsc@gmail.com.',
   active: 'contact',
   hero: pageHero({
     crumbs: CRUMBS,
     badges: [{ label: 'Direct Clinical Desk' }, { label: 'Chembur • Mumbai' }],
-    title: 'Contact Us',
+    title: 'Contact PTA Solutions',
     subtitle: 'We are here to assist you and your family with audiology diagnostics and speech therapy care.',
   }),
   path: PATH,

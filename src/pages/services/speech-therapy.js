@@ -15,13 +15,13 @@ const FAQS = [
 ];
 
 module.exports = {
-  title: 'Speech Therapy in Chembur, Mumbai | Pediatric & Adult Speech-Language Care | PTA Solutions',
+  title: 'Speech Therapy in Chembur, Mumbai | PTA Solutions',
   description: 'Speech therapy in Chembur, Mumbai for pediatric speech delay, stammering, articulation, and adult post-stroke voice recovery.',
   active: 'services',
   hero: pageHero({
     crumbs: CRUMBS,
     badges: [{ label: 'Rehabilitation' }],
-    title: 'Speech Therapy',
+    title: 'Speech & Language Therapy in Chembur',
     meta: `<span><strong>Duration:</strong> 45 Mins</span><span>•</span><span><strong>Session Fee:</strong> Personalized</span><span>•</span><span><strong>Location:</strong> Chembur Clinic or Doorstep</span>`,
   }),
   path: PATH,
