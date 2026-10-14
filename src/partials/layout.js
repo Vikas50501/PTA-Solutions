@@ -15,12 +15,21 @@ function organizationSchema() {
     "email": "ptasolutionshsc@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Above Surya Hospital, Next to R.K.Studio, Opp CROMA",
+      "streetAddress": "Shanmukhapriya Healthcare Centre, 6th Floor, Shrikant Chambers -2, Above Surya Hospital, Next to R.K.Studio, Opp CROMA",
       "addressLocality": "Chembur, Mumbai",
       "addressRegion": "Maharashtra",
       "postalCode": "400074",
       "addressCountry": "IN"
     },
+    "hasMap": "https://maps.app.goo.gl/6NxZW5o8YwbTGYAdA",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "11:00",
+        "closes": "19:00"
+      }
+    ],
     "founder": {
       "@type": "Person",
       "name": "Johnsavio Fernandes"
@@ -248,10 +257,13 @@ function footer() {
     </div>
     <div class="space-y-3">
       <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Contact</h5>
-      <p class="text-[13px] text-gray-400">Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Opp CROMA, Chembur, Mumbai - 400074</p>
+      <p class="text-[13px] text-gray-400">Shanmukhapriya Healthcare Centre, 6th Floor, Shrikant Chambers -2, Opp CROMA, Chembur, Mumbai - 400074</p>
+      <p class="text-[13px] text-gray-400"><a href="https://maps.app.goo.gl/6NxZW5o8YwbTGYAdA" target="_blank" rel="noopener noreferrer" class="text-[#087F8C] hover:text-white">Get Directions</a></p>
       <p class="text-[13px] text-gray-400">Tel: <a href="tel:+919773545058" class="text-white hover:text-[#087F8C]">+91 9773545058</a></p>
       <p class="text-[13px] text-gray-400">WhatsApp: <a href="https://wa.me/919773545058" target="_blank" rel="noopener noreferrer" class="text-white hover:text-[#087F8C]">Chat with us</a></p>
       <p class="text-[13px] text-gray-400">Email: <a href="mailto:ptasolutionshsc@gmail.com" class="text-white hover:text-[#087F8C]">ptasolutionshsc@gmail.com</a></p>
+      <p class="text-[13px] text-gray-400">Hours: Mon–Sat 11am–7pm, Sun Closed</p>
+      <p class="text-[13px] text-gray-400"><a href="https://share.google/AwXqDfxdJzLlS4XpW" target="_blank" rel="noopener noreferrer" class="text-[#087F8C] hover:text-white">Reviews on Google</a></p>
     </div>
   </div>
   <div class="border-t border-gray-800/80 py-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center text-[12px] text-gray-500">

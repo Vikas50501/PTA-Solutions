@@ -817,8 +817,18 @@ module.exports = {
             <div>
               <p class="font-display font-bold text-[15px] text-[#0D234A]">Clinic Address</p>
               <p class="text-[13px] text-[#64748B] mt-1 leading-relaxed">
-                Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Above Surya Hospital Next to R.K.Studio, Opp CROMA, Chembur, Mumbai - 400074
+                Shanmukhapriya Healthcare Centre, 6th Floor, Shrikant Chambers -2, Above Surya Hospital Next to R.K.Studio, Opp CROMA, Chembur, Mumbai - 400074
               </p>
+              <a href="https://maps.app.goo.gl/6NxZW5o8YwbTGYAdA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[12px] font-bold text-[#1797A6] hover:underline mt-1.5">
+                Get Directions <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-[#F8FAFC] rounded-xl border border-[#D7E3E8]">
+            <span class="material-symbols-outlined text-[#1797A6] text-[24px]">schedule</span>
+            <div>
+              <p class="font-display font-bold text-[15px] text-[#0D234A]">Opening Hours</p>
+              <p class="text-[13px] text-[#64748B]">Mon – Sat: 11:00 AM – 7:00 PM &bull; Sun: Closed</p>
             </div>
           </div>
           <div class="flex items-center gap-4 p-5 bg-[#F8FAFC] rounded-xl border border-[#D7E3E8]">

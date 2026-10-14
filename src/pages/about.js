@@ -57,7 +57,7 @@ module.exports = {
         </blockquote>
         <div class="pt-4 border-t border-[#D7E3E8]">
           <p class="font-display font-bold text-[16px] text-[#0D234A]">Johnsavio Fernandes</p>
-          <p class="text-[12px] text-[#64748B] mt-1">Shanmukhapriya HealthCare Center, Chembur, Mumbai</p>
+          <p class="text-[12px] text-[#64748B] mt-1">Shanmukhapriya Healthcare Centre, Chembur, Mumbai</p>
         </div>
       </div>
     </div>

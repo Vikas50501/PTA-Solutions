@@ -5,7 +5,7 @@ const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Contact Us' }];
 
 module.exports = {
   title: 'Contact PTA Solutions Hearing and Speech Care Clinics',
-  description: 'Contact PTA Solutions Hearing and Speech Care Clinics at Shanmukhapriya HealthCare Center, Chembur, Mumbai. Call +91 9773545058 or email ptasolutionshsc@gmail.com.',
+  description: 'Contact PTA Solutions Hearing and Speech Care Clinics at Shanmukhapriya Healthcare Centre, Chembur, Mumbai. Call +91 9773545058 or email ptasolutionshsc@gmail.com.',
   active: 'contact',
   hero: pageHero({
     crumbs: CRUMBS,
@@ -19,7 +19,7 @@ module.exports = {
 <section class="py-16 bg-white border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
     <div class="lg:col-span-5 space-y-6">
-      ${imagePlaceholder({ icon: 'location_on', label: 'PTA Solutions Clinic, Chembur', caption: 'Shanmukhapriya HealthCare Center, 6th Floor' })}
+      ${imagePlaceholder({ icon: 'location_on', label: 'PTA Solutions Clinic, Chembur', caption: 'Shanmukhapriya Healthcare Centre, 6th Floor' })}
       <div class="p-6 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] space-y-6">
         <div class="flex items-center justify-between">
           <span class="text-[11px] font-bold uppercase tracking-widest text-[#1797A6]">Clinic Headquarters</span>
@@ -36,7 +36,10 @@ module.exports = {
             <span class="material-symbols-outlined text-[#1797A6] text-[22px] mt-0.5">location_on</span>
             <div>
               <p class="font-display font-bold text-[16px] text-[#0D234A]">PTA Solutions Hearing and Speech Care Clinics</p>
-              <p class="text-[13px] text-[#64748B] mt-1 leading-relaxed">Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Above Surya Hospital, Next to R.K.Studio, Opp CROMA, Chembur, Mumbai - 400074</p>
+              <p class="text-[13px] text-[#64748B] mt-1 leading-relaxed">Shanmukhapriya Healthcare Centre, 6th Floor, Shrikant Chambers -2, Above Surya Hospital, Next to R.K.Studio, Opp CROMA, Chembur, Mumbai - 400074</p>
+              <a href="https://maps.app.goo.gl/6NxZW5o8YwbTGYAdA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[12px] font-bold text-[#1797A6] hover:underline mt-1.5">
+                Get Directions <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
             </div>
           </div>
           <div class="flex items-center gap-3.5 pt-2 border-t border-[#D7E3E8]">
@@ -60,15 +63,24 @@ module.exports = {
               <a href="mailto:ptasolutionshsc@gmail.com" class="text-[15px] font-medium text-[#0D234A] hover:text-[#1797A6] transition-colors">ptasolutionshsc@gmail.com</a>
             </div>
           </div>
-          <!-- PENDING: Opening hours and Google Maps directions link await clinic confirmation -->
-          <div class="flex items-center gap-3.5 pt-2 border-t border-[#D7E3E8]">
-            <span class="material-symbols-outlined text-[#1797A6] text-[22px]">schedule</span>
+          <div class="flex items-start gap-3.5 pt-2 border-t border-[#D7E3E8]">
+            <span class="material-symbols-outlined text-[#1797A6] text-[22px] mt-0.5">schedule</span>
             <div>
-              <p class="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">Opening Hours</p>
-              <p class="text-[13px] text-[#64748B]">Please call or WhatsApp us to confirm current clinic hours.</p>
+              <p class="text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Opening Hours</p>
+              <div class="text-[13px] text-[#0D234A] space-y-0.5">
+                <p>Monday – Saturday: <span class="font-semibold">11:00 AM – 7:00 PM</span></p>
+                <p>Sunday: <span class="font-semibold text-[#64748B]">Closed</span></p>
+              </div>
             </div>
           </div>
         </div>
+        <a href="https://share.google/AwXqDfxdJzLlS4XpW" target="_blank" rel="noopener noreferrer" class="p-4 bg-[#EEF6F8] rounded-xl border border-[#D7E3E8] flex items-center gap-3 hover:border-[#1797A6] transition-colors">
+          <span class="material-symbols-outlined text-[#1797A6] text-[24px]">reviews</span>
+          <div>
+            <p class="font-display font-bold text-[13px] text-[#0D234A]">View Us on Google</p>
+            <p class="text-[11px] text-[#64748B]">See our Google Business Profile &amp; reviews</p>
+          </div>
+        </a>
         <div class="p-4 bg-[#EEF6F8] rounded-xl border border-[#D7E3E8] flex items-center gap-3">
           <span class="material-symbols-outlined text-[#1797A6] text-[24px]">verified</span>
           <div>
