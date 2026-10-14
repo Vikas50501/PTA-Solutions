@@ -116,14 +116,14 @@ function head({ title, description, path = '/', ogImage, extraSchema = [] }) {
       theme: {
         extend: {
           colors: {
-            primary: "#1E3E83",
-            teal: "#4FC3D9",
-            dark: "#0F1E3E",
-            textdark: "#182426",
-            muted: "#687779",
-            surface: "#F7FAF9",
-            warmwhite: "#FCFDFC",
-            bordercol: "#DCE7E6"
+            primary: "#1797A6",
+            teal: "#087F8C",
+            dark: "#0D234A",
+            textdark: "#1F2937",
+            muted: "#64748B",
+            surface: "#F8FAFC",
+            warmwhite: "#F8FAFC",
+            bordercol: "#D7E3E8"
           },
           fontFamily: {
             display: ["Manrope", "sans-serif"],
@@ -140,17 +140,20 @@ function head({ title, description, path = '/', ogImage, extraSchema = [] }) {
       vertical-align: middle;
     }
     .header-scrolled {
-      background-color: rgba(252, 253, 252, 0.98) !important;
-      box-shadow: 0 4px 20px -2px rgba(15, 30, 62, 0.08);
-      border-color: rgba(220, 231, 230, 0.9);
+      background-color: rgba(248, 250, 252, 0.98) !important;
+      box-shadow: 0 4px 20px -2px rgba(13, 35, 74, 0.08);
+      border-color: rgba(215, 227, 232, 0.9);
     }
     .faq-chevron { transition: transform 0.25s ease; }
     .faq-item.open .faq-chevron { transform: rotate(180deg); }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
     .faq-item.open .faq-answer { max-height: 320px; }
+    @media (max-width: 767px) {
+      body { padding-bottom: 64px; }
+    }
   </style>
 </head>
-<body class="bg-[#F7FAF9] text-[#182426] font-body antialiased selection:bg-[#4FC3D9] selection:text-[#0F1E3E] flex flex-col min-h-screen">
+<body class="bg-[#F8FAFC] text-[#1F2937] font-body antialiased selection:bg-[#087F8C] selection:text-[#0D234A] flex flex-col min-h-screen">
 `;
 }
 
@@ -177,43 +180,43 @@ const MOBILE_NAV_ITEMS = [
 function header(active) {
   const navHtml = NAV_ITEMS.map(it => {
     const activeClass = it.key === active
-      ? 'text-[#0F1E3E] font-semibold'
-      : 'hover:text-[#1E3E83]';
+      ? 'text-[#0D234A] font-semibold'
+      : 'hover:text-[#1797A6]';
     return `      <a class="nav-item cursor-pointer py-1 transition-colors ${activeClass}" href="${it.href}">${it.label}</a>`;
   }).join('\n');
 
   const mobileItems = MOBILE_NAV_ITEMS.map((it, i) => {
-    const border = i < MOBILE_NAV_ITEMS.length - 1 ? ' border-b border-[#F1F4F3]' : '';
-    const colorClass = it.key === active ? 'text-[#0F1E3E]' : 'text-[#526163]';
+    const border = i < MOBILE_NAV_ITEMS.length - 1 ? ' border-b border-[#EEF6F8]' : '';
+    const colorClass = it.key === active ? 'text-[#0D234A]' : 'text-[#64748B]';
     return `    <a class="block py-2 text-[15px] font-medium ${colorClass}${border}" href="${it.href}">${it.label}</a>`;
   }).join('\n');
 
-  return `<header class="sticky top-0 z-50 w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] transition-all duration-300" id="main-header">
+  return `<header class="sticky top-0 z-50 w-full bg-[#F8FAFC]/95 backdrop-blur-md border-b border-[#D7E3E8] transition-all duration-300" id="main-header">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-20">
     <a aria-label="PTA SOLUTIONS Home" class="flex items-center gap-3 group cursor-pointer" href="/">
       <img alt="PTA Solutions Clinic Logo" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105" src="${LOGO}">
     </a>
-    <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[14px] font-medium text-[#526163]">
+    <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[14px] font-medium text-[#64748B]">
 ${navHtml}
     </nav>
     <div class="flex items-center gap-4">
-      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#526163] hover:text-[#1E3E83] transition-colors group" href="tel:+919773545058">
-        <span class="material-symbols-outlined text-[#1E3E83] text-[18px] transition-transform group-hover:scale-110">call</span>
+      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#64748B] hover:text-[#1797A6] transition-colors group" href="tel:+919773545058">
+        <span class="material-symbols-outlined text-[#1797A6] text-[18px] transition-transform group-hover:scale-110">call</span>
         <span class="">+91 9773545058</span>
       </a>
-      <a class="group hidden sm:inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap" href="/book-appointment">
+      <a class="group hidden sm:inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#087F8C] text-[#0D234A] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap" href="/book-appointment">
         <span class="">Book Appointment</span>
         <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
       </a>
-      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0F1E3E] hover:bg-[#F1F4F3] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0D234A] hover:bg-[#EEF6F8] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
       </button>
     </div>
   </div>
-  <div class="hidden md:hidden border-t border-[#DCE7E6] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
+  <div class="hidden md:hidden border-t border-[#D7E3E8] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
 ${mobileItems}
     <div class="pt-2">
-      <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#1E3E83] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
+      <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#1797A6] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
         <span class="material-symbols-outlined text-[18px]">call</span>
         <span class="">Direct Call: +91 9773545058</span>
       </a>
@@ -224,30 +227,30 @@ ${mobileItems}
 }
 
 // Breadcrumb + title band, same editorial pattern used across every inner page
-function pageHero({ crumbs, badges, title, subtitle, meta, bg = '#F7FAF9' }) {
+function pageHero({ crumbs, badges, title, subtitle, meta, bg = '#F8FAFC' }) {
   const crumbHtml = crumbs.map((c, i) => {
     if (i === crumbs.length - 1) return c.label;
     return `<a href="${c.href}" class="cursor-pointer hover:underline">${c.label}</a> / `;
   }).join('');
 
   const badgeHtml = badges ? `<div class="flex items-center gap-2 mb-2">
-          ${badges.map(b => `<span class="px-3 py-1 ${b.solid ? 'bg-[#4FC3D9] text-[#0F1E3E]' : 'bg-[#4FC3D9]/20 text-[#163B6B]'} font-bold rounded-full text-[11px] uppercase tracking-wider">${b.label}</span>`).join('\n          ')}
+          ${badges.map(b => `<span class="px-3 py-1 ${b.solid ? 'bg-[#087F8C] text-[#0D234A]' : 'bg-[#087F8C]/20 text-[#0D234A]'} font-bold rounded-full text-[11px] uppercase tracking-wider">${b.label}</span>`).join('\n          ')}
         </div>` : '';
 
-  return `  <section class="py-12 bg-[${bg}] border-b border-[#DCE7E6]">
+  return `  <section class="py-12 bg-[${bg}] border-b border-[#D7E3E8]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <p class="text-[12px] text-[#687779] mb-3">${crumbHtml}</p>
+      <p class="text-[12px] text-[#64748B] mb-3">${crumbHtml}</p>
       ${badgeHtml}
-      <h1 class="text-[36px] lg:text-[48px] font-display font-extrabold text-[#0F1E3E] mt-2">${title}</h1>
-      ${subtitle ? `<p class="text-[16px] text-[#687779] max-w-2xl mt-2">${subtitle}</p>` : ''}
-      ${meta ? `<div class="flex flex-wrap gap-4 text-[13px] text-[#687779] mt-3">${meta}</div>` : ''}
+      <h1 class="text-[36px] lg:text-[48px] font-display font-extrabold text-[#0D234A] mt-2">${title}</h1>
+      ${subtitle ? `<p class="text-[16px] text-[#64748B] max-w-2xl mt-2">${subtitle}</p>` : ''}
+      ${meta ? `<div class="flex flex-wrap gap-4 text-[13px] text-[#64748B] mt-3">${meta}</div>` : ''}
     </div>
   </section>
 `;
 }
 
 function footer() {
-  return `<footer class="bg-[#0F1E3E] text-white border-t border-gray-800">
+  return `<footer class="bg-[#0D234A] text-white border-t border-gray-800">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
     <div class="space-y-4">
       <h4 class="font-display font-bold text-[18px] text-white tracking-wider">PTA SOLUTIONS</h4>
@@ -255,7 +258,7 @@ function footer() {
       <p class="text-[12px] text-gray-500">Lead Clinician: Dr. Johnsavio Fernandes</p>
     </div>
     <div class="space-y-3">
-      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#4FC3D9]">Explore</h5>
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Explore</h5>
       <ul class="space-y-2 text-[13px] text-gray-400">
         <li><a href="/about" class="hover:text-white">About Clinic</a></li>
         <li><a href="/services" class="hover:text-white">Services Directory</a></li>
@@ -266,7 +269,7 @@ function footer() {
       </ul>
     </div>
     <div class="space-y-3">
-      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#4FC3D9]">Clinical Services</h5>
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Clinical Services</h5>
       <ul class="space-y-2 text-[13px] text-gray-400">
         <li><a href="/services/hearing-tests" class="hover:text-white">Hearing Tests</a></li>
         <li><a href="/services/hearing-aids" class="hover:text-white">Hearing Aids</a></li>
@@ -277,10 +280,10 @@ function footer() {
       </ul>
     </div>
     <div class="space-y-3">
-      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#4FC3D9]">Contact</h5>
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Contact</h5>
       <p class="text-[13px] text-gray-400">Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Opp CROMA, Chembur, Mumbai - 400074</p>
-      <p class="text-[13px] text-gray-400">Tel: <a href="tel:+919773545058" class="text-white hover:text-[#4FC3D9]">+91 9773545058</a></p>
-      <p class="text-[13px] text-gray-400">Email: <a href="mailto:ptasolutionshsc@gmail.com" class="text-white hover:text-[#4FC3D9]">ptasolutionshsc@gmail.com</a></p>
+      <p class="text-[13px] text-gray-400">Tel: <a href="tel:+919773545058" class="text-white hover:text-[#087F8C]">+91 9773545058</a></p>
+      <p class="text-[13px] text-gray-400">Email: <a href="mailto:ptasolutionshsc@gmail.com" class="text-white hover:text-[#087F8C]">ptasolutionshsc@gmail.com</a></p>
     </div>
   </div>
   <div class="border-t border-gray-800/80 py-6 text-center text-[12px] text-gray-500">
@@ -288,18 +291,34 @@ function footer() {
   </div>
 </footer>
 
-<div id="booking-toast" class="fixed bottom-6 left-6 bg-[#0F1E3E] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-gray-700 hidden z-50 items-center gap-3">
-  <span class="material-symbols-outlined text-[#4FC3D9]">check_circle</span>
+<div id="booking-toast" class="fixed bottom-6 left-6 bg-[#0D234A] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-gray-700 hidden z-50 items-center gap-3">
+  <span class="material-symbols-outlined text-[#087F8C]">check_circle</span>
   <div>
     <p class="font-display font-bold text-[13px]" id="toast-title">Appointment Confirmed</p>
     <p class="text-[12px] text-gray-300" id="toast-desc">Our clinic desk will contact you shortly.</p>
   </div>
 </div>
-<div class="fixed bottom-6 right-6 z-40">
-  <a aria-label="Chat directly on WhatsApp" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all font-display font-semibold text-[13px] group" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
+
+<!-- MOBILE FIXED BOTTOM BAR: Call | WhatsApp | Book -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-[#D7E3E8] shadow-[0_-2px_10px_rgba(13,35,74,0.08)] grid grid-cols-3">
+  <a class="flex flex-col items-center justify-center gap-0.5 py-2.5 text-[#0D234A] active:bg-[#EEF6F8] transition-colors" href="tel:+919773545058">
+    <span class="material-symbols-outlined text-[20px]">call</span>
+    <span class="text-[11px] font-semibold">Call</span>
+  </a>
+  <a class="flex flex-col items-center justify-center gap-0.5 py-2.5 text-[#0D234A] border-x border-[#D7E3E8] active:bg-[#EEF6F8] transition-colors" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
+    <span class="material-symbols-outlined text-[20px]">chat</span>
+    <span class="text-[11px] font-semibold">WhatsApp</span>
+  </a>
+  <a class="flex flex-col items-center justify-center gap-0.5 py-2.5 bg-[#087F8C] text-white active:bg-[#0D234A] transition-colors" href="/book-appointment">
+    <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+    <span class="text-[11px] font-semibold">Book</span>
+  </a>
+</div>
+
+<div class="hidden md:block fixed bottom-6 right-6 z-40">
+  <a aria-label="Chat directly on WhatsApp" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-md hover:shadow-lg active:scale-95 transition-all font-display font-semibold text-[13px]" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
     <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
-    <span class="hidden sm:inline">WhatsApp Care Desk</span>
-    <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+    <span class="">WhatsApp Us</span>
   </a>
 </div>
 `;
@@ -371,14 +390,14 @@ function page({ title, description, active, hero, body, path = '/', ogImage, ext
 // Marked with an HTML comment so it's easy to find and swap for real photography later.
 function imagePlaceholder({ icon, label, caption, aspect = 'aspect-[4/3]' }) {
   return `<!-- IMAGE PLACEHOLDER: replace with a real photo (${label}) -->
-        <div class="relative bg-white p-3 border border-[#DCE7E6] rounded-2xl shadow-md">
-          <div class="${aspect} rounded-xl bg-gradient-to-br from-[#F7FAF9] to-[#E6F6FA] border border-[#DCE7E6] flex flex-col items-center justify-center gap-3 text-center p-6">
-            <div class="w-16 h-16 rounded-full bg-white border border-[#DCE7E6] flex items-center justify-center text-[#1E3E83] shadow-sm">
+        <div class="relative bg-white p-3 border border-[#D7E3E8] rounded-2xl shadow-md">
+          <div class="${aspect} rounded-xl bg-gradient-to-br from-[#F8FAFC] to-[#EEF6F8] border border-[#D7E3E8] flex flex-col items-center justify-center gap-3 text-center p-6">
+            <div class="w-16 h-16 rounded-full bg-white border border-[#D7E3E8] flex items-center justify-center text-[#1797A6] shadow-sm">
               <span class="material-symbols-outlined text-[32px]">${icon}</span>
             </div>
             <div>
-              <p class="font-display font-bold text-[15px] text-[#0F1E3E]">${label}</p>
-              ${caption ? `<p class="text-[12px] text-[#687779] mt-1">${caption}</p>` : ''}
+              <p class="font-display font-bold text-[15px] text-[#0D234A]">${label}</p>
+              ${caption ? `<p class="text-[12px] text-[#64748B] mt-1">${caption}</p>` : ''}
             </div>
           </div>
         </div>`;
@@ -388,10 +407,10 @@ function imagePlaceholder({ icon, label, caption, aspect = 'aspect-[4/3]' }) {
 function imageThumb({ icon, label, dark = false }) {
   const base = dark
     ? 'bg-gradient-to-br from-white/10 to-white/5 border-white/15'
-    : 'bg-gradient-to-br from-[#F7FAF9] to-[#E6F6FA] border-[#DCE7E6]';
+    : 'bg-gradient-to-br from-[#F8FAFC] to-[#EEF6F8] border-[#D7E3E8]';
   const iconBox = dark
-    ? 'bg-white/10 border-white/20 text-[#4FC3D9]'
-    : 'bg-white border-[#DCE7E6] text-[#1E3E83]';
+    ? 'bg-white/10 border-white/20 text-[#087F8C]'
+    : 'bg-white border-[#D7E3E8] text-[#1797A6]';
   return `<!-- IMAGE PLACEHOLDER: replace with a real photo (${label}) -->
         <div class="aspect-[16/9] rounded-xl border ${base} flex items-center justify-center mb-4">
           <div class="w-11 h-11 rounded-full border ${iconBox} flex items-center justify-center">
@@ -403,15 +422,15 @@ function imageThumb({ icon, label, dark = false }) {
 // Full-width banner placeholder for the top of a page, under the title band
 function imageBanner({ icon, label, caption }) {
   return `<!-- IMAGE PLACEHOLDER: replace with a real photo (${label}) -->
-  <section class="bg-white border-b border-[#DCE7E6]">
+  <section class="bg-white border-b border-[#D7E3E8]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-10">
-      <div class="aspect-[21/9] sm:aspect-[3/1] rounded-2xl border border-[#DCE7E6] bg-gradient-to-br from-[#F7FAF9] to-[#E6F6FA] flex flex-col items-center justify-center gap-3 text-center p-6">
-        <div class="w-16 h-16 rounded-full bg-white border border-[#DCE7E6] flex items-center justify-center text-[#1E3E83] shadow-sm">
+      <div class="aspect-[21/9] sm:aspect-[3/1] rounded-2xl border border-[#D7E3E8] bg-gradient-to-br from-[#F8FAFC] to-[#EEF6F8] flex flex-col items-center justify-center gap-3 text-center p-6">
+        <div class="w-16 h-16 rounded-full bg-white border border-[#D7E3E8] flex items-center justify-center text-[#1797A6] shadow-sm">
           <span class="material-symbols-outlined text-[32px]">${icon}</span>
         </div>
         <div>
-          <p class="font-display font-bold text-[16px] text-[#0F1E3E]">${label}</p>
-          ${caption ? `<p class="text-[13px] text-[#687779] mt-1">${caption}</p>` : ''}
+          <p class="font-display font-bold text-[16px] text-[#0D234A]">${label}</p>
+          ${caption ? `<p class="text-[13px] text-[#64748B] mt-1">${caption}</p>` : ''}
         </div>
       </div>
     </div>
@@ -422,37 +441,37 @@ function sectionHeading({ eyebrow, title, subtitle, align = 'left' }) {
   const alignClass = align === 'center' ? 'text-center mx-auto' : '';
   return `    <div class="max-w-2xl ${alignClass} space-y-3">
       <div class="inline-flex items-center gap-2 ${align === 'center' ? 'justify-center' : ''}">
-        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
-        <span class="text-[11px] font-bold uppercase tracking-wider text-[#687779]">${eyebrow}</span>
-        ${align === 'center' ? `<span class="w-5 h-[2px] bg-[#4FC3D9]"></span>` : ''}
+        <span class="w-5 h-[2px] bg-[#087F8C]"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">${eyebrow}</span>
+        ${align === 'center' ? `<span class="w-5 h-[2px] bg-[#087F8C]"></span>` : ''}
       </div>
-      <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0F1E3E] leading-tight">${title}</h2>
-      ${subtitle ? `<p class="text-[15px] text-[#687779] leading-relaxed">${subtitle}</p>` : ''}
+      <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A] leading-tight">${title}</h2>
+      ${subtitle ? `<p class="text-[15px] text-[#64748B] leading-relaxed">${subtitle}</p>` : ''}
     </div>`;
 }
 
 function benefitGrid(items) {
   return `    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-${items.map(it => `      <div class="p-5 bg-[#F7FAF9] rounded-xl border border-[#DCE7E6]">
-        <span class="material-symbols-outlined text-[#1E3E83] text-[24px]">${it.icon}</span>
-        <h4 class="font-display font-bold text-[16px] text-[#0F1E3E] mt-2">${it.title}</h4>
-        <p class="text-[13px] text-[#687779] mt-1">${it.desc}</p>
+${items.map(it => `      <div class="p-5 bg-[#F8FAFC] rounded-xl border border-[#D7E3E8]">
+        <span class="material-symbols-outlined text-[#1797A6] text-[24px]">${it.icon}</span>
+        <h4 class="font-display font-bold text-[16px] text-[#0D234A] mt-2">${it.title}</h4>
+        <p class="text-[13px] text-[#64748B] mt-1">${it.desc}</p>
       </div>`).join('\n')}
     </div>`;
 }
 
 function processSteps(steps) {
   return `    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-${steps.map((s, i) => `      <div class="bg-white p-6 rounded-2xl border border-[#DCE7E6] space-y-3">
+${steps.map((s, i) => `      <div class="bg-white p-6 rounded-2xl border border-[#D7E3E8] space-y-3">
         <div class="flex items-center justify-between">
-          <span class="text-[22px] font-mono font-extrabold ${i === 0 ? 'text-[#1E3E83]' : 'text-[#687779]'}">0${i + 1}</span>
-          <div class="w-9 h-9 rounded-lg ${i === 0 ? 'bg-[#4FC3D9] text-[#0F1E3E]' : 'bg-[#F1F4F3] text-[#687779]'} flex items-center justify-center">
+          <span class="text-[22px] font-mono font-extrabold ${i === 0 ? 'text-[#1797A6]' : 'text-[#64748B]'}">0${i + 1}</span>
+          <div class="w-9 h-9 rounded-lg ${i === 0 ? 'bg-[#087F8C] text-[#0D234A]' : 'bg-[#EEF6F8] text-[#64748B]'} flex items-center justify-center">
             <span class="material-symbols-outlined text-[20px]">${s.icon}</span>
           </div>
         </div>
         <div>
-          <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">${s.title}</h4>
-          <p class="text-[12.5px] text-[#687779] mt-1.5 leading-relaxed">${s.desc}</p>
+          <h4 class="font-display font-bold text-[15px] text-[#0D234A]">${s.title}</h4>
+          <p class="text-[12.5px] text-[#64748B] mt-1.5 leading-relaxed">${s.desc}</p>
         </div>
       </div>`).join('\n')}
     </div>`;
@@ -460,13 +479,13 @@ ${steps.map((s, i) => `      <div class="bg-white p-6 rounded-2xl border border-
 
 function faqAccordion(faqs) {
   return `    <div class="faq-list space-y-3 max-w-3xl mx-auto">
-${faqs.map((f, i) => `      <div class="faq-item border border-[#DCE7E6] rounded-xl bg-white overflow-hidden${i === 0 ? ' open' : ''}">
+${faqs.map((f, i) => `      <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden${i === 0 ? ' open' : ''}">
         <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
-          <span class="font-display font-semibold text-[15px] text-[#0F1E3E]">${f.q}</span>
-          <span class="material-symbols-outlined faq-chevron text-[#1E3E83] text-[22px] shrink-0">expand_more</span>
+          <span class="font-display font-semibold text-[15px] text-[#0D234A]">${f.q}</span>
+          <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
         </button>
         <div class="faq-answer px-5">
-          <p class="text-[14px] text-[#687779] leading-relaxed pb-5">${f.a}</p>
+          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">${f.a}</p>
         </div>
       </div>`).join('\n')}
     </div>`;
@@ -474,12 +493,12 @@ ${faqs.map((f, i) => `      <div class="faq-item border border-[#DCE7E6] rounded
 
 function relatedServices(items) {
   return `    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-${items.map(it => `      <a href="${it.href}" class="block p-5 bg-white rounded-xl border border-[#DCE7E6] hover:border-[#4FC3D9] transition-all group">
-        <div class="w-10 h-10 rounded-lg bg-[#4FC3D9]/20 text-[#1E3E83] flex items-center justify-center mb-3">
+${items.map(it => `      <a href="${it.href}" class="block p-5 bg-white rounded-xl border border-[#D7E3E8] hover:border-[#087F8C] transition-all group">
+        <div class="w-10 h-10 rounded-lg bg-[#087F8C]/20 text-[#1797A6] flex items-center justify-center mb-3">
           <span class="material-symbols-outlined text-[20px]">${it.icon}</span>
         </div>
-        <h4 class="font-display font-bold text-[15px] text-[#0F1E3E] group-hover:text-[#1E3E83]">${it.title}</h4>
-        <p class="text-[12.5px] text-[#687779] mt-1">${it.desc}</p>
+        <h4 class="font-display font-bold text-[15px] text-[#0D234A] group-hover:text-[#1797A6]">${it.title}</h4>
+        <p class="text-[12.5px] text-[#64748B] mt-1">${it.desc}</p>
       </a>`).join('\n')}
     </div>`;
 }

@@ -30,18 +30,18 @@ module.exports = {
     faqSchema(FAQS),
   ],
   body: `
-<section class="py-16 bg-white border-b border-[#DCE7E6]">
+<section class="py-16 bg-white border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
     <div class="lg:col-span-8 space-y-10">
       <div class="space-y-4">
-        <h2 class="text-[24px] font-display font-bold text-[#0F1E3E]">Dedicated Home Visits for NRI Families</h2>
-        <p class="text-[15px] text-[#687779] leading-relaxed">
+        <h2 class="text-[24px] font-display font-bold text-[#0D234A]">Dedicated Home Visits for NRI Families</h2>
+        <p class="text-[15px] text-[#64748B] leading-relaxed">
           Premium NRI Care offers specialized home visits, parent progress reports, and remote video updates for families living overseas who want the best hearing care for their parents in Mumbai, without the stress of coordinating it all from a distance.
         </p>
       </div>
 
       <div>
-        <h2 class="text-[22px] font-display font-bold text-[#0F1E3E] mb-4">What's Included</h2>
+        <h2 class="text-[22px] font-display font-bold text-[#0D234A] mb-4">What's Included</h2>
         ${benefitGrid([
           { icon: 'event_repeat', title: 'Quarterly In-Home Evaluations', desc: 'Scheduled hearing assessments at your parents\' home in Mumbai.' },
           { icon: 'chat', title: 'Direct WhatsApp Updates', desc: 'Clinical summaries and updates sent directly to family abroad.' },
@@ -51,12 +51,12 @@ module.exports = {
       </div>
 
       <div>
-        <h2 class="text-[22px] font-display font-bold text-[#0F1E3E] mb-4">Who This Service Is For</h2>
-        <p class="text-[15px] text-[#687779] leading-relaxed mb-4">Designed for sons and daughters living outside India who want dependable, dedicated hearing care for elderly parents residing in Mumbai, with regular reporting and remote visibility.</p>
+        <h2 class="text-[22px] font-display font-bold text-[#0D234A] mb-4">Who This Service Is For</h2>
+        <p class="text-[15px] text-[#64748B] leading-relaxed mb-4">Designed for sons and daughters living outside India who want dependable, dedicated hearing care for elderly parents residing in Mumbai, with regular reporting and remote visibility.</p>
       </div>
 
       <div>
-        <h2 class="text-[22px] font-display font-bold text-[#0F1E3E] mb-5">How It Works</h2>
+        <h2 class="text-[22px] font-display font-bold text-[#0D234A] mb-5">How It Works</h2>
         ${processSteps([
           { icon: 'call', title: '1. Enroll', desc: 'Share your parents\' details and your contact information abroad.' },
           { icon: 'home', title: '2. Home Visit', desc: 'Our team conducts the first evaluation at your parents\' residence.' },
@@ -79,16 +79,16 @@ module.exports = {
 
     <div class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
       ${imagePlaceholder({ icon: 'family_restroom', label: 'NRI Family Concierge Care', caption: 'Dedicated home visits across Mumbai' })}
-      <div class="bg-[#F7FAF9] p-6 rounded-2xl border-2 border-[#4FC3D9] space-y-4">
-        <div class="flex items-center gap-2 text-[13px] text-[#0F1E3E]">
-          <span class="material-symbols-outlined text-[#1E3E83] text-[18px]">schedule</span>
+      <div class="bg-[#F8FAFC] p-6 rounded-2xl border-2 border-[#087F8C] space-y-4">
+        <div class="flex items-center gap-2 text-[13px] text-[#0D234A]">
+          <span class="material-symbols-outlined text-[#1797A6] text-[18px]">schedule</span>
           <span class="font-semibold">Duration: 1 hr</span>
         </div>
         <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-[#1E3E83]">Price</span>
-          <p class="text-[26px] font-display font-bold text-[#0F1E3E] mt-1">₹2L <span class="text-[14px] text-[#687779] font-normal">to ₹3.5L</span></p>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#1797A6]">Price</span>
+          <p class="text-[26px] font-display font-bold text-[#0D234A] mt-1">₹2L <span class="text-[14px] text-[#64748B] font-normal">to ₹3.5L</span></p>
         </div>
-        <a href="/booking/premium-nri-care" class="block text-center w-full py-3.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-md">
+        <a href="/booking/premium-nri-care" class="block text-center w-full py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">
           Enroll NRI Plan
         </a>
       </div>
@@ -96,7 +96,7 @@ module.exports = {
   </div>
 </section>
 
-<section class="py-16 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+<section class="py-16 bg-[#F8FAFC] border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-10">
     ${sectionHeading({ eyebrow: 'Common Questions', title: 'Premium NRI Care FAQs', align: 'center' })}
     ${faqAccordion(FAQS)}
@@ -105,11 +105,11 @@ module.exports = {
 
 <section class="py-16 bg-white">
   <div class="max-w-4xl mx-auto px-6 text-center space-y-5">
-    <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0F1E3E]">Give your parents dedicated hearing care in Mumbai.</h2>
-    <p class="text-[15px] text-[#687779]">Enroll your parents in the Premium NRI Care program today.</p>
+    <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A]">Give your parents dedicated hearing care in Mumbai.</h2>
+    <p class="text-[15px] text-[#64748B]">Enroll your parents in the Premium NRI Care program today.</p>
     <div class="flex flex-wrap justify-center gap-4 pt-2">
-      <a href="/booking/premium-nri-care" class="px-7 py-3.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[15px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-md">Enroll NRI Plan</a>
-      <a href="tel:+919773545058" class="px-7 py-3.5 border border-[#DCE7E6] bg-white text-[#0F1E3E] font-display font-semibold text-[15px] rounded-lg hover:border-[#4FC3D9] transition-all">Call +91 9773545058</a>
+      <a href="/booking/premium-nri-care" class="px-7 py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Enroll NRI Plan</a>
+      <a href="tel:+919773545058" class="px-7 py-3.5 border border-[#D7E3E8] bg-white text-[#0D234A] font-display font-semibold text-[15px] rounded-lg hover:border-[#087F8C] transition-all">Call +91 9773545058</a>
     </div>
   </div>
 </section>

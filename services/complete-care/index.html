@@ -29,14 +29,14 @@
       theme: {
         extend: {
           colors: {
-            primary: "#1E3E83",
-            teal: "#4FC3D9",
-            dark: "#0F1E3E",
-            textdark: "#182426",
-            muted: "#687779",
-            surface: "#F7FAF9",
-            warmwhite: "#FCFDFC",
-            bordercol: "#DCE7E6"
+            primary: "#1797A6",
+            teal: "#087F8C",
+            dark: "#0D234A",
+            textdark: "#1F2937",
+            muted: "#64748B",
+            surface: "#F8FAFC",
+            warmwhite: "#F8FAFC",
+            bordercol: "#D7E3E8"
           },
           fontFamily: {
             display: ["Manrope", "sans-serif"],
@@ -53,54 +53,57 @@
       vertical-align: middle;
     }
     .header-scrolled {
-      background-color: rgba(252, 253, 252, 0.98) !important;
-      box-shadow: 0 4px 20px -2px rgba(15, 30, 62, 0.08);
-      border-color: rgba(220, 231, 230, 0.9);
+      background-color: rgba(248, 250, 252, 0.98) !important;
+      box-shadow: 0 4px 20px -2px rgba(13, 35, 74, 0.08);
+      border-color: rgba(215, 227, 232, 0.9);
     }
     .faq-chevron { transition: transform 0.25s ease; }
     .faq-item.open .faq-chevron { transform: rotate(180deg); }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
     .faq-item.open .faq-answer { max-height: 320px; }
+    @media (max-width: 767px) {
+      body { padding-bottom: 64px; }
+    }
   </style>
 </head>
-<body class="bg-[#F7FAF9] text-[#182426] font-body antialiased selection:bg-[#4FC3D9] selection:text-[#0F1E3E] flex flex-col min-h-screen">
-<header class="sticky top-0 z-50 w-full bg-[#FCFDFC]/95 backdrop-blur-md border-b border-[#DCE7E6] transition-all duration-300" id="main-header">
+<body class="bg-[#F8FAFC] text-[#1F2937] font-body antialiased selection:bg-[#087F8C] selection:text-[#0D234A] flex flex-col min-h-screen">
+<header class="sticky top-0 z-50 w-full bg-[#F8FAFC]/95 backdrop-blur-md border-b border-[#D7E3E8] transition-all duration-300" id="main-header">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-20">
     <a aria-label="PTA SOLUTIONS Home" class="flex items-center gap-3 group cursor-pointer" href="/">
       <img alt="PTA Solutions Clinic Logo" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105" src="/assets/logo.png">
     </a>
-    <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[14px] font-medium text-[#526163]">
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/">Home</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/about">About</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/services">Services</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/nri-hearing-care">NRI Hearing Care</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors text-[#0F1E3E] font-semibold" href="/services/complete-care">Complete Care</a>
-      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1E3E83]" href="/contact">Contact</a>
+    <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[14px] font-medium text-[#64748B]">
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1797A6]" href="/">Home</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1797A6]" href="/about">About</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1797A6]" href="/services">Services</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1797A6]" href="/nri-hearing-care">NRI Hearing Care</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors text-[#0D234A] font-semibold" href="/services/complete-care">Complete Care</a>
+      <a class="nav-item cursor-pointer py-1 transition-colors hover:text-[#1797A6]" href="/contact">Contact</a>
     </nav>
     <div class="flex items-center gap-4">
-      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#526163] hover:text-[#1E3E83] transition-colors group" href="tel:+919773545058">
-        <span class="material-symbols-outlined text-[#1E3E83] text-[18px] transition-transform group-hover:scale-110">call</span>
+      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#64748B] hover:text-[#1797A6] transition-colors group" href="tel:+919773545058">
+        <span class="material-symbols-outlined text-[#1797A6] text-[18px] transition-transform group-hover:scale-110">call</span>
         <span class="">+91 9773545058</span>
       </a>
-      <a class="group hidden sm:inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap" href="/book-appointment">
+      <a class="group hidden sm:inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#087F8C] text-[#0D234A] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap" href="/book-appointment">
         <span class="">Book Appointment</span>
         <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
       </a>
-      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0F1E3E] hover:bg-[#F1F4F3] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+      <button aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-lg text-[#0D234A] hover:bg-[#EEF6F8] focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
       </button>
     </div>
   </div>
-  <div class="hidden md:hidden border-t border-[#DCE7E6] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/">Home</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/about">About PTA Solutions</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/services">All Services Directory</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/nri-hearing-care">NRI Hearing Care Mumbai</a>
-    <a class="block py-2 text-[15px] font-medium text-[#0F1E3E] border-b border-[#F1F4F3]" href="/services/complete-care">Complete Care Program</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163] border-b border-[#F1F4F3]" href="/book-appointment">Book Appointment Hub</a>
-    <a class="block py-2 text-[15px] font-medium text-[#526163]" href="/contact">Contact Chembur Clinic</a>
+  <div class="hidden md:hidden border-t border-[#D7E3E8] bg-white px-6 py-5 space-y-3 shadow-lg" id="mobile-menu-dropdown">
+    <a class="block py-2 text-[15px] font-medium text-[#64748B] border-b border-[#EEF6F8]" href="/">Home</a>
+    <a class="block py-2 text-[15px] font-medium text-[#64748B] border-b border-[#EEF6F8]" href="/about">About PTA Solutions</a>
+    <a class="block py-2 text-[15px] font-medium text-[#64748B] border-b border-[#EEF6F8]" href="/services">All Services Directory</a>
+    <a class="block py-2 text-[15px] font-medium text-[#64748B] border-b border-[#EEF6F8]" href="/nri-hearing-care">NRI Hearing Care Mumbai</a>
+    <a class="block py-2 text-[15px] font-medium text-[#0D234A] border-b border-[#EEF6F8]" href="/services/complete-care">Complete Care Program</a>
+    <a class="block py-2 text-[15px] font-medium text-[#64748B] border-b border-[#EEF6F8]" href="/book-appointment">Book Appointment Hub</a>
+    <a class="block py-2 text-[15px] font-medium text-[#64748B]" href="/contact">Contact Chembur Clinic</a>
     <div class="pt-2">
-      <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#1E3E83] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
+      <a class="w-full flex items-center justify-center gap-2 py-3 bg-[#1797A6] text-white rounded-lg font-display text-[14px] font-semibold" href="tel:+919773545058">
         <span class="material-symbols-outlined text-[18px]">call</span>
         <span class="">Direct Call: +91 9773545058</span>
       </a>
@@ -108,100 +111,100 @@
   </div>
 </header>
 <main class="flex-grow">
-  <section class="py-12 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+  <section class="py-12 bg-[#F8FAFC] border-b border-[#D7E3E8]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <p class="text-[12px] text-[#687779] mb-3"><a href="/" class="cursor-pointer hover:underline">Home</a> / <a href="/services" class="cursor-pointer hover:underline">Services</a> / Complete Care</p>
+      <p class="text-[12px] text-[#64748B] mb-3"><a href="/" class="cursor-pointer hover:underline">Home</a> / <a href="/services" class="cursor-pointer hover:underline">Services</a> / Complete Care</p>
       <div class="flex items-center gap-2 mb-2">
-          <span class="px-3 py-1 bg-[#4FC3D9] text-[#0F1E3E] font-bold rounded-full text-[11px] uppercase tracking-wider">Flagship Protocol</span>
+          <span class="px-3 py-1 bg-[#087F8C] text-[#0D234A] font-bold rounded-full text-[11px] uppercase tracking-wider">Flagship Protocol</span>
         </div>
-      <h1 class="text-[36px] lg:text-[48px] font-display font-extrabold text-[#0F1E3E] mt-2">Complete Care</h1>
+      <h1 class="text-[36px] lg:text-[48px] font-display font-extrabold text-[#0D234A] mt-2">Complete Care</h1>
       
-      <div class="flex flex-wrap gap-4 text-[13px] text-[#687779] mt-3"><span><strong>Duration:</strong> 1 hr</span><span>•</span><span><strong>Price:</strong> ₹75,000 to ₹1,50,000</span><span>•</span><span><strong>Location:</strong> Customer's Place</span></div>
+      <div class="flex flex-wrap gap-4 text-[13px] text-[#64748B] mt-3"><span><strong>Duration:</strong> 1 hr</span><span>•</span><span><strong>Price:</strong> ₹75,000 to ₹1,50,000</span><span>•</span><span><strong>Location:</strong> Customer's Place</span></div>
     </div>
   </section>
 
-<section class="py-16 bg-white border-b border-[#DCE7E6]">
+<section class="py-16 bg-white border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
     <div class="lg:col-span-8 space-y-8">
       <div class="space-y-4">
-        <h2 class="text-[24px] font-display font-bold text-[#0F1E3E]">Comprehensive In-Home Rehabilitation</h2>
-        <div class="p-6 bg-[#F7FAF9] rounded-2xl border border-[#DCE7E6] text-[16px] text-[#0F1E3E] leading-relaxed italic">
+        <h2 class="text-[24px] font-display font-bold text-[#0D234A]">Comprehensive In-Home Rehabilitation</h2>
+        <div class="p-6 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] text-[16px] text-[#0D234A] leading-relaxed italic">
           "Our Complete Care service offers a holistic approach to audiology, ensuring you receive top-notch hearing and speech therapies. With cutting-edge diagnostics and personalized care plans, our expert team is dedicated to enhancing your auditory experience right at your home. Experience a new level of hearing health with our unparalleled commitment to your well-being!"
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="p-5 bg-white rounded-xl border border-[#DCE7E6]">
-          <span class="material-symbols-outlined text-[#1E3E83] text-[24px]">biotech</span>
-          <h4 class="font-display font-bold text-[16px] text-[#0F1E3E] mt-2">Cutting-Edge Diagnostics</h4>
-          <p class="text-[13px] text-[#687779] mt-1">Full pure-tone threshold evaluation, speech discrimination, and acoustic impedance testing at your living room.</p>
+        <div class="p-5 bg-white rounded-xl border border-[#D7E3E8]">
+          <span class="material-symbols-outlined text-[#1797A6] text-[24px]">biotech</span>
+          <h4 class="font-display font-bold text-[16px] text-[#0D234A] mt-2">Cutting-Edge Diagnostics</h4>
+          <p class="text-[13px] text-[#64748B] mt-1">Full pure-tone threshold evaluation, speech discrimination, and acoustic impedance testing at your living room.</p>
         </div>
-        <div class="p-5 bg-white rounded-xl border border-[#DCE7E6]">
-          <span class="material-symbols-outlined text-[#1E3E83] text-[24px]">tune</span>
-          <h4 class="font-display font-bold text-[16px] text-[#0F1E3E] mt-2">Real-Ear Acoustic Verification</h4>
-          <p class="text-[13px] text-[#687779] mt-1">Real-time probe microphone measurements to verify target audibility curves against clinical prescriptions.</p>
+        <div class="p-5 bg-white rounded-xl border border-[#D7E3E8]">
+          <span class="material-symbols-outlined text-[#1797A6] text-[24px]">tune</span>
+          <h4 class="font-display font-bold text-[16px] text-[#0D234A] mt-2">Real-Ear Acoustic Verification</h4>
+          <p class="text-[13px] text-[#64748B] mt-1">Real-time probe microphone measurements to verify target audibility curves against clinical prescriptions.</p>
         </div>
-        <div class="p-5 bg-white rounded-xl border border-[#DCE7E6]">
-          <span class="material-symbols-outlined text-[#1E3E83] text-[24px]">record_voice_over</span>
-          <h4 class="font-display font-bold text-[16px] text-[#0F1E3E] mt-2">Integrated Speech Therapy</h4>
-          <p class="text-[13px] text-[#687779] mt-1">Specialized brain auditory retraining to distinguish consonants in background conversation noise.</p>
+        <div class="p-5 bg-white rounded-xl border border-[#D7E3E8]">
+          <span class="material-symbols-outlined text-[#1797A6] text-[24px]">record_voice_over</span>
+          <h4 class="font-display font-bold text-[16px] text-[#0D234A] mt-2">Integrated Speech Therapy</h4>
+          <p class="text-[13px] text-[#64748B] mt-1">Specialized brain auditory retraining to distinguish consonants in background conversation noise.</p>
         </div>
-        <div class="p-5 bg-white rounded-xl border border-[#DCE7E6]">
-          <span class="material-symbols-outlined text-[#1E3E83] text-[24px]">support_agent</span>
-          <h4 class="font-display font-bold text-[16px] text-[#0F1E3E] mt-2">Lifetime Concierge Care</h4>
-          <p class="text-[13px] text-[#687779] mt-1">Direct line to Dr. Johnsavio Fernandes with ongoing acoustic check-ins and scheduled battery replenishment.</p>
+        <div class="p-5 bg-white rounded-xl border border-[#D7E3E8]">
+          <span class="material-symbols-outlined text-[#1797A6] text-[24px]">support_agent</span>
+          <h4 class="font-display font-bold text-[16px] text-[#0D234A] mt-2">Lifetime Concierge Care</h4>
+          <p class="text-[13px] text-[#64748B] mt-1">Direct line to Dr. Johnsavio Fernandes with ongoing acoustic check-ins and scheduled battery replenishment.</p>
         </div>
       </div>
 
       <div>
-        <h2 class="text-[22px] font-display font-bold text-[#0F1E3E] mb-5">How It Works</h2>
+        <h2 class="text-[22px] font-display font-bold text-[#0D234A] mb-5">How It Works</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="bg-white p-6 rounded-2xl border border-[#DCE7E6] space-y-3">
+      <div class="bg-white p-6 rounded-2xl border border-[#D7E3E8] space-y-3">
         <div class="flex items-center justify-between">
-          <span class="text-[22px] font-mono font-extrabold text-[#1E3E83]">01</span>
-          <div class="w-9 h-9 rounded-lg bg-[#4FC3D9] text-[#0F1E3E] flex items-center justify-center">
+          <span class="text-[22px] font-mono font-extrabold text-[#1797A6]">01</span>
+          <div class="w-9 h-9 rounded-lg bg-[#087F8C] text-[#0D234A] flex items-center justify-center">
             <span class="material-symbols-outlined text-[20px]">call</span>
           </div>
         </div>
         <div>
-          <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">1. Consult</h4>
-          <p class="text-[12.5px] text-[#687779] mt-1.5 leading-relaxed">Talk to our specialist to understand your needs and goals.</p>
+          <h4 class="font-display font-bold text-[15px] text-[#0D234A]">1. Consult</h4>
+          <p class="text-[12.5px] text-[#64748B] mt-1.5 leading-relaxed">Talk to our specialist to understand your needs and goals.</p>
         </div>
       </div>
-      <div class="bg-white p-6 rounded-2xl border border-[#DCE7E6] space-y-3">
+      <div class="bg-white p-6 rounded-2xl border border-[#D7E3E8] space-y-3">
         <div class="flex items-center justify-between">
-          <span class="text-[22px] font-mono font-extrabold text-[#687779]">02</span>
-          <div class="w-9 h-9 rounded-lg bg-[#F1F4F3] text-[#687779] flex items-center justify-center">
+          <span class="text-[22px] font-mono font-extrabold text-[#64748B]">02</span>
+          <div class="w-9 h-9 rounded-lg bg-[#EEF6F8] text-[#64748B] flex items-center justify-center">
             <span class="material-symbols-outlined text-[20px]">home</span>
           </div>
         </div>
         <div>
-          <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">2. Home Diagnostics</h4>
-          <p class="text-[12.5px] text-[#687779] mt-1.5 leading-relaxed">Our team brings diagnostic equipment directly to your home.</p>
+          <h4 class="font-display font-bold text-[15px] text-[#0D234A]">2. Home Diagnostics</h4>
+          <p class="text-[12.5px] text-[#64748B] mt-1.5 leading-relaxed">Our team brings diagnostic equipment directly to your home.</p>
         </div>
       </div>
-      <div class="bg-white p-6 rounded-2xl border border-[#DCE7E6] space-y-3">
+      <div class="bg-white p-6 rounded-2xl border border-[#D7E3E8] space-y-3">
         <div class="flex items-center justify-between">
-          <span class="text-[22px] font-mono font-extrabold text-[#687779]">03</span>
-          <div class="w-9 h-9 rounded-lg bg-[#F1F4F3] text-[#687779] flex items-center justify-center">
+          <span class="text-[22px] font-mono font-extrabold text-[#64748B]">03</span>
+          <div class="w-9 h-9 rounded-lg bg-[#EEF6F8] text-[#64748B] flex items-center justify-center">
             <span class="material-symbols-outlined text-[20px]">tune</span>
           </div>
         </div>
         <div>
-          <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">3. Personalized Plan</h4>
-          <p class="text-[12.5px] text-[#687779] mt-1.5 leading-relaxed">A care plan is designed around your diagnostic results.</p>
+          <h4 class="font-display font-bold text-[15px] text-[#0D234A]">3. Personalized Plan</h4>
+          <p class="text-[12.5px] text-[#64748B] mt-1.5 leading-relaxed">A care plan is designed around your diagnostic results.</p>
         </div>
       </div>
-      <div class="bg-white p-6 rounded-2xl border border-[#DCE7E6] space-y-3">
+      <div class="bg-white p-6 rounded-2xl border border-[#D7E3E8] space-y-3">
         <div class="flex items-center justify-between">
-          <span class="text-[22px] font-mono font-extrabold text-[#687779]">04</span>
-          <div class="w-9 h-9 rounded-lg bg-[#F1F4F3] text-[#687779] flex items-center justify-center">
+          <span class="text-[22px] font-mono font-extrabold text-[#64748B]">04</span>
+          <div class="w-9 h-9 rounded-lg bg-[#EEF6F8] text-[#64748B] flex items-center justify-center">
             <span class="material-symbols-outlined text-[20px]">support_agent</span>
           </div>
         </div>
         <div>
-          <h4 class="font-display font-bold text-[15px] text-[#0F1E3E]">4. Ongoing Care</h4>
-          <p class="text-[12.5px] text-[#687779] mt-1.5 leading-relaxed">Continued support and adjustments as part of the program.</p>
+          <h4 class="font-display font-bold text-[15px] text-[#0D234A]">4. Ongoing Care</h4>
+          <p class="text-[12.5px] text-[#64748B] mt-1.5 leading-relaxed">Continued support and adjustments as part of the program.</p>
         </div>
       </div>
     </div>
@@ -210,35 +213,35 @@
       <div>
             <div class="max-w-2xl  space-y-3">
       <div class="inline-flex items-center gap-2 ">
-        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
-        <span class="text-[11px] font-bold uppercase tracking-wider text-[#687779]">Related Services</span>
+        <span class="w-5 h-[2px] bg-[#087F8C]"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">Related Services</span>
         
       </div>
-      <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0F1E3E] leading-tight">You May Also Need</h2>
+      <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A] leading-tight">You May Also Need</h2>
       
     </div>
         <div class="mt-5">
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-      <a href="/services/hearing-tests" class="block p-5 bg-white rounded-xl border border-[#DCE7E6] hover:border-[#4FC3D9] transition-all group">
-        <div class="w-10 h-10 rounded-lg bg-[#4FC3D9]/20 text-[#1E3E83] flex items-center justify-center mb-3">
+      <a href="/services/hearing-tests" class="block p-5 bg-white rounded-xl border border-[#D7E3E8] hover:border-[#087F8C] transition-all group">
+        <div class="w-10 h-10 rounded-lg bg-[#087F8C]/20 text-[#1797A6] flex items-center justify-center mb-3">
           <span class="material-symbols-outlined text-[20px]">hearing</span>
         </div>
-        <h4 class="font-display font-bold text-[15px] text-[#0F1E3E] group-hover:text-[#1E3E83]">Hearing Tests</h4>
-        <p class="text-[12.5px] text-[#687779] mt-1">A standalone diagnostic test if you need a quicker option.</p>
+        <h4 class="font-display font-bold text-[15px] text-[#0D234A] group-hover:text-[#1797A6]">Hearing Tests</h4>
+        <p class="text-[12.5px] text-[#64748B] mt-1">A standalone diagnostic test if you need a quicker option.</p>
       </a>
-      <a href="/services/hearing-aids" class="block p-5 bg-white rounded-xl border border-[#DCE7E6] hover:border-[#4FC3D9] transition-all group">
-        <div class="w-10 h-10 rounded-lg bg-[#4FC3D9]/20 text-[#1E3E83] flex items-center justify-center mb-3">
+      <a href="/services/hearing-aids" class="block p-5 bg-white rounded-xl border border-[#D7E3E8] hover:border-[#087F8C] transition-all group">
+        <div class="w-10 h-10 rounded-lg bg-[#087F8C]/20 text-[#1797A6] flex items-center justify-center mb-3">
           <span class="material-symbols-outlined text-[20px]">hearing_disabled</span>
         </div>
-        <h4 class="font-display font-bold text-[15px] text-[#0F1E3E] group-hover:text-[#1E3E83]">Hearing Aids</h4>
-        <p class="text-[12.5px] text-[#687779] mt-1">Standalone fitting and dispensing service.</p>
+        <h4 class="font-display font-bold text-[15px] text-[#0D234A] group-hover:text-[#1797A6]">Hearing Aids</h4>
+        <p class="text-[12.5px] text-[#64748B] mt-1">Standalone fitting and dispensing service.</p>
       </a>
-      <a href="/services/premium-nri-care" class="block p-5 bg-white rounded-xl border border-[#DCE7E6] hover:border-[#4FC3D9] transition-all group">
-        <div class="w-10 h-10 rounded-lg bg-[#4FC3D9]/20 text-[#1E3E83] flex items-center justify-center mb-3">
+      <a href="/services/premium-nri-care" class="block p-5 bg-white rounded-xl border border-[#D7E3E8] hover:border-[#087F8C] transition-all group">
+        <div class="w-10 h-10 rounded-lg bg-[#087F8C]/20 text-[#1797A6] flex items-center justify-center mb-3">
           <span class="material-symbols-outlined text-[20px]">public</span>
         </div>
-        <h4 class="font-display font-bold text-[15px] text-[#0F1E3E] group-hover:text-[#1E3E83]">Premium NRI Care</h4>
-        <p class="text-[12.5px] text-[#687779] mt-1">A similar home-based program designed for families abroad.</p>
+        <h4 class="font-display font-bold text-[15px] text-[#0D234A] group-hover:text-[#1797A6]">Premium NRI Care</h4>
+        <p class="text-[12.5px] text-[#64748B] mt-1">A similar home-based program designed for families abroad.</p>
       </a>
     </div>
         </div>
@@ -247,30 +250,30 @@
 
     <div class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
       <!-- IMAGE PLACEHOLDER: replace with a real photo (Complete Care at Home) -->
-        <div class="relative bg-white p-3 border border-[#DCE7E6] rounded-2xl shadow-md">
-          <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-[#F7FAF9] to-[#E6F6FA] border border-[#DCE7E6] flex flex-col items-center justify-center gap-3 text-center p-6">
-            <div class="w-16 h-16 rounded-full bg-white border border-[#DCE7E6] flex items-center justify-center text-[#1E3E83] shadow-sm">
+        <div class="relative bg-white p-3 border border-[#D7E3E8] rounded-2xl shadow-md">
+          <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-[#F8FAFC] to-[#EEF6F8] border border-[#D7E3E8] flex flex-col items-center justify-center gap-3 text-center p-6">
+            <div class="w-16 h-16 rounded-full bg-white border border-[#D7E3E8] flex items-center justify-center text-[#1797A6] shadow-sm">
               <span class="material-symbols-outlined text-[32px]">favorite</span>
             </div>
             <div>
-              <p class="font-display font-bold text-[15px] text-[#0F1E3E]">Complete Care at Home</p>
-              <p class="text-[12px] text-[#687779] mt-1">Diagnostics and therapy at your residence</p>
+              <p class="font-display font-bold text-[15px] text-[#0D234A]">Complete Care at Home</p>
+              <p class="text-[12px] text-[#64748B] mt-1">Diagnostics and therapy at your residence</p>
             </div>
           </div>
         </div>
-      <div class="bg-[#F7FAF9] p-8 rounded-2xl border-2 border-[#4FC3D9] space-y-6">
+      <div class="bg-[#F8FAFC] p-8 rounded-2xl border-2 border-[#087F8C] space-y-6">
         <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-[#1E3E83]">Service Investment</span>
-          <p class="text-[32px] font-display font-bold text-[#0F1E3E] mt-1">₹75,000 <span class="text-[14px] text-[#687779] font-normal">to ₹1,50,000</span></p>
-          <p class="text-[12px] text-[#687779] mt-1">Duration: 1 hr • Conducted at Customer's Place</p>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#1797A6]">Service Investment</span>
+          <p class="text-[32px] font-display font-bold text-[#0D234A] mt-1">₹75,000 <span class="text-[14px] text-[#64748B] font-normal">to ₹1,50,000</span></p>
+          <p class="text-[12px] text-[#64748B] mt-1">Duration: 1 hr • Conducted at Customer's Place</p>
         </div>
-        <div class="space-y-2 border-t border-[#DCE7E6] pt-4 text-[13px] text-[#0F1E3E]">
-          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1E3E83] text-[18px]">check</span> Complete audiology diagnostic suite</div>
-          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1E3E83] text-[18px]">check</span> Real environment acoustic adaptation</div>
-          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1E3E83] text-[18px]">check</span> Customized speech therapy sessions</div>
-          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1E3E83] text-[18px]">check</span> Zero hidden medical surcharges</div>
+        <div class="space-y-2 border-t border-[#D7E3E8] pt-4 text-[13px] text-[#0D234A]">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px]">check</span> Complete audiology diagnostic suite</div>
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px]">check</span> Real environment acoustic adaptation</div>
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px]">check</span> Customized speech therapy sessions</div>
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px]">check</span> Zero hidden medical surcharges</div>
         </div>
-        <a href="/book-appointment" class="block text-center w-full py-3.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[14px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-md">
+        <a href="/book-appointment" class="block text-center w-full py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">
           Talk to Specialist Now
         </a>
       </div>
@@ -278,52 +281,52 @@
   </div>
 </section>
 
-<section class="py-16 bg-[#F7FAF9] border-b border-[#DCE7E6]">
+<section class="py-16 bg-[#F8FAFC] border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-10">
         <div class="max-w-2xl text-center mx-auto space-y-3">
       <div class="inline-flex items-center gap-2 justify-center">
-        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
-        <span class="text-[11px] font-bold uppercase tracking-wider text-[#687779]">Common Questions</span>
-        <span class="w-5 h-[2px] bg-[#4FC3D9]"></span>
+        <span class="w-5 h-[2px] bg-[#087F8C]"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">Common Questions</span>
+        <span class="w-5 h-[2px] bg-[#087F8C]"></span>
       </div>
-      <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0F1E3E] leading-tight">Complete Care FAQs</h2>
+      <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A] leading-tight">Complete Care FAQs</h2>
       
     </div>
         <div class="faq-list space-y-3 max-w-3xl mx-auto">
-      <div class="faq-item border border-[#DCE7E6] rounded-xl bg-white overflow-hidden open">
+      <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden open">
         <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
-          <span class="font-display font-semibold text-[15px] text-[#0F1E3E]">Is Complete Care conducted entirely at home?</span>
-          <span class="material-symbols-outlined faq-chevron text-[#1E3E83] text-[22px] shrink-0">expand_more</span>
+          <span class="font-display font-semibold text-[15px] text-[#0D234A]">Is Complete Care conducted entirely at home?</span>
+          <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
         </button>
         <div class="faq-answer px-5">
-          <p class="text-[14px] text-[#687779] leading-relaxed pb-5">Yes, Complete Care is delivered at the customer's place for comprehensive, convenient audiology and speech therapy.</p>
+          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">Yes, Complete Care is delivered at the customer's place for comprehensive, convenient audiology and speech therapy.</p>
         </div>
       </div>
-      <div class="faq-item border border-[#DCE7E6] rounded-xl bg-white overflow-hidden">
+      <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden">
         <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
-          <span class="font-display font-semibold text-[15px] text-[#0F1E3E]">What does the price range depend on?</span>
-          <span class="material-symbols-outlined faq-chevron text-[#1E3E83] text-[22px] shrink-0">expand_more</span>
+          <span class="font-display font-semibold text-[15px] text-[#0D234A]">What does the price range depend on?</span>
+          <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
         </button>
         <div class="faq-answer px-5">
-          <p class="text-[14px] text-[#687779] leading-relaxed pb-5">The ₹75,000 to ₹1,50,000 range reflects the specific diagnostics, devices, and therapy plan tailored to your needs.</p>
+          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">The ₹75,000 to ₹1,50,000 range reflects the specific diagnostics, devices, and therapy plan tailored to your needs.</p>
         </div>
       </div>
-      <div class="faq-item border border-[#DCE7E6] rounded-xl bg-white overflow-hidden">
+      <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden">
         <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
-          <span class="font-display font-semibold text-[15px] text-[#0F1E3E]">How do I get started?</span>
-          <span class="material-symbols-outlined faq-chevron text-[#1E3E83] text-[22px] shrink-0">expand_more</span>
+          <span class="font-display font-semibold text-[15px] text-[#0D234A]">How do I get started?</span>
+          <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
         </button>
         <div class="faq-answer px-5">
-          <p class="text-[14px] text-[#687779] leading-relaxed pb-5">Talk to our specialist through the Contact page, and we will guide you through the Complete Care program.</p>
+          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">Talk to our specialist through the Contact page, and we will guide you through the Complete Care program.</p>
         </div>
       </div>
-      <div class="faq-item border border-[#DCE7E6] rounded-xl bg-white overflow-hidden">
+      <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden">
         <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
-          <span class="font-display font-semibold text-[15px] text-[#0F1E3E]">Does Complete Care include hearing aids?</span>
-          <span class="material-symbols-outlined faq-chevron text-[#1E3E83] text-[22px] shrink-0">expand_more</span>
+          <span class="font-display font-semibold text-[15px] text-[#0D234A]">Does Complete Care include hearing aids?</span>
+          <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
         </button>
         <div class="faq-answer px-5">
-          <p class="text-[14px] text-[#687779] leading-relaxed pb-5">Complete Care includes diagnostics, real-ear verification, and speech therapy; hearing aid fitting is coordinated as part of your personalized plan when needed.</p>
+          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">Complete Care includes diagnostics, real-ear verification, and speech therapy; hearing aid fitting is coordinated as part of your personalized plan when needed.</p>
         </div>
       </div>
     </div>
@@ -332,16 +335,16 @@
 
 <section class="py-16 bg-white">
   <div class="max-w-4xl mx-auto px-6 text-center space-y-5">
-    <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0F1E3E]">Experience complete audiology care at home.</h2>
-    <p class="text-[15px] text-[#687779]">Speak with our specialist to design your personalized Complete Care plan.</p>
+    <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A]">Experience complete audiology care at home.</h2>
+    <p class="text-[15px] text-[#64748B]">Speak with our specialist to design your personalized Complete Care plan.</p>
     <div class="flex flex-wrap justify-center gap-4 pt-2">
-      <a href="/contact" class="px-7 py-3.5 bg-[#4FC3D9] text-[#0F1E3E] font-display font-bold text-[15px] rounded-lg hover:bg-[#1E3E83] hover:text-white transition-all shadow-md">Talk to Specialist Now</a>
-      <a href="tel:+919773545058" class="px-7 py-3.5 border border-[#DCE7E6] bg-white text-[#0F1E3E] font-display font-semibold text-[15px] rounded-lg hover:border-[#4FC3D9] transition-all">Call +91 9773545058</a>
+      <a href="/contact" class="px-7 py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Talk to Specialist Now</a>
+      <a href="tel:+919773545058" class="px-7 py-3.5 border border-[#D7E3E8] bg-white text-[#0D234A] font-display font-semibold text-[15px] rounded-lg hover:border-[#087F8C] transition-all">Call +91 9773545058</a>
     </div>
   </div>
 </section>
 </main>
-<footer class="bg-[#0F1E3E] text-white border-t border-gray-800">
+<footer class="bg-[#0D234A] text-white border-t border-gray-800">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
     <div class="space-y-4">
       <h4 class="font-display font-bold text-[18px] text-white tracking-wider">PTA SOLUTIONS</h4>
@@ -349,7 +352,7 @@
       <p class="text-[12px] text-gray-500">Lead Clinician: Dr. Johnsavio Fernandes</p>
     </div>
     <div class="space-y-3">
-      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#4FC3D9]">Explore</h5>
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Explore</h5>
       <ul class="space-y-2 text-[13px] text-gray-400">
         <li><a href="/about" class="hover:text-white">About Clinic</a></li>
         <li><a href="/services" class="hover:text-white">Services Directory</a></li>
@@ -360,7 +363,7 @@
       </ul>
     </div>
     <div class="space-y-3">
-      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#4FC3D9]">Clinical Services</h5>
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Clinical Services</h5>
       <ul class="space-y-2 text-[13px] text-gray-400">
         <li><a href="/services/hearing-tests" class="hover:text-white">Hearing Tests</a></li>
         <li><a href="/services/hearing-aids" class="hover:text-white">Hearing Aids</a></li>
@@ -371,10 +374,10 @@
       </ul>
     </div>
     <div class="space-y-3">
-      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#4FC3D9]">Contact</h5>
+      <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Contact</h5>
       <p class="text-[13px] text-gray-400">Shanmukhapriya HealthCare Center, 6th Floor, Shrikant Chambers -2, Opp CROMA, Chembur, Mumbai - 400074</p>
-      <p class="text-[13px] text-gray-400">Tel: <a href="tel:+919773545058" class="text-white hover:text-[#4FC3D9]">+91 9773545058</a></p>
-      <p class="text-[13px] text-gray-400">Email: <a href="mailto:ptasolutionshsc@gmail.com" class="text-white hover:text-[#4FC3D9]">ptasolutionshsc@gmail.com</a></p>
+      <p class="text-[13px] text-gray-400">Tel: <a href="tel:+919773545058" class="text-white hover:text-[#087F8C]">+91 9773545058</a></p>
+      <p class="text-[13px] text-gray-400">Email: <a href="mailto:ptasolutionshsc@gmail.com" class="text-white hover:text-[#087F8C]">ptasolutionshsc@gmail.com</a></p>
     </div>
   </div>
   <div class="border-t border-gray-800/80 py-6 text-center text-[12px] text-gray-500">
@@ -382,18 +385,34 @@
   </div>
 </footer>
 
-<div id="booking-toast" class="fixed bottom-6 left-6 bg-[#0F1E3E] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-gray-700 hidden z-50 items-center gap-3">
-  <span class="material-symbols-outlined text-[#4FC3D9]">check_circle</span>
+<div id="booking-toast" class="fixed bottom-6 left-6 bg-[#0D234A] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-gray-700 hidden z-50 items-center gap-3">
+  <span class="material-symbols-outlined text-[#087F8C]">check_circle</span>
   <div>
     <p class="font-display font-bold text-[13px]" id="toast-title">Appointment Confirmed</p>
     <p class="text-[12px] text-gray-300" id="toast-desc">Our clinic desk will contact you shortly.</p>
   </div>
 </div>
-<div class="fixed bottom-6 right-6 z-40">
-  <a aria-label="Chat directly on WhatsApp" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all font-display font-semibold text-[13px] group" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
+
+<!-- MOBILE FIXED BOTTOM BAR: Call | WhatsApp | Book -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-[#D7E3E8] shadow-[0_-2px_10px_rgba(13,35,74,0.08)] grid grid-cols-3">
+  <a class="flex flex-col items-center justify-center gap-0.5 py-2.5 text-[#0D234A] active:bg-[#EEF6F8] transition-colors" href="tel:+919773545058">
+    <span class="material-symbols-outlined text-[20px]">call</span>
+    <span class="text-[11px] font-semibold">Call</span>
+  </a>
+  <a class="flex flex-col items-center justify-center gap-0.5 py-2.5 text-[#0D234A] border-x border-[#D7E3E8] active:bg-[#EEF6F8] transition-colors" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
+    <span class="material-symbols-outlined text-[20px]">chat</span>
+    <span class="text-[11px] font-semibold">WhatsApp</span>
+  </a>
+  <a class="flex flex-col items-center justify-center gap-0.5 py-2.5 bg-[#087F8C] text-white active:bg-[#0D234A] transition-colors" href="/book-appointment">
+    <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+    <span class="text-[11px] font-semibold">Book</span>
+  </a>
+</div>
+
+<div class="hidden md:block fixed bottom-6 right-6 z-40">
+  <a aria-label="Chat directly on WhatsApp" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-md hover:shadow-lg active:scale-95 transition-all font-display font-semibold text-[13px]" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
     <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
-    <span class="hidden sm:inline">WhatsApp Care Desk</span>
-    <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+    <span class="">WhatsApp Us</span>
   </a>
 </div>
 <script>
