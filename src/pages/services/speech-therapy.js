@@ -7,11 +7,11 @@ const PATH = '/services/speech-therapy';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Services', href: '/services' }, { label: 'Speech Therapy' }];
 
 const FAQS = [
-  { q: 'What ages do you work with?', a: 'We work with children with developmental speech delays as well as adults, including post-stroke voice recovery.' },
-  { q: 'How long is each session?', a: 'Sessions typically run about 45 minutes, one-on-one with a speech-language professional.' },
-  { q: 'Is therapy available at home?', a: 'Yes, speech therapy sessions can be arranged at our Chembur clinic or at your home across Mumbai.' },
-  { q: 'How many sessions will my child need?', a: 'This depends on the individual assessment — your therapist will discuss a personalized plan after the first consultation.' },
-  { q: 'Do you treat stammering in adults?', a: 'Yes, our fluency and stammering modification programs are available for both adolescents and adults.' },
+  { q: "When should I seek advice for a child's speech or language delay?", a: "If a child is missing expected speech or language milestones, or you have concerns about their communication development, it's a good idea to seek an assessment early." },
+  { q: 'What happens during the first speech-therapy appointment?', a: 'The first appointment includes an assessment of speech, language, and fluency, so a personalized therapy plan can be discussed with you.' },
+  { q: 'How often might therapy be recommended?', a: 'This depends on the individual assessment — your therapist will discuss a recommended frequency after the first consultation.' },
+  { q: 'Do you offer online speech-therapy sessions?', a: 'Please contact our clinic directly to confirm whether an online session format is suitable and available for your specific need.' },
+  { q: 'Do you support adults with communication difficulties after a stroke?', a: 'Yes — our speech-therapy programs include support for adults recovering speech and language function after a stroke.' },
 ];
 
 module.exports = {

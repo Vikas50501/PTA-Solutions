@@ -22,7 +22,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"PTA Solutions Hearing and Speech Care Clinics","url":"https://ptasolutions.vercel.app"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ptasolutions.vercel.app"},{"@type":"ListItem","position":2,"name":"Services","item":"https://ptasolutions.vercel.app/services"},{"@type":"ListItem","position":3,"name":"Hearing Tests","item":"https://ptasolutions.vercel.app/services/hearing-tests"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Hearing Tests","name":"Hearing Tests | PTA Solutions Hearing and Speech Care Clinics","description":"Pure Tone Audiometry, tympanometry and acoustic reflex testing for diagnosing hearing loss.","provider":{"@type":"MedicalBusiness","name":"PTA Solutions Hearing and Speech Care Clinics","url":"https://ptasolutions.vercel.app"},"areaServed":{"@type":"City","name":"Mumbai"},"url":"https://ptasolutions.vercel.app/services/hearing-tests","offers":{"@type":"Offer","priceCurrency":"INR","price":"1500"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does a hearing test take?","acceptedAnswer":{"@type":"Answer","text":"A full Pure Tone Audiometry and tympanometry session takes about 45 minutes."}},{"@type":"Question","name":"Can the test be done at my home?","acceptedAnswer":{"@type":"Answer","text":"Yes — we offer doorstep hearing test appointments across Mumbai in addition to our Chembur clinic."}},{"@type":"Question","name":"What should I bring to my appointment?","acceptedAnswer":{"@type":"Answer","text":"Please bring any previous audiograms or medical reports you have, if available."}},{"@type":"Question","name":"Will I get my results the same day?","acceptedAnswer":{"@type":"Answer","text":"Yes, your audiogram and test results are reviewed with you immediately after the session."}},{"@type":"Question","name":"Do I need a doctor referral to book a hearing test?","acceptedAnswer":{"@type":"Answer","text":"No referral is required. You can book directly with our clinic for a hearing test."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What happens during a hearing test?","acceptedAnswer":{"@type":"Answer","text":"A hearing test includes Pure Tone Audiometry (air and bone conduction) along with tympanometry and acoustic reflex testing, carried out in a sound-treated testing room."}},{"@type":"Question","name":"How long does a hearing test take?","acceptedAnswer":{"@type":"Answer","text":"A full Pure Tone Audiometry and tympanometry session takes about 45 minutes."}},{"@type":"Question","name":"Should I bring a previous audiogram or medical report?","acceptedAnswer":{"@type":"Answer","text":"Please bring any previous audiograms or medical reports you have, if available."}},{"@type":"Question","name":"Do you provide hearing-aid trials and fitting?","acceptedAnswer":{"@type":"Answer","text":"Yes — we offer hearing-aid consultation, a trial period, and fitting. Visit our Hearing Aids page for details."}},{"@type":"Question","name":"Are home visits available?","acceptedAnswer":{"@type":"Answer","text":"Yes — doorstep hearing test appointments are available across Mumbai in addition to our Chembur clinic."}}]}</script>
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <script>
     tailwind.config = {
@@ -303,6 +303,15 @@
         <div class="faq-list space-y-3 max-w-3xl mx-auto">
       <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden open">
         <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
+          <span class="font-display font-semibold text-[15px] text-[#0D234A]">What happens during a hearing test?</span>
+          <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">A hearing test includes Pure Tone Audiometry (air and bone conduction) along with tympanometry and acoustic reflex testing, carried out in a sound-treated testing room.</p>
+        </div>
+      </div>
+      <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden">
+        <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
           <span class="font-display font-semibold text-[15px] text-[#0D234A]">How long does a hearing test take?</span>
           <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
         </button>
@@ -312,16 +321,7 @@
       </div>
       <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden">
         <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
-          <span class="font-display font-semibold text-[15px] text-[#0D234A]">Can the test be done at my home?</span>
-          <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
-        </button>
-        <div class="faq-answer px-5">
-          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">Yes — we offer doorstep hearing test appointments across Mumbai in addition to our Chembur clinic.</p>
-        </div>
-      </div>
-      <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden">
-        <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
-          <span class="font-display font-semibold text-[15px] text-[#0D234A]">What should I bring to my appointment?</span>
+          <span class="font-display font-semibold text-[15px] text-[#0D234A]">Should I bring a previous audiogram or medical report?</span>
           <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
         </button>
         <div class="faq-answer px-5">
@@ -330,20 +330,20 @@
       </div>
       <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden">
         <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
-          <span class="font-display font-semibold text-[15px] text-[#0D234A]">Will I get my results the same day?</span>
+          <span class="font-display font-semibold text-[15px] text-[#0D234A]">Do you provide hearing-aid trials and fitting?</span>
           <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
         </button>
         <div class="faq-answer px-5">
-          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">Yes, your audiogram and test results are reviewed with you immediately after the session.</p>
+          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">Yes — we offer hearing-aid consultation, a trial period, and fitting. Visit our Hearing Aids page for details.</p>
         </div>
       </div>
       <div class="faq-item border border-[#D7E3E8] rounded-xl bg-white overflow-hidden">
         <button class="w-full flex items-center justify-between gap-4 p-5 text-left" onclick="toggleFaq(this.closest('.faq-item'))" type="button">
-          <span class="font-display font-semibold text-[15px] text-[#0D234A]">Do I need a doctor referral to book a hearing test?</span>
+          <span class="font-display font-semibold text-[15px] text-[#0D234A]">Are home visits available?</span>
           <span class="material-symbols-outlined faq-chevron text-[#1797A6] text-[22px] shrink-0">expand_more</span>
         </button>
         <div class="faq-answer px-5">
-          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">No referral is required. You can book directly with our clinic for a hearing test.</p>
+          <p class="text-[14px] text-[#64748B] leading-relaxed pb-5">Yes — doorstep hearing test appointments are available across Mumbai in addition to our Chembur clinic.</p>
         </div>
       </div>
     </div>

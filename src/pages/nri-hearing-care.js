@@ -4,10 +4,9 @@ const PATH = '/nri-hearing-care';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'NRI Hearing Care' }];
 
 const FAQS = [
-  { q: "Can I book an appointment for my parent without them being present?", a: "We need your parent's consent before any appointment, visit, or consultation takes place. You can enquire and coordinate on their behalf, but we will confirm directly with them before proceeding." },
-  { q: 'Will I be kept updated if I live abroad?', a: "With your parent's consent, we can share appointment summaries and updates with family members over WhatsApp or call." },
-  { q: 'Do you visit homes across Mumbai?', a: 'Doorstep visits can be arranged across Mumbai in addition to appointments at our Chembur clinic — enquire with us for availability in your area.' },
-  { q: 'How do I get started?', a: 'Contact us with your parent\'s details and your availability, and our team will reach out to confirm next steps.' },
+  { q: 'Can I enquire about hearing care for a parent living in Mumbai?', a: "Yes — you can contact us to enquire about appointments and care options for a parent living in Mumbai. We will coordinate directly with your parent, with their consent, before anything is confirmed." },
+  { q: 'Can appointments be planned around an India visit?', a: 'Yes, let us know your travel dates and we will do our best to coordinate an appointment that fits your schedule.' },
+  { q: 'Can the clinic share updates with me abroad?', a: "With your parent's consent, we can share appointment summaries and updates with you over WhatsApp or call." },
 ];
 
 module.exports = {

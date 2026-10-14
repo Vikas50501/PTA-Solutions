@@ -7,11 +7,11 @@ const PATH = '/services/hearing-tests';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Services', href: '/services' }, { label: 'Hearing Tests' }];
 
 const FAQS = [
+  { q: 'What happens during a hearing test?', a: 'A hearing test includes Pure Tone Audiometry (air and bone conduction) along with tympanometry and acoustic reflex testing, carried out in a sound-treated testing room.' },
   { q: 'How long does a hearing test take?', a: 'A full Pure Tone Audiometry and tympanometry session takes about 45 minutes.' },
-  { q: 'Can the test be done at my home?', a: 'Yes — we offer doorstep hearing test appointments across Mumbai in addition to our Chembur clinic.' },
-  { q: 'What should I bring to my appointment?', a: 'Please bring any previous audiograms or medical reports you have, if available.' },
-  { q: 'Will I get my results the same day?', a: 'Yes, your audiogram and test results are reviewed with you immediately after the session.' },
-  { q: 'Do I need a doctor referral to book a hearing test?', a: 'No referral is required. You can book directly with our clinic for a hearing test.' },
+  { q: 'Should I bring a previous audiogram or medical report?', a: 'Please bring any previous audiograms or medical reports you have, if available.' },
+  { q: 'Do you provide hearing-aid trials and fitting?', a: 'Yes — we offer hearing-aid consultation, a trial period, and fitting. Visit our Hearing Aids page for details.' },
+  { q: 'Are home visits available?', a: 'Yes — doorstep hearing test appointments are available across Mumbai in addition to our Chembur clinic.' },
 ];
 
 module.exports = {
