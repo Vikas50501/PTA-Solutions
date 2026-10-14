@@ -16,7 +16,7 @@ const FAQS = [
 
 module.exports = {
   title: 'Speech Therapy in Chembur, Mumbai | Pediatric & Adult Speech-Language Care | PTA Solutions',
-  description: 'Speech therapy in Chembur, Mumbai for pediatric speech delay, stammering, articulation, and adult post-stroke voice recovery, led by certified speech-language professionals.',
+  description: 'Speech therapy in Chembur, Mumbai for pediatric speech delay, stammering, articulation, and adult post-stroke voice recovery.',
   active: 'services',
   hero: pageHero({
     crumbs: CRUMBS,
@@ -37,7 +37,7 @@ module.exports = {
       <div class="space-y-4">
         <h2 class="text-[24px] font-display font-bold text-[#0D234A]">Specialized Speech &amp; Language Programs</h2>
         <p class="text-[15px] text-[#64748B] leading-relaxed">
-          Our speech therapy programs are tailored, individualized sessions addressing speech delays, stammering, articulation clarity, and post-stroke aphasia recovery, led by certified Speech-Language professionals.
+          Our speech therapy programs are tailored, individualized sessions addressing speech delays, stammering, articulation clarity, and post-stroke aphasia recovery.
         </p>
         <p class="text-[15px] text-[#64748B] leading-relaxed">
           Whether a child is missing developmental speech milestones or an adult is rebuilding communication after a neurological event, therapy is planned around clear, measurable goals and regular progress check-ins with the family.

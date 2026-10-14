@@ -1,7 +1,14 @@
-const { pageHero, breadcrumbSchema, imageThumb, imagePlaceholder, sectionHeading } = require('../partials/layout.js');
+const { pageHero, breadcrumbSchema, imageThumb, imagePlaceholder, sectionHeading, faqAccordion, faqSchema } = require('../partials/layout.js');
 
 const PATH = '/nri-hearing-care';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'NRI Hearing Care' }];
+
+const FAQS = [
+  { q: "Can I book an appointment for my parent without them being present?", a: "We need your parent's consent before any appointment, visit, or consultation takes place. You can enquire and coordinate on their behalf, but we will confirm directly with them before proceeding." },
+  { q: 'Will I be kept updated if I live abroad?', a: "With your parent's consent, we can share appointment summaries and updates with family members over WhatsApp or call." },
+  { q: 'Do you visit homes across Mumbai?', a: 'Doorstep visits can be arranged across Mumbai in addition to appointments at our Chembur clinic — enquire with us for availability in your area.' },
+  { q: 'How do I get started?', a: 'Contact us with your parent\'s details and your availability, and our team will reach out to confirm next steps.' },
+];
 
 module.exports = {
   title: 'NRI Hearing Care for Parents in Mumbai | PTA Solutions',
@@ -14,7 +21,7 @@ module.exports = {
     subtitle: "If you live in the USA, UK, UAE, Canada, Singapore or elsewhere and your parent lives in Mumbai, we can help you enquire about appointments, understand recommended next steps and coordinate follow-up, with the patient's consent.",
   }),
   path: PATH,
-  extraSchema: [breadcrumbSchema(CRUMBS, PATH)],
+  extraSchema: [breadcrumbSchema(CRUMBS, PATH), faqSchema(FAQS)],
   body: `
 <section class="py-16 bg-white border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -28,7 +35,7 @@ module.exports = {
           <span class="material-symbols-outlined text-[#1797A6]">home</span>
           <div>
             <p class="font-display font-bold text-[15px] text-[#0D234A]">Doorstep Audiological Testing</p>
-            <p class="text-[13px] text-[#64748B]">Calibrated portable equipment brought directly into their living room.</p>
+            <p class="text-[13px] text-[#64748B]">Portable testing equipment brought directly into their living room.</p>
           </div>
         </div>
         <div class="p-4 bg-[#F8FAFC] rounded-xl border border-[#D7E3E8] flex gap-3">
@@ -121,6 +128,13 @@ module.exports = {
         <p class="text-[12.5px] text-[#64748B] mt-1.5">Scheduled follow-up visits keep your parents' hearing health on track.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-b border-[#D7E3E8]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-10">
+    ${sectionHeading({ eyebrow: 'Common Questions', title: 'NRI Hearing Care FAQs', align: 'center' })}
+    ${faqAccordion(FAQS)}
   </div>
 </section>
 `

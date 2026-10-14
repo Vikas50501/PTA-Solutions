@@ -47,18 +47,33 @@ module.exports = {
             </div>
           </div>
           <div class="flex items-center gap-3.5 pt-2 border-t border-[#D7E3E8]">
+            <span class="material-symbols-outlined text-[#1797A6] text-[22px]">chat</span>
+            <div>
+              <p class="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">WhatsApp</p>
+              <a href="https://wa.me/919773545058" target="_blank" rel="noopener noreferrer" class="text-[15px] font-bold text-[#0D234A] hover:text-[#1797A6] transition-colors">Chat with us</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3.5 pt-2 border-t border-[#D7E3E8]">
             <span class="material-symbols-outlined text-[#1797A6] text-[22px]">mail</span>
             <div>
               <p class="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">Clinical Email</p>
               <a href="mailto:ptasolutionshsc@gmail.com" class="text-[15px] font-medium text-[#0D234A] hover:text-[#1797A6] transition-colors">ptasolutionshsc@gmail.com</a>
             </div>
           </div>
+          <!-- PENDING: Opening hours and Google Maps directions link await clinic confirmation -->
+          <div class="flex items-center gap-3.5 pt-2 border-t border-[#D7E3E8]">
+            <span class="material-symbols-outlined text-[#1797A6] text-[22px]">schedule</span>
+            <div>
+              <p class="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">Opening Hours</p>
+              <p class="text-[13px] text-[#64748B]">Please call or WhatsApp us to confirm current clinic hours.</p>
+            </div>
+          </div>
         </div>
         <div class="p-4 bg-[#EEF6F8] rounded-xl border border-[#D7E3E8] flex items-center gap-3">
           <span class="material-symbols-outlined text-[#1797A6] text-[24px]">verified</span>
           <div>
-            <p class="font-display font-bold text-[13px] text-[#0D234A]">Supervised by Dr. Johnsavio Fernandes</p>
-            <p class="text-[11px] text-[#64748B]">Senior Audiologist &amp; Speech-Language Pathologist</p>
+            <p class="font-display font-bold text-[13px] text-[#0D234A]">Clinician Johnsavio Fernandes</p>
+            <p class="text-[11px] text-[#64748B]">PTA Solutions, Chembur, Mumbai</p>
           </div>
         </div>
       </div>

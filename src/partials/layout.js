@@ -23,7 +23,7 @@ function organizationSchema() {
     },
     "founder": {
       "@type": "Person",
-      "name": "Dr. Johnsavio Fernandes"
+      "name": "Johnsavio Fernandes"
     }
   };
 }
@@ -254,8 +254,8 @@ function footer() {
   <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
     <div class="space-y-4">
       <h4 class="font-display font-bold text-[18px] text-white tracking-wider">PTA SOLUTIONS</h4>
-      <p class="text-[13px] text-gray-400">Hearing and Speech Care Clinics. Leading audiology and speech pathology practice in Chembur, Mumbai.</p>
-      <p class="text-[12px] text-gray-500">Lead Clinician: Dr. Johnsavio Fernandes</p>
+      <p class="text-[13px] text-gray-400">Hearing and Speech Care Clinics, Chembur, Mumbai.</p>
+      <p class="text-[12px] text-gray-500">Clinician: Johnsavio Fernandes</p>
     </div>
     <div class="space-y-3">
       <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Explore</h5>
@@ -355,7 +355,7 @@ function scripts() {
 
   function handleBooking(e, serviceName) {
     e.preventDefault();
-    showToast('Booking Request Received: ' + serviceName, "Dr. Johnsavio Fernandes' desk has received your request.");
+    showToast('Booking Request Received: ' + serviceName, "Johnsavio Fernandes' desk has received your request.");
     e.target.reset();
   }
 
@@ -503,8 +503,57 @@ ${items.map(it => `      <a href="${it.href}" class="block p-5 bg-white rounded-
     </div>`;
 }
 
+// STEP 10 of the client brief: simplified "Request an Appointment" form —
+// Name, Phone/WhatsApp, Service (dropdown), Preferred date/time (optional), Short message (optional).
+// No fake time slots, no email requirement, and an explicit "not confirmed until we contact you" notice.
+const SERVICE_OPTIONS = [
+  'Hearing Tests', 'Hearing Aids', 'Speech Therapy', 'Newborn Screening',
+  'Basic Consultation', 'Premium NRI Care', 'Complete Care',
+];
+
+function requestAppointmentForm(serviceName, formId) {
+  const options = SERVICE_OPTIONS.map(s => `<option${s === serviceName ? ' selected' : ''}>${s}</option>`).join('');
+  return `<div class="bg-white p-8 rounded-2xl border border-[#D7E3E8] shadow-sm space-y-6">
+  <div>
+    <h2 class="text-[22px] font-display font-bold text-[#0D234A]">Request an Appointment</h2>
+    <p class="text-[14px] text-[#64748B] mt-1">Please submit your preferred date and time. Our team will contact you to confirm availability. Your appointment is not confirmed until we contact you.</p>
+  </div>
+  <form onsubmit="handleBooking(event, '${serviceName}')" class="space-y-4 pt-2" id="${formId}">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Name *</label>
+        <input type="text" required placeholder="Your full name" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+      </div>
+      <div>
+        <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Phone / WhatsApp Number *</label>
+        <input type="tel" required placeholder="+91 97735 45058" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+      </div>
+      <div>
+        <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Service Needed *</label>
+        <select required class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">${options}</select>
+      </div>
+      <div>
+        <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Preferred Date or Time</label>
+        <input type="text" placeholder="e.g. Weekday mornings" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+      </div>
+    </div>
+    <div>
+      <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Short Message</label>
+      <textarea rows="3" placeholder="Anything else we should know?" class="w-full p-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]"></textarea>
+    </div>
+    <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#D7E3E8]">
+      <div class="text-[13px] text-[#64748B]">Need help? Call the clinic: <a href="tel:+919773545058" class="text-[#1797A6] font-bold">+91 9773545058</a></div>
+      <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#0D234A] transition-all shadow-sm">
+        Request an Appointment
+      </button>
+    </div>
+  </form>
+</div>`;
+}
+
 module.exports = {
   LOGO, SITE_URL, SITE_NAME, head, header, footer, scripts, page, pageHero, NAV_ITEMS,
   breadcrumbSchema, serviceSchema, faqSchema, jsonLd,
   imagePlaceholder, imageThumb, imageBanner, sectionHeading, benefitGrid, processSteps, faqAccordion, relatedServices,
+  requestAppointmentForm,
 };

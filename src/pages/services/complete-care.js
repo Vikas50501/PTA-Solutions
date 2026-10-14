@@ -59,7 +59,7 @@ module.exports = {
         <div class="p-5 bg-white rounded-xl border border-[#D7E3E8]">
           <span class="material-symbols-outlined text-[#1797A6] text-[24px]">support_agent</span>
           <h4 class="font-display font-bold text-[16px] text-[#0D234A] mt-2">Lifetime Concierge Care</h4>
-          <p class="text-[13px] text-[#64748B] mt-1">Direct line to Dr. Johnsavio Fernandes with ongoing acoustic check-ins and scheduled battery replenishment.</p>
+          <p class="text-[13px] text-[#64748B] mt-1">Direct line to Johnsavio Fernandes with ongoing acoustic check-ins and scheduled battery replenishment.</p>
         </div>
       </div>
 
