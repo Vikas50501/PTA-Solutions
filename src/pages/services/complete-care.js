@@ -79,7 +79,7 @@ module.exports = {
           ${relatedServices([
             { icon: 'hearing', title: 'Hearing Tests', desc: 'A standalone diagnostic test if you need a quicker option.', href: '/services/hearing-tests' },
             { icon: 'hearing_disabled', title: 'Hearing Aids', desc: 'Standalone fitting and dispensing service.', href: '/services/hearing-aids' },
-            { icon: 'public', title: 'Premium NRI Care', desc: 'A similar home-based program designed for families abroad.', href: '/services/premium-nri-care' },
+            { icon: 'public', title: 'NRI Parent Care', desc: 'An entry hearing or speech assessment designed for families abroad.', href: '/nri-hearing-care' },
           ])}
         </div>
       </div>

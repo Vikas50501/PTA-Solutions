@@ -32,7 +32,9 @@ function organizationSchema() {
     ],
     "founder": {
       "@type": "Person",
-      "name": "Johnsavio Fernandes"
+      "name": "Johnsavio Fernandes",
+      "honorificSuffix": "BASLP, DHLS, BNYS",
+      "jobTitle": "Audiologist & Speech-Language Pathologist"
     }
   };
 }
@@ -231,7 +233,7 @@ function footer() {
     <div class="space-y-4">
       <h4 class="font-display font-bold text-[18px] text-white tracking-wider">PTA SOLUTIONS</h4>
       <p class="text-[13px] text-gray-400">Hearing and Speech Care Clinics, Chembur, Mumbai.</p>
-      <p class="text-[12px] text-gray-500">Clinician: Johnsavio Fernandes</p>
+      <p class="text-[12px] text-gray-500">Johnsavio Fernandes, BASLP, DHLS, BNYS — Audiologist &amp; Speech-Language Pathologist</p>
     </div>
     <div class="space-y-3">
       <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Explore</h5>
@@ -252,7 +254,7 @@ function footer() {
         <li><a href="/services/speech-therapy" class="hover:text-white">Speech Therapy</a></li>
         <li><a href="/services/newborn-screening" class="hover:text-white">Newborn Screening</a></li>
         <li><a href="/services/basic-consultation" class="hover:text-white">Basic Consultation</a></li>
-        <li><a href="/services/premium-nri-care" class="hover:text-white">Premium NRI Care</a></li>
+        <li><a href="/nri-hearing-care" class="hover:text-white">NRI Parent Care</a></li>
       </ul>
     </div>
     <div class="space-y-3">
@@ -263,7 +265,7 @@ function footer() {
       <p class="text-[13px] text-gray-400">WhatsApp: <a href="https://wa.me/919773545058" target="_blank" rel="noopener noreferrer" class="text-white hover:text-[#087F8C]">Chat with us</a></p>
       <p class="text-[13px] text-gray-400">Email: <a href="mailto:ptasolutionshsc@gmail.com" class="text-white hover:text-[#087F8C]">ptasolutionshsc@gmail.com</a></p>
       <p class="text-[13px] text-gray-400">Hours: Mon–Sat 11am–7pm, Sun Closed</p>
-      <p class="text-[13px] text-gray-400"><a href="https://share.google/AwXqDfxdJzLlS4XpW" target="_blank" rel="noopener noreferrer" class="text-[#087F8C] hover:text-white">Reviews on Google</a></p>
+      <p class="text-[13px] text-gray-400"><a href="https://share.google/IQ3eMohHWIxNQhR0P" target="_blank" rel="noopener noreferrer" class="text-[#087F8C] hover:text-white">Reviews on Google</a></p>
     </div>
   </div>
   <div class="border-t border-gray-800/80 py-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center text-[12px] text-gray-500">
@@ -526,7 +528,7 @@ ${items.map(it => `      <a href="${it.href}" class="block p-5 bg-white rounded-
 // No fake time slots, no email requirement, and an explicit "not confirmed until we contact you" notice.
 const SERVICE_OPTIONS = [
   'Hearing Tests', 'Hearing Aids', 'Speech Therapy', 'Newborn Screening',
-  'Basic Consultation', 'Premium NRI Care', 'Complete Care',
+  'Basic Consultation', 'Complete Care',
 ];
 
 function requestAppointmentForm(serviceName, formId) {

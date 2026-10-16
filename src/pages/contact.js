@@ -74,7 +74,7 @@ module.exports = {
             </div>
           </div>
         </div>
-        <a href="https://share.google/AwXqDfxdJzLlS4XpW" target="_blank" rel="noopener noreferrer" class="p-4 bg-[#EEF6F8] rounded-xl border border-[#D7E3E8] flex items-center gap-3 hover:border-[#1797A6] transition-colors">
+        <a href="https://share.google/IQ3eMohHWIxNQhR0P" target="_blank" rel="noopener noreferrer" class="p-4 bg-[#EEF6F8] rounded-xl border border-[#D7E3E8] flex items-center gap-3 hover:border-[#1797A6] transition-colors">
           <span class="material-symbols-outlined text-[#1797A6] text-[24px]">reviews</span>
           <div>
             <p class="font-display font-bold text-[13px] text-[#0D234A]">View Us on Google</p>
@@ -84,8 +84,8 @@ module.exports = {
         <div class="p-4 bg-[#EEF6F8] rounded-xl border border-[#D7E3E8] flex items-center gap-3">
           <span class="material-symbols-outlined text-[#1797A6] text-[24px]">verified</span>
           <div>
-            <p class="font-display font-bold text-[13px] text-[#0D234A]">Clinician Johnsavio Fernandes</p>
-            <p class="text-[11px] text-[#64748B]">PTA Solutions, Chembur, Mumbai</p>
+            <p class="font-display font-bold text-[13px] text-[#0D234A]">Johnsavio Fernandes, BASLP, DHLS, BNYS</p>
+            <p class="text-[11px] text-[#64748B]">Audiologist &amp; Speech-Language Pathologist, PTA Solutions, Chembur, Mumbai</p>
           </div>
         </div>
       </div>

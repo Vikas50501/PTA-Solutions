@@ -15,7 +15,6 @@ const ROUTES = {
   'services/speech-therapy': 'services/speech-therapy.js',
   'services/newborn-screening': 'services/newborn-screening.js',
   'services/basic-consultation': 'services/basic-consultation.js',
-  'services/premium-nri-care': 'services/premium-nri-care.js',
   'nri-hearing-care': 'nri-hearing-care.js',
   'book-appointment': 'book-appointment.js',
   'booking/hearing-tests': 'booking/hearing-tests.js',
@@ -23,7 +22,6 @@ const ROUTES = {
   'booking/speech-therapy': 'booking/speech-therapy.js',
   'booking/newborn-screening': 'booking/newborn-screening.js',
   'booking/basic-consultation': 'booking/basic-consultation.js',
-  'booking/premium-nri-care': 'booking/premium-nri-care.js',
   'contact': 'contact.js',
   'privacy-policy': 'privacy-policy.js',
 };

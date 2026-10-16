@@ -20,10 +20,11 @@ module.exports = {
     <div class="lg:col-span-7 space-y-6">
       <div class="p-6 bg-[#EEF6F8] border-l-4 border-[#1797A6] rounded-r-xl">
         <h3 class="font-display font-bold text-[20px] text-[#1797A6]">Meet Your Clinician</h3>
-        <p class="text-[15px] text-[#0D234A] mt-1 font-medium">Johnsavio Fernandes, Chembur, Mumbai.</p>
+        <p class="text-[15px] text-[#0D234A] mt-1 font-medium">Johnsavio Fernandes, BASLP, DHLS, BNYS, Chembur, Mumbai.</p>
+        <p class="text-[13px] text-[#64748B] mt-0.5">Audiologist &amp; Speech-Language Pathologist</p>
       </div>
       <p class="text-[16px] text-[#64748B] leading-relaxed">
-        Clinician Johnsavio Fernandes works with patients and families on hearing care and communication needs. His clinical work includes hearing assessment, hearing-aid counselling and fitting, and speech and language support. The focus is on clear explanations, individual needs and practical next steps.
+        Johnsavio Fernandes, BASLP, DHLS, BNYS, is an Audiologist &amp; Speech-Language Pathologist who works with patients and families on hearing care and communication needs. His clinical work includes hearing assessment, hearing-aid counselling and fitting, and speech and language support. The focus is on clear explanations, individual needs and practical next steps.
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
         <div class="p-4 bg-[#F8FAFC] rounded-xl border border-[#D7E3E8]">
@@ -56,8 +57,8 @@ module.exports = {
           "Our mission is simple — to help you reconnect with the world through <span class="text-[#1797A6] not-italic font-bold">better hearing</span> and <span class="text-[#1797A6] not-italic font-bold">clearer communication</span> improving your quality of life."
         </blockquote>
         <div class="pt-4 border-t border-[#D7E3E8]">
-          <p class="font-display font-bold text-[16px] text-[#0D234A]">Johnsavio Fernandes</p>
-          <p class="text-[12px] text-[#64748B] mt-1">Shanmukhapriya Healthcare Centre, Chembur, Mumbai</p>
+          <p class="font-display font-bold text-[16px] text-[#0D234A]">Johnsavio Fernandes, BASLP, DHLS, BNYS</p>
+          <p class="text-[12px] text-[#64748B] mt-1">Audiologist &amp; Speech-Language Pathologist, Shanmukhapriya Healthcare Centre, Chembur, Mumbai</p>
         </div>
       </div>
     </div>

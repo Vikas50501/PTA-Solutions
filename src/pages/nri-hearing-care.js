@@ -64,7 +64,7 @@ module.exports = {
         </ul>
         <div class="p-3 bg-[#EEF6F8] rounded-lg text-[12.5px] text-[#64748B] flex items-start gap-2">
           <span class="material-symbols-outlined text-[16px] text-[#1797A6] mt-0.5">location_on</span>
-          <span>Appointment location: at our Chembur clinic. Home visits can be arranged separately — see Additional Care below.</span>
+          <span>Appointment location: at your parent's home in Mumbai (default). A clinic appointment at Chembur can be arranged instead, on request.</span>
         </div>
         <div class="pt-2 mt-auto">
           <button type="button" onclick="prefillNriEnquiry('Hearing Care', '')" class="w-full py-3 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
@@ -97,7 +97,7 @@ module.exports = {
         </ul>
         <div class="p-3 bg-[#EEF6F8] rounded-lg text-[12.5px] text-[#64748B] flex items-start gap-2">
           <span class="material-symbols-outlined text-[16px] text-[#1797A6] mt-0.5">location_on</span>
-          <span>Appointment location: at our Chembur clinic. Home visits can be arranged separately — see Additional Care below.</span>
+          <span>Appointment location: at your parent's home in Mumbai (default). A clinic appointment at Chembur can be arranged instead, on request.</span>
         </div>
         <div class="pt-2 mt-auto">
           <button type="button" onclick="prefillNriEnquiry('Speech &amp; Communication Care', '')" class="w-full py-3 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
@@ -117,8 +117,8 @@ module.exports = {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <div class="p-6 bg-white rounded-2xl border border-[#D7E3E8] space-y-3">
         <span class="material-symbols-outlined text-[#1797A6] text-[24px]">home</span>
-        <h4 class="font-display font-bold text-[16px] text-[#0D234A]">Home Visits</h4>
-        <p class="text-[13px] text-[#64748B] leading-relaxed">Home visits may be arranged where appropriate. The fee depends on location, travel and the services required. Please contact us for a quote.</p>
+        <h4 class="font-display font-bold text-[16px] text-[#0D234A]">Home Visits (Default)</h4>
+        <p class="text-[13px] text-[#64748B] leading-relaxed">The entry assessment is conducted at your parent's home in Mumbai by default. A clinic appointment at Chembur can be arranged instead on request. Exact logistics are confirmed before the appointment.</p>
         <button type="button" onclick="prefillNriEnquiry('Not Sure', 'Interested in a home visit.')" class="text-[13px] font-bold text-[#1797A6] hover:underline">Arrange a Home Visit →</button>
       </div>
       <div class="p-6 bg-white rounded-2xl border border-[#D7E3E8] space-y-3">

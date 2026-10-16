@@ -69,11 +69,11 @@ ${imageBanner({ icon: 'calendar_month', label: 'Book Your Appointment', caption:
       </div>
       <div class="p-6 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] flex items-center justify-between hover:border-[#087F8C] transition-all">
         <div>
-          <h3 class="font-display font-bold text-[18px] text-[#0D234A]">Premium NRI Care</h3>
-          <p class="text-[13px] text-[#64748B] mt-0.5">Mumbai home visits for overseas families</p>
+          <h3 class="font-display font-bold text-[18px] text-[#0D234A]">NRI Parent Care</h3>
+          <p class="text-[13px] text-[#64748B] mt-0.5">Entry hearing or speech assessment for a parent in Mumbai (₹9,999*)</p>
         </div>
-        <a href="/booking/premium-nri-care" class="px-4 py-2 bg-[#0D234A] text-white text-[13px] font-semibold rounded-lg hover:bg-[#1797A6] transition-all whitespace-nowrap">
-          Book Appointment Now
+        <a href="/nri-hearing-care#nri-enquiry-section" class="px-4 py-2 bg-[#0D234A] text-white text-[13px] font-semibold rounded-lg hover:bg-[#1797A6] transition-all whitespace-nowrap">
+          Enquire Now
         </a>
       </div>
     </div>

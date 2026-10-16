@@ -290,10 +290,11 @@ module.exports = {
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">Meet Your Clinician</span>
         </div>
         <h2 class="text-[32px] lg:text-[42px] font-display font-bold text-[#0D234A] leading-tight">
-          Johnsavio Fernandes
+          Johnsavio Fernandes, BASLP, DHLS, BNYS
         </h2>
+        <p class="text-[15px] font-display font-semibold text-[#1797A6]">Audiologist &amp; Speech-Language Pathologist</p>
         <p class="text-[15px] text-[#1F2937] leading-relaxed">
-          Clinician Johnsavio Fernandes works with patients and families on hearing care and communication needs. His clinical work includes hearing assessment, hearing-aid counselling and fitting, and speech and language support. The focus is on clear explanations, individual needs and practical next steps.
+          Johnsavio Fernandes, BASLP, DHLS, BNYS, is an Audiologist &amp; Speech-Language Pathologist who works with patients and families on hearing care and communication needs. His clinical work includes hearing assessment, hearing-aid counselling and fitting, and speech and language support. The focus is on clear explanations, individual needs and practical next steps.
         </p>
         <div class="pt-2">
           <a href="/about" class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#087F8C] text-white font-display font-semibold text-[14px] rounded-lg hover:bg-[#0D234A] transition-colors">
@@ -439,7 +440,7 @@ module.exports = {
             <span class="material-symbols-outlined text-[#1797A6] text-[22px] mt-0.5">assignment</span>
             <div>
               <p class="font-display font-bold text-[15px] text-[#0D234A]">Clear Assessment &amp; Care Plan</p>
-              <p class="text-[13px] text-[#64748B]">An entry hearing or speech assessment at our Chembur clinic, with a written summary and next-step recommendations.</p>
+              <p class="text-[13px] text-[#64748B]">An entry hearing or speech assessment at your parent's home in Mumbai by default, with a written summary and next-step recommendations.</p>
             </div>
           </div>
           <div class="flex items-start gap-3.5">
@@ -575,7 +576,7 @@ module.exports = {
             </div>
             <div class="flex items-center gap-2 text-[12px] text-[#64748B] mt-1">
               <span class="material-symbols-outlined text-[15px]">schedule</span>
-              <span>Chembur Clinic • Home visits quoted separately</span>
+              <span>At your parent's home in Mumbai • Clinic visits available on request</span>
             </div>
           </div>
           <div class="lg:col-span-3 text-[13px] text-[#1F2937] space-y-1">
@@ -951,7 +952,7 @@ module.exports = {
       category: "FOR FAMILIES ABROAD",
       title: "NRI Parent Hearing & Speech Care",
       duration: "Entry Assessment: ₹9,999*",
-      desc: "An entry hearing or speech & communication assessment for a parent living in Mumbai, at our Chembur clinic, with a written care plan and a scheduled update for family abroad.",
+      desc: "An entry hearing or speech & communication assessment for a parent living in Mumbai, at their home by default, with a written care plan and a scheduled update for family abroad.",
       scope: "Assessment, counselling & personalised care plan",
       target: "Overseas family members coordinating care for a parent in Mumbai",
       serviceName: "",
