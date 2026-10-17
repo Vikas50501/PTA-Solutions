@@ -101,7 +101,7 @@ module.exports = {
           <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px]">check</span> Customized speech therapy sessions</div>
           <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px]">check</span> Zero hidden medical surcharges</div>
         </div>
-        <a href="/book-appointment" class="block text-center w-full py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">
+        <a href="/book-appointment" class="block text-center w-full py-3.5 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">
           Talk to Specialist Now
         </a>
       </div>
@@ -121,7 +121,7 @@ module.exports = {
     <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A]">Experience complete audiology care at home.</h2>
     <p class="text-[15px] text-[#64748B]">Speak with our specialist to design your personalized Complete Care plan.</p>
     <div class="flex flex-wrap justify-center gap-4 pt-2">
-      <a href="/contact" class="px-7 py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Talk to Specialist Now</a>
+      <a href="/contact" class="px-7 py-3.5 bg-[#087F8C] text-white font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Talk to Specialist Now</a>
       <a href="tel:+919773545058" class="px-7 py-3.5 border border-[#D7E3E8] bg-white text-[#0D234A] font-display font-semibold text-[15px] rounded-lg hover:border-[#087F8C] transition-all">Call +91 9773545058</a>
     </div>
   </div>

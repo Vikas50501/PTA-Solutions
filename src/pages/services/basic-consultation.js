@@ -90,7 +90,7 @@ module.exports = {
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#1797A6]">Price</span>
           <p class="text-[26px] font-display font-bold text-[#0D234A] mt-1">₹10,000 <span class="text-[14px] text-[#64748B] font-normal">to ₹20,000</span></p>
         </div>
-        <a href="/booking/basic-consultation" class="block text-center w-full py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">
+        <a href="/booking/basic-consultation" class="block text-center w-full py-3.5 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">
           Book Evaluation
         </a>
       </div>
@@ -110,7 +110,7 @@ module.exports = {
     <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A]">Get clarity on your hearing and speech health.</h2>
     <p class="text-[15px] text-[#64748B]">Book a Basic Consultation at our Chembur clinic or at your home.</p>
     <div class="flex flex-wrap justify-center gap-4 pt-2">
-      <a href="/booking/basic-consultation" class="px-7 py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Book Evaluation</a>
+      <a href="/booking/basic-consultation" class="px-7 py-3.5 bg-[#087F8C] text-white font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Book Evaluation</a>
       <a href="tel:+919773545058" class="px-7 py-3.5 border border-[#D7E3E8] bg-white text-[#0D234A] font-display font-semibold text-[15px] rounded-lg hover:border-[#087F8C] transition-all">Call +91 9773545058</a>
     </div>
   </div>

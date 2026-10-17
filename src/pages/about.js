@@ -44,7 +44,7 @@ module.exports = {
         </div>
       </div>
       <div class="pt-4">
-        <a href="/book-appointment" class="inline-block px-7 py-3 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
+        <a href="/book-appointment" class="inline-block px-7 py-3 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
           Book a Consultation →
         </a>
       </div>
@@ -94,7 +94,7 @@ module.exports = {
     <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A]">Ready to take the first step?</h2>
     <p class="text-[15px] text-[#64748B]">Book a consultation at our Chembur clinic or request a doorstep visit, where available.</p>
     <div class="flex flex-wrap justify-center gap-4 pt-2">
-      <a href="/book-appointment" class="px-7 py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Book Appointment</a>
+      <a href="/book-appointment" class="px-7 py-3.5 bg-[#087F8C] text-white font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Book Appointment</a>
       <a href="tel:+919773545058" class="px-7 py-3.5 border border-[#D7E3E8] bg-white text-[#0D234A] font-display font-semibold text-[15px] rounded-lg hover:border-[#087F8C] transition-all">Call +91 9773545058</a>
     </div>
   </div>

@@ -67,7 +67,7 @@ module.exports = {
           <span>Appointment location: at your parent's home in Mumbai (default). A clinic appointment at Chembur can be arranged instead, on request.</span>
         </div>
         <div class="pt-2 mt-auto">
-          <button type="button" onclick="prefillNriEnquiry('Hearing Care', '')" class="w-full py-3 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
+          <button type="button" onclick="prefillNriEnquiry('Hearing Care', '')" class="w-full py-3 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
             Enquire About Hearing Care
           </button>
           <p class="text-[11.5px] text-[#64748B] mt-3 leading-relaxed">*Proposed entry price, subject to final approval by PTA Solutions. Hearing aids, additional tests, travel, fitting appointments and ongoing follow-ups are not included unless specifically listed in a written estimate.</p>
@@ -100,7 +100,7 @@ module.exports = {
           <span>Appointment location: at your parent's home in Mumbai (default). A clinic appointment at Chembur can be arranged instead, on request.</span>
         </div>
         <div class="pt-2 mt-auto">
-          <button type="button" onclick="prefillNriEnquiry('Speech &amp; Communication Care', '')" class="w-full py-3 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
+          <button type="button" onclick="prefillNriEnquiry('Speech &amp; Communication Care', '')" class="w-full py-3 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
             Enquire About Speech Care
           </button>
           <p class="text-[11.5px] text-[#64748B] mt-3 leading-relaxed">*Proposed entry price, subject to confirmation of the assessment scope and fee. Ongoing therapy sessions, specialist assessments, home visits and travel are not included unless specifically listed in a written estimate.</p>

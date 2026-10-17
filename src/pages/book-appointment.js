@@ -83,7 +83,7 @@ ${imageBanner({ icon: 'calendar_month', label: 'Book Your Appointment', caption:
         <h3 class="font-display font-bold text-[20px] text-white mt-0.5">Complete Care (₹75,000 to ₹1,50,000)</h3>
         <p class="text-[13px] text-gray-300">Diagnostics, real-ear verification &amp; speech therapy right at your residence.</p>
       </div>
-      <a href="/services/complete-care" class="px-6 py-2.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[13px] rounded-lg hover:bg-white transition-all whitespace-nowrap">
+      <a href="/services/complete-care" class="px-6 py-2.5 bg-[#087F8C] text-white font-display font-bold text-[13px] rounded-lg hover:bg-white transition-all whitespace-nowrap">
         More Info →
       </a>
     </div>

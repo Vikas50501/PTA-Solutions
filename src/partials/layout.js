@@ -178,11 +178,11 @@ function header(active) {
 ${navHtml}
     </nav>
     <div class="flex items-center gap-4">
-      <a class="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium text-[#64748B] hover:text-[#1797A6] transition-colors group" href="/contact">
-        <span class="material-symbols-outlined text-[#1797A6] text-[18px] transition-transform group-hover:scale-110">mail</span>
+      <a class="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 border border-[#D7E3E8] bg-white text-[#0D234A] font-display font-semibold text-[13px] rounded-lg hover:border-[#087F8C] hover:text-[#1797A6] active:scale-95 transition-all duration-200 whitespace-nowrap" href="/contact">
+        <span class="material-symbols-outlined text-[18px]">mail</span>
         <span class="">Contact Us</span>
       </a>
-      <a class="group hidden sm:inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#087F8C] text-[#0D234A] font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap" href="/book-appointment">
+      <a class="group hidden sm:inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-[#087F8C] text-white font-display font-semibold text-[13px] sm:text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap" href="/book-appointment">
         <span class="">Book Appointment</span>
         <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
       </a>
@@ -212,7 +212,7 @@ function pageHero({ crumbs, badges, title, subtitle, meta, bg = '#F8FAFC' }) {
   }).join('');
 
   const badgeHtml = badges ? `<div class="flex items-center gap-2 mb-2">
-          ${badges.map(b => `<span class="px-3 py-1 ${b.solid ? 'bg-[#087F8C] text-[#0D234A]' : 'bg-[#087F8C]/20 text-[#0D234A]'} font-bold rounded-full text-[11px] uppercase tracking-wider">${b.label}</span>`).join('\n          ')}
+          ${badges.map(b => `<span class="px-3 py-1 ${b.solid ? 'bg-[#087F8C] text-white' : 'bg-[#087F8C]/20 text-[#0D234A]'} font-bold rounded-full text-[11px] uppercase tracking-wider">${b.label}</span>`).join('\n          ')}
         </div>` : '';
 
   return `  <section class="py-12 bg-[${bg}] border-b border-[#D7E3E8]">
@@ -485,7 +485,7 @@ function processSteps(steps) {
 ${steps.map((s, i) => `      <div class="bg-white p-6 rounded-2xl border border-[#D7E3E8] space-y-3">
         <div class="flex items-center justify-between">
           <span class="text-[22px] font-mono font-extrabold ${i === 0 ? 'text-[#1797A6]' : 'text-[#64748B]'}">0${i + 1}</span>
-          <div class="w-9 h-9 rounded-lg ${i === 0 ? 'bg-[#087F8C] text-[#0D234A]' : 'bg-[#EEF6F8] text-[#64748B]'} flex items-center justify-center">
+          <div class="w-9 h-9 rounded-lg ${i === 0 ? 'bg-[#087F8C] text-white' : 'bg-[#EEF6F8] text-[#64748B]'} flex items-center justify-center">
             <span class="material-symbols-outlined text-[20px]">${s.icon}</span>
           </div>
         </div>

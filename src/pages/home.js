@@ -450,7 +450,7 @@ module.exports = {
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-4 pt-4">
-          <a class="h-12 px-7 inline-flex items-center justify-center bg-[#087F8C] text-[#0D234A] font-display font-semibold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all duration-200 shadow-sm hover:shadow-md" href="/nri-hearing-care#nri-enquiry-section">
+          <a class="h-12 px-7 inline-flex items-center justify-center bg-[#087F8C] text-white font-display font-semibold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all duration-200 shadow-sm hover:shadow-md" href="/nri-hearing-care#nri-enquiry-section">
             Enquire About NRI Parent Care
           </a>
           <a class="h-12 px-7 inline-flex items-center justify-center gap-2 border border-[#25D366]/40 bg-white text-[#0D234A] font-display font-semibold text-[15px] rounded-lg hover:border-[#25D366] hover:bg-[#25D366]/10 transition-all duration-200" href="https://wa.me/919773545058" rel="noopener noreferrer" target="_blank">
@@ -482,7 +482,7 @@ module.exports = {
     <div class="space-y-4">
       <!-- ROW 1 -->
       <div class="plan-row bg-white border-2 border-[#087F8C] rounded-2xl p-6 lg:p-8 relative">
-        <div class="absolute -top-3 left-8 bg-[#087F8C] text-[#0D234A] px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase">
+        <div class="absolute -top-3 left-8 bg-[#087F8C] text-white px-3 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase">
           Most Comprehensive
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
@@ -512,7 +512,7 @@ module.exports = {
             </div>
           </div>
           <div class="lg:col-span-2 text-right">
-            <a class="w-full py-3 inline-flex items-center justify-center bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm" href="#booking-hub" onclick="selectServiceForBooking('Complete Care')">
+            <a class="w-full py-3 inline-flex items-center justify-center bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm" href="#booking-hub" onclick="selectServiceForBooking('Complete Care')">
               Talk to Specialist
             </a>
           </div>
@@ -610,7 +610,7 @@ module.exports = {
     <div class="bg-white border border-[#D7E3E8] rounded-2xl p-6 lg:p-10 shadow-sm transition-all duration-300">
       <div class="grid grid-cols-3 gap-2 pb-8 border-b border-[#D7E3E8] mb-8" id="step-indicator">
         <button class="flex items-center gap-2 text-[#1797A6] font-bold border-b-2 border-[#087F8C] pb-2 text-left" id="step-ind-1" onclick="goToStep(1)" type="button">
-          <span class="w-6 h-6 rounded-full bg-[#087F8C] text-[#0D234A] text-[11px] flex items-center justify-center font-bold">1</span>
+          <span class="w-6 h-6 rounded-full bg-[#087F8C] text-white text-[11px] flex items-center justify-center font-bold">1</span>
           <span class="text-[13px] font-display hidden sm:inline">Choose Service</span>
         </button>
         <button class="flex items-center gap-2 text-[#64748B] pb-2 text-left" id="step-ind-2" onclick="goToStep(2)" type="button">
@@ -667,7 +667,7 @@ module.exports = {
           </div>
           <p class="text-[13px] text-[#64748B]">Coordinating care for a parent abroad? <a href="/nri-hearing-care#nri-enquiry-section" class="text-[#1797A6] font-semibold hover:underline">Use the NRI Parent Care enquiry form →</a></p>
           <div class="flex justify-end pt-4">
-            <button class="group px-7 py-3 bg-[#087F8C] text-[#0D234A] font-display font-semibold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(2)" type="button">
+            <button class="group px-7 py-3 bg-[#087F8C] text-white font-display font-semibold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(2)" type="button">
               <span>Continue to Date &amp; Time</span>
               <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
             </button>
@@ -691,7 +691,7 @@ module.exports = {
             <button class="px-6 py-2.5 border border-[#64748B]/40 text-[#0D234A] font-display font-semibold text-[14px] rounded-lg hover:bg-[#EEF6F8] transition-all" onclick="goToStep(1)" type="button">
               ← Back
             </button>
-            <button class="group px-7 py-3 bg-[#087F8C] text-[#0D234A] font-display font-semibold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(3)" type="button">
+            <button class="group px-7 py-3 bg-[#087F8C] text-white font-display font-semibold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm inline-flex items-center gap-2" onclick="goToStep(3)" type="button">
               <span>Continue to Details</span>
               <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
             </button>
@@ -724,7 +724,7 @@ module.exports = {
             <button class="px-6 py-2.5 border border-[#64748B]/40 text-[#0D234A] font-display font-semibold text-[14px] rounded-lg hover:bg-[#EEF6F8] transition-all" onclick="goToStep(2)" type="button">
               ← Back
             </button>
-            <button class="px-8 py-3 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md active:scale-95" type="submit">
+            <button class="px-8 py-3 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md active:scale-95" type="submit">
               Request Appointment
             </button>
           </div>
@@ -770,7 +770,7 @@ module.exports = {
       Speak with Johnsavio Fernandes or schedule a doorstep clinical audiology evaluation today.
     </p>
     <div class="pt-4 flex flex-wrap justify-center items-center gap-4">
-      <a class="group px-8 py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[15px] rounded-lg hover:bg-white hover:text-[#0D234A] transition-all duration-200 shadow-lg inline-flex items-center gap-2" href="#booking-hub">
+      <a class="group px-8 py-3.5 bg-[#087F8C] text-white font-display font-bold text-[15px] rounded-lg hover:bg-white hover:text-[#0D234A] transition-all duration-200 shadow-lg inline-flex items-center gap-2" href="#booking-hub">
         <span>Book Appointment</span>
         <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1.5">arrow_forward</span>
       </a>
@@ -859,7 +859,7 @@ module.exports = {
             <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1.5" for="contact-message">Message</label>
             <textarea class="custom-input w-full p-4 rounded-lg bg-white border border-[#D7E3E8] text-[#0D234A] text-[14px]" id="contact-message" name="message" placeholder="Briefly describe your hearing concerns..." rows="4"></textarea>
           </div>
-          <button class="w-full h-12 inline-flex items-center justify-center bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm active:scale-95" type="submit">
+          <button class="w-full h-12 inline-flex items-center justify-center bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm active:scale-95" type="submit">
             Send Message
           </button>
           <p class="text-[12px] text-[#64748B] text-center">By submitting, you agree to our <a class="text-[#1797A6] hover:underline" href="/privacy-policy">Privacy Policy</a> on how we use your information.</p>
@@ -1028,7 +1028,7 @@ module.exports = {
       const badge = ind.querySelector('span:first-child');
       if (i === step) {
         ind.className = "flex items-center gap-2 text-[#1797A6] font-bold border-b-2 border-[#087F8C] pb-2 text-left";
-        badge.className = "w-6 h-6 rounded-full bg-[#087F8C] text-[#0D234A] text-[11px] flex items-center justify-center font-bold";
+        badge.className = "w-6 h-6 rounded-full bg-[#087F8C] text-white text-[11px] flex items-center justify-center font-bold";
       } else if (i < step) {
         ind.className = "flex items-center gap-2 text-[#1797A6] pb-2 font-medium text-left";
         badge.className = "w-6 h-6 rounded-full bg-[#087F8C]/20 text-[#1797A6] text-[11px] flex items-center justify-center font-bold";

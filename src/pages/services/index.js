@@ -58,7 +58,7 @@ module.exports = {
             <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-1">NRI Hearing Care</h3>
             <p class="text-[14px] text-[#64748B] mt-2">Helping families living abroad coordinate hearing-care appointments for parents and family members living in Mumbai, with the patient's consent.</p>
           </div>
-          <a href="/nri-hearing-care" class="w-full text-center py-2.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[13px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
+          <a href="/nri-hearing-care" class="w-full text-center py-2.5 bg-[#087F8C] text-white font-display font-bold text-[13px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
             View NRI Care Details →
           </a>
         </div>
@@ -69,7 +69,7 @@ module.exports = {
             <h3 class="text-[22px] font-display font-bold text-white mt-1">Complete Care</h3>
             <p class="text-[14px] text-gray-300 mt-2">An all-in-one in-home audiology, real-ear verification, and speech-therapy coordination suite (₹75k to ₹1.5L).</p>
           </div>
-          <a href="/services/complete-care" class="w-full text-center py-2.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[13px] rounded-lg hover:bg-white transition-all">
+          <a href="/services/complete-care" class="w-full text-center py-2.5 bg-[#087F8C] text-white font-display font-bold text-[13px] rounded-lg hover:bg-white transition-all">
             Complete Care Deep Dive →
           </a>
         </div>

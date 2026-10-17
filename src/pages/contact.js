@@ -127,7 +127,7 @@ module.exports = {
           <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Message *</label>
           <textarea name="message" rows="4" required placeholder="Describe your hearing, speech, or appointment inquiry..." class="w-full p-3 bg-white border border-[#D7E3E8] rounded-lg text-[14px]"></textarea>
         </div>
-        <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm">
+        <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-sm">
           Send Message
         </button>
         <p class="text-[12px] text-[#64748B]">By submitting, you agree to our <a href="/privacy-policy" class="text-[#1797A6] hover:underline">Privacy Policy</a> on how we use your information.</p>

@@ -94,7 +94,7 @@ module.exports = {
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#1797A6]">Screening</span>
           <p class="text-[26px] font-display font-bold text-[#0D234A] mt-1">Gentle Screening</p>
         </div>
-        <a href="/booking/newborn-screening" class="block text-center w-full py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">
+        <a href="/booking/newborn-screening" class="block text-center w-full py-3.5 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">
           Book Newborn Screening
         </a>
       </div>
@@ -114,7 +114,7 @@ module.exports = {
     <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A]">Give your baby's hearing the best start.</h2>
     <p class="text-[15px] text-[#64748B]">Schedule a gentle, non-invasive newborn hearing screening today.</p>
     <div class="flex flex-wrap justify-center gap-4 pt-2">
-      <a href="/booking/newborn-screening" class="px-7 py-3.5 bg-[#087F8C] text-[#0D234A] font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Book Newborn Screening</a>
+      <a href="/booking/newborn-screening" class="px-7 py-3.5 bg-[#087F8C] text-white font-display font-bold text-[15px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all shadow-md">Book Newborn Screening</a>
       <a href="tel:+919773545058" class="px-7 py-3.5 border border-[#D7E3E8] bg-white text-[#0D234A] font-display font-semibold text-[15px] rounded-lg hover:border-[#087F8C] transition-all">Call +91 9773545058</a>
     </div>
   </div>
