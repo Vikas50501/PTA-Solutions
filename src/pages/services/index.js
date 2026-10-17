@@ -1,4 +1,4 @@
-const { pageHero, breadcrumbSchema, imageThumb } = require('../../partials/layout.js');
+const { pageHero, breadcrumbSchema } = require('../../partials/layout.js');
 
 const PATH = '/services';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Services' }];
@@ -24,8 +24,10 @@ module.exports = {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
         <div class="p-8 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] space-y-4 flex flex-col justify-between">
           <div>
-            ${imageThumb({ icon: 'hearing', label: 'Hearing Tests' })}
-            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-1">Hearing Tests</h3>
+            <div class="w-12 h-12 rounded-xl bg-white border border-[#D7E3E8] flex items-center justify-center text-[#1797A6] shadow-sm">
+              <span class="material-symbols-outlined text-[24px]">hearing</span>
+            </div>
+            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-4">Hearing Tests</h3>
             <p class="text-[14px] text-[#64748B] mt-2">Pure Tone Audiometry (air and bone conduction) in a sound-treated testing room, with tympanometry and acoustic reflex testing.</p>
           </div>
           <a href="/services/hearing-tests" class="w-full text-center py-2.5 bg-white border border-[#D7E3E8] font-display font-bold text-[13px] text-[#1797A6] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
@@ -34,8 +36,10 @@ module.exports = {
         </div>
         <div class="p-8 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] space-y-4 flex flex-col justify-between">
           <div>
-            ${imageThumb({ icon: 'hearing_disabled', label: 'Hearing Aids' })}
-            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-1">Hearing Aids</h3>
+            <div class="w-12 h-12 rounded-xl bg-white border border-[#D7E3E8] flex items-center justify-center text-[#1797A6] shadow-sm">
+              <span class="material-symbols-outlined text-[24px]">hearing_disabled</span>
+            </div>
+            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-4">Hearing Aids</h3>
             <p class="text-[14px] text-[#64748B] mt-2">Hearing-aid consultation, a trial period, and fitting, with real-ear verification.</p>
           </div>
           <a href="/services/hearing-aids" class="w-full text-center py-2.5 bg-white border border-[#D7E3E8] font-display font-bold text-[13px] text-[#1797A6] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
@@ -44,8 +48,10 @@ module.exports = {
         </div>
         <div class="p-8 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] space-y-4 flex flex-col justify-between">
           <div>
-            ${imageThumb({ icon: 'child_care', label: 'Newborn Screening' })}
-            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-1">Newborn Screening</h3>
+            <div class="w-12 h-12 rounded-xl bg-white border border-[#D7E3E8] flex items-center justify-center text-[#1797A6] shadow-sm">
+              <span class="material-symbols-outlined text-[24px]">child_care</span>
+            </div>
+            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-4">Newborn Screening</h3>
             <p class="text-[14px] text-[#64748B] mt-2">Hearing-screening evaluations for infants and toddlers, carried out gently and explained clearly to parents.</p>
           </div>
           <a href="/services/newborn-screening" class="w-full text-center py-2.5 bg-white border border-[#D7E3E8] font-display font-bold text-[13px] text-[#1797A6] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
@@ -54,8 +60,10 @@ module.exports = {
         </div>
         <div class="p-8 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] space-y-4 flex flex-col justify-between">
           <div>
-            ${imageThumb({ icon: 'public', label: 'NRI Hearing Care' })}
-            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-1">NRI Hearing Care</h3>
+            <div class="w-12 h-12 rounded-xl bg-white border border-[#D7E3E8] flex items-center justify-center text-[#1797A6] shadow-sm">
+              <span class="material-symbols-outlined text-[24px]">public</span>
+            </div>
+            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-4">NRI Hearing Care</h3>
             <p class="text-[14px] text-[#64748B] mt-2">Helping families living abroad coordinate hearing-care appointments for parents and family members living in Mumbai, with the patient's consent.</p>
           </div>
           <a href="/nri-hearing-care" class="w-full text-center py-2.5 bg-[#087F8C] text-white font-display font-bold text-[13px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
@@ -64,8 +72,10 @@ module.exports = {
         </div>
         <div class="p-8 bg-[#0D234A] text-white rounded-2xl border border-gray-800 space-y-4 flex flex-col justify-between">
           <div>
-            ${imageThumb({ icon: 'favorite', label: 'Complete Care', dark: true })}
-            <span class="font-mono text-[12px] font-bold text-[#087F8C]">FLAGSHIP SUITE</span>
+            <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-[#087F8C]">
+              <span class="material-symbols-outlined text-[24px]">favorite</span>
+            </div>
+            <span class="font-mono text-[12px] font-bold text-[#087F8C] mt-4 block">FLAGSHIP SUITE</span>
             <h3 class="text-[22px] font-display font-bold text-white mt-1">Complete Care</h3>
             <p class="text-[14px] text-gray-300 mt-2">An all-in-one in-home audiology, real-ear verification, and speech-therapy coordination suite (₹75k to ₹1.5L).</p>
           </div>
@@ -81,8 +91,10 @@ module.exports = {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
         <div class="p-8 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] space-y-4 flex flex-col justify-between">
           <div>
-            ${imageThumb({ icon: 'record_voice_over', label: 'Speech Therapy' })}
-            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-1">Speech Therapy</h3>
+            <div class="w-12 h-12 rounded-xl bg-white border border-[#D7E3E8] flex items-center justify-center text-[#1797A6] shadow-sm">
+              <span class="material-symbols-outlined text-[24px]">record_voice_over</span>
+            </div>
+            <h3 class="text-[22px] font-display font-bold text-[#0D234A] mt-4">Speech Therapy</h3>
             <p class="text-[14px] text-[#64748B] mt-2">Therapy for pediatric articulation and language-delay support, fluency, and adult speech and language rehabilitation.</p>
           </div>
           <a href="/services/speech-therapy" class="w-full text-center py-2.5 bg-white border border-[#D7E3E8] font-display font-bold text-[13px] text-[#1797A6] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
