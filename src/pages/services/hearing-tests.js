@@ -1,5 +1,5 @@
 const {
-  pageHero, imagePlaceholder, sectionHeading, benefitGrid, processSteps,
+  pageHero, sectionHeading, benefitGrid, processSteps,
   faqAccordion, relatedServices, breadcrumbSchema, serviceSchema, faqSchema,
 } = require('../../partials/layout.js');
 
@@ -82,7 +82,9 @@ module.exports = {
     </div>
 
     <div class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
-      ${imagePlaceholder({ icon: 'hearing', label: 'Hearing Test in Progress', caption: 'Sound-treated testing room, Chembur clinic' })}
+      <div class="relative bg-white p-3 border border-[#D7E3E8] rounded-2xl shadow-md">
+        <img src="/assets/clinic/sound-booth-window.webp" alt="Sound-treated testing booth at PTA Solutions, Chembur clinic" class="w-full h-auto aspect-[4/3] object-cover rounded-xl">
+      </div>
       <div class="bg-[#F8FAFC] p-6 rounded-2xl border-2 border-[#087F8C] space-y-4">
         <div class="flex items-center gap-2 text-[13px] text-[#0D234A]">
           <span class="material-symbols-outlined text-[#1797A6] text-[18px]">schedule</span>

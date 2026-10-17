@@ -1,5 +1,5 @@
 const {
-  pageHero, imagePlaceholder, sectionHeading, processSteps, faqAccordion,
+  pageHero, sectionHeading, processSteps, faqAccordion,
   relatedServices, breadcrumbSchema, serviceSchema, faqSchema,
 } = require('../../partials/layout.js');
 
@@ -86,7 +86,9 @@ module.exports = {
     </div>
 
     <div class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
-      ${imagePlaceholder({ icon: 'favorite', label: 'Complete Care at Home', caption: 'Diagnostics and therapy at your residence' })}
+      <div class="relative bg-white p-3 border border-[#D7E3E8] rounded-2xl shadow-md">
+        <img src="/assets/clinic/patient-session-1.webp" alt="Audiology diagnostic session at PTA Solutions" class="w-full h-auto aspect-[4/3] object-cover rounded-xl">
+      </div>
       <div class="bg-[#F8FAFC] p-8 rounded-2xl border-2 border-[#087F8C] space-y-6">
         <div>
           <span class="text-[11px] font-bold uppercase tracking-wider text-[#1797A6]">Service Investment</span>
