@@ -1,4 +1,4 @@
-const { pageHero, breadcrumbSchema } = require('../partials/layout.js');
+const { pageHero, breadcrumbSchema, imagePlaceholder } = require('../partials/layout.js');
 
 const PATH = '/contact';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Contact Us' }];
@@ -19,9 +19,7 @@ module.exports = {
 <section class="py-16 bg-white border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
     <div class="lg:col-span-5 space-y-6">
-      <div class="relative bg-white p-3 border border-[#D7E3E8] rounded-2xl shadow-md">
-        <img src="/assets/clinic/clinic-signage.webp" alt="PTA Solutions Hearing and Speech Care Clinics signage, Audiometry and Speech Therapy Room" class="w-full h-auto aspect-[4/3] object-cover rounded-xl">
-      </div>
+      ${imagePlaceholder({ icon: 'location_on', label: 'PTA Solutions Clinic, Chembur', caption: 'Shanmukhapriya Healthcare Centre, 6th Floor' })}
       <div class="p-6 bg-[#F8FAFC] rounded-2xl border border-[#D7E3E8] space-y-6">
         <div class="flex items-center justify-between">
           <span class="text-[11px] font-bold uppercase tracking-widest text-[#1797A6]">Clinic Headquarters</span>
