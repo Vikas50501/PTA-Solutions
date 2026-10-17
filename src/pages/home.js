@@ -269,7 +269,7 @@ module.exports = {
             <span class="material-symbols-outlined text-[#1797A6] text-[20px]">verified</span>
             <span>Conducted in Chembur Clinic or via doorstep diagnostics</span>
           </div>
-          <a class="group px-6 py-2.5 bg-[#087F8C] text-[#0D234A] font-display font-semibold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all duration-200 shadow-sm inline-flex items-center gap-2" href="#booking-hub" id="svc-book-btn" onclick="selectServiceForBooking('Hearing Tests')">
+          <a class="group px-6 py-2.5 bg-[#087F8C] text-white font-display font-semibold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all duration-200 shadow-sm inline-flex items-center gap-2" href="#booking-hub" id="svc-book-btn" onclick="selectServiceForBooking('Hearing Tests')">
             <span>Book Service Now</span>
             <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
           </a>
