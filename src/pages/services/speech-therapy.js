@@ -82,7 +82,9 @@ module.exports = {
     </div>
 
     <div class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
-      ${imagePlaceholder({ icon: 'record_voice_over', label: 'Speech Therapy Session', caption: 'One-on-one with a speech-language professional' })}
+      <div class="relative bg-white p-3 border border-[#D7E3E8] rounded-2xl shadow-md">
+        <img src="/assets/stock/speech-therapy.webp" alt="Speech therapy session with a young boy and therapist" class="w-full h-auto aspect-[4/3] object-cover rounded-xl">
+      </div>
       <div class="bg-[#F8FAFC] p-6 rounded-2xl border-2 border-[#087F8C] space-y-4">
         <div class="flex items-center gap-2 text-[13px] text-[#0D234A]">
           <span class="material-symbols-outlined text-[#1797A6] text-[18px]">schedule</span>

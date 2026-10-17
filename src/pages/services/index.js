@@ -1,4 +1,4 @@
-const { pageHero, breadcrumbSchema, imageThumb, imageBanner } = require('../../partials/layout.js');
+const { pageHero, breadcrumbSchema, imageThumb } = require('../../partials/layout.js');
 
 const PATH = '/services';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Services' }];
@@ -16,7 +16,9 @@ module.exports = {
   path: PATH,
   extraSchema: [breadcrumbSchema(CRUMBS, PATH)],
   body: `
-${imageBanner({ icon: 'graphic_eq', label: 'PTA Solutions Clinic, Chembur', caption: 'Diagnostic suite and consultation rooms' })}
+<div class="w-full">
+  <img src="/assets/stock/services-banner.webp" alt="Audiologist consultation at a hearing and speech care clinic" class="w-full h-auto aspect-[16/9] object-cover">
+</div>
 <section class="py-16 bg-white border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-14">
 
