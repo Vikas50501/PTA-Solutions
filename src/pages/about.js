@@ -65,6 +65,20 @@ module.exports = {
   </div>
 </section>
 
+<section class="py-16 bg-white border-b border-[#D7E3E8]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-6">
+      <img src="/assets/clinic/real-clinic-exterior.webp" alt="PTA Solutions Hearing and Speech Care Clinics exterior signage, Chembur" class="w-full h-auto aspect-[4/3] object-cover rounded-2xl border border-[#D7E3E8] shadow-md">
+    </div>
+    <div class="lg:col-span-6 space-y-3">
+      <span class="text-[11px] font-bold uppercase tracking-widest text-[#1797A6]">Visit Our Clinic</span>
+      <h2 class="text-[26px] lg:text-[32px] font-display font-bold text-[#0D234A]">PTA Solutions, Chembur</h2>
+      <p class="text-[15px] text-[#64748B] leading-relaxed">Shanmukhapriya Healthcare Centre, 6th Floor, Shrikant Chambers -2, Above Surya Hospital, Next to R.K.Studio, Opp CROMA, Chembur, Mumbai - 400074.</p>
+      <a href="/contact" class="inline-flex items-center gap-1 text-[14px] font-bold text-[#1797A6] hover:underline">Get Directions &amp; Contact Details →</a>
+    </div>
+  </div>
+</section>
+
 <section class="py-16 bg-[#F8FAFC] border-b border-[#D7E3E8]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-10">
     ${sectionHeading({ eyebrow: 'Why Choose PTA Solutions', title: 'Care Built on Precision and Trust', align: 'center' })}
