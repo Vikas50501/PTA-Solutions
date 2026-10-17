@@ -1,4 +1,4 @@
-const { imageBanner, breadcrumbSchema } = require('../partials/layout.js');
+const { breadcrumbSchema } = require('../partials/layout.js');
 
 const PATH = '/book-appointment';
 const CRUMBS = [{ label: 'Home', href: '/' }, { label: 'Book Appointment' }];
@@ -18,7 +18,6 @@ module.exports = {
   </section>
 `,
   body: `
-${imageBanner({ icon: 'calendar_month', label: 'Book Your Appointment', caption: 'Chembur clinic or doorstep visits across Mumbai' })}
 <section class="py-16 bg-white border-b border-[#D7E3E8]">
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
