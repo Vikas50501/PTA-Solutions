@@ -86,8 +86,8 @@ module.exports = {
         <div class="p-4 bg-[#EEF6F8] rounded-xl border border-[#D7E3E8] flex items-center gap-3">
           <span class="material-symbols-outlined text-[#1797A6] text-[24px]">verified</span>
           <div>
-            <p class="font-display font-bold text-[13px] text-[#0D234A]">Johnsavio Fernandes, BASLP, DHLS, BNYS</p>
-            <p class="text-[11px] text-[#64748B]">Audiologist &amp; Speech-Language Pathologist, PTA Solutions, Chembur, Mumbai</p>
+            <p class="font-display font-bold text-[13px] text-[#0D234A]">PTA SOLUTIONS HEARING AND SPEECH CARE CLINICS</p>
+            <p class="text-[11px] text-[#64748B]">Audiology &amp; Speech-Language Pathology Clinic, Chembur, Mumbai</p>
           </div>
         </div>
       </div>

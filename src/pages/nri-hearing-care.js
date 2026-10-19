@@ -50,27 +50,27 @@ module.exports = {
           <p class="text-[14px] text-[#64748B] mt-2">For families living abroad who want to understand their parent's hearing needs and the next steps for care.</p>
         </div>
         <div class="flex items-baseline gap-2">
-          <span class="text-[32px] font-display font-bold text-[#1797A6]">₹9,999*</span>
+          <span class="text-[18px] font-display font-bold text-[#1797A6]">Coordinated Assessment</span>
         </div>
         <ul class="space-y-2 text-[13.5px] text-[#1F2937]">
           <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>Initial hearing consultation and relevant case history.</li>
-          <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>Pure Tone Audiometry (PTA), when clinically appropriate and available within the confirmed package.</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>Pure Tone Audiometry (PTA), when clinically appropriate.</li>
           <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>Explanation and counselling of the hearing test results.</li>
           <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>Hearing-aid demonstration or trial, if clinically suitable and an appropriate device is available.</li>
-          <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>Guidance on suitable hearing-aid options, features and indicative costs. A hearing aid is not included in the ₹9,999 fee.</li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>Guidance on suitable hearing-aid options, features and next steps.</li>
           <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>A personalised care plan and next-step recommendations.</li>
           <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>One scheduled WhatsApp or video discussion with the family member abroad, with the parent's informed consent.</li>
           <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>A brief written summary of findings and recommendations.</li>
         </ul>
         <div class="p-3 bg-[#EEF6F8] rounded-lg text-[12.5px] text-[#64748B] flex items-start gap-2">
           <span class="material-symbols-outlined text-[16px] text-[#1797A6] mt-0.5">location_on</span>
-          <span>Appointment location: at your parent's home in Mumbai (default). A clinic appointment at Chembur can be arranged instead, on request.</span>
+          <span>Appointment location: Chembur Clinic, or coordinated home visit on request where feasible.</span>
         </div>
         <div class="pt-2 mt-auto">
           <button type="button" onclick="prefillNriEnquiry('Hearing Care', '')" class="w-full py-3 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
             Enquire About Hearing Care
           </button>
-          <p class="text-[11.5px] text-[#64748B] mt-3 leading-relaxed">*Proposed entry price, subject to final approval by PTA Solutions. Hearing aids, additional tests, travel, fitting appointments and ongoing follow-ups are not included unless specifically listed in a written estimate.</p>
+          <p class="text-[11.5px] text-[#64748B] mt-3 leading-relaxed">*Hearing aids, additional tests, travel and ongoing follow-up sessions are discussed and quoted transparently in advance.</p>
         </div>
       </div>
 
@@ -83,7 +83,7 @@ module.exports = {
           <p class="text-[14px] text-[#64748B] mt-2">For families living abroad whose parent needs support with speech, language, voice or everyday communication.</p>
         </div>
         <div class="flex items-baseline gap-2">
-          <span class="text-[32px] font-display font-bold text-[#1797A6]">₹9,999*</span>
+          <span class="text-[18px] font-display font-bold text-[#1797A6]">Coordinated Assessment</span>
         </div>
         <ul class="space-y-2 text-[13.5px] text-[#1F2937]">
           <li class="flex gap-2"><span class="material-symbols-outlined text-[#1797A6] text-[18px] shrink-0">check</span>Initial speech and communication consultation and relevant case history.</li>
@@ -97,13 +97,13 @@ module.exports = {
         </ul>
         <div class="p-3 bg-[#EEF6F8] rounded-lg text-[12.5px] text-[#64748B] flex items-start gap-2">
           <span class="material-symbols-outlined text-[16px] text-[#1797A6] mt-0.5">location_on</span>
-          <span>Appointment location: at your parent's home in Mumbai (default). A clinic appointment at Chembur can be arranged instead, on request.</span>
+          <span>Appointment location: Chembur Clinic, or coordinated home visit on request where feasible.</span>
         </div>
         <div class="pt-2 mt-auto">
           <button type="button" onclick="prefillNriEnquiry('Speech &amp; Communication Care', '')" class="w-full py-3 bg-[#087F8C] text-white font-display font-bold text-[14px] rounded-lg hover:bg-[#1797A6] hover:text-white transition-all">
             Enquire About Speech Care
           </button>
-          <p class="text-[11.5px] text-[#64748B] mt-3 leading-relaxed">*Proposed entry price, subject to confirmation of the assessment scope and fee. Ongoing therapy sessions, specialist assessments, home visits and travel are not included unless specifically listed in a written estimate.</p>
+          <p class="text-[11.5px] text-[#64748B] mt-3 leading-relaxed">*Ongoing therapy sessions, specialist assessments and travel are discussed and confirmed transparently in advance.</p>
         </div>
       </div>
     </div>
@@ -116,10 +116,10 @@ module.exports = {
     ${sectionHeading({ eyebrow: 'Additional Care', title: "Additional Care, Based on Your Parent's Needs", subtitle: 'Every person\'s needs are different. After the initial assessment, we will explain the recommended next steps and provide a separate estimate before any additional service is booked.', align: 'center' })}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <div class="p-6 bg-white rounded-2xl border border-[#D7E3E8] space-y-3">
-        <span class="material-symbols-outlined text-[#1797A6] text-[24px]">home</span>
-        <h4 class="font-display font-bold text-[16px] text-[#0D234A]">Home Visits (Default)</h4>
-        <p class="text-[13px] text-[#64748B] leading-relaxed">The entry assessment is conducted at your parent's home in Mumbai by default. A clinic appointment at Chembur can be arranged instead on request. Exact logistics are confirmed before the appointment.</p>
-        <button type="button" onclick="prefillNriEnquiry('Not Sure', 'Interested in a home visit.')" class="text-[13px] font-bold text-[#1797A6] hover:underline">Arrange a Home Visit →</button>
+        <span class="material-symbols-outlined text-[#1797A6] text-[24px]">location_on</span>
+        <h4 class="font-display font-bold text-[16px] text-[#0D234A]">Clinic or Coordinated Visits</h4>
+        <p class="text-[13px] text-[#64748B] leading-relaxed">Appointments are held at our Chembur clinic, or coordinated at home on request where feasible. Exact logistics and availability are confirmed before booking.</p>
+        <button type="button" onclick="prefillNriEnquiry('Not Sure', 'Interested in a visit.')" class="text-[13px] font-bold text-[#1797A6] hover:underline">Discuss Visit Options →</button>
       </div>
       <div class="p-6 bg-white rounded-2xl border border-[#D7E3E8] space-y-3">
         <span class="material-symbols-outlined text-[#1797A6] text-[24px]">hearing_disabled</span>

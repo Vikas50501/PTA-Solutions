@@ -29,13 +29,7 @@ function organizationSchema() {
         "opens": "11:00",
         "closes": "19:00"
       }
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Johnsavio Fernandes",
-      "honorificSuffix": "BASLP, DHLS, BNYS",
-      "jobTitle": "Audiologist & Speech-Language Pathologist"
-    }
+    ]
   };
 }
 
@@ -232,16 +226,17 @@ function footer() {
   <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
     <div class="space-y-4">
       <h4 class="font-display font-bold text-[18px] text-white tracking-wider">PTA SOLUTIONS</h4>
-      <p class="text-[13px] text-gray-400">Hearing and Speech Care Clinics, Chembur, Mumbai.</p>
-      <p class="text-[12px] text-gray-500">Johnsavio Fernandes, BASLP, DHLS, BNYS — Audiologist &amp; Speech-Language Pathologist</p>
+      <p class="text-[13px] text-[#087F8C] font-semibold">Hearing and Speech Care Clinics</p>
+      <p class="text-[13px] text-gray-400">Shanmukhapriya Healthcare Centre, Chembur, Mumbai.</p>
     </div>
     <div class="space-y-3">
       <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Explore</h5>
       <ul class="space-y-2 text-[13px] text-gray-400">
         <li><a href="/about" class="hover:text-white">About Clinic</a></li>
-        <li><a href="/services#hearing-care" class="hover:text-white">Hearing Care</a></li>
+        <li><a href="/services" class="hover:text-white">Our Services</a></li>
+        <li><a href="/services/hearing-tests" class="hover:text-white">Hearing Care</a></li>
         <li><a href="/services/speech-therapy" class="hover:text-white">Speech Therapy</a></li>
-        <li><a href="/nri-hearing-care" class="hover:text-white">NRI Hearing Care</a></li>
+        <li><a href="/nri-hearing-care" class="hover:text-white">NRI Parent Care</a></li>
         <li><a href="/book-appointment" class="hover:text-white">Book Appointment Hub</a></li>
         <li><a href="/contact" class="hover:text-white">Contact Us</a></li>
       </ul>
@@ -249,12 +244,11 @@ function footer() {
     <div class="space-y-3">
       <h5 class="text-[12px] font-bold uppercase tracking-widest text-[#087F8C]">Clinical Services</h5>
       <ul class="space-y-2 text-[13px] text-gray-400">
-        <li><a href="/services/hearing-tests" class="hover:text-white">Hearing Tests</a></li>
-        <li><a href="/services/hearing-aids" class="hover:text-white">Hearing Aids</a></li>
-        <li><a href="/services/speech-therapy" class="hover:text-white">Speech Therapy</a></li>
-        <li><a href="/services/newborn-screening" class="hover:text-white">Newborn Screening</a></li>
-        <li><a href="/services/basic-consultation" class="hover:text-white">Basic Consultation</a></li>
-        <li><a href="/nri-hearing-care" class="hover:text-white">NRI Parent Care</a></li>
+        <li><a href="/services/hearing-tests" class="hover:text-white">Hearing Tests &amp; Audiology</a></li>
+        <li><a href="/services/hearing-aids" class="hover:text-white">Hearing Aids &amp; Fitting</a></li>
+        <li><a href="/services/speech-therapy" class="hover:text-white">Speech &amp; Language Therapy</a></li>
+        <li><a href="/services/newborn-screening" class="hover:text-white">Newborn &amp; Infant Screening</a></li>
+        <li><a href="/nri-hearing-care" class="hover:text-white">NRI Parent Care Coordination</a></li>
       </ul>
     </div>
     <div class="space-y-3">
@@ -362,7 +356,7 @@ function scripts() {
     e.preventDefault();
     const result = await submitFormData(e.target);
     if (result.ok) {
-      showToast('Booking Request Received: ' + serviceName, "Johnsavio Fernandes' desk has received your request.");
+      showToast('Booking Request Received: ' + serviceName, "PTA SOLUTIONS HEARING AND SPEECH CARE CLINICS has received your request.");
       e.target.reset();
     } else {
       showToast('Could not send your request', 'Please call or WhatsApp us directly at +91 9773545058.');
@@ -528,7 +522,7 @@ ${items.map(it => `      <a href="${it.href}" class="block p-5 bg-white rounded-
 // No fake time slots, no email requirement, and an explicit "not confirmed until we contact you" notice.
 const SERVICE_OPTIONS = [
   'Hearing Tests', 'Hearing Aids', 'Speech Therapy', 'Newborn Screening',
-  'Basic Consultation', 'Complete Care',
+  'NRI Hearing and Speech Care',
 ];
 
 function requestAppointmentForm(serviceName, formId) {
@@ -536,31 +530,23 @@ function requestAppointmentForm(serviceName, formId) {
   return `<div class="bg-white p-8 rounded-2xl border border-[#D7E3E8] shadow-sm space-y-6">
   <div>
     <h2 class="text-[22px] font-display font-bold text-[#0D234A]">Request an Appointment</h2>
-    <p class="text-[14px] text-[#64748B] mt-1">Please submit your preferred date and time. Our team will contact you to confirm availability. Your appointment is not confirmed until we contact you.</p>
+    <p class="text-[14px] text-[#64748B] mt-1">Please submit your details below. Our team will contact you to confirm availability. Your appointment is not confirmed until we contact you.</p>
   </div>
   <form onsubmit="handleBooking(event, '${serviceName}')" class="space-y-4 pt-2" id="${formId}">
     <input type="hidden" name="_subject" value="New appointment request: ${serviceName}">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Name *</label>
-        <input type="text" name="name" required placeholder="Your full name" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+        <input type="text" name="name" required placeholder="Enter your full name" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px] text-[#0D234A] focus:bg-white focus:border-[#087F8C] focus:outline-none">
       </div>
       <div>
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Phone / WhatsApp Number *</label>
-        <input type="tel" name="phone" required placeholder="+91 97735 45058" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
+        <input type="tel" name="phone" required placeholder="e.g. 98765 43210" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px] text-[#0D234A] focus:bg-white focus:border-[#087F8C] focus:outline-none">
       </div>
-      <div>
+      <div class="sm:col-span-2">
         <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Service Needed *</label>
-        <select name="service" required class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">${options}</select>
+        <select name="service" required class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px] text-[#0D234A] focus:bg-white focus:border-[#087F8C] focus:outline-none">${options}</select>
       </div>
-      <div>
-        <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Preferred Date or Time</label>
-        <input type="text" name="preferred_time" placeholder="e.g. Weekday mornings" class="w-full h-11 px-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]">
-      </div>
-    </div>
-    <div>
-      <label class="block text-[11px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Short Message</label>
-      <textarea name="message" rows="3" placeholder="Anything else we should know?" class="w-full p-3 bg-[#F8FAFC] border border-[#D7E3E8] rounded-lg text-[14px]"></textarea>
     </div>
     <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#D7E3E8]">
       <div class="text-[13px] text-[#64748B]">Need help? Call the clinic: <a href="tel:+919773545058" class="text-[#1797A6] font-bold">+91 9773545058</a></div>
